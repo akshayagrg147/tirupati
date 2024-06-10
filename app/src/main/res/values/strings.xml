@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Metaluxe</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_uptext">NEW TO SHRI TIRUPATI ENTERPRISES? <font color='#EA8F62'>Sign up</font></string>
+    <string name="login_text">Already have an account? <font color='#EA8F62'> Login</font></string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+    <string-array name="item_detail_array">
+        <item>Copper Rod</item>
+        <!-- Add other items if needed -->
+    </string-array>
+
+    <string-array name="payment_terms_array">
+        <item>Lorem Ipsum</item>
+        <!-- Add other terms if needed -->
+    </string-array>
+
+    <string-array name="delivery_terms_array">
+        <item>Lorem Ipsum</item>
+        <!-- Add other terms if needed -->
+    </string-array>
+
+    <!-- Content description for the upload button -->
+    <string name="upload_document">Upload Document</string>
+</resources>

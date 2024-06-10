@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto">
+
+        <View
+            android:id="@+id/viewBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent" />
+
+        <FrameLayout
+            android:id="@+id/flCard"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/_20sdp"
+            android:clickable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="match_parent"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="@dimen/_200sdp"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:showDividers="middle">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_20sdp"
+                    android:text="Are you sure you want to Log out?"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:paddingLeft="@dimen/_25sdp"
+                        android:layout_weight="1">
+                        <com.varuna.parivartan.views.CustomTextView
+                            android:id="@+id/tvYes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:gravity="center"
+                            android:background="@color/lightGrey"
+                            android:padding="@dimen/_8sdp"
+                            android:text="Yes"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp"
+                            apps:textAllCaps="false" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingRight="@dimen/_25sdp"
+                        android:layout_weight="1">
+                        <com.varuna.parivartan.views.CustomTextView
+                            android:id="@+id/tvNo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@color/lightGrey"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="No"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_10sdp"
+                            apps:textAllCaps="false" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+</RelativeLayout>

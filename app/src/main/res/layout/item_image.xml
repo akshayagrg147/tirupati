@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content"
+    android:id="@+id/uploadFrntBackImg"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/rounded_dashed_border_vivamagenta_all"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_below="@+id/gstUpload"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="Upload Image"
+        android:fontFamily="@font/montserrat_regular"
+        />
+
+</LinearLayout>

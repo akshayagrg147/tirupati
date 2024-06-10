@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:gravity="center">
+<!--    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"        -->
+<!--        android:background="@color/transparent">-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:alpha="0.5"-->
+<!--            android:background="@color/black" />-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+          <!--  <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/progressView"
+                android:visibility="gone"
+                style="@style/AVLoadingIndicatorView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                app:indicatorColor="@color/white"
+                app:indicatorName="BallTrianglePathIndicator" />
+-->
+<!--            <ImageView-->
+<!--                android:id="@+id/progressView1212"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/loader_vivirooms"/>-->
+
+           <!-- <pl.droidsonroids.gif.GifTextView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:background="@drawable/loader_vivirooms1"
+                tools:ignore="MissingClass" />-->
+
+            <com.vivirooms.app.views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="Please wait"
+                android:textColor="@color/white" />
+        </LinearLayout>
+<!--    </FrameLayout>-->
+</RelativeLayout>
+</layout>
+
+

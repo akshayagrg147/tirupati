@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.CollapsingToolbarLayout
+    android:id="@+id/customCollapsableTb"
+    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical">
+
+            <!-- android:layout_marginTop="@dimen/status_bar_view_height"-->
+
+            <RelativeLayout
+                android:id="@+id/rlToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="@dimen/_34sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_8sdp"
+                    android:rotation="0"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:background="?attr/selectableItemBackground"/>
+                <!--  android:src="@drawable/ic_arrow"-->
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivMenu"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_5sdp"
+                    android:tint="@color/white"
+                    tools:visibility="visible" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@+id/rlSearch"
+                android:layout_toEndOf="@+id/rlToolbar"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!--<ImageView
+                    android:id="@+id/ivLogo"
+                    android:layout_width="@dimen/_86sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    android:src="@drawable/logo_varuna_300_horizontal_new"
+                     android:padding="1dp" />-->
+<!--                android:src="@drawable/beta_logo"
+    android:layout_width="@dimen/_96sdp"
+    android:src="@drawable/ic_vivirooms_app_logo_new23"-->
+
+<!--                android:layout_width="@dimen/_32sdp"
+                  android:src="@drawable/ic_vivirooms_star_logo"  -->
+                <!--              android:src="@drawable/ic_vivirooms_logo"
+                 android:src="@drawable/ic_vivirooms_logo" -->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHeaderTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:lines="1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp"
+                    app:fontFamily="@font/open_sans_semibold"
+                    android:background="?attr/selectableItemBackground"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:id="@+id/rlSearch1"
+                        android:layout_width="@dimen/_34sdp"
+                        android:layout_height="@dimen/_34sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_1sdp">
+
+                      <!--  <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/tvSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/_7sdp"
+                            android:src="@drawable/clock_icon" />-->
+
+                       <!-- <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/tvSearch"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:padding="@dimen/_7sdp"
+                            android:src="@drawable/ic_search1" />-->
+                    </RelativeLayout>
+
+                    <RelativeLayout android:visibility="visible"
+                        android:id="@+id/myNotification"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_1sdp">
+
+
+                      <!--  <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivWishList"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/_4sdp"
+                            android:src="@drawable/capture"
+                            />-->
+                        <!--android:src="@drawable/notification_w"-->
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/my_cart_layout"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:layout_width="@dimen/_36sdp"
+                        android:layout_height="@dimen/_36sdp"
+                        android:layout_marginStart="@dimen/_1sdp">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/tvCart"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:padding="@dimen/_7sdp"
+                             />
+
+<!--                        <com.varunest.sparkbutton.SparkButton-->
+<!--                            android:id="@+id/tvCart"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            app:sparkbutton_activeImage="@drawable/ic_bag_1_fill"-->
+<!--                            app:sparkbutton_inActiveImage="@drawable/ic_bag_1"-->
+<!--                            app:sparkbutton_iconSize="@dimen/_20sdp"-->
+<!--                            app:sparkbutton_animationSpeed=".4"-->
+<!--                            app:sparkbutton_primaryColor="@color/golden_yellow"-->
+<!--                            app:sparkbutton_secondaryColor="@color/viva_megenta"-->
+<!--                            />-->
+
+                        <!--android:src="@drawable/notification_w"-->
+                        <!--                        TOP RIGHT-->
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/count"-->
+                        <!--                            android:layout_width="@dimen/_12sdp"-->
+                        <!--                            android:layout_height="@dimen/_12sdp"-->
+                        <!--                            android:layout_alignParentTop="true"-->
+                        <!--                            android:layout_alignParentRight="true"-->
+                        <!--                            android:layout_marginTop="@dimen/_5sdp"-->
+                        <!--                            android:layout_marginRight="@dimen/_5sdp"-->
+                        <!--                            android:background="@drawable/badge_background1"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:text="125"-->
+                        <!--                            android:textColor="@color/white"-->
+                        <!--                            android:textSize="@dimen/_6sdp"-->
+                        <!--                            android:textStyle="normal" /> -->
+
+                        <!--                        CENTER -->
+                        <TextView
+                            android:id="@+id/tvCartCount"
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/_3ssp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_9sdp"
+                            android:textStyle="normal" />
+                        <!--                        android:background="@drawable/badge_background1"-->
+
+                    </RelativeLayout>
+                    <!--                    <androidx.appcompat.widget.AppCompatImageView-->
+                    <!--                        android:id="@+id/tvCart"-->
+                    <!--                        android:layout_width="@dimen/_30sdp"-->
+                    <!--                        android:layout_height="@dimen/_30sdp"-->
+                    <!--                        android:layout_gravity="center_vertical"-->
+                    <!--                        android:padding="@dimen/_7sdp"-->
+                    <!--                        android:src="@drawable/ic_bag_1" />-->
+                    <!--                        android:src="@drawable/ic_basket" />-->
+                    <!--                        android:src="@drawable/ic_bag"/>-->
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlInfo"
+                        android:visibility="gone"
+                        android:layout_width="@dimen/_34sdp"
+                        android:layout_height="@dimen/_34sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_1sdp">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/infoImgBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:padding="@dimen/_7sdp"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:visibility="gone"
+                        android:id="@+id/settingsRL"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_1sdp">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivSettingsImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/_4sdp"
+                             />
+
+
+                    </RelativeLayout>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivChat"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center_vertical"
+                        android:padding="@dimen/_7sdp"
+
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+</com.google.android.material.appbar.CollapsingToolbarLayout>
+

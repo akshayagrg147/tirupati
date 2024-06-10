@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_flow_vendor"
+    app:startDestination="@id/customerFragment">
+    <fragment
+        android:id="@+id/customerFragment"
+        android:name="com.tirupati.vendor.fragmnts.CustomerFragment"
+        android:label="fragment_customer"
+        tools:layout="@layout/fragment_customer" >
+        <action
+            android:id="@+id/action_customerFragment_to_editSupervisorFragment"
+            app:destination="@id/editSupervisorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/polistfragment"
+        android:name="com.tirupati.vendor.fragmnts.PoListFragment"
+        android:label="fragment_upload_photos_p_o_i_d"
+        tools:layout="@layout/fragment_po_list" >
+        <action
+            android:id="@+id/currentt_to_vendorPageFragment"
+            app:destination="@id/vendorPageFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/vendorPageFragment"
+        android:name="com.tirupati.vendor.fragmnts.VendorQotationFragment"
+        android:label="fragment_manage_profile"
+        tools:layout="@layout/vendor_quotation_form" />
+
+    <fragment
+        android:id="@+id/vendorListingFragment"
+        android:name="com.tirupati.vendor.fragmnts.VendorListingFragment"
+        android:label="VendorListingFragment"
+        tools:layout="@layout/fragment_vendor_listing">
+        <action
+            android:id="@+id/action_vendorListingFragment_to_detailListingEditFragment"
+            app:destination="@id/detailListingEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailListingEditFragment"
+        android:name="com.tirupati.vendor.fragmnts.DetailListingEditFragment"
+        android:label="fragment_detail_listing_edit"
+        tools:layout="@layout/fragment_detail_listing_edit" />
+
+
+</navigation>
+<!--
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_search"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.dw.hoofboot.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+
+
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="type"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="data"
+            android:defaultValue="@null"
+            app:argType="com.dw.hoofboot.models.ProductDetailWithSimilarProductsModel"
+            app:nullable="true" />
+
+
+
+
+        <action
+            android:id="@+id/action_searchFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryDetailsFragment"
+        android:name="com.dw.hoofboot.fragments.CategoryDetailsFragment"
+        android:label="fragment_category_details"
+        tools:layout="@layout/fragment_category_details" >
+
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+
+        <action
+            android:id="@+id/action_categoryDetailsFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.dw.hoofboot.fragments.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail" >
+
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="type"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="data"
+            android:defaultValue="@null"
+            app:argType="com.dw.hoofboot.models.ProductDetailWithSimilarProductsModel"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/action_productDetailFragment_to_anotherproduct"
+            app:destination="@id/productDetailFragment" />
+    <action
+        android:id="@+id/action_productDetailFragment_to_openFormFragment"
+        app:destination="@id/openFormFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/openFormFragment"
+        android:name="com.dw.hoofboot.fragments.OpenFormFragment"
+        android:label="fragment_open_form"
+        tools:layout="@layout/fragment_open_form" >
+
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="type"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+
+
+        <action
+            android:id="@+id/action_openFormFragment_to_additionalInfoFragment"
+            app:destination="@id/additionalInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/additionalInfoFragment"
+        android:name="com.dw.hoofboot.fragments.AdditionalInfoFragment"
+        android:label="fragment_additional_info"
+        tools:layout="@layout/fragment_additional_info" >
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="type"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+
+
+        <action
+            android:id="@+id/action_additionalInfoFragment_to_measurementFragment"
+            app:destination="@id/measurementFragment" />
+
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/measurementFragment"
+        android:name="com.dw.hoofboot.fragments.MeasurementFragment"
+        android:label="fragment_measurement"
+        tools:layout="@layout/fragment_measurement" >
+        <action
+            android:id="@+id/action_measurementFragment_to_measureFragment"
+            app:destination="@id/measureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/measureFragment"
+        android:name="com.dw.hoofboot.fragments.MeasureFragment"
+        android:label="fragment_measure"
+        tools:layout="@layout/fragment_measure" >
+        <action
+            android:id="@+id/action_measureFragment_to_photowholehorsefragment"
+            app:destination="@id/photoWholeHorseFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/legsPhotoUploadFragment"
+        android:name="com.dw.hoofboot.fragments.LegsPhotoUploadFragment"
+        android:label="fragment_legs_photo_upload"
+        tools:layout="@layout/fragment_legs_photo_upload" >
+        <action
+            android:id="@+id/action_legsPhotoUploadFragment_to_photoWholeHorseFragment"
+            app:destination="@id/photoWholeHorseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoWholeHorseFragment"
+        android:name="com.dw.hoofboot.fragments.PhotoWholeHorseFragment"
+        android:label="fragment_photo_whole_horse"
+        tools:layout="@layout/fragment_photo_whole_horse" >
+        <action
+            android:id="@+id/action_photoWholeHorseFragment_to_thankYouScreenFragment"
+            app:destination="@id/thankYouScreenFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/thankYouScreenFragment"
+        android:name="com.dw.hoofboot.fragments.ThankYouScreenFragment"
+        android:label="fragment_thank_you_screen"
+        tools:layout="@layout/fragment_thank_you_screen" >
+        <action
+            android:id="@+id/action_thankYouScreenFragment_to_homeAcademyFragment"
+            app:destination="@id/homeAcademyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.dw.hoofboot.fragments.ProductFragment"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product" >
+
+
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/action_productFragment_to_categoryDetailsFragment"
+            app:destination="@id/categoryDetailsFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/payment_Pay_Fragment"
+        android:name="com.dw.hoofboot.Payment_Pay_Fragment"
+        android:label="fragment_payment_pay"
+        tools:layout="@layout/fragment_payment_pay" />
+
+
+</navigation>-->

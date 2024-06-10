@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmnts.BusinessDetailFragment">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btn_back_form"
+                    android:layout_width="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginEnd="16dp"
+                    android:padding="1dp"
+                    android:scaleType="centerInside"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/iv_back" />
+
+                <TextView
+                    android:id="@+id/toolbarTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Upload"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout
+        android:layout_below="@+id/appbar_first"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <LinearLayout
+            android:id="@+id/lltitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingVertical="@dimen/_8sdp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/forpage_image"
+                android:background="@color/white"/>
+        </LinearLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/lltitle"
+    >
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_80sdp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <!--                GST-->
+                <RelativeLayout
+                    android:id="@+id/gstCerRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/tvGST"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="GST Certificate"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                    <ImageView
+                        android:id="@+id/gstIv"
+                        android:layout_below="@+id/tvGST"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/deleteGst"
+                        android:layout_below="@+id/tvGST"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/gstCerLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/_24sdp"
+                android:layout_marginVertical="@dimen/_4sdp"
+                android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_40sdp"
+                android:id="@+id/gstCertificate"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_23sdp"
+                android:src="@drawable/tpp_upload_image"
+                android:layout_gravity="center"
+                style="@style/Style.App.circleImageView"
+                />
+            <TextView
+                android:layout_below="@+id/gstUpload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_22sdp"
+                android:text="Upload GST Certifiate"
+                android:fontFamily="@font/montserrat_regular"
+                />
+
+            </LinearLayout>
+
+
+
+<!--                PAN-->
+                <RelativeLayout
+                    android:id="@+id/panRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/TvPanCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="PAN Card"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                   <!-- <ImageView
+                        android:id="@+id/panIV"
+                        android:layout_below="@+id/TvPanCard"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/deletePanIV"
+                        android:layout_below="@+id/TvPanCard"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_below="@+id/TvPanCard"
+                        android:id="@+id/imageListRCPDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
+                        app:reverseLayout="true"
+                        android:visibility="visible"
+                        android:layout_marginEnd="@dimen/_2sdp"
+                        tools:listitem="@layout/item_add_image"/>
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/panLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/panCardUpload"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:src="@drawable/tpp_upload_image"
+                        android:layout_gravity="center"
+                        app:shapeAppearanceOverlay="@style/Style.App.circleImageView"
+                        />
+                    <TextView
+                        android:layout_below="@+id/gstUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_22sdp"
+                        android:text="Upload PAN Card"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                </LinearLayout>
+<!--                   Electricity bill -->
+
+                <RelativeLayout
+                    android:id="@+id/eleBillRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/TvElecBill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="Electricity Bill"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                    <ImageView
+                        android:id="@+id/IVelecBill"
+                        android:layout_below="@+id/TvElecBill"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/deleteIVElecBill"
+
+                        android:layout_below="@+id/TvElecBill"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/eleBillLL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/electricityBill"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:src="@drawable/tpp_upload_image"
+                        android:layout_gravity="center"
+                        style="@style/Style.App.circleImageView"
+                        />
+                    <TextView
+                        android:layout_below="@+id/gstUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_22sdp"
+                        android:text="Upload Electricity Bill"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                </LinearLayout>
+<!--                Rent Dead-->
+
+                <RelativeLayout
+                    android:id="@+id/rentDeaRL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/TvRentDead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="Rent Dead"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                    <ImageView
+                        android:id="@+id/IVrentDead"
+                        android:layout_below="@+id/TvRentDead"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/deleteRentDead"
+                        android:layout_below="@+id/TvRentDead"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/rentDeaLL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/rentDeadUpload"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:src="@drawable/tpp_upload_image"
+                        android:layout_gravity="center"
+                        style="@style/Style.App.circleImageView"
+                        />
+                    <TextView
+                        android:layout_below="@+id/gstUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_22sdp"
+                        android:text="Upload Rent Dead"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                </LinearLayout>
+
+
+<!--                Godown Photo-->
+
+                <RelativeLayout
+                    android:id="@+id/godwonRL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/TvGodown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="Godown Photo"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                    <ImageView
+                        android:id="@+id/IVgodownImg"
+                        android:layout_below="@+id/TvGodown"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/IVdeletegodownImg"
+
+                        android:layout_below="@+id/TvGodown"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/godwonLL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/godwnPhoto"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:src="@drawable/upload_image"
+                        android:layout_gravity="center"
+                        style="@style/Style.App.circleImageView"
+                        />
+                    <TextView
+                        android:layout_below="@+id/gstUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_22sdp"
+                        android:text="Upload Godown Photo"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                </LinearLayout>
+
+<!--                Cancelled cheque-->
+
+                <RelativeLayout
+                    android:id="@+id/ccRL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/Tvcheque"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="Cancelled Cheque"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                    <ImageView
+                        android:id="@+id/cancelledCIv"
+                        android:layout_below="@+id/Tvcheque"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/deleteChequeIV"
+                        android:layout_below="@+id/Tvcheque"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ccLL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/cancelledChequeUpload"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:src="@drawable/tpp_upload_image"
+                        android:layout_gravity="center"
+                        style="@style/Style.App.circleImageView"
+                        />
+                    <TextView
+                        android:layout_below="@+id/gstUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_22sdp"
+                        android:text="Upload Cancelled Cheque"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                </LinearLayout>
+
+<!--                Aadhar-->
+                <RelativeLayout
+                    android:id="@+id/adharRL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/TvAdharCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="Adhaar Card"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                    <ImageView
+                        android:id="@+id/adhaarIV"
+                        android:layout_below="@+id/TvAdharCard"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/deleteAdharIv"
+                        android:layout_below="@+id/TvAdharCard"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/adharLL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/adhaarUpload"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:src="@drawable/tpp_upload_image"
+                        android:layout_gravity="center"
+                        style="@style/Style.App.circleImageView"
+                        />
+                    <TextView
+                        android:layout_below="@+id/gstUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_22sdp"
+                        android:text="Upload Aadhar Card"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                </LinearLayout>
+
+<!--                Bank Confirmation-->
+                <RelativeLayout
+                    android:id="@+id/BCRL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/TvBankConfirmation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="Bank Confirmation"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                    <ImageView
+                        android:id="@+id/bankConfirmIV"
+                        android:layout_below="@+id/TvBankConfirmation"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/deleteBankConfirmIV"
+                        android:layout_below="@+id/TvBankConfirmation"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/BCLL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/bankConfirmationUpload"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:src="@drawable/tpp_upload_image"
+                        android:layout_gravity="center"
+                        style="@style/Style.App.circleImageView"
+                        />
+                    <TextView
+                        android:layout_below="@+id/gstUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_22sdp"
+                        android:text="Upload Bank Confirmation"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                </LinearLayout>
+
+<!--                ITR-->
+
+                <RelativeLayout
+                    android:id="@+id/itrRL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/TvITR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="ITR Photo"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                    <ImageView
+                        android:id="@+id/ITRimageView"
+                        android:layout_below="@+id/TvITR"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/deleteITRIV"
+                        android:layout_below="@+id/TvITR"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/itrLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/uploadITR"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:src="@drawable/tpp_upload_image"
+                        android:layout_gravity="center"
+                        style="@style/Style.App.circleImageView"
+                        />
+                    <TextView
+                        android:layout_below="@+id/gstUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_22sdp"
+                        android:text="Upload ITR"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                </LinearLayout>
+
+<!--                MSME-->
+                <RelativeLayout
+                    android:id="@+id/MsmeRL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/TvMSME"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="MSME Uploaded"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                    <ImageView
+                        android:id="@+id/MSMEImageView"
+                        android:layout_below="@+id/TvMSME"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/deleteMSMEImageView"
+
+                        android:layout_below="@+id/TvMSME"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/MsmeLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/uploadMSME"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:src="@drawable/tpp_upload_image"
+                        android:layout_gravity="center"
+                        style="@style/Style.App.circleImageView"
+                        />
+                    <TextView
+                        android:layout_below="@+id/gstUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_22sdp"
+                        android:text="Upload MSME"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                </LinearLayout>
+
+
+<!--                E Invoice-->
+                <RelativeLayout
+                    android:id="@+id/eInvRL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+                    <TextView
+                        android:id="@+id/uploadEInvoiceTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="E-Invoice Applicable"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                    <ImageView
+                        android:id="@+id/eInvoiceimageView"
+                        android:layout_below="@+id/uploadEInvoiceTV"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/appbg"/>
+
+                    <ImageView
+                        android:id="@+id/deleteEInvoice"
+                        android:layout_below="@+id/uploadEInvoiceTV"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="69dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/eInvLL"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/eInvoiceApplicableUpload"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:src="@drawable/tpp_upload_image"
+                        android:layout_gravity="center"
+                        style="@style/Style.App.circleImageView"
+                        />
+                    <TextView
+                        android:layout_below="@+id/gstUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_22sdp"
+                        android:text="Upload E-Invoice Applicable"
+                        android:fontFamily="@font/montserrat_regular"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/loginProgressBar"
+                layout="@layout/layout_progress_bar"
+                />
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_alignParentBottom="true">
+
+
+
+        <TextView
+            android:id="@+id/btnSignUpDone"
+            style="@style/loginButton"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@drawable/square_filled_black"
+            android:fontFamily="@font/monsrt_bold"
+            android:text="Sign Up"
+            android:textColor="@color/white" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"/>
+    </LinearLayout>
+
+</RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

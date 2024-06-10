@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ThemeSpinner">
+        <!-- Color when pressed -->
+        <item name="colorAccent">#ffb300</item>
+        <!-- Default color for the dropdown arrow and line -->
+        <item name="colorControlNormal">#80000000</item>
+    </style>
+</resources>

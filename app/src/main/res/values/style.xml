@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Dialog">
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">true</item>
+
+        <item name="android:windowIsFloating">false</item>
+
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@color/transparent</item>
+
+        <!-- Additionally if you want animations when dialog opening -->
+<!--        <item name="android:windowEnterAnimation">@anim/dialog_fade_in</item>-->
+<!--        <item name="android:windowExitAnimation">@anim/dialog_fade_out</item>-->
+    </style>
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+        <attr name="fill_color" format="color" />
+        <attr name="view_type" format="string" />
+    </declare-styleable>
+    <style name="ThemeOverlay.App.Dialog" parent="@style/ThemeOverlay.MaterialComponents.Dialog">
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorPrimary">@color/blue_dark</item> <!-- button text color -->
+    </style>
+
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/orange</item>
+        <item name="android:colorAccent">@color/blue_dark</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DialogButtonStyled</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DialogButtonStyled</item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/DialogButtonStyled</item>
+    </style>
+
+
+    <style name="CustomDatePickerDialog" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="android:datePickerStyle">@style/CustomDatePicker</item>
+
+    </style>
+
+    <style name="CustomDatePicker" parent="@android:style/Widget.Material.DatePicker">
+        <!-- Customize your date picker colors here -->
+        <item name="android:calendarTextColor">@color/black</item>
+        <item name="android:headerBackground">@color/orange</item>
+        <item name="android:background">@color/white</item>
+        <!-- Add more attributes as needed -->
+    </style>
+
+    <style name="DialogButtonStyled" parent="Theme.MaterialComponents.Light">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/_8sdp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="fontFamily">@font/open_sans_semibold</item>
+
+
+    </style>
+
+
+    <style name="Transparent" parent="TransparentDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="TransparentDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+
+    <style name="SpinnerThemexx" parent="android:Widget.Material.Spinner.Underlined">
+        <item name="android:popupBackground">@drawable/rounded_drop_down
+        </item>
+
+
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="et_login_signup" parent="Theme.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:backgroundTint">@color/grey</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="hintTextColor">@color/lightGrey</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+
+    </style>
+
+    <style name="et_login_signup_caps" parent="Theme.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:backgroundTint">@color/grey</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="hintTextColor">@color/lightGrey</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:inputType">textCapCharacters</item>
+
+    </style>
+
+    <style name="dialogToast" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="android:colorAccent">@color/ambulance_red</item>
+        <item name="android:colorPrimary">@color/grey</item>
+
+    </style>
+
+    <style name="text_Box" parent="Theme.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:backgroundTint">@color/grey</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:alpha">.8</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="boxStrokeColor">@color/greyBorderColor</item>
+<!--        Set color when TextInputLayout is resting.-->
+        <item name="android:textColorHint">@color/lightGrey</item>
+<!--       Set color when TextInputLayout is floating/focused/tapped. -->
+        <item name="hintTextColor">@color/black</item>
+
+    </style>
+
+
+
+    <style name="MyCardView" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">@dimen/_8sdp</item>
+        <item name="cornerSizeBottomLeft">@dimen/_8sdp</item>
+    </style>
+
+    <style name="welvcom" parent="Theme.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/monsrt_bold</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_19ssp</item>
+
+    </style>
+    <style name="CustomStyleWidget.MaterialComponents.CompoundButton.Switch"
+        parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="useMaterialThemeColors">false</item>
+
+    </style>
+
+    <style name="Style.App.circleImageView" parent="">
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.App.circleImageView</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.circleImageView" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+
+    <style name="loginButton" parent="Theme.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_45sdp</item>
+        <item name="android:layout_marginTop">@dimen/_20sdp</item>
+        <item name="android:background">@drawable/button_selector_n</item>
+        <item name="android:fontFamily">@font/monsert</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/_15sdp</item>
+        <item name="android:paddingBottom">@dimen/_15sdp</item>
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+
+        <item name="android:padding">@dimen/_10sdp</item>
+
+    </style>
+
+    <style name="Widget.MyTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary" />
+
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/ma"
+            android:icon="@drawable/account_icon"
+            android:title="Manage Profile" />
+
+        <item
+            android:id="@+id/paymentFragment"
+            android:icon="@drawable/terms_icon"
+            android:title="Terms &amp; Condition" />
+
+        <item
+            android:id="@+id/staticContentFragment"
+            android:icon="@drawable/privacy_icon"
+            android:title="Privacy" />
+        <item
+            android:id="@+id/changeResetPasswordFragment"
+            android:icon="@drawable/about_icon"
+            android:title="About" />
+    </group>
+
+</menu>

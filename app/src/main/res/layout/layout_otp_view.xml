@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt1"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/squared_black_border_all"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="5"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/black_cursor"
+            tools:text="5" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/squared_black_border_all"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="1"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/black_cursor"
+            tools:text="5" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt3"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/squared_black_border_all"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="1"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/black_cursor"
+            tools:text="5" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt4"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/squared_black_border_all"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="1"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/black_cursor"
+            tools:text="5" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt5"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@drawable/otp2"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="1"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            tools:text="5" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt6"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@drawable/otp2"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="1"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            tools:text="5" />
+
+    </LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- view background color -->
+    <solid android:color="@color/brownlow" />
+
+
+        <gradient
+            android:angle="180"
+            android:endColor="@color/brownHigh"
+            android:startColor="@color/brownlow"
+            android:type="linear" />
+
+
+    <!-- view border color and width -->
+<!--    <stroke-->
+<!--        android:width="@dimen/_1sdp"-->
+<!--        android:color="@color/black" />-->
+
+    <!-- If you want to add some padding -->
+    <padding
+        android:bottom="0.5dp"
+        android:left="0.5dp"
+        android:right="0.5dp"
+        android:top="0.5dp"/>
+
+    <!-- Here is the corner radius -->
+    <corners
+
+        android:radius="@dimen/_8sdp"/>
+    <!--<stroke android:color="@color/brownlow"
+        android:width="@dimen/_1sdp"/>-->
+
+</shape>

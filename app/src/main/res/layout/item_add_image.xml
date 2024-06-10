@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="@dimen/_80sdp"
+    android:layout_width="@dimen/_100sdp"
+    android:gravity="center_vertical"
+    android:padding="@dimen/_6sdp"
+    >
+
+    <ImageView
+        android:id="@+id/imageViewFB"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_width="@dimen/_100sdp"
+        android:src="@drawable/appbg" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="@dimen/_12sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_delete" />
+
+</RelativeLayout>

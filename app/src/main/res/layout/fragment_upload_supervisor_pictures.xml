@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_below="@+id/lltitle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_80sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:id="@+id/vendorImageRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                >
+                <TextView
+                    android:id="@+id/uploadVendorTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:gravity="start"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:text="Load Vehicle"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
+
+                <ImageView
+                    android:layout_below="@+id/uploadVendorTV"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:scaleType="fitXY"
+                    android:padding="@dimen/_6sdp"
+                    android:id="@+id/InvoiceimageView"
+                    android:src="@drawable/appbg"/>
+
+                <ImageView
+                    android:layout_below="@+id/uploadVendorTV"
+                    android:id="@+id/delete1Button"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignEnd="@+id/InvoiceimageView"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="69dp"
+                    android:layout_marginEnd="3dp"
+                    android:src="@drawable/ic_delete"
+                     />
+
+            </RelativeLayout>
+            <!--                GST-->
+            <LinearLayout
+                android:id="@+id/vendorLL"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_110sdp"
+                android:orientation="vertical"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/loadVehicle"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_23sdp"
+                    android:src="@drawable/upload_image"
+                    android:layout_gravity="center"
+                    style="@style/Style.App.circleImageView"
+                    />
+                <TextView
+                    android:layout_below="@+id/gstUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_22sdp"
+                    android:text="Upload Video Of Load Vehicle"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/copyTollReceiptRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                >
+                <TextView
+                    android:id="@+id/uploadTollReceipt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:gravity="start"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:text="Toll Receipt"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
+
+                <ImageView
+                    android:layout_below="@+id/uploadTollReceipt"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:scaleType="fitXY"
+                    android:padding="@dimen/_6sdp"
+                    android:id="@+id/tollReceiptimageView"
+                    android:src="@drawable/appbg"/>
+
+                <ImageView
+                    android:layout_below="@+id/uploadTollReceipt"
+                    android:id="@+id/deleteToll"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignEnd="@+id/tollReceiptimageView"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="69dp"
+                    android:layout_marginEnd="3dp"
+                    android:src="@android:drawable/ic_menu_delete"
+                    app:tint="@color/white" />
+
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/tollReceiptLL"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_110sdp"
+                android:orientation="vertical"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/tollReceipt"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_23sdp"
+                    android:src="@drawable/upload_image"
+                    android:layout_gravity="center"
+                    app:shapeAppearanceOverlay="@style/Style.App.circleImageView"
+                    />
+                <TextView
+                    android:layout_below="@+id/gstUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_22sdp"
+                    android:text="Upload Copy of Toll Receipt"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
+
+            </LinearLayout>
+            <!--                   Electricity bill -->
+            <RelativeLayout
+                android:id="@+id/VehicleRCRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                >
+                <TextView
+                    android:id="@+id/uploadTollVehicleRC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:gravity="start"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:text="Vehicle RC"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
+
+                <ImageView
+                    android:layout_below="@+id/uploadTollVehicleRC"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:scaleType="fitXY"
+                    android:padding="@dimen/_6sdp"
+                    android:id="@+id/vehicleRCimageView"
+                    android:src="@drawable/appbg"/>
+
+                <ImageView
+                    android:layout_below="@+id/uploadTollVehicleRC"
+                    android:id="@+id/deleteVehicleRc"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignEnd="@+id/vehicleRCimageView"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="69dp"
+                    android:layout_marginEnd="3dp"
+                    android:src="@android:drawable/ic_menu_delete"
+                    app:tint="@color/white" />
+
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/vehicleRcLL"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_110sdp"
+                android:orientation="vertical"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/vehicleRc"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_23sdp"
+                    android:src="@drawable/upload_image"
+                    android:layout_gravity="center"
+                    style="@style/Style.App.circleImageView"
+                    />
+                <TextView
+                    android:layout_below="@+id/gstUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_22sdp"
+                    android:text="Upload copy of vehicle RC"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
+
+            </LinearLayout>
+            <!--                Rent Dead-->
+            <RelativeLayout
+                android:id="@+id/drivingLicenceRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                >
+                <TextView
+                    android:id="@+id/uploadDrivinLC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:gravity="start"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:text="Toll Receipt"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
+
+                <ImageView
+                    android:layout_below="@+id/uploadDrivinLC"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:scaleType="fitXY"
+                    android:padding="@dimen/_6sdp"
+                    android:id="@+id/uploadDrivinLCImageView"
+                    android:src="@drawable/appbg"/>
+
+                <ImageView
+                    android:layout_below="@+id/uploadDrivinLC"
+                    android:id="@+id/deleteDrivinLC"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignEnd="@+id/uploadDrivinLCImageView"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="69dp"
+                    android:layout_marginEnd="3dp"
+                    android:src="@android:drawable/ic_menu_delete"
+                    app:tint="@color/white" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/drivingLicenceLL"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_110sdp"
+                android:orientation="vertical"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/driverLicense"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_23sdp"
+                    android:src="@drawable/upload_image"
+                    android:layout_gravity="center"
+                    style="@style/Style.App.circleImageView"
+                    />
+                <TextView
+                    android:layout_below="@+id/gstUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_22sdp"
+                    android:text="Upload Driving License"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/frntBackLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <!--                Godown Photo-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Front &amp; Back Picture of Vehicle with driver"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/imageListRC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        app:reverseLayout="true"
+        android:visibility="visible"
+        android:layout_marginEnd="@dimen/_2sdp"
+        tools:listitem="@layout/image_item"/>
+
+<!--    <LinearLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/uploadFrntBack"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+        <TextView
+            android:layout_below="@+id/gstUpload"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="Upload Image"
+            android:fontFamily="@font/montserrat_regular"
+            />
+
+    </LinearLayout>-->
+
+
+</LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_alignParentBottom="true">
+
+
+
+        <TextView
+            android:id="@+id/btnSupervisorDone"
+            style="@style/loginButton"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@drawable/square_filled_black"
+            android:fontFamily="@font/monsrt_bold"
+            android:text="Submit"
+            android:textColor="@color/white" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"/>
+    </LinearLayout>
+    <include
+        android:id="@+id/loginProgressBar"
+        layout="@layout/layout_progress_bar"
+        />
+</RelativeLayout>

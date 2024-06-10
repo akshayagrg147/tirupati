@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Status Circle -->
+        <ImageView
+            android:id="@+id/status_circle"
+            android:layout_width="25dp"
+
+            android:scaleType="centerInside"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/pending" />
+
+        <!-- Status Text -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/status_text"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+
+                android:layout_marginStart="8dp"
+                android:text="Pending"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+             />
+            <TextView
+                android:id="@+id/date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:layout_marginTop="4dp"
+                android:text="01-01-2024"
+                android:textSize="10sp"
+                android:textColor="@color/color1A1A1A" />
+
+        </LinearLayout>
+
+
+        <!-- Action Button -->
+        <TextView
+            android:id="@+id/action_button"
+            style="@style/loginButton"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:background="@drawable/square_filled_black"
+            android:fontFamily="@font/monsrt_bold"
+            android:text="Dispatch"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+
+    <!-- Date -->
+
+
+    <!-- Weight, Price, Total -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       android:weightSum="3"
+        android:layout_marginTop="1dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qty"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                />
+            <TextView
+                android:id="@+id/weight_text"
+                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:textColor="@color/orange"
+                android:layout_height="wrap_content"
+                android:text="56 Kg"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textSize="14sp"
+
+
+              />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@android:color/black"
+                />
+            <TextView
+                android:id="@+id/price_text"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@color/orange"
+                android:layout_height="wrap_content"
+                android:text="56 Kg"
+                android:textSize="14sp"
+
+
+              />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                />
+            <TextView
+                android:id="@+id/total_text"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/orange"
+                android:fontFamily="@font/montserrat_semibold"
+                android:layout_height="wrap_content"
+                android:text="56 Kg"
+                android:textSize="14sp"
+
+
+             />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <!-- Details Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_background"
+        android:padding="16dp"
+        android:layout_marginTop="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/po_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PO Number:"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="14sp"
+                android:textColor="@color/color1A1A1A" />
+            <TextView
+                android:id="@+id/po_vslue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" P00092"
+                android:fontFamily="@font/montserrat_regular"
+                android:textSize="14sp"
+                android:textColor="@color/color1A1A1A" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/vendor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Vendor:"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="14sp"
+                android:textColor="@color/color1A1A1A" />
+
+            <TextView
+                android:id="@+id/vendor_value"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Steven Roddy"
+                android:textColor="@color/color1A1A1A"
+                android:fontFamily="@font/montserrat_regular"
+                android:textSize="14sp" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Item:"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/color1A1A1A" />
+            <TextView
+                android:id="@+id/item_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copper Rod"
+                android:fontFamily="@font/montserrat_regular"
+                android:textSize="14sp"
+                android:textColor="@color/color1A1A1A"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+    <!-- Optional Button -->
+
+
+</LinearLayout>

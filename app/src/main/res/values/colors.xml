@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryVariant">#000000</color>
+    <color name="colorPrimaryDark">#b7b7b7</color>
+    <color name="colorSecondary">#000000</color>
+    <color name="colorSecondaryVariant">#b7b7b7</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorBackground">#f2f2f2</color>
+    <color name="colorSurface">#ffffff</color>
+    <color name="colorError">#b00020</color>
+
+    <!--"On" colors define how text, icons and strokes are colored in relation to the surface-->
+    <!--on which they appear.-->
+
+    <color name="colorOnPrimary">#000000</color>
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorOnBackground">#000000</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorOnError">#ffffff</color>
+    <color name="box_stroke_color">#b7b7b7</color>
+
+
+
+
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="brownHigh">#815343</color>
+    <color name="brownlow">#E99972</color>
+    <color name="orange">#EA8F62</color>
+
+    <color name="text_color">#1A1A1A</color>
+    <color name="color_00aeae">#00aeae</color>
+    <color name="lightWhiteColor">#fafafa</color>
+    <color name="ambulance_red">#FFF65F5E</color>
+    <color name="offwhite">#F2F2F2</color>
+
+    <color name="bg_blue">#00aeae</color>
+    <color name="bg_white">#fcfcfc</color>
+    <color name="bg_pink">#ebb48c</color>
+    <color name="blackShade1">#341a1a</color>
+    <color name="blueShade1">#17354e</color>
+    <color name="grey">#D7D7D7</color>
+    <color name="bbb">#99D5DC</color>
+    <color name="color_E9E9E9">#E9E9E9</color>
+    <color name="dark_blue">#004c54</color>
+    <color name="status_blue">#53bae0</color>
+    <color name="status_blue_light">#b6dddf</color>
+    <color name="darkblue">#222455</color>
+    <color name="warm_grey">#707070</color>
+    <color name="light_warm_grey">#90707070</color>
+    <color name="greenishcolour">#004c54</color>
+    <color name="text_green">#47af39</color>
+    <color name="blue_00A0FA">#00A0FA</color>
+    <color name="red_DA3A36">#DA3A36</color>
+    <color name="green_18BE46">#18BE46</color>
+    <color name="F7F7F7_white">#F7F7F7</color>
+    <color name="yellow_FFB800">#FFB800</color>
+    <color name="blackishcolour">#141414</color>
+    <color name="purplecolour">#5691c8</color>
+    <color name="status_bg_green">#8de39a</color>
+    <color name="status_bg_green_2">#8be0c3</color>
+    <color name="line_space">#dedede</color>
+    <color name="bluecolour">#34b6d9</color>
+    <color name="text_black">#212121</color>
+    <color name="blackgreycolour">#343434</color>
+    <color name="ratingcolour">#ff7c6b</color>
+    <color name="darkGrey">#5f5f5f</color>
+
+    <color name="blue_dark">#5590c8</color>
+    <color name="blue_light">#34b4d8</color>
+    <color name="blue_light_2">#dafbdd</color>
+    <color name="blue_darkest">#206ca0</color>
+    <color name="blue_ocean">#95d8d8</color>
+    <color name="color1A1A1A">#1A1A1A</color>
+    <color name="gun_metal">#585C5E</color>
+    <color name="dark_red">#f74f5d</color>
+    <color name="pink_light">#fff7e8</color>
+    <color name="pink">#fce4e4</color>
+    <color name="pink_dark">#ff8878</color>
+    <color name="pinkish">#f0a6a5</color>
+    <color name="magenta">#dc1a7a</color>
+    <color name="lightBlack">#808080</color>
+    <color name="malibu_color">#83def7</color>
+    <color name="yellow_color">#f9c021</color>
+    <color name="malibulue_color">#7db3f2</color>
+    <color name="olivegreen_color">#c9e193</color>
+    <color name="oasis_color">#fde8cc</color>
+    <color name="oasis_darkcolor">#f2db9b</color>
+    <color name="rectanglecolour">#00b7b7</color>
+    <color name="rectanglecolour2">#17A1E7</color>
+    <color name="blueishcolour">#0097a7</color>
+    <color name="quartzColor">#d6c7f2</color>
+    <color name="texasRoseColor">#fda559</color>
+    <color name="scandalColor">#b6dddf</color>
+    <color name="Silver_Chalice_solid">#acacac</color>
+    <color name="Oslo_Gray">#898a8f</color>
+    <color name="Mine_Shaft_approx">#343434</color>
+    <color name="outer_Space">#2e3434</color>
+    <color name="martinique_approx">#313450</color>
+    <color name="amaranth_approx">#ed3869</color>
+    <color name="transparent_full">#00FFFFFF</color>
+    <color name="pet_training_status_bar_color">#84BDFF</color>
+    <color name="cardEditForegroundColor">#80DDDDDD</color>
+    <color name="greyBorderColor">#cbcbcb</color>
+    <color name="blueBorderColor">#3aaed5</color>
+
+    <color name="serviceColor1">#FF83def7</color>
+    <color name="serviceColor2">#FFfda559</color>
+    <color name="serviceColor3">#FFed3869</color>
+    <color name="serviceColor4">#FF0097a7</color>
+    <color name="serviceColor5">#FFf9c021</color>
+    <color name="serviceColor6">#FFdc1a7a</color>
+    <color name="serviceColor7">#FF83def7</color>
+    <color name="serviceColor8">#FFf0a6a5</color>
+    <color name="serviceColor9">#FFff8878</color>
+    <color name="serviceColor10">#FFf74f5d</color>
+    <color name="serviceColor11">#FFF65F5E</color>
+    <color name="serviceColor12">#FF84BDFF</color>
+    <color name="serviceColor13">#FFf2db9b</color>
+    <color name="serviceColor14">#FFff7c6b</color>
+    <color name="serviceColor15">#FFdbebf4</color>
+    <color name="serviceColor16">#FF5590c8</color>
+
+    <color name="productColor1">#FFfaf3d2</color>
+    <color name="productColor2">#FFdbebf4</color>
+    <color name="productColor3">#FFd9f7e5</color>
+    <color name="productColor4">#FFe2f0d9</color>
+    <color name="productColor5">#FFf7d9da</color>
+    <color name="productColor6">#FFc1e5ed</color>
+    <color name="brightRed">#e33c3c</color>
+    <color name="shakespeare_approx">#4A9ECE</color>
+    <color name="color271C42">#271C42</color>
+    <color name="color999999">#999999</color>
+    <color name="lightGrey">#707070</color>
+    <color name="light_red">#e03858</color>
+    <color name="green_test">#26b151</color>
+    <color name="color2F2F30">#2F2F30</color>
+<!--    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/brownlow</color>-->
+
+</resources>

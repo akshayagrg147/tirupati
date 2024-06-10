@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmnts.BusinessDetailFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_below="@+id/lltitle"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtUserGST"
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    app:endIconCheckable="true"
+                    app:errorEnabled="true"
+                    app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+                    app:hintAnimationEnabled="true">
+
+                    <EditText
+                        android:id="@+id/inputUserFirstName"
+                        style="@style/et_login_signup"
+                        android:hint="Bank Name"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:inputType="text"
+                        android:maxLength="50"
+                        android:outlineAmbientShadowColor="@color/blue_light" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    app:endIconCheckable="true"
+                    app:errorEnabled="true"
+                    app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+                    app:hintAnimationEnabled="true">
+
+                    <EditText
+                        style="@style/et_login_signup"
+                        android:hint="Account Number"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:inputType="text"
+                        android:maxLength="50"
+                        android:outlineAmbientShadowColor="@color/blue_light" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    app:endIconCheckable="true"
+                    app:errorEnabled="true"
+                    app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+                    app:hintAnimationEnabled="true">
+
+                    <EditText
+                        style="@style/et_login_signup"
+                        android:hint="Account Type"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:inputType="text"
+                        android:maxLength="50"
+                        android:outlineAmbientShadowColor="@color/blue_light" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    app:endIconCheckable="true"
+                    app:errorEnabled="true"
+                    app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+                    app:hintAnimationEnabled="true">
+
+                    <EditText
+                        style="@style/et_login_signup"
+                        android:hint="IFSC"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:inputType="text"
+                        android:maxLength="50"
+                        android:outlineAmbientShadowColor="@color/blue_light" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    app:endIconCheckable="true"
+                    app:errorEnabled="true"
+                    app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+                    app:hintAnimationEnabled="true">
+
+                    <EditText
+                        style="@style/et_login_signup"
+                        android:hint="Pincode"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:inputType="text"
+                        android:maxLength="50"
+                        android:outlineAmbientShadowColor="@color/blue_light" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    app:endIconCheckable="true"
+                    app:errorEnabled="true"
+                    app:hintAnimationEnabled="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="5">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="4"
+                            android:layout_gravity="center_vertical"
+                            android:layout_height="@dimen/_23sdp"
+                            android:text="MSME Applicable"
+                            android:textColor="@color/black"
+
+                            />
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/MsmeswOnOff"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_20ssp"
+                            app:trackTint="@color/orange"
+                            app:thumbTint="@null"
+                            android:fontFamily="@font/montserrat_semibold"
+                            app:track="@drawable/custom_track"
+                            android:thumb="@drawable/custom_thumb"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    app:endIconCheckable="true"
+                    app:errorEnabled="true"
+                    app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+                    app:hintAnimationEnabled="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="5">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="4"
+                            android:layout_gravity="center_vertical"
+                            android:layout_height="@dimen/_23sdp"
+                            android:textColor="@color/black"
+                            android:text="E-Invoice Applicable"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/InvoiceswOnOff"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:elevation="4dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:shadowColor="#717070"
+                            android:textSize="@dimen/_20ssp"
+                            android:thumb="@drawable/custom_thumb"
+                            app:thumbTint="@null"
+                            app:track="@drawable/custom_track"
+                            app:trackTint="@color/orange" />
+
+                    </LinearLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"/>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/btnAddPurchase"
+        style="@style/loginButton"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:layout_marginVertical="@dimen/_20sdp"
+        android:background="@drawable/square_filled_black"
+        android:fontFamily="@font/monsrt_bold"
+        android:text="Submit"
+        android:textColor="@color/white" />
+
+</LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

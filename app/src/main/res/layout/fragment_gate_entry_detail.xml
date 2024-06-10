@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmnts.GateEntryDetailFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lltitle"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lltitle"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtUserGST"
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:counterMaxLength="50"
+                app:endIconCheckable="true"
+                app:errorEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <AutoCompleteTextView
+                    android:id="@+id/purchaseNo"
+                    style="@style/et_login_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_38sdp"
+                    android:hint="Purchase Number"
+                    android:focusable="false"
+                    android:importantForAutofill="noExcludeDescendants"
+                    android:inputType="text"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:maxLength="50"
+                    android:outlineAmbientShadowColor="@color/blue_light"
+                    android:paddingStart="@dimen/_15sdp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+            <!--                style="@style/text_Box"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:textColorHint="@color/black"-->
+            <!--                app:boxStrokeErrorColor="@color/brightRed"-->
+            <!--                app:counterMaxLength="50"-->
+            <!--                app:endIconCheckable="true"-->
+            <!--                app:boxCornerRadiusBottomEnd="12dp"-->
+            <!--                app:boxCornerRadiusBottomStart="12dp"-->
+            <!--                app:boxCornerRadiusTopEnd="12dp"-->
+            <!--                app:boxCornerRadiusTopStart="12dp"-->
+            <!--                app:errorEnabled="true"-->
+            <!--                app:hintAnimationEnabled="true">-->
+
+            <!--                <EditText-->
+            <!--                    android:id="@+id/legalEntity"-->
+            <!--                    style="@style/et_login_signup"-->
+            <!--                    android:hint="Legal Entity Type"-->
+            <!--                    android:importantForAutofill="noExcludeDescendants"-->
+            <!--                    android:inputType="text"-->
+            <!--                    android:maxLength="50"-->
+            <!--                    android:outlineAmbientShadowColor="@color/blue_light" />-->
+
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:counterMaxLength="50"
+                app:endIconCheckable="true"
+                app:errorEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/billNumber"
+                    style="@style/et_login_signup"
+                    android:hint="Bill Number"
+                    android:textAllCaps="true"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:outlineAmbientShadowColor="@color/blue_light" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:counterMaxLength="50"
+                app:endIconCheckable="true"
+                app:errorEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/vehicleNumber"
+                    style="@style/et_login_signup"
+                    android:hint="Vehicle Number"
+                    android:importantForAutofill="noExcludeDescendants"
+                    android:inputType="text"
+                    android:textAllCaps="true"
+                    android:maxLength="50"
+                    android:outlineAmbientShadowColor="@color/blue_light" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:counterMaxLength="50"
+                app:endIconCheckable="true"
+                app:errorEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    style="@style/et_login_signup"
+                    android:hint="Bill Date"
+                    android:id="@+id/billDate"
+                    android:importantForAutofill="noExcludeDescendants"
+                    android:inputType="text"
+                    android:focusable="false"
+                    android:maxLength="50"
+                    android:outlineAmbientShadowColor="@color/blue_light" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/btnGateEntryDone"
+            style="@style/loginButton"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:background="@drawable/square_filled_black"
+            android:fontFamily="@font/monsrt_bold"
+            android:text="Continue"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_app"
+    app:startDestination="@id/logInFragment2">
+
+
+
+       <!-- <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="type"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="data"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/action_homeAcademyFragment_to_openFormFragment"
+            app:destination="@id/openFormFragment" />
+        -->
+
+
+    <fragment
+        android:id="@+id/logInFragment2"
+        android:name="com.tirupati.vendor.fragmnts.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment2_to_OTPFragment2"
+            app:destination="@id/OTPFragment2" />
+        <action
+            android:id="@+id/action_logInFragment2_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/OTPFragment2"
+        android:name="com.tirupati.vendor.fragmnts.OTPFragment"
+        android:label="fragment_o_t_p"
+        tools:layout="@layout/fragment_o_t_p" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.tirupati.vendor.fragmnts.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_firstDetailPageFragment"
+            app:destination="@id/businessDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/businessDetailFragment"
+        android:name="com.tirupati.vendor.fragmnts.BusinessDetailFragment"
+        android:label="fragment_first_detail_page"
+        tools:layout="@layout/fragment_first_detail_page" >
+        <action
+            android:id="@+id/action_firstDetailPageFragment_to_secondDetailPageFragment"
+            app:destination="@id/secondDetailPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondDetailPageFragment"
+        android:name="com.tirupati.vendor.fragmnts.AddressDetailFragment"
+        android:label="fragment_second_detail_page"
+        tools:layout="@layout/fragment_second_detail_page" >
+        <action
+            android:id="@+id/action_secondDetailPageFragment_to_thirdDetailPageFragment"
+            app:destination="@id/thirdDetailPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdDetailPageFragment"
+        android:name="com.tirupati.vendor.fragmnts.BankDetailFragment"
+        android:label="fragment_third_detail_page"
+        tools:layout="@layout/fragment_third_detail_page" >
+        <action
+            android:id="@+id/action_thirdDetailPageFragment_to_uploadsFragment"
+            app:destination="@id/uploadsFragment" />
+        <action
+            android:id="@+id/action_thirdDetailPageFragment_to_multipleAccountsFragment2"
+            app:destination="@id/multipleAccountsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/uploadsFragment"
+        android:name="com.tirupati.vendor.fragmnts.UploadsFragment"
+        android:label="fragment_uploads"
+        tools:layout="@layout/fragment_uploads" >
+        <action
+            android:id="@+id/action_uploadsFragment_to_OTPFragment2"
+            app:destination="@id/OTPFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/multipleAccountsFragment"
+        android:name="com.tirupati.vendor.fragmnts.MultipleAccountsFragment"
+        android:label="MultipleAccountsFragment"
+        tools:layout="@layout/fragment_multiple_accounts">
+        <action
+            android:id="@+id/action_multipleAccountsFragment_to_uploadsFragment"
+            app:destination="@id/uploadsFragment" />
+    </fragment>
+</navigation>

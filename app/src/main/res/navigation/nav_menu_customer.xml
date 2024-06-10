@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_flow_supervisor"
+    app:startDestination="@id/customerFragment">
+
+    <fragment
+        android:id="@+id/vendorPageFragment"
+        android:name="com.tirupati.vendor.fragmnts.VendorQotationFragment"
+        android:label="fragment_manage_profile"
+        tools:layout="@layout/vendor_quotation_form" />
+    <fragment
+        android:id="@+id/customerFragment"
+        android:name="com.tirupati.vendor.fragmnts.CustomerFragment"
+        android:label="fragment_customer"
+        tools:layout="@layout/fragment_customer" >
+        <action
+            android:id="@+id/action_customerFragment_to_editSupervisorFragment"
+            app:destination="@id/editSupervisorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editSupervisorFragment"
+        android:name="com.tirupati.vendor.fragmnts.EditSupervisorFragment"
+        android:label="fragment_edit_supervisor"
+        tools:layout="@layout/fragment_edit_supervisor" >
+        <action
+            android:id="@+id/action_editSupervisorFragment_to_uploadSupervisorPicturesFragment"
+            app:destination="@id/uploadSupervisorPicturesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadSupervisorPicturesFragment"
+        android:name="com.tirupati.vendor.fragmnts.UploadSupervisorPicturesFragment"
+        android:label="fragment_upload_supervisor_pictures"
+        tools:layout="@layout/fragment_upload_supervisor_pictures" >
+        <action
+            android:id="@+id/action_uploadSupervisorPicturesFragment_to_customerFragment"
+            app:destination="@id/customerFragment" />
+    </fragment>
+</navigation>

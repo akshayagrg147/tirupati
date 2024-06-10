@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:errorEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
+
+            <EditText
+                android:id="@+id/vendor_name"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vendor Name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:errorEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
+
+            <EditText
+                style="@style/et_login_signup"
+                android:id="@+id/organisation_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of the organisation" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:errorEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
+
+            <EditText
+                android:id="@+id/item_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Item Detail" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:errorEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
+
+            <EditText
+                android:id="@+id/uom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="UoM" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hsn_sac_code_label"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/hsn_sac_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="HSN/SAC Code" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- HSN/SAC Code -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:errorEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
+
+            <EditText
+                android:id="@+id/hsn_sac_code_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Quantity" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:errorEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
+
+            <EditText
+                android:id="@+id/quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rate" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/payment_terms"
+            android:layout_width="match_parent"
+            android:background="@drawable/rounder_corner1"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:theme="@style/ThemeSpinner"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:errorEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
+
+            <EditText
+                android:id="@+id/rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Amount" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/delivery_terms"
+            android:layout_width="match_parent"
+            android:background="@drawable/rounder_corner1"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:theme="@style/ThemeSpinner"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:errorEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
+
+            <EditText
+                android:id="@+id/remarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Remarks"
+                android:lines="4"
+                android:gravity="top"
+
+                android:padding="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/vendorLL"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_110sdp"
+            android:orientation="vertical"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:background="@drawable/rounded_dashed_border_vivamagenta_all">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/loadVehicle"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_23sdp"
+                android:src="@drawable/tpp_upload_image"
+                android:layout_gravity="center"
+                style="@style/Style.App.circleImageView"
+                />
+            <TextView
+                android:layout_below="@+id/upload_document"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_22sdp"
+                android:text="upload_document"
+                android:fontFamily="@font/montserrat_regular"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/btnAddPurchase"
+            style="@style/loginButton"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@drawable/square_filled_black"
+            android:fontFamily="@font/monsrt_bold"
+            android:text="Submit"
+            android:textColor="@color/white" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"/>
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>
+
