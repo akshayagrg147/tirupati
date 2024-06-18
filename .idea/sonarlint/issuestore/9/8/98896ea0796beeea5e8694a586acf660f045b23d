@@ -1,0 +1,15 @@
+
+zkotlin:S1172S"7Use "_" instead of this unused lambda parameter "view".(¼ÙÁ üÿÿÿÿJ$13e161f2-50b4-4eb9-932a-fb50fbe5c4df
+_kotlin:S6615¨" Remove this useless initializer.(²© J$c838783b-62dc-4a19-ad63-e4d8f11573a8
+bkotlin:S125•"Remove this commented out code.(§½âşÿÿÿÿJ$347a4583-1095-4b6e-a610-bcba466ef23d
+bkotlin:S125È"Remove this commented out code.(ö´óùÿÿÿÿJ$bf2defa1-4252-4ab2-932b-504583ad8ae0
+kkotlin:S108=")Either remove or fill this block of code.(ÅÃÏüÿÿÿÿJ$897850e2-0e4f-4644-8380-052fb0c8b728
+gkotlin:S108Ë")Either remove or fill this block of code.(ñ¿ÿÄJ$c3d5f231-9eec-4d99-94c0-ed43087bc0f1
+gkotlin:S108Í")Either remove or fill this block of code.(ßâƒ‚J$473e0b20-4834-41ad-b979-41052075eb8f
+fkotlin:S108Ï")Either remove or fill this block of code.(Ä†•J$2ba7e5ab-ee42-439f-b11b-b0defbd18c32
+lkotlin:S108Ñ")Either remove or fill this block of code.(±ß–ûÿÿÿÿJ$16101fea-84a3-48d4-8e8d-86c676ae4347
+akotlin:S1874/"#Deprecated code should not be used.(½¨ÖŠJ$8f8eb8cd-d5e6-461e-b8ba-455e56b3923b
+|kotlin:S6511©"=Merge chained "if" statements into a single "when" statement.(©§¥âJ$538f53b2-f4f8-4b7e-9dad-187c64e70568
+okotlin:S6518J",Replace function call with indexed accessor.(°Ñ³ûÿÿÿÿJ$4131ce4b-bd23-4af6-9e4c-17669761d3d2
+okotlin:S6518K",Replace function call with indexed accessor.(ç’™¿ùÿÿÿÿJ$318d6c9d-75a8-402d-b152-ed7bb73fc0c7
+okotlin:S6518L",Replace function call with indexed accessor.(‡‘†‡ıÿÿÿÿJ$9f4f3bf3-dabf-450e-9735-b0b29574866c

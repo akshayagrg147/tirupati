@@ -9,23 +9,22 @@ import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
 import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.ActivityLandingVendorSactivityBinding
-import com.tirupati.vendor.databinding.VendorLandingScreenActivityBinding
 import com.tirupati.vendor.fragmnts.GateEntryFragment
+import com.tirupati.vendor.fragmnts.PoListFragment
+import com.tirupati.vendor.fragmnts.PurchaseOrderClickFragment
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.interfaces.ToolbarTitleChangeListener
 import com.tirupati.vendor.model.VendorRESPONSEDATAX
@@ -73,13 +72,15 @@ class LandingVendorSActivity : AppCompatActivity(), ToolbarTitleChangeListener {
 
             if(toolbarV!=null){
                 val img = toolbarV!!.findViewById<ImageView>(R.id.otp_back_iv)
-
+                val reload: ImageView = toolbarV!!.findViewById<ImageView>(R.id.otp_back_iv)
                 if(changed){
                     img.visibility= View.VISIBLE
+                    reload.visibility= View.VISIBLE
 
                 }else{
 
                     img.visibility= View.GONE
+                    reload.visibility= View.GONE
                 }
             }
         }
@@ -97,11 +98,7 @@ class LandingVendorSActivity : AppCompatActivity(), ToolbarTitleChangeListener {
         toolbarV=toolbar
         toolbar.title = title
         setSupportActionBar(toolbar)
-        val reload: ImageView = findViewById<ImageView>(R.id.otp_back_iv)
 
-        reload.setOnClickListener {
-            callTheListApi()
-        }
 
         drawerLayout = findViewById(R.id.drawer_acedamy)
         val navView: NavigationView = findViewById(R.id.navigationView)
@@ -169,6 +166,18 @@ class LandingVendorSActivity : AppCompatActivity(), ToolbarTitleChangeListener {
             navController, drawerLayout
         )
     }
+    fun onToolbarButtonClick(reload: ImageView) {
+        val fragment = supportFragmentManager.findFragmentById(R.id.app_flow_vendor)
+        if (fragment is NavHostFragment) {
+
+            val childFragment = fragment.childFragmentManager.primaryNavigationFragment
+            if (childFragment is PoListFragment) {
+
+                childFragment.doSomethingOnButtonClick()
+            }
+
+        }
+    }
     fun callTheListApi() {
         lifecycleScope.launch {
             var response = gateKeeperVm.getCompanyList()
@@ -214,5 +223,8 @@ class LandingVendorSActivity : AppCompatActivity(), ToolbarTitleChangeListener {
             // drawerLayout.invalidate()
         }, 0)
     }
+
+
+
 
 }

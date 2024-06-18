@@ -99,6 +99,7 @@ class LandingVendorActivity : AppCompatActivity(), ToolbarTitleChangeListener {
         val reload:ImageView = findViewById<ImageView>(R.id.otp_back_iv)
        // callTheListApi()
         reload.setOnClickListener {
+
           //  callTheListApi()
         }
 

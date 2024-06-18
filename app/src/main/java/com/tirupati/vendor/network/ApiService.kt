@@ -5,6 +5,7 @@ import com.tirupati.vendor.model.GateKeeperEntryModel
 import com.tirupati.vendor.model.LogInResponse
 import com.tirupati.vendor.model.OTPverifiedModel
 import com.tirupati.vendor.model.POID_RESPONSE
+import com.tirupati.vendor.model.PoDetailsResponse
 import com.tirupati.vendor.model.PurchaseOrderResponse
 import com.tirupati.vendor.model.StateResponse
 import com.tirupati.vendor.model.UploadsDetailResponse
@@ -91,6 +92,30 @@ suspend fun getLogIn(
         @HeaderMap headers: Map<String, String>,
     ): Response<GateKeeperEntryModel>
 
+    @GET("V2/getpoDetails")
+    suspend fun getPoDetails(
+        @HeaderMap headers: Map<String, String>,
+        @Query("id") input: String,
+
+    ): Response<PoDetailsResponse>
+@Multipart
+    @POST("V2/vendorQuotation")
+    suspend fun saveVendorQuoation(
+    @HeaderMap headers: Map<String, String>,
+
+
+    @Part formaData: MultipartBody.Part?,
+    @Part("UOM_ID") UOM_ID: RequestBody,
+    @Part("TOTAL_AMOUNT") TOTAL_AMOUNT: RequestBody,
+    @Part("DELIVERY_TERMS") DELIVERY_TERMS: RequestBody,
+    @Part("REMARKS") REMARKS: RequestBody,
+    @Part("QUANTITY") QUANTITY: RequestBody,
+    @Part("PAYMENT_TERMS") PAYMENT_TERMS: RequestBody,
+    @Part("ITEM_ID") ITEM_ID: RequestBody,
+    @Part("RATE") RATE: RequestBody
+
+): Response<UploadsDetailResponse>
+
     @GET("V2/getpoList")
     suspend fun getpoList(
         @HeaderMap headers: Map<String, String>,
@@ -122,6 +147,22 @@ suspend fun getLogIn(
         @Part image_url7: ArrayList<MultipartBody.Part?>
 
         ): Response<UploadsDetailResponse>
+
+    @Multipart
+    @POST("V2/dispatchOrder")
+
+    suspend fun dispatchOrder(
+        @HeaderMap headers: Map<String, String>,
+
+        @Part formdata: MultipartBody.Part,
+        @Part("PODATE") podate:RequestBody,
+        @Part("PO_NUMBER")  po_number: RequestBody,
+        @Part("LOCATION_NAME")  location_name: RequestBody,
+        @Part("LATITUDE")  lat: RequestBody,
+        @Part("LONGITUDE") lng: RequestBody
+
+
+    ): Response<UploadsDetailResponse>
 
 
 

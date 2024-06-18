@@ -1,0 +1,21 @@
+
+jkotlin:S6615|" Remove this useless initializer.(ö¹öüÿÿÿÿ8ĞÇîÚ€2J$cb6e5be3-de14-45c2-b647-b354cb42cbcd
+kkotlin:S6615•" Remove this useless initializer.(ö¹öüÿÿÿÿ8ĞÇîÚ€2J$316d902a-3854-4695-8ff9-52315337ab83
+dkotlin:S125›"Remove this commented out code.(Ìß¡8ÒÇîÚ€2J$1d83e7bb-55bf-4d95-922b-a10da2efff97
+skotlin:S108£")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8ÙÇîÚ€2J$557f1fe1-f7b4-4279-8784-a5d68d054ece
+nkotlin:S108°")Either remove or fill this block of code.(ñ¿ÿÄ8ÙÇîÚ€2J$d35dce01-bcc3-4edd-b341-0ea75b3a0ae5
+nkotlin:S108³")Either remove or fill this block of code.(ßâƒ‚8ÙÇîÚ€2J$bbf8073c-5371-485f-a4a5-19980e6b391d
+mkotlin:S108¶")Either remove or fill this block of code.(Ä†•8ÙÇîÚ€2J$316385b9-8030-4c4c-b683-1a83333c1234
+skotlin:S108¹")Either remove or fill this block of code.(±ß–ûÿÿÿÿ8ÙÇîÚ€2J$32df98f1-b2fc-4180-93b7-f58f57afb824
+|kotlin:S1135C"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8ÛÇîÚ€2J$22213f6b-f9c5-4cf2-bdbf-7659d4f272ed
+ukotlin:S1481{"0Remove this unused "bitmapImage" local variable.(ıĞç8ÜÇîÚ€2J$203508d6-34f5-4354-9159-862999c8f26a
+mkotlin:S1481³"'Remove this unused "cw" local variable.(Éó‹Â8ÜÇîÚ€2J$092b61c5-4c9e-4960-8e84-904d49d0afe1
+dkotlin:S1128%"Remove this unused import.(µ““ûÿÿÿÿ8ßÇîÚ€2J$3db0f232-0f67-490e-a72c-5d47d1e30251
+_kotlin:S1128+"Remove this unused import.(‰±ˆ8ßÇîÚ€2J$20015e33-5afb-4605-91da-85713fdd057e
+dkotlin:S1128:"Remove this unused import.(åÉˆúÿÿÿÿÿ8ßÇîÚ€2J$708f337a-c30b-4f65-a76e-8ff8464dfab2
+ikotlin:S1874‰"#Deprecated code should not be used.(òô’Ò8áÇîÚ€2J$aace3bc3-5acb-49f2-8a48-b08c8f61f570
+hkotlin:S1874\"#Deprecated code should not be used.(¿©¡í8áÇîÚ€2J$9fd6566d-5eb7-49d3-877c-9a001c574955
+˜kotlin:S3776Ç"RRefactor this method to reduce its Cognitive Complexity from 41 to the 15 allowed.(ëü«8áÇîÚ€2J$d4349992-c41c-4fdc-b187-4cd75de2a935
+–kotlin:S6516y"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8ãÇîÚ€2J$61efa044-41d0-4f34-b492-b3c0c61673ee
+tkotlin:S1066·".Merge this "if" statement with the nested one.(¥Ä¬á8äÇîÚ€2J$a717c40a-4925-4682-9a69-b29ade2cbb2a
+ˆkotlin:S6511æ"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8äÇîÚ€2J$fa72fea6-91b5-4803-9e07-227e97eb29ff

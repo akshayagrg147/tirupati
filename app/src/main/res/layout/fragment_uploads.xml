@@ -155,7 +155,7 @@
                 android:gravity="center"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginBottom="@dimen/_22sdp"
-                android:text="Upload GST Certifiate"
+                android:text="Upload GST Certifiate (GST Certificate only from GST portal; other forms not accepted)"
                 android:fontFamily="@font/montserrat_regular"
                 />
 
@@ -168,6 +168,7 @@
                     android:id="@+id/panRL"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all"
                     android:visibility="visible"
                     tools:visibility="visible"
                     >
@@ -179,7 +180,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="PAN Card"
+                        android:text="Upload Owner's Pan Card"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -318,7 +319,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload Electricity Bill"
+                        android:text="Upload Electricity Bill\n \(Latest)"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -341,7 +342,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="Rent Dead"
+                        android:text="Upload Rent Dead(if applicable)"
                         android:fontFamily="@font/montserrat_regular"
                         />
 

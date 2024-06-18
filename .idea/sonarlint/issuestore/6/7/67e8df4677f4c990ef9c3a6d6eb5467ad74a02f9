@@ -1,0 +1,16 @@
+
+tkotlin:S1172§"0Remove this unused function parameter "binding".(Ë€¼úÿÿÿÿJ$5c0fefa7-518a-4c93-923b-1f8062b0fb16
+€kotlin:S899¹";Do something with the "Boolean" value returned by "delete".(ø¸ºÀ8òÈ¬´€2J$0ff1f5ad-f610-4bb8-95f2-95eb1c098b18
+_kotlin:S6615©" Remove this useless initializer.(²© J$38395cf5-e422-4e2c-acda-da31469a55ed
+]kotlin:S125«"Remove this commented out code.(‹úõöJ$c89859b6-ae4e-46d4-97ae-d92439c6dbb6
+bkotlin:S125»"Remove this commented out code.(— ûéıÿÿÿÿJ$88f53443-726a-4a94-8056-88567c40c3fd
+]kotlin:S125‚"Remove this commented out code.(€„øíJ$87c6ae95-096e-47d8-88b0-0ab4c2a2d97e
+bkotlin:S125‹"Remove this commented out code.(ö´óùÿÿÿÿJ$68f036a4-aea7-4e49-aeeb-615bb4f240bf
+ikotlin:S125Ù"Remove this commented out code.(ö§ƒ’ùÿÿÿÿ8úÈ¬´€2J$6302a048-f27e-4614-8c26-7aa9b4e6d11c
+gkotlin:S108™")Either remove or fill this block of code.(á¢–¬J$b98998a9-a1f9-4c10-9439-6db4fbeaf673
+gkotlin:S108”")Either remove or fill this block of code.(÷¦¦ÒJ$af38d9d8-d333-45d9-b23a-3b90e6e95659
+xkotlin:S1481ø"2Remove this unused "adapterImages" local variable.(ô8†É¬´€2J$c89ef75e-3e1b-4cda-9a7e-c727f5f76d1c
+akotlin:S1874y"#Deprecated code should not be used.(É´¹J$828ecc46-e219-4e3b-b4a6-87c008efc99c
+bkotlin:S1874Ş"#Deprecated code should not be used.(–ø”J$3de4574e-2841-44df-9def-a9ff36a0de61
+bkotlin:S1874œ"#Deprecated code should not be used.(‚´Ã¬J$46d80f90-eaca-40e9-883b-1c687d675ab0
+kotlin:S6511ª"=Merge chained "if" statements into a single "when" statement.(êúƒ ÿÿÿÿÿJ$6227b022-716a-4ff6-b2e9-dd60c7300cf8

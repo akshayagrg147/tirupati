@@ -1,0 +1,16 @@
+
+ukotlin:S6619Q"7Remove this useless non-null check, it always succeeds.(óèƒJ$29c4e2c1-909c-4105-8667-d78e7c755b7e
+akotlin:S125#"Remove this commented out code.(†¡ÅŠÿÿÿÿÿJ$03701942-5e67-4c8b-9de0-d6751d01edc0
+]kotlin:S125Ï"Remove this commented out code.(óæ¡J$4f001951-4735-4a8e-8a01-8a677e19bebe
+\kotlin:S125Ò"Remove this commented out code.(Ï‰™zJ$4d7cbd54-7f06-4b2e-a738-ed6f48fd29ff
+bkotlin:S125"Remove this commented out code.(ìí¸ùüÿÿÿÿJ$d6cac73d-12f0-4fd4-8011-2b7c2607cf1d
+lkotlin:S108Õ")Either remove or fill this block of code.(ÍÖ¥ºÿÿÿÿÿJ$f006a5f9-3654-4e46-aa97-234c15122d1d
+^kotlin:S65309"Remove this unchecked cast.(¥ÅõüùÿÿÿÿJ$0f5179a9-f75d-4ba3-a0a1-e24b6313d5fa
+Zkotlin:S6530‰"Remove this unchecked cast.(Ï‰¦æJ$6ce998cd-e50c-456d-be4d-33c39aa11167
+fkotlin:S1874n"#Deprecated code should not be used.(¸Ëü’ıÿÿÿÿJ$f598b4bf-f5b6-4eff-80d9-e2e581c9e770
+bkotlin:S1874ï"#Deprecated code should not be used.(öÙÒ´J$f8ad27d9-7839-479d-91a4-9f5829b58e4f
+kotlin:S1186©"ZAdd a nested comment explaining why this function is empty or complete the implementation.(ÁŒü«şÿÿÿÿJ$5a91e697-da58-4f71-b920-cae2d5e3b317
+kotlin:S1186¬"ZAdd a nested comment explaining why this function is empty or complete the implementation.(šÆÅÍüÿÿÿÿJ$7a4a515f-f393-4998-849b-cfcd1ee030a7
+™kotlin:S1186­"ZAdd a nested comment explaining why this function is empty or complete the implementation.(ç¨ÔÈJ$dc5f29a3-9449-4379-8e9c-37cc867a87f7
+™kotlin:S1186®"ZAdd a nested comment explaining why this function is empty or complete the implementation.(ÈÙóJ$44b2f31f-af80-4f54-a0ce-8eef968a95f2
+{kotlin:S6511U"=Merge chained "if" statements into a single "when" statement.(¬¨Â§J$f794f5da-434d-41ca-9ef2-9f3ae92ffe69

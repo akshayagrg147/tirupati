@@ -9,10 +9,16 @@ data class OTPverifiedModel(
 
 
 data class OTPRESPONSEDATA(
-    val EMAIL: String,
     val LOG_TOKEN: String,
-    val MONO1: String,
     val USER_ID: String,
-    val USER_NAME: String,
-    val VERSION: String
+    val VERSION: String,
+    val VCODE: String,
+    val NAME: String,
+    val GSTIN: String,
+    val VENDOR_LEGAL_NAME: String,
+    val AADHAR_NO: String,
+    val NAME_OF_ORGANIZATION: String,
+    val NAME_OF_OWNER: String,
+    val CONTACT_EMAIL: String,
+    val OWNER_CONT_NO: String
 )

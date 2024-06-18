@@ -28,6 +28,8 @@
 
             <EditText
                 android:id="@+id/vendor_name"
+                android:clickable="false"
+                android:focusable="false"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,52 +53,32 @@
             <EditText
                 style="@style/et_login_signup"
                 android:id="@+id/organisation_name"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name of the organisation" />
         </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/text_Box"
+        <Spinner
+            android:id="@+id/payment_terms"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:background="@drawable/rounder_corner1"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:theme="@style/ThemeSpinner"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxStrokeErrorColor="@color/brightRed"
-            app:errorEnabled="true"
-            app:hintTextColor="@color/colorPrimaryVariant">
-
-            <EditText
-                android:id="@+id/item_detail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Item Detail" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/text_Box"
+        <Spinner
+            android:id="@+id/item_detail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxStrokeErrorColor="@color/brightRed"
-            app:errorEnabled="true"
-            app:hintTextColor="@color/colorPrimaryVariant">
+            android:background="@drawable/rounder_corner1"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:theme="@style/ThemeSpinner"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-            <EditText
-                android:id="@+id/uom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="UoM" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/text_Box"
@@ -114,10 +96,12 @@
                 <EditText
                     android:id="@+id/hsn_sac_code"
                     android:layout_width="match_parent"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:layout_height="wrap_content"
                     android:hint="HSN/SAC Code" />
             </com.google.android.material.textfield.TextInputLayout>
-        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- HSN/SAC Code -->
 
@@ -135,7 +119,7 @@
             app:hintTextColor="@color/colorPrimaryVariant">
 
             <EditText
-                android:id="@+id/hsn_sac_code_label"
+                android:id="@+id/quantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Quantity" />
@@ -157,14 +141,15 @@
             app:hintTextColor="@color/colorPrimaryVariant">
 
             <EditText
-                android:id="@+id/quantity"
+                android:id="@+id/rate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Rate" />
         </com.google.android.material.textfield.TextInputLayout>
 
+
         <Spinner
-            android:id="@+id/payment_terms"
+            android:id="@+id/delivery_terms"
             android:layout_width="match_parent"
             android:background="@drawable/rounder_corner1"
             style="@style/Base.Widget.AppCompat.Spinner.Underlined"
@@ -172,6 +157,7 @@
             android:layout_marginTop="4dp"
             android:theme="@style/ThemeSpinner"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/text_Box"
@@ -186,21 +172,13 @@
             app:hintTextColor="@color/colorPrimaryVariant">
 
             <EditText
-                android:id="@+id/rate"
+                android:id="@+id/amount_total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Amount" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/delivery_terms"
-            android:layout_width="match_parent"
-            android:background="@drawable/rounder_corner1"
-            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-            android:layout_height="50dp"
-            android:layout_marginTop="4dp"
-            android:theme="@style/ThemeSpinner"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
 
 
 
@@ -229,9 +207,17 @@
 
                 android:padding="8dp" />
         </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginVertical="@dimen/_10sdp"/>
 
         <LinearLayout
-            android:id="@+id/vendorLL"
+            android:id="@+id/upload_document"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_110sdp"
             android:orientation="vertical"
@@ -239,7 +225,8 @@
             android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/loadVehicle"
+                android:id="@+id/shapeImageView"
+
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginTop="@dimen/_23sdp"

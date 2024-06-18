@@ -3,6 +3,7 @@ package com.tirupati.vendor.fragmnts
 
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,8 +48,23 @@ class PoAdapter(cntx: Context, private val itemList: List<ResponseData>) : Recyc
         holder.vendorName.text = "${item.VENDOR_NAME}"
         holder.itemName.text = "${item.ITEM_NAME}"
         holder.itemView.setOnClickListener{
-            Navigation.findNavController(holder.itemView).
-            navigate(R.id.currentt_to_purchaseOrderFragmentClick)
+            when(item.STATUS){
+                "Approved"->{
+                    val bundle = Bundle()
+                    bundle.putParcelable("myObjectKey", item);
+                    Navigation.findNavController(holder.itemView).navigate(R.id.currentt_to_dispatchFragment,bundle);
+                }
+                else->{
+                    val bundle = Bundle()
+                    bundle.putParcelable("myObjectKey", item);
+                    Navigation.findNavController(holder.itemView).navigate(R.id.currentt_to_purchaseOrderFragmentClick, bundle);
+                }
+
+
+
+            }
+
+
         }
 
         when (item.STATUS) {

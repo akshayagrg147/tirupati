@@ -1,6 +1,20 @@
 
-‹kotlin:S1179"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(©’ğ’J$d4f26b05-d7e9-4cb0-9b4a-79ef9ca2f174
-ˆkotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.(†Ç±€øÿÿÿÿJ$2da4d089-72f1-435a-937d-9cdf9c0a8381
-ƒkotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.(Ÿ—ôŸJ$8c02ed96-9f8a-4349-baec-0e669e9bba36
-ƒkotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.( ğ™µJ$2ce329f8-7778-4e88-b523-8e40fec0eb91
-ƒkotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.(ş¥½¼J$676b821d-c5f4-4f02-b550-da5ed8371528
+’kotlin:S117K"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(©’ğ’8”äû´€2J$0c216eb8-32f0-4a8d-a383-8c2f322eedda
+œkotlin:S117l"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(¸Ü‘Òùÿÿÿÿ8¯Ã±µ€2J$a9a3bbd3-e88f-4254-b20f-8722c5f0e4f2
+œkotlin:S117m"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(­‘¯¤şÿÿÿÿ8¯Ã±µ€2J$685970ac-f36c-434d-8406-43cfed5a2e4a
+—kotlin:S117n"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ÿÇÎ‹8¯Ã±µ€2J$8a777ef5-7fd5-41e5-9bc5-0acc4d330599
+—kotlin:S117o"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(°ó†™8¯Ã±µ€2J$cf37de0d-e62f-426d-ade7-d51aea9f65c2
+œkotlin:S117p"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$( êíŒúÿÿÿÿ8¯Ã±µ€2J$d3e57864-381f-48a1-a93a-b78770e3ca8d
+œkotlin:S117q"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(—»·Éşÿÿÿÿ8¯Ã±µ€2J$dc1484a1-067a-4cac-8bec-4a2f6cf78724
+œkotlin:S117r"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(©Şˆ™ùÿÿÿÿ8¯Ã±µ€2J$64761b48-12bd-405d-82e3-89e359331cf2
+—kotlin:S117s"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ª›ÀŸ8¯Ã±µ€2J$94a783a0-3558-4098-ac6a-7d1211db1679
+œkotlin:S117|"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(„µà×üÿÿÿÿ8Ì´Ãê€2J$4b2fffdc-b222-4150-b494-89da4da2f65f
+—kotlin:S117}"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(×¼õæ8Ì´Ãê€2J$b1cdb888-8e2c-44a7-9a28-38a70f3c40d5
+kotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.(†Ç±€øÿÿÿÿ8”äû´€2J$c06f60eb-c8fc-489e-9144-d749de9a9207
+Škotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.(Ÿ—ôŸ8”äû´€2J$c944aff6-a26f-4538-abe4-74b507993140
+Škotlin:S6313#"EClasses extending "ViewModel" should not expose suspending functions.( ğ™µ8”äû´€2J$dfb1466d-95c5-4da0-abc9-98ce1d7331a9
+Škotlin:S6313&"EClasses extending "ViewModel" should not expose suspending functions.(ş¥½¼8”äû´€2J$d6d3f691-9545-4d67-9235-109a4f46cd1e
+kotlin:S6313)"EClasses extending "ViewModel" should not expose suspending functions.(ÿ‘âµùÿÿÿÿ8”äû´€2J$d3d284b4-2fca-4e11-985b-4470c3a81abe
+Škotlin:S6313,"EClasses extending "ViewModel" should not expose suspending functions.(ŸÕ×é8”äû´€2J$f596d905-0fe8-484b-88b3-5dc30e1aa69d
+Škotlin:S63130"EClasses extending "ViewModel" should not expose suspending functions.(¿öÇ8”äû´€2J$7f13370a-91c1-4cfa-bfc3-602c368b4f23
+Ÿkotlin:S1192l"UDefine a constant instead of duplicating this literal "multipart/form-data" 13 times.(¸Ü‘Òùÿÿÿÿ8²Ã±µ€2J$5435337c-5dc2-41d4-90fd-321bc4bf46aa

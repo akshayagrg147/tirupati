@@ -1,0 +1,18 @@
+
+tkotlin:S1172û"0Remove this unused function parameter "binding".(òÊ»ÃÿÿÿÿÿJ$633b0cb4-d0b0-4079-8ac0-82fed81e637f
+ykotlin:S899Ò";Do something with the "Boolean" value returned by "delete".(ø¸ºÀJ$23450b87-fa8f-4148-bc80-22a816f4d783
+_kotlin:S6615ı" Remove this useless initializer.(²© J$c808151c-90cc-492a-b191-0173c55b7efb
+]kotlin:S125"Remove this commented out code.(±ä‘ÔJ$48293893-e49c-4191-ae8f-f0ec0711d58f
+bkotlin:S125"Remove this commented out code.(— ûéıÿÿÿÿJ$743ffa69-7de0-4e28-8ba7-35f5c48f3e5a
+]kotlin:S125î"Remove this commented out code.(àçÑ¬J$9c67f32f-66ab-4634-a834-f505971c91e1
+bkotlin:S125É"Remove this commented out code.(ö´óùÿÿÿÿJ$a13e561d-79c7-49c7-99dd-961249b3c7b7
+bkotlin:S125è"Remove this commented out code.(é§ÆùşÿÿÿÿJ$8eb018ef-97e4-4d29-959c-569fd7ef421e
+bkotlin:S125 "Remove this commented out code.(ö§ƒ’ùÿÿÿÿJ$7cfa7cd3-b1b0-487a-b08f-4699154093e6
+‚kotlin:S1144€">Remove this unused private "dispatchTakePictureIntent" method.(ÔŒè…ÿÿÿÿÿJ$3d7c6655-0e17-4c9f-98c6-0abf7dd6435c
+‹kotlin:S1192ÿ"GDefine a constant instead of duplicating this literal "Error!" 7 times.(è¹ôµşÿÿÿÿJ$dad1f26c-ade1-43f4-8624-937165f3d17b
+fkotlin:S1874{"#Deprecated code should not be used.(…±³„şÿÿÿÿJ$6a7adf4e-8494-4305-ac1b-7c47097a83d2
+bkotlin:S1874ğ"#Deprecated code should not be used.(‚´Ã¬J$6abdaf64-87bd-4580-80c0-6825a2e28789
+bkotlin:S1874ñ"#Deprecated code should not be used.(–ø”J$b52e0de8-ebb8-4f79-80a1-5bc1f299b3d8
+bkotlin:S1874"#Deprecated code should not be used.(–ø”J$79f78bba-b71c-48b1-b3e6-51839432a8dd
+kotlin:S6511ş"=Merge chained "if" statements into a single "when" statement.(êúƒ ÿÿÿÿÿJ$aba0ba6a-80e3-4708-86a9-bb575fff7665
+kotlin:S6511÷"=Merge chained "if" statements into a single "when" statement.(ê›‡úÿÿÿÿJ$04ef1653-fc2a-4cb3-b992-e35483dca875

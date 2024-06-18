@@ -1,0 +1,20 @@
+
+d
+java:S54119"(Use a primitive boolean expression here.(ß‰ã³J$a281b9ac-8f67-4172-9f4d-b399d88f7a78
+È
+java:S2681"†This line will not be executed conditionally; only the first line of this 2-line block will be. The rest will execute unconditionally.(§çµüÿÿÿÿJ$0d2ebe4a-860d-4c5a-b227-6ebadf25b054
+p
+java:S1874"/Remove this use of "Handler"; it is deprecated.(§çµüÿÿÿÿJ$89a9d09c-f70e-42c6-bad0-8b586236bfb4
+o
+java:S1874%"3Remove this use of "NetworkInfo"; it is deprecated.(ÔËğ½J$1bd59b45-1903-48c9-88af-7d738d2101a7
+x
+java:S1874%"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(ÔËğ½J$5bb7e9af-13f3-4a2d-bcac-290109e5e08c
+l
+java:S1874&"0Remove this use of "getState"; it is deprecated.(„ÍØ¾J$5d96ce31-ecb8-491d-983b-a0f7d2f15735
+o
+java:S1874&"3Remove this use of "NetworkInfo"; it is deprecated.(„ÍØ¾J$32bec11a-6a8b-4810-a694-bb8f38e75935
+i
+java:S1874&"-Remove this use of "State"; it is deprecated.(„ÍØ¾J$7aa604a6-7662-424a-b271-df9883e1156f
+m
+java:S1874&"1Remove this use of "CONNECTED"; it is deprecated.(„ÍØ¾J$78b1105a-9de7-471c-930a-7e87f28a6533
+w	java:S125@"<This block of commented-out lines of code should be removed.(ÖÍø¢J$efd9a2ba-1b0f-49b7-8aed-f6e2b461c187

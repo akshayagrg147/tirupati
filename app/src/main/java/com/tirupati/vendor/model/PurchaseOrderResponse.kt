@@ -1,12 +1,14 @@
 package com.tirupati.vendor.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import java.util.ArrayList
 
 data class PurchaseOrderResponse(
     val STATUS: Boolean,
     val RESPONSEDATA: ArrayList<ResponseData>
 )
-
+@Parcelize
 data class ResponseData(
     val POID: String,
     val PO_NO: String,
@@ -26,4 +28,4 @@ data class ResponseData(
     val COUNTER_REMARK: String?,
     val STATUS: String,
     val COUNTS: String
-)
+):Parcelable

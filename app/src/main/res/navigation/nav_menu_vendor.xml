@@ -16,9 +16,18 @@
         <action
             android:id="@+id/currentt_to_purchaseOrderFragmentClick"
             app:destination="@id/purchaseOrderFragmentClick" />
+        <action
+            android:id="@+id/currentt_to_dispatchFragment"
+            app:destination="@id/dispatchFragment" />
 
 
     </fragment>
+    <fragment
+        android:id="@+id/dispatchFragment"
+        android:name="com.tirupati.vendor.fragmnts.DispatchFragment"
+        android:label="fragment_manage_profile"
+        tools:layout="@layout/fragment_dispatch" />
+
     <fragment
         android:id="@+id/purchaseOrderFragmentClick"
         android:name="com.tirupati.vendor.fragmnts.PurchaseOrderClickFragment"

@@ -135,4 +135,8 @@ class PoListFragment : Fragment() {
         callTheListPo()
 
     }
+
+    fun doSomethingOnButtonClick() {
+        callTheListPo()
+    }
 }
