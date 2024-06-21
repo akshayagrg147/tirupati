@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.AutoCompleteTextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.SpinnerAdapter
 import com.tirupati.vendor.databinding.FragmentThirdDetailPageBinding
@@ -76,7 +77,10 @@ class BankDetailFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         bindingThirdPage = FragmentThirdDetailPageBinding.inflate(inflater, container, false)
+        bindingThirdPage?.btnBackForm?.setOnClickListener{
+            findNavController(). popBackStack()
 
+        }
         bindingThirdPage?.btnThirdDone?.setOnClickListener {
             if(validateUI(bindingThirdPage!!))
             {

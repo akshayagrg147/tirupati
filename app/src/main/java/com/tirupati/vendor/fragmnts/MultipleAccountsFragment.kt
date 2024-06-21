@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.FragmentMultipleAccountsBinding
@@ -103,7 +104,10 @@ class MultipleAccountsFragment : Fragment() {
         // Inflate the layout for this fragment
 
         bindingUploads = FragmentMultipleAccountsBinding.inflate(inflater, container, false)
+        bindingUploads?.btnBackForm?.setOnClickListener{
+            findNavController(). popBackStack()
 
+        }
         bindingUploads?.btnFinalNext?.setOnClickListener {
            if (validateUI(bindingUploads!!)) {
                val args = Bundle()

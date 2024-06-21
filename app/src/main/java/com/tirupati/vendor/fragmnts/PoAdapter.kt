@@ -81,6 +81,13 @@ class PoAdapter(cntx: Context, private val itemList: List<ResponseData>) : Recyc
                 val color = ContextCompat.getColor(context, com.tirupati.vendor.R.color.green_18BE46)
                 holder.statusText.setTextColor(color)
             }
+            "Cancel" -> {
+                holder.statusCircle.setBackgroundResource(R.drawable.approved)
+                holder.actionButton.visibility = View.VISIBLE
+                holder.actionButton.text = "Dispatch"
+                val color = ContextCompat.getColor(context, com.tirupati.vendor.R.color.green_18BE46)
+                holder.statusText.setTextColor(color)
+            }
             "Dispatched" -> {
                 holder.statusCircle.setBackgroundResource(R.drawable.dispatched)
                 holder.actionButton.visibility = View.GONE
@@ -94,6 +101,12 @@ class PoAdapter(cntx: Context, private val itemList: List<ResponseData>) : Recyc
                 holder.statusText.setTextColor(color)
             }
             "Collector" -> {
+                holder.statusCircle.setBackgroundResource(R.drawable.collecter)
+                holder.actionButton.visibility = View.GONE
+                val color = ContextCompat.getColor(context, com.tirupati.vendor.R.color.yellow_FFB800)
+                holder.statusText.setTextColor(color)
+            }
+            "Counter" -> {
                 holder.statusCircle.setBackgroundResource(R.drawable.collecter)
                 holder.actionButton.visibility = View.GONE
                 val color = ContextCompat.getColor(context, com.tirupati.vendor.R.color.yellow_FFB800)

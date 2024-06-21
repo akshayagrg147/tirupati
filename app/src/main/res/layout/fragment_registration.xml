@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/lltitle"
+    android:background="@color/white"
+    >
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -67,12 +74,7 @@
                 android:layout_height="wrap_content"
                 />
         </LinearLayout>
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/lltitle"
-            android:background="@color/white"
-           >
+
         <LinearLayout
             android:layout_below="@+id/lltitle"
             android:layout_width="match_parent"
@@ -98,6 +100,7 @@
             <EditText
                 android:id="@+id/etNameOrg"
                 style="@style/et_login_signup"
+                android:imeOptions="actionDone"
                 android:hint="Name of Organisation"
                 android:importantForAutofill="noExcludeDescendants"
                 android:inputType="textPersonName"
@@ -124,6 +127,7 @@
                 <EditText
                     android:id="@+id/etContactNumber"
                     style="@style/et_login_signup"
+                    android:imeOptions="actionDone"
                     android:hint="Organisation's Contact Number"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="phone"
@@ -150,6 +154,7 @@
                     android:id="@+id/etOrgEmailNumber"
                     style="@style/et_login_signup"
                     android:hint="Organisation's Email ID"
+                    android:imeOptions="actionDone"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="textEmailAddress"
                     android:maxLength="50"
@@ -191,10 +196,11 @@
 
         </LinearLayout>
 
-        </androidx.core.widget.NestedScrollView>
+
 
 
     </RelativeLayout>
 
 </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
 

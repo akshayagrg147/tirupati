@@ -10,6 +10,14 @@
         android:orientation="vertical"
         android:layout_height="match_parent"
         android:padding="16dp">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_regular"
+
+            android:text="Vensors can counter the rate upto twice,exceeding this may lead to PO rejection"  android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+
 
 
 
@@ -18,6 +26,7 @@
             style="@style/text_Box"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
@@ -30,6 +39,8 @@
                 android:id="@+id/vendor_name"
                 android:clickable="false"
                 android:focusable="false"
+                android:imeOptions="actionDone"
+
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,30 +65,79 @@
                 style="@style/et_login_signup"
                 android:id="@+id/organisation_name"
                 android:clickable="false"
+                android:imeOptions="actionDone"
+
                 android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name of the organisation" />
         </com.google.android.material.textfield.TextInputLayout>
-        <Spinner
-            android:id="@+id/payment_terms"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
             android:layout_width="match_parent"
-            android:background="@drawable/rounder_corner1"
-            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-            android:layout_height="50dp"
-            android:layout_marginTop="4dp"
-            android:theme="@style/ThemeSpinner"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:counterMaxLength="50"
+            app:endIconCheckable="true"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
 
-        <Spinner
-            android:id="@+id/item_detail"
+            <AutoCompleteTextView
+                android:id="@+id/payment_terms"
+                style="@style/et_login_signup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:focusable="true"
+                android:hint="Legal Entity Type"
+                android:importantForAutofill="noExcludeDescendants"
+                android:inputType="text"
+                android:fontFamily="@font/montserrat_regular"
+                android:maxLength="50"
+                android:outlineAmbientShadowColor="@color/blue_light"
+                android:paddingStart="@dimen/_15sdp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
             android:layout_width="match_parent"
-            android:background="@drawable/rounder_corner1"
-            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-            android:layout_height="50dp"
-            android:layout_marginTop="4dp"
-            android:theme="@style/ThemeSpinner"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:counterMaxLength="50"
+            app:endIconCheckable="true"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
+
+            <AutoCompleteTextView
+                android:id="@+id/item_detail"
+                style="@style/et_login_signup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:focusable="true"
+                android:hint="Legal Entity Type"
+                android:importantForAutofill="noExcludeDescendants"
+                android:inputType="text"
+                android:fontFamily="@font/montserrat_regular"
+                android:maxLength="50"
+                android:outlineAmbientShadowColor="@color/blue_light"
+                android:paddingStart="@dimen/_15sdp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -120,6 +180,8 @@
 
             <EditText
                 android:id="@+id/quantity"
+                android:imeOptions="actionDone"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Quantity" />
@@ -142,21 +204,44 @@
 
             <EditText
                 android:id="@+id/rate"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Rate" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <Spinner
-            android:id="@+id/delivery_terms"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_Box"
             android:layout_width="match_parent"
-            android:background="@drawable/rounder_corner1"
-            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-            android:layout_height="50dp"
-            android:layout_marginTop="4dp"
-            android:theme="@style/ThemeSpinner"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeErrorColor="@color/brightRed"
+            app:counterMaxLength="50"
+            app:endIconCheckable="true"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintTextColor="@color/colorPrimaryVariant">
+
+            <AutoCompleteTextView
+                android:id="@+id/delivery_terms"
+                style="@style/et_login_signup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:focusable="true"
+                android:hint="Legal Entity Type"
+                android:importantForAutofill="noExcludeDescendants"
+                android:inputType="text"
+                android:fontFamily="@font/montserrat_regular"
+                android:maxLength="50"
+                android:outlineAmbientShadowColor="@color/blue_light"
+                android:paddingStart="@dimen/_15sdp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -173,6 +258,8 @@
 
             <EditText
                 android:id="@+id/amount_total"
+                android:imeOptions="actionDone"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Amount" />
@@ -202,6 +289,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Remarks"
+                android:imeOptions="actionDone"
                 android:lines="4"
                 android:gravity="top"
 
@@ -242,7 +330,7 @@
                 android:gravity="center"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginBottom="@dimen/_22sdp"
-                android:text="upload_document"
+                android:text="Upload Photo/Video (If Any)"
                 android:fontFamily="@font/montserrat_regular"
                 />
 

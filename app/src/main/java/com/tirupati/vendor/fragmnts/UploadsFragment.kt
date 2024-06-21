@@ -36,6 +36,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -409,7 +410,10 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
         // Inflate the layout for this fragment
 
         bindingUploads = FragmentUploadsBinding.inflate(inflater, container, false)
+        bindingUploads?.btnBackForm?.setOnClickListener{
+            findNavController(). popBackStack()
 
+        }
 
         bindingUploads!!.imageListRCPDF.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         bindingUploads!!.imageListRCPDF.itemAnimator = null

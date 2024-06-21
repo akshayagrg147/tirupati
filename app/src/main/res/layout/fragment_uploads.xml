@@ -135,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginBottom="@dimen/_24sdp"
-                android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                 android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
             <com.google.android.material.imageview.ShapeableImageView
@@ -170,6 +170,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all"
                     android:visibility="visible"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     tools:visibility="visible"
                     >
                     <TextView
@@ -223,7 +224,7 @@
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
                     android:visibility="gone"
-                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -297,9 +298,9 @@
                     android:id="@+id/eleBillLL"
 
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_110sdp"
+                    android:layout_height="@dimen/_120sdp"
                     android:orientation="vertical"
-                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -374,7 +375,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
-                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -453,7 +454,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
-                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -530,7 +531,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
-                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -605,7 +606,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
-                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -681,7 +682,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
-                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -708,6 +709,28 @@
                 </LinearLayout>
 
 <!--                ITR-->
+                <TextView
+                    android:layout_below="@+id/gstUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_4sdp"
+
+                    android:text="Please find format of:"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
+                <TextView
+                    android:layout_below="@+id/gstUpload"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:textStyle="bold"
+                    android:textColor="@color/brownlow"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="Bank Confirmation letter"
+                    android:fontFamily="@font/montserrat_regular"
+                    />
 
                 <RelativeLayout
                     android:id="@+id/itrRL"
@@ -756,7 +779,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
-                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -776,7 +799,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload ITR"
+                        android:text="Upload ITR Acknowledgement"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -832,7 +855,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
-                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -852,7 +875,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload MSME"
+                        android:text="Upload MSME Certificate"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -908,7 +931,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
-                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -928,7 +951,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload E-Invoice Applicable"
+                        android:text="Upload E-Invoice"
                         android:fontFamily="@font/montserrat_regular"
                         />
 

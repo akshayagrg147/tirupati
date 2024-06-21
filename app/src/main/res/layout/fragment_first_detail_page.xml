@@ -103,6 +103,8 @@
                     <EditText
                         android:id="@+id/inputUserFirstName"
                         style="@style/et_login_signup"
+                        android:imeOptions="actionDone"
+
                         android:hint="Name of Orginazation"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
@@ -186,6 +188,7 @@
                     <EditText
                         style="@style/et_login_signup"
                         android:hint="Owner's Full Name"
+                        android:imeOptions="actionDone"
                         android:id="@+id/ownerFullNameET"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
@@ -212,6 +215,7 @@
                     <EditText
                         android:id="@+id/ownerContactET"
                         style="@style/et_login_signup"
+                        android:imeOptions="actionDone"
                         android:hint="Owner's Contact Number"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="phone"
@@ -239,6 +243,7 @@
                         android:id="@+id/emailOwnerET"
                         style="@style/et_login_signup"
                         android:hint="Owner's Email ID"
+                        android:imeOptions="actionDone"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
@@ -265,6 +270,7 @@
                         android:id="@+id/ETpodName"
                         style="@style/et_login_signup"
                         android:hint="POC Name"
+                        android:imeOptions="actionDone"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
@@ -289,6 +295,7 @@
                     <EditText
                         android:id="@+id/ownerPanET"
                         style="@style/et_login_signup_caps"
+                        android:imeOptions="actionDone"
                         android:hint="Owner's Pan Card"
                         android:inputType="textCapCharacters"
                         android:maxLength="50"
@@ -315,6 +322,7 @@
                     <EditText
                         android:id="@+id/POCWhatsAppET"
                         style="@style/et_login_signup"
+                        android:imeOptions="actionDone"
                         android:hint="POC Whatsapp Number"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="number"

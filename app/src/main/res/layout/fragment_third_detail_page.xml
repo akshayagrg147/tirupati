@@ -303,10 +303,10 @@
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:textSize="@dimen/_20ssp"
-                        app:trackTint="@color/orange"
                         app:thumbTint="@null"
                         android:fontFamily="@font/montserrat_semibold"
                         app:track="@drawable/custom_track"
+                        app:trackTint="@null"
                         android:thumb="@drawable/custom_thumb"
                         android:layout_height="wrap_content"/>
 
@@ -353,7 +353,7 @@
                             android:thumb="@drawable/custom_thumb"
                             app:thumbTint="@null"
                             app:track="@drawable/custom_track"
-                            app:trackTint="@color/orange" />
+                            app:trackTint="@null" />
 
                     </LinearLayout>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -399,7 +399,7 @@
                             android:thumb="@drawable/custom_thumb"
                             app:thumbTint="@null"
                             app:track="@drawable/custom_track"
-                            app:trackTint="@color/orange" />
+                            app:trackTint="@null" />
 
                     </LinearLayout>
                 </com.google.android.material.textfield.TextInputLayout>

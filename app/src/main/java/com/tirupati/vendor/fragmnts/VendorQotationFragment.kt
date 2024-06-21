@@ -8,7 +8,6 @@ import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat
 import android.media.MediaMetadataRetriever
 import android.net.Uri
@@ -22,6 +21,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
 import android.widget.AdapterView
+import android.widget.AutoCompleteTextView
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
@@ -34,11 +34,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.DeliveryTermsAdapter
 import com.tirupati.vendor.adapters.PaymentTermsAdapter
+import com.tirupati.vendor.adapters.SpinnerAdapter
 import com.tirupati.vendor.databinding.VendorQuotationFormBinding
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.model.ResponseDataItem
+import com.tirupati.vendor.model.UOMData
 import com.tirupati.vendor.model.vendorQuoationRequest
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.ui.LandingVendorSActivity
@@ -374,29 +377,33 @@ class VendorQotationFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success->{
+
                     itemDetail=response.body.RESPONSEDATA[0].UOMID
+                    binding?.itemDetail?.setText(response.body.RESPONSEDATA[0].UOMCODE)
 
                     val customDropDownAdapter3 =
                         DeliveryTermsAdapter(requireContext(),  response.body.RESPONSEDATA)
-                    binding?.itemDetail?.adapter = customDropDownAdapter3
-                    binding?.itemDetail?.onItemSelectedListener =
-                        object : AdapterView.OnItemSelectedListener {
-                            override fun onItemSelected(
-                                parent: AdapterView<*>?,
-                                view: View,
-                                position: Int,
-                                id: Long
-                            ) {
-                                itemDetail=response.body.RESPONSEDATA[position].UOMID
+                    binding?.itemDetail?.setAdapter(customDropDownAdapter3)
 
 
-
-
-
-                            }
-
-                            override fun onNothingSelected(parent: AdapterView<*>?) {}
+                    binding?.itemDetail?.threshold=1
+                    binding?.itemDetail?.setKeyListener(null);
+                    binding?.itemDetail?.setOnClickListener {
+                        (it as AutoCompleteTextView).showDropDown()
+                    }
+                    binding?.itemDetail?.setOnFocusChangeListener { v, hasFocus ->
+                        if (hasFocus) {
+                            (v as AutoCompleteTextView).showDropDown()
                         }
+                    }
+
+                    binding?.itemDetail?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
+                        val selectedModel = parent.adapter.getItem(position) as UOMData
+                        if (selectedModel != null) {
+                            itemDetail=selectedModel.UOMID
+                            binding?.itemDetail?.setText(selectedModel.UOMCODE)
+                        }
+                    }
 
                 }
 
@@ -456,27 +463,35 @@ class VendorQotationFragment : Fragment() {
     }
 
     private fun getItemDetails() {
-        val list= listOf(ResponseDataItem(NAME = "Freight Paid"),ResponseDataItem(NAME = "Freight To Pay"))
-        val customDropDownAdapter3 =
-            PaymentTermsAdapter(requireContext(), list)
         deliverTerm="Freight Paid"
-        binding?.deliveryTerms?.adapter = customDropDownAdapter3
-        binding?.deliveryTerms?.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View,
-                    position: Int,
-                    id: Long
-                ) {
+        val accountType: ArrayList<String> = ArrayList()
+        accountType.add( "Freight Paid")
+        accountType.add("Freight To Pay")
+        binding?.deliveryTerms?.setText(deliverTerm)
 
-                    deliverTerm=list[position].NAME
-
-
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {}
+        val spinnerAdapter = SpinnerAdapter(requireActivity(), R.layout.item_spinner_row, accountType)
+        spinnerAdapter.setDropDownViewResource(R.layout.item_spinner_row)
+        binding?.deliveryTerms?.setAdapter(spinnerAdapter);
+        // Remove setting key listener to null
+        // bindingSecondPage?.statesList?.setKeyListener(null);
+        binding?.deliveryTerms?.threshold=1
+        binding?.deliveryTerms?.setKeyListener(null);
+        binding?.deliveryTerms?.setOnClickListener {
+            (it as AutoCompleteTextView).showDropDown()
+        }
+        binding?.deliveryTerms?.setOnFocusChangeListener { v, hasFocus ->
+            if (hasFocus) {
+                (v as AutoCompleteTextView).showDropDown()
             }
+        }
+
+        binding?.deliveryTerms?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
+            val selectedModel = parent.adapter.getItem(position) as String
+            // Do whatever you want with the selected model object here
+            binding?.deliveryTerms?.setText(selectedModel)
+        }
+
+
     }
 
     private fun displayVideoThumbnail(context: Context, uri: Uri, imageView: ImageView?) {
@@ -525,32 +540,47 @@ class VendorQotationFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success->{
+                    var clicked:Boolean=true
 
-                    val customDropDownAdapter3 =
-                        PaymentTermsAdapter(requireContext(),  response.body.RESPONSEDATA)
-                    paymentTerm= response.body.RESPONSEDATA[0].NAME
-                    itemId=response.body.RESPONSEDATA[0].ITEMID
-                    binding?.hsnSacCode?.setText(response.body.RESPONSEDATA[0].HSNDESCRIPTION)
-                    binding?.paymentTerms?.adapter = customDropDownAdapter3
+                    // Assuming you have a PaymentTermsAdapter that takes a context and a list of ResponseDataItem
+                    val customDropDownAdapter3 = PaymentTermsAdapter(requireContext(), response.body.RESPONSEDATA)
+                    val initialItem = response.body.RESPONSEDATA[0]
 
-                    binding?.paymentTerms?.onItemSelectedListener =
-                        object : AdapterView.OnItemSelectedListener {
-                            override fun onItemSelected(
-                                parent: AdapterView<*>?,
-                                view: View,
-                                position: Int,
-                                id: Long
-                            ) {
+// Set initial values
+                    paymentTerm = initialItem.NAME
+                    binding?.paymentTerms?.setText(paymentTerm)
+                    itemId = initialItem.ITEMID
+                    binding?.hsnSacCode?.setText(initialItem.HSNDESCRIPTION)
 
-                                paymentTerm=response.body.RESPONSEDATA[position].NAME
-                                itemId=response.body.RESPONSEDATA[position].ITEMID
-                                binding?.hsnSacCode?.setText(response.body.RESPONSEDATA[position].HSNDESCRIPTION)
+// Set the adapter to the AutoCompleteTextView
+                    binding?.paymentTerms?.setAdapter(customDropDownAdapter3)
 
+                    binding?.paymentTerms?.threshold=1
+                    binding?.paymentTerms?.setKeyListener(null);
+                    binding?.paymentTerms?.setOnClickListener {
+                        (it as AutoCompleteTextView).showDropDown()
+                    }
 
-                            }
-
-                            override fun onNothingSelected(parent: AdapterView<*>?) {}
+                    binding?.paymentTerms?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
+                        val selectedItem = parent.adapter.getItem(position) as ResponseDataItem
+                        // Do whatever you want with the selected model object here
+                        if (selectedItem != null) {
+                            paymentTerm = selectedItem.NAME
+                            clicked=true
+                            itemId = selectedItem.ITEMID
+                            binding?.paymentTerms?.setText(paymentTerm)
+                            binding?.hsnSacCode?.setText(selectedItem.HSNDESCRIPTION)
                         }
+                    }
+
+
+
+
+
+
+
+
+
 
                 }
 

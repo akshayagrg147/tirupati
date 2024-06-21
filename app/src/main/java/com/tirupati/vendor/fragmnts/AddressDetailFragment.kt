@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.CityAdapter
 import com.tirupati.vendor.adapters.StateAdapter
@@ -77,7 +78,10 @@ class AddressDetailFragment : Fragment() {
         // Inflate the layout for this fragment
         // Inflate the layout for this fragment
         bindingSecondPage = FragmentSecondDetailPageBinding.inflate(inflater, container, false)
+        bindingSecondPage?.btnBackForm?.setOnClickListener{
+            findNavController(). popBackStack()
 
+        }
         bindingSecondPage?.btnSecondDone?.setOnClickListener {
             if(validateUI(bindingSecondPage!!)){
                 val args = Bundle()

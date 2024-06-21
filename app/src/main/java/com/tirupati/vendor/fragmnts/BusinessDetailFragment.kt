@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.AutoCompleteTextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.SpinnerAdapter
 import com.tirupati.vendor.databinding.FragmentFirstDetailPageBinding
@@ -47,6 +48,10 @@ class BusinessDetailFragment : Fragment() {
         bindingFirstPage = FragmentFirstDetailPageBinding.inflate(inflater, container, false)
         bindingFirstPage!!.ownerPanET.setFilters(bindingFirstPage!!.ownerPanET.getFilters() + InputFilter.AllCaps())
         legalEntity()
+        bindingFirstPage?.btnBackForm?.setOnClickListener{
+            findNavController(). popBackStack()
+
+        }
         bindingFirstPage?.btnFirstDone?.setOnClickListener {
             if(validateUI(bindingFirstPage!!)){
                 val args = Bundle()
@@ -113,6 +118,7 @@ class BusinessDetailFragment : Fragment() {
         }
     *
     * */
+
 
 
 
