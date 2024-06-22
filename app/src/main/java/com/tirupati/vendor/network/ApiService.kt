@@ -85,6 +85,7 @@ suspend fun getLogIn(
 
     @GET("V2/getpoDetails")
     suspend fun getCounter(
+        @HeaderMap headers: Map<String, String>,
         @Query("id") id: String
     ): Response<CounterResponseModel>
 

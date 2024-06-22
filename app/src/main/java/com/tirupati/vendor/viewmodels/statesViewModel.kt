@@ -63,9 +63,9 @@ class StateVMRepository @Inject constructor(private val apiService: ApiService) 
         }
     }
 
-    suspend fun getCounter(id:String):NetworkState<CounterResponseModel>{
+    suspend fun getCounter(header: HashMap<String, String>,id:String):NetworkState<CounterResponseModel>{
         return safeApiCall {
-            apiService.getCounter(id)
+            apiService.getCounter(header,id)
         }
     }
 
