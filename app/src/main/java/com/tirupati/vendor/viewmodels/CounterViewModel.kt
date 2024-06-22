@@ -26,7 +26,7 @@ class CounterViewModel @Inject constructor(private val stateVMRepo: StateVMRepos
 
                 is NetworkState.Success -> {
                     withContext(Dispatchers.Main){
-                        counterDetails.set(response.body.rESPONSEDATA)
+                        counterDetails.set(response.body.responseData)
                     }
                 }
 

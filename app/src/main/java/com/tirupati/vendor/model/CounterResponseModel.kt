@@ -8,59 +8,59 @@ import android.os.Parcelable
 @Parcelize
 data class CounterResponseModel(
     @SerializedName("MESSAGE")
-    var mESSAGE: String? = null,
+    var message: String? = null,
     @SerializedName("RESPONSEDATA")
-    var rESPONSEDATA: RESPONSEDATA? = null,
+    var responseData: RESPONSEDATA? = null,
     @SerializedName("STATUS")
-    var sTATUS: Boolean? = null
+    var status: Boolean? = null
 ) : Parcelable {
     @Parcelize
     data class RESPONSEDATA(
         @SerializedName("AMOUNT")
-        var aMOUNT: String? = null,
+        var amount: String? = null,
         @SerializedName("ATTACHMENT_DOC")
-        var aTTACHMENTDOC: String? = null,
+        var attachmentDOC: String? = null,
         @SerializedName("COUNTER_REMARK")
-        var cOUNTERREMARK: String? = null,
+        var counterRemark: String? = null,
         @SerializedName("COUNTS")
-        var cOUNTS: String? = null,
+        var counts: String? = null,
         @SerializedName("DELIVERY_TERMS")
-        var dELIVERYTERMS: String? = null,
+        var deliveryTerms: String? = null,
         @SerializedName("HSNCODE")
-        var hSNCODE: String? = null,
+        var hsncCode: String? = null,
         @SerializedName("ICODE")
-        var iCODE: String? = null,
+        var icode: String? = null,
         @SerializedName("ITEMID_REF")
-        var iTEMIDREF: String? = null,
+        var itemIdRef: String? = null,
         @SerializedName("ITEM_NAME")
-        var iTEMNAME: String? = null,
+        var itemName : String? = null,
         @SerializedName("NAME_OF_ORGANIZATION")
-        var nAMEOFORGANIZATION: String? = null,
+        var nameOfOrganization: String? = null,
         @SerializedName("PAYMENT_TERMS")
-        var pAYMENTTERMS: String? = null,
+        var paymentTerms: String? = null,
         @SerializedName("PO_DT")
-        var pODT: String? = null,
+        var podt: String? = null,
         @SerializedName("POID")
-        var pOID: String? = null,
+        var poid: String? = null,
         @SerializedName("PO_NO")
-        var pONO: String? = null,
+        var pono: String? = null,
         @SerializedName("PO_QTY")
-        var pOQTY: String? = null,
+        var poqty: String? = null,
         @SerializedName("RATEP_UOM")
-        var rATEPUOM: String? = null,
+        var ratepUom: String? = null,
         @SerializedName("REMARKS")
-        var rEMARKS: String? = null,
+        var remarks: String? = null,
         @SerializedName("STATUS")
-        var sTATUS: String? = null,
+        var status: String? = null,
         @SerializedName("UOMCODE")
-        var uOMCODE: String? = null,
+        var uomcode: String? = null,
         @SerializedName("UOMID_REF")
-        var uOMIDREF: String? = null,
+        var uomidRef: String? = null,
         @SerializedName("UOM_NAME")
-        var uOMNAME: String? = null,
+        var uomName: String? = null,
         @SerializedName("VENDOR_NAME")
-        var vENDORNAME: String? = null,
+        var vendorName: String? = null,
         @SerializedName("VID")
-        var vID: String? = null
+        var vid: String? = null
     ) : Parcelable
 }
