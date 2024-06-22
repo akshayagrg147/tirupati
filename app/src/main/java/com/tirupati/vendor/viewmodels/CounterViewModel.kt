@@ -17,10 +17,10 @@ class CounterViewModel @Inject constructor(private val stateVMRepo: StateVMRepos
 
         var counterDetails = ObservableField<CounterResponseModel.RESPONSEDATA>()
 
-    fun callCounterApi(id: String) {
+    fun callCounterApi(header: HashMap<String, String>, id: String) {
 
         viewModelScope.launch {
-            var response = stateVMRepo.getCounter(id)
+            var response = stateVMRepo.getCounter(header,id)
 
             when (response) {
 

@@ -706,7 +706,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
     private fun callUploadImageData() {
 
-        println("$latitude,$longitude,$locationName,$org_name,$org_contact, $org_email,$business_org_name,$ownerName,$legalName,$ownerContact,$ownerEmail,$podName,$ownerPan,$podWhatsapp,$addressName$country,$state,$city,$pinCode,$orgGst,$orgPAN$orgBank,$accountNumber,$accountType,$ifsc,$branchName,$branchPin ,$v1Name,$v1Contact,$v1Email,$v1Adhar,$v2Name,$v2Contact,$v2Email,$v2Adhar,$v3Name,$v3Contact,$v3Email,$v3Adhar")
+        println("akshay_test \n $latitude,$longitude,$locationName,$org_name,$org_contact, $org_email,$business_org_name,$ownerName,$legalName,$ownerContact,$ownerEmail,$podName,$ownerPan,$podWhatsapp,$addressName$country,$state,$city,$pinCode,$orgGst,$orgPAN$orgBank,$accountNumber,$accountType,$ifsc,$branchName,$branchPin ,$v1Name,$v1Contact,$v1Email,$v1Adhar,$v2Name,$v2Contact,$v2Email,$v2Adhar,$v3Name,$v3Contact,$v3Email,$v3Adhar")
         bindingUploads!!.loginProgressBar.progressBar.shown()
 
             lifecycleScope.launch {
