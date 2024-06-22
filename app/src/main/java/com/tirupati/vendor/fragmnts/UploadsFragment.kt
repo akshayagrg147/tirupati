@@ -10,6 +10,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.location.Address
 import android.location.Geocoder
 import android.net.Uri
@@ -122,7 +123,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
     private var first:ArrayList<MultipartBody.Part?>?=null
 
     private var image2:String = ""
-//    private var image2clicked:Boolean = false
+    private var image2clicked:Boolean = false
     private var second:ArrayList<MultipartBody.Part?>?=null
 
     private var image3:String = ""
@@ -427,7 +428,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
         bindingUploads!!.gstCertificate.setOnClickListener {
 //            dispatchTakePictureIntent()
             image1clicked=true
-//            image2clicked=false
+            image2clicked=false
             image3clicked=false
             image4clicked=false
             image5clicked=false
@@ -440,7 +441,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
 //            takePhoto()
 //            dispatchTakePictureIntent()
-            capturePhoto("cam")
+            capturePhoto("pdf")
         }
 
         bindingUploads!!.panCardUpload.setOnClickListener{
@@ -461,7 +462,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 //==================================================
         bindingUploads!!.electricityBill.setOnClickListener {
             image1clicked=false
-//            image2clicked=false
+            image2clicked=false
             image3clicked=true
             image4clicked=false
             image5clicked=false
@@ -471,13 +472,13 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image9clicked=false
             image10clicked=false
             image11clicked=false
-            capturePhoto("cam")
+            capturePhoto("pdf")
 
         }
 
         bindingUploads!!.rentDeadUpload.setOnClickListener {
             image1clicked=false
-//            image2clicked=false
+            image2clicked=false
             image3clicked=false
             image4clicked=true
             image5clicked=false
@@ -490,7 +491,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
 
 
-            capturePhoto("cam")
+            capturePhoto("pdf")
 
         }
 
@@ -514,7 +515,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                 setUpLocationListener()
             if(locationName.isNotEmpty()){
                 image1clicked=false
-//                image2clicked=false
+                image2clicked=false
                 image3clicked=false
                 image4clicked=false
                 image5clicked=true
@@ -540,7 +541,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
         bindingUploads!!.cancelledChequeUpload.setOnClickListener {
             image1clicked=false
-//            image2clicked=false
+            image2clicked=false
             image3clicked=false
             image4clicked=false
             image5clicked=false
@@ -552,13 +553,13 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image11clicked=false
 
 
-            capturePhoto("cam")
+            capturePhoto("pdf")
 
         }
 
         bindingUploads!!.adhaarUpload.setOnClickListener {
             image1clicked=false
-//            image2clicked=false
+            image2clicked=false
             image3clicked=false
             image4clicked=false
             image5clicked=false
@@ -570,13 +571,13 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image11clicked=false
 
 
-            capturePhoto("cam")
+            capturePhoto("pdf")
 
         }
 
         bindingUploads!!.bankConfirmationUpload.setOnClickListener {
             image1clicked=false
-//            image2clicked=false
+            image2clicked=false
             image3clicked=false
             image4clicked=false
             image5clicked=false
@@ -588,14 +589,14 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image11clicked=false
 
 
-            capturePhoto("cam")
+            capturePhoto("pdf")
 
         }
 
 
         bindingUploads!!.uploadITR.setOnClickListener {
             image1clicked=false
-//            image2clicked=false
+            image2clicked=false
             image3clicked=false
             image4clicked=false
             image5clicked=false
@@ -606,14 +607,14 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image10clicked=false
             image11clicked=false
 
-            capturePhoto("cam")
+            capturePhoto("pdf")
 
         }
 
 
         bindingUploads!!.uploadMSME.setOnClickListener {
             image1clicked=false
-//            image2clicked=false
+            image2clicked=false
             image3clicked=false
             image4clicked=false
             image5clicked=false
@@ -625,12 +626,12 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image11clicked=false
 
 
-            capturePhoto("cam")
+            capturePhoto("pdf")
 
         }
         bindingUploads!!.eInvoiceApplicableUpload.setOnClickListener {
             image1clicked=false
-//            image2clicked=false
+            image2clicked=false
             image3clicked=false
             image4clicked=false
             image5clicked=false
@@ -643,7 +644,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
 
 
-            capturePhoto("cam")
+            capturePhoto("pdf")
 
         }
 
@@ -663,7 +664,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
     override fun onAddImageClick() {
         if (images.size < 4) {
             image1clicked=false
-//            image2clicked=false
+            image2clicked=true
             image3clicked=false
             image4clicked=false
             capturePhoto("pdf")
@@ -1242,19 +1243,6 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                 }
             }
         }
-       /* else if(
-            requestCode == 1001 && resultCode == Activity.RESULT_OK
-        ){
-            photoFile?.let {
-                selectedPaths = it.absolutePath
-
-                generateImageFromPdf(Uri.fromFile(File(selectedPaths)))
-
-
-
-            }
-
-        }*/
         else if (requestCode == PICK_PDF_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
 
             data?.data?.let { uri1 ->
@@ -1268,31 +1256,369 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                 val path = myFile.absolutePath
                 var displayName: String? = null
 
-                if (uriString.startsWith("content://")) {
-                    var cursor: Cursor? = null
-                    try {
-                        cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-                        if (cursor != null && cursor.moveToFirst()) {
-                            displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                when{
+                    image1clicked -> {
+
+                        if (uriString.startsWith("content://")) {
+                            var cursor: Cursor? = null
+                            try {
+                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                if (cursor != null && cursor.moveToFirst()) {
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    Log.d("lllllllllll",displayName)
+                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                    val path=fileFromContentUri(requireContext(),uri)
+                                    images1.add(compressFile(path,requireContext()))
+                                    first= filesToMultipartParts("GST_CERTIFICATE[]",images1)
+                                    bindingUploads?.gstCerLL?.visibility = View.GONE
+                                    bindingUploads!!.gstCerRL.visibility = View.VISIBLE
+                                    bindingUploads!!.gstIv.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
+
+                                    bindingUploads!!.deleteGst.setOnClickListener {
+                                        bindingUploads?.gstCerLL?.visibility = View.VISIBLE
+                                        bindingUploads!!.gstCerRL.visibility = View.GONE
+                                    }
+                                }
+                            } finally {
+
+                                cursor!!.close()
+                            }
+                        } else if (uriString.startsWith("file://")) {
+                            displayName = myFile.name
                             Log.d("lllllllllll",displayName)
-                            val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
 
-
-                            adapter.addImage(uri)
-                        val path=fileFromContentUri(requireContext(),uri)
-////
-                        images2.add(compressFile(path,requireContext()))
-                        second = filesToMultipartPartsPDF("COM_PAN_CARD",images2,requireContext())
                         }
-                    } finally {
-
-                        cursor!!.close()
                     }
-                } else if (uriString.startsWith("file://")) {
-                    displayName = myFile.name
-                    Log.d("lllllllllll",displayName)
+                    image2clicked -> {
+                        if (uriString.startsWith("content://")) {
+                            var cursor: Cursor? = null
+                            try {
+                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                if (cursor != null && cursor.moveToFirst()) {
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    Log.d("lllllllllll",displayName)
+                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
 
+
+                                    adapter.addImage(uri)
+                                    val path=fileFromContentUri(requireContext(),uri)
+////
+                                    images2.add(compressFile(path,requireContext()))
+                                    second = filesToMultipartPartsPDF("COM_PAN_CARD",images2,requireContext())
+                                }
+                            } finally {
+
+                                cursor!!.close()
+                            }
+                        } else if (uriString.startsWith("file://")) {
+                            displayName = myFile.name
+                            Log.d("lllllllllll",displayName)
+
+                        }
+                    }
+                    image3clicked -> {
+
+                        if (uriString.startsWith("content://")) {
+                            var cursor: Cursor? = null
+                            try {
+                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                if (cursor != null && cursor.moveToFirst()) {
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    Log.d("lllllllllll",displayName)
+                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                    val path=fileFromContentUri(requireContext(),uri)
+                                    images3.add(compressFile(path,requireContext()))
+                                    third= filesToMultipartParts("ELECTRIC_BILL[]",images3)
+                                    bindingUploads?.eleBillLL?.visibility = View.GONE
+                                    bindingUploads!!.eleBillRL.visibility = View.VISIBLE
+                                    bindingUploads!!.IVelecBill.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
+                                    bindingUploads!!.deleteIVElecBill.setOnClickListener {
+                                        bindingUploads?.eleBillLL?.visibility = View.VISIBLE
+                                        bindingUploads!!.eleBillRL.visibility = View.GONE
+                                    }
+                                }
+                            } finally {
+                                cursor!!.close()
+                            }
+                        } else if (uriString.startsWith("file://")) {
+                            displayName = myFile.name
+                            Log.d("lllllllllll",displayName)
+                        }
+
+
+                    }
+                    image4clicked -> {
+
+                        if (uriString.startsWith("content://")) {
+                            var cursor: Cursor? = null
+                            try {
+                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                if (cursor != null && cursor.moveToFirst()) {
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    Log.d("lllllllllll",displayName)
+                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                    val path=fileFromContentUri(requireContext(),uri)
+                                    images4.add(compressFile(path,requireContext()))
+                                    fourth= filesToMultipartParts("RENT_DOC[]",images4)
+
+//                        rentDeaRL
+//                        IVrentDead
+//                        deleteRentDead
+//                        rentDeaLL
+                                    bindingUploads?.rentDeaLL?.visibility = View.GONE
+                                    bindingUploads!!.rentDeaRL.visibility = View.VISIBLE
+                                    bindingUploads!!.IVrentDead.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
+                                    bindingUploads!!.deleteRentDead.setOnClickListener {
+                                        bindingUploads?.rentDeaLL?.visibility = View.VISIBLE
+                                        bindingUploads!!.rentDeaRL.visibility = View.GONE
+
+                                    }
+                                }
+                            } finally {
+
+                                cursor!!.close()
+                            }
+                        } else if (uriString.startsWith("file://")) {
+                            displayName = myFile.name
+                            Log.d("lllllllllll",displayName)
+
+                        }
+
+
+
+                    }
+                    image6clicked -> {
+
+                        if (uriString.startsWith("content://")) {
+                            var cursor: Cursor? = null
+                            try {
+                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                if (cursor != null && cursor.moveToFirst()) {
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    Log.d("lllllllllll",displayName)
+                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                    val path=fileFromContentUri(requireContext(),uri)
+                                    images6.add(compressFile(path,requireContext()))
+                                    sixth= filesToMultipartParts("CANCEL_CHEQUE[]",images6)
+//                        ccRL
+//                        cancelledCIv
+//                        deleteChequeIV
+//                        ccLL
+
+                                    bindingUploads?.ccLL?.visibility = View.GONE
+                                    bindingUploads!!.ccRL.visibility = View.VISIBLE
+                                    bindingUploads!!.cancelledCIv.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
+                                    bindingUploads!!.deleteChequeIV.setOnClickListener {
+                                        bindingUploads?.ccLL?.visibility = View.VISIBLE
+                                        bindingUploads!!.ccRL.visibility = View.GONE
+
+                                    }
+                                }
+                            } finally {
+
+                                cursor!!.close()
+                            }
+                        } else if (uriString.startsWith("file://")) {
+                            displayName = myFile.name
+                            Log.d("lllllllllll",displayName)
+
+                        }
+
+
+
+                    }
+                    image7clicked -> {
+                        if (uriString.startsWith("content://")) {
+                            var cursor: Cursor? = null
+                            try {
+                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                if (cursor != null && cursor.moveToFirst()) {
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    Log.d("lllllllllll",displayName)
+                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                    val path=fileFromContentUri(requireContext(),uri)
+                                    images7.add(compressFile(path,requireContext()))
+                                    seventh= filesToMultipartParts("OWNER_AADHAR[]",images7)
+
+//                        adharRL
+//                        adhaarIV
+//                        deleteAdharIv
+//                        adharLL
+                                    bindingUploads?.adharLL?.visibility = View.GONE
+                                    bindingUploads!!.adharRL.visibility = View.VISIBLE
+                                    bindingUploads!!.adhaarIV.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
+                                    bindingUploads!!.deleteAdharIv.setOnClickListener {
+                                        bindingUploads?.adharLL?.visibility = View.VISIBLE
+                                        bindingUploads!!.adharRL.visibility = View.GONE
+                                        seventh!!.clear()
+
+                                    }
+                                }
+                            } finally {
+
+                                cursor!!.close()
+                            }
+                        } else if (uriString.startsWith("file://")) {
+                            displayName = myFile.name
+                            Log.d("lllllllllll",displayName)
+
+                        }
+
+
+
+                    }
+                    image8clicked -> {
+                        if (uriString.startsWith("content://")) {
+                            var cursor: Cursor? = null
+                            try {
+                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                if (cursor != null && cursor.moveToFirst()) {
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    Log.d("lllllllllll",displayName)
+                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                    val path=fileFromContentUri(requireContext(),uri)
+                                    images8.add(compressFile(path,requireContext()))
+
+                                    eighth= filesToMultipartParts("BANK_CONF_LETTER[]",images8)
+                                    bindingUploads?.BCLL?.visibility = View.GONE
+                                    bindingUploads!!.BCRL.visibility = View.VISIBLE
+                                    bindingUploads!!.bankConfirmIV.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
+                                    bindingUploads!!.deleteBankConfirmIV.setOnClickListener {
+                                        bindingUploads?.BCLL?.visibility = View.VISIBLE
+                                        bindingUploads!!.BCRL.visibility = View.GONE
+
+                                    }
+                                }
+                            } finally {
+
+                                cursor!!.close()
+                            }
+                        } else if (uriString.startsWith("file://")) {
+                            displayName = myFile.name
+                            Log.d("lllllllllll",displayName)
+
+                        }
+
+
+
+                    }
+                    image9clicked -> {
+                        if (uriString.startsWith("content://")) {
+                            var cursor: Cursor? = null
+                            try {
+                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                if (cursor != null && cursor.moveToFirst()) {
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    Log.d("lllllllllll",displayName)
+                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                    val path=fileFromContentUri(requireContext(),uri)
+                                    images9.add(compressFile(path,requireContext()))
+                                    ninth= filesToMultipartParts("ITR_ACK[]",images9)
+
+                                    bindingUploads?.itrLL?.visibility = View.GONE
+                                    bindingUploads!!.itrRL.visibility = View.VISIBLE
+                                    bindingUploads!!.ITRimageView.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
+                                    bindingUploads!!.deleteITRIV.setOnClickListener {
+                                        bindingUploads?.itrLL?.visibility = View.VISIBLE
+                                        bindingUploads!!.itrRL.visibility = View.GONE
+
+                                    }
+                                }
+                            } finally {
+
+                                cursor!!.close()
+                            }
+                        } else if (uriString.startsWith("file://")) {
+                            displayName = myFile.name
+                            Log.d("lllllllllll",displayName)
+
+                        }
+
+
+
+                    }
+                    image10clicked -> {
+                        if (uriString.startsWith("content://")) {
+                            var cursor: Cursor? = null
+                            try {
+                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                if (cursor != null && cursor.moveToFirst()) {
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    Log.d("lllllllllll",displayName)
+                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                    val path=fileFromContentUri(requireContext(),uri)
+                                    images10.add(compressFile(path,requireContext()))
+                                    tenth= filesToMultipartParts("MSME[]",images10)
+//                        MsmeRL
+//                        MSMEImageView
+//                        deleteMSMEImageView
+//                        MsmeLL
+                                    bindingUploads?.MsmeLL?.visibility = View.GONE
+                                    bindingUploads!!.MsmeRL.visibility = View.VISIBLE
+                                    bindingUploads!!.MSMEImageView.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
+                                    bindingUploads!!.deleteMSMEImageView.setOnClickListener {
+                                        bindingUploads?.MsmeLL?.visibility = View.VISIBLE
+                                        bindingUploads!!.MsmeRL.visibility = View.GONE
+
+                                    }
+                                }
+                            } finally {
+
+                                cursor!!.close()
+                            }
+                        } else if (uriString.startsWith("file://")) {
+                            displayName = myFile.name
+                            Log.d("lllllllllll",displayName)
+
+                        }
+
+
+
+                    }
+                    image11clicked -> {
+
+                        if (uriString.startsWith("content://")) {
+                            var cursor: Cursor? = null
+                            try {
+                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                if (cursor != null && cursor.moveToFirst()) {
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    Log.d("lllllllllll",displayName)
+                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                    val path=fileFromContentUri(requireContext(),uri)
+                                    images11.add(compressFile(path,requireContext()))
+
+                                    elevnth= filesToMultipartParts("E_INVOICE[]",images11)
+//                        eInvRL
+//                        eInvoiceimageView
+//                        deleteEInvoice
+//                        eInvLL
+
+                                    bindingUploads?.eInvLL?.visibility = View.GONE
+                                    bindingUploads!!.eInvRL.visibility = View.VISIBLE
+                                    bindingUploads!!.eInvoiceimageView.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
+                                    bindingUploads!!.deleteEInvoice.setOnClickListener {
+                                        bindingUploads?.eInvLL?.visibility = View.VISIBLE
+                                        bindingUploads!!.eInvRL.visibility = View.GONE
+
+                                    }
+                                }
+                            } finally {
+
+                                cursor!!.close()
+                            }
+                        } else if (uriString.startsWith("file://")) {
+                            displayName = myFile.name
+                            Log.d("lllllllllll",displayName)
+
+                        }
+
+
+
+
+                    }
                 }
+
 
 //                adapter.addImage(toShowImg)
 //

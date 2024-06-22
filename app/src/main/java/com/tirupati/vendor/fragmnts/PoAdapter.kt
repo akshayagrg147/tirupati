@@ -54,6 +54,11 @@ class PoAdapter(cntx: Context, private val itemList: List<ResponseData>) : Recyc
                     bundle.putParcelable("myObjectKey", item);
                     Navigation.findNavController(holder.itemView).navigate(R.id.currentt_to_dispatchFragment,bundle);
                 }
+                "Counter"->{
+                    val bundle = Bundle()
+                    bundle.putString("id",item.POID)
+                    Navigation.findNavController(holder.itemView).navigate(R.id.polistfragmentToCounterFragment,bundle);
+                }
                 else->{
                     val bundle = Bundle()
                     bundle.putParcelable("myObjectKey", item);

@@ -19,6 +19,9 @@
         <action
             android:id="@+id/currentt_to_dispatchFragment"
             app:destination="@id/dispatchFragment" />
+        <action
+            android:id="@+id/polistfragmentToCounterFragment"
+            app:destination="@id/counterFragment" />
 
 
     </fragment>
@@ -53,6 +56,11 @@
         android:name="com.tirupati.vendor.fragmnts.DetailListingEditFragment"
         android:label="fragment_detail_listing_edit"
         tools:layout="@layout/fragment_detail_listing_edit" />
+    <fragment
+        android:id="@+id/counterFragment"
+        android:name="com.tirupati.vendor.fragmnts.CounterFragment"
+        android:label="fragment_counter"
+        tools:layout="@layout/fragment_counter" />
 
 
 </navigation>

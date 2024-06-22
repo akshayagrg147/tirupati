@@ -143,35 +143,41 @@ class MultipleAccountsFragment : Fragment() {
                args.putString("OTHERAPPLICABLE",MULTIPLE_ACCOUNTS)
 
 
-               args.putString("V1_NAME",bindingUploads!!.EtVFirstName.text.toString()?:"")
-               args.putString("V1_CONTACT",bindingUploads!!.firstVContact.text.toString())
-               args.putString("V1_EMAIL",bindingUploads!!.inputFirstVendorEmail.text.toString())
-               args.putString("V1_ADHAR",bindingUploads!!.firstVAdhar.text.toString())
+               args.putString("V1_NAME",bindingUploads!!.EtVSecondName.text.toString()?:"")
+               args.putString("V1_CONTACT",bindingUploads!!.secondVContact.text.toString())
+               args.putString("V1_EMAIL",bindingUploads!!.inputSecondVendorEmail.text.toString())
+               args.putString("V1_ADHAR",bindingUploads!!.secondVAdhar.text.toString())
 
-               args.putString("V2_NAME",bindingUploads!!.EtVSecondName.text.toString()?:"")
-               args.putString("V2_CONTACT",bindingUploads!!.secondVContact.text.toString())
-               args.putString("V2_EMAIL",bindingUploads!!.inputSecondVendorEmail.text.toString())
-               args.putString("V2_ADHAR",bindingUploads!!.secondVAdhar.text.toString())
+               args.putString("V2_NAME",bindingUploads!!.EtVThirdName.text.toString()?:"")
+               args.putString("V2_CONTACT",bindingUploads!!.thirdVContact.text.toString())
+               args.putString("V2_EMAIL",bindingUploads!!.inputThirdVendorEmail.text.toString())
+               args.putString("V2_ADHAR",bindingUploads!!.thirdVAdhar.text.toString())
 
 
-               args.putString("V3_NAME",bindingUploads!!.EtVThirdName.text.toString()?:"")
-               args.putString("V3_CONTACT",bindingUploads!!.thirdVContact.text.toString())
-               args.putString("V3_EMAIL",bindingUploads!!.inputThirdVendorEmail.text.toString())
-               args.putString("V3_ADHAR",bindingUploads!!.thirdVAdhar.text.toString())
+               args.putString("V3_NAME",bindingUploads!!.EtVFourthName.text.toString()?:"")
+               args.putString("V3_CONTACT",bindingUploads!!.fourthVContact.text.toString())
+               args.putString("V3_EMAIL",bindingUploads!!.inputfourthVendorEmail.text.toString())
+               args.putString("V3_ADHAR",bindingUploads!!.fourthVAdhar.text.toString())
                Navigation.findNavController(bindingUploads!!.root)
                    .navigate(R.id.action_multipleAccountsFragment_to_uploadsFragment, args)
            }
         }
-        bindingUploads?.firstAdded?.setOnClickListener{
-            bindingUploads?.firstLL?.visibility = View.GONE
-            bindingUploads!!.secondAccountll.visibility = View.VISIBLE
-
-        }
         bindingUploads?.secondAdded?.setOnClickListener{
             bindingUploads?.firstLL?.visibility = View.GONE
-            bindingUploads!!.secondAccountll.visibility = View.GONE
-            bindingUploads!!.thirdAccountll.visibility = View.VISIBLE
-
+            if (bindingUploads!!.thirdAccountll.visibility == View.VISIBLE){
+                bindingUploads!!.fourthAccountll.visibility = View.VISIBLE
+                bindingUploads?.secondAdded?.visibility = View.GONE
+            }else{
+                bindingUploads!!.thirdAccountll.visibility = View.VISIBLE
+            }
+        }
+        bindingUploads?.thirdCancel?.setOnClickListener{
+            bindingUploads?.secondAdded?.visibility = View.VISIBLE
+            bindingUploads!!.thirdAccountll.visibility = View.GONE
+        }
+        bindingUploads?.fourthCancel?.setOnClickListener{
+            bindingUploads?.secondAdded?.visibility = View.VISIBLE
+            bindingUploads!!.fourthAccountll.visibility = View.GONE
         }
 
 

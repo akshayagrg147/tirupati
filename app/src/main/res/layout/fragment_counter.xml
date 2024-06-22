@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.tirupati.vendor.viewmodels.CounterViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragmnts.CounterFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_regular"
+                android:text="Vensors can counter the rate upto twice,exceeding this may lead to PO rejection"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/vendor_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="Vendor Name"
+                    android:imeOptions="actionDone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/organisation_name"
+                    style="@style/et_login_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="Name of the organisation"
+                    android:imeOptions="actionDone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:counterMaxLength="50"
+                app:endIconCheckable="true"
+                app:errorEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <AutoCompleteTextView
+                    android:id="@+id/payment_terms"
+                    style="@style/et_login_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_38sdp"
+                    android:focusable="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="Item Detail"
+                    android:importantForAutofill="noExcludeDescendants"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:outlineAmbientShadowColor="@color/blue_light"
+                    android:paddingStart="@dimen/_15sdp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:counterMaxLength="50"
+                app:endIconCheckable="true"
+                app:errorEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <AutoCompleteTextView
+                    android:id="@+id/item_detail"
+                    style="@style/et_login_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_38sdp"
+                    android:focusable="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="UoM"
+                    android:importantForAutofill="noExcludeDescendants"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:outlineAmbientShadowColor="@color/blue_light"
+                    android:paddingStart="@dimen/_15sdp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hsn_sac_code_label"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/hsn_sac_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="HSN/SAC Code" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- HSN/SAC Code -->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Quantity"
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Rate"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:counterMaxLength="50"
+                app:endIconCheckable="true"
+                app:errorEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <AutoCompleteTextView
+                    android:id="@+id/delivery_terms"
+                    style="@style/et_login_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_38sdp"
+                    android:focusable="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="Payment Terms"
+                    android:importantForAutofill="noExcludeDescendants"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:outlineAmbientShadowColor="@color/blue_light"
+                    android:paddingStart="@dimen/_15sdp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/amount_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Amount Exclusive GST"
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/remarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:hint="Remarks"
+                    android:imeOptions="actionDone"
+                    android:lines="4"
+
+                    android:padding="8dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/upload_document"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_110sdp"
+                android:visibility="gone"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@drawable/rounded_dashed_border_vivamagenta_all"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/shapeImageView"
+
+                    style="@style/Style.App.circleImageView"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_23sdp"
+                    android:src="@drawable/tpp_upload_image" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/upload_document"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_22sdp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center"
+                    android:text="Upload Photo/Video (If Any)"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnAddPurchase"
+                style="@style/loginButton"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_80sdp"
+                android:background="@drawable/square_filled_black"
+                android:fontFamily="@font/monsrt_bold"
+                android:text="Submit"
+                android:textColor="@color/white" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+</layout>
+

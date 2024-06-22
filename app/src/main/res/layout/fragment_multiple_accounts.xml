@@ -93,29 +93,34 @@
                         android:layout_marginVertical="@dimen/_4sdp"
                         android:background="@drawable/rounded_dashed_border_vivamagenta_all"
                         android:orientation="vertical"
+                        android:visibility="gone"
                         android:paddingHorizontal="@dimen/_12sdp">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_12sdp"
-                            android:layout_marginBottom="@dimen/_5sdp"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="First Vendor Details"
-                            android:layout_alignParentStart="true"
-                            android:textColor="@color/black"
-                            android:textFontWeight="8"
-                            android:textSize="@dimen/_13ssp" />
-    <ImageView
-        android:id="@+id/first_added"
-        android:layout_width="@dimen/_24sdp"
-        android:layout_height="@dimen/_24sdp"
-        android:layout_alignParentEnd="true"
-        android:src="@android:drawable/ic_input_add"
-        app:tint="@color/black"/>
-</RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="First Vendor Details"
+                                android:textColor="@color/black"
+                                android:textFontWeight="8"
+                                android:textSize="@dimen/_13ssp" />
+
+                            <ImageView
+                                android:id="@+id/first_added"
+                                android:layout_width="@dimen/_24sdp"
+                                android:layout_height="@dimen/_24sdp"
+                                android:layout_alignParentEnd="true"
+                                android:src="@android:drawable/ic_input_add"
+                                app:tint="@color/black" />
+                        </RelativeLayout>
+
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/firstVName"
                             style="@style/text_Box"
@@ -225,7 +230,6 @@
                         </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
-
                     <LinearLayout
                         android:id="@+id/second_accountll"
                         android:layout_width="match_parent"
@@ -233,32 +237,35 @@
                         android:layout_marginVertical="@dimen/_4sdp"
                         android:background="@drawable/rounded_dashed_border_vivamagenta_all"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        tools:visibility="visible"
-                        android:paddingHorizontal="@dimen/_12sdp">
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:visibility="visible"
+                        tools:visibility="visible">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
                                 android:layout_marginTop="@dimen/_12sdp"
                                 android:layout_marginBottom="@dimen/_5sdp"
                                 android:fontFamily="@font/montserrat_medium"
                                 android:text="Second Vendor Details"
-                                android:layout_alignParentStart="true"
                                 android:textColor="@color/black"
                                 android:textFontWeight="8"
                                 android:textSize="@dimen/_13ssp" />
+
                             <ImageView
                                 android:id="@+id/second_added"
                                 android:layout_width="@dimen/_24sdp"
                                 android:layout_height="@dimen/_24sdp"
                                 android:layout_alignParentEnd="true"
                                 android:src="@android:drawable/ic_input_add"
-                                app:tint="@color/black"/>
+                                app:tint="@color/black" />
                         </RelativeLayout>
+
                         <com.google.android.material.textfield.TextInputLayout
                             style="@style/text_Box"
                             android:layout_width="match_parent"
@@ -370,8 +377,6 @@
                         </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
-
-
                     <LinearLayout
                         android:id="@+id/third_accountll"
                         android:layout_width="match_parent"
@@ -379,29 +384,32 @@
                         android:layout_marginVertical="@dimen/_4sdp"
                         android:background="@drawable/rounded_dashed_border_vivamagenta_all"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        android:paddingHorizontal="@dimen/_12sdp">
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:visibility="gone">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
                                 android:layout_marginTop="@dimen/_12sdp"
                                 android:layout_marginBottom="@dimen/_5sdp"
                                 android:fontFamily="@font/montserrat_medium"
                                 android:text="Third Vendor Details"
-                                android:layout_alignParentStart="true"
                                 android:textColor="@color/black"
                                 android:textFontWeight="8"
                                 android:textSize="@dimen/_13ssp" />
+
                             <ImageView
+                                android:id="@+id/thirdCancel"
                                 android:layout_width="@dimen/_24sdp"
                                 android:layout_height="@dimen/_24sdp"
                                 android:layout_alignParentEnd="true"
                                 android:src="@android:drawable/ic_delete"
-                                app:tint="@color/black"/>
+                                app:tint="@color/black" />
                         </RelativeLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -507,6 +515,156 @@
 
                             <EditText
                                 android:id="@+id/thirdVAdhar"
+                                style="@style/et_login_signup"
+                                android:hint="Adhar Card"
+                                android:importantForAutofill="noExcludeDescendants"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:outlineAmbientShadowColor="@color/blue_light" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/fourth_accountll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_4sdp"
+                        android:background="@drawable/rounded_dashed_border_vivamagenta_all"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="Fourth Vendor Details"
+                                android:textColor="@color/black"
+                                android:textFontWeight="8"
+                                android:textSize="@dimen/_13ssp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_24sdp"
+                                android:layout_height="@dimen/_24sdp"
+                                android:layout_alignParentEnd="true"
+                                android:src="@android:drawable/ic_delete"
+                                android:id="@+id/fourthCancel"
+                                app:tint="@color/black" />
+                        </RelativeLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/fourthVName"
+                            style="@style/text_Box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColorHint="@color/black"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeErrorColor="@color/brightRed"
+                            app:counterMaxLength="50"
+                            app:endIconCheckable="true"
+                            app:errorEnabled="true"
+                            app:hintAnimationEnabled="true">
+
+                            <EditText
+                                android:id="@+id/EtVFourthName"
+                                style="@style/et_login_signup"
+                                android:hint="Vendor Name"
+                                android:importantForAutofill="noExcludeDescendants"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:outlineAmbientShadowColor="@color/blue_light" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+
+                            android:id="@+id/fourthVEmail"
+                            style="@style/text_Box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeErrorColor="@color/brightRed"
+                            app:counterMaxLength="50"
+                            app:endIconCheckable="true"
+                            app:errorEnabled="true"
+                            app:hintAnimationEnabled="true">
+
+                            <EditText
+                                android:id="@+id/inputfourthVendorEmail"
+                                style="@style/et_login_signup"
+                                android:hint="Email"
+                                android:importantForAutofill="noExcludeDescendants"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:outlineAmbientShadowColor="@color/blue_light" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/fourthVname"
+                            style="@style/text_Box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColorHint="@color/black"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeErrorColor="@color/brightRed"
+                            app:counterMaxLength="50"
+                            app:endIconCheckable="true"
+                            app:errorEnabled="true"
+                            app:hintAnimationEnabled="true">
+
+                            <EditText
+                                android:id="@+id/fourthVContact"
+                                style="@style/et_login_signup"
+                                android:hint="Contact Number"
+                                android:importantForAutofill="noExcludeDescendants"
+                                android:inputType="phone"
+                                android:maxLength="50"
+                                android:outlineAmbientShadowColor="@color/blue_light" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/fourthUserAdhar"
+                            style="@style/text_Box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColorHint="@color/black"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeErrorColor="@color/brightRed"
+                            app:counterMaxLength="50"
+                            app:endIconCheckable="true"
+                            app:errorEnabled="true"
+                            app:hintAnimationEnabled="true">
+
+                            <EditText
+                                android:id="@+id/fourthVAdhar"
                                 style="@style/et_login_signup"
                                 android:hint="Adhar Card"
                                 android:importantForAutofill="noExcludeDescendants"

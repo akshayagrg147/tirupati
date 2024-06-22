@@ -1,6 +1,7 @@
 package com.tirupati.vendor.viewmodels
 
 import androidx.lifecycle.ViewModel
+import com.tirupati.vendor.model.CounterResponseModel
 import com.tirupati.vendor.model.StateResponse
 import com.tirupati.vendor.model.getCitiesResponse
 import com.tirupati.vendor.model.itemListResponse
@@ -62,6 +63,11 @@ class StateVMRepository @Inject constructor(private val apiService: ApiService) 
         }
     }
 
+    suspend fun getCounter(id:String):NetworkState<CounterResponseModel>{
+        return safeApiCall {
+            apiService.getCounter(id)
+        }
+    }
 
 
 }

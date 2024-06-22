@@ -213,6 +213,7 @@
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         android:orientation="horizontal"
                         app:reverseLayout="true"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
                         android:visibility="visible"
                         android:layout_marginEnd="@dimen/_2sdp"
                         tools:listitem="@layout/item_add_image"/>

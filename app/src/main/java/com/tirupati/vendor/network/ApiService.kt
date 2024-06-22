@@ -1,6 +1,7 @@
 package com.tirupati.vendor.network
 
 
+import com.tirupati.vendor.model.CounterResponseModel
 import com.tirupati.vendor.model.GateKeeperEntryModel
 import com.tirupati.vendor.model.LogInResponse
 import com.tirupati.vendor.model.OTPverifiedModel
@@ -82,6 +83,10 @@ suspend fun getLogIn(
        
     ): Response<uomDataResponse>
 
+    @GET("V2/getpoDetails")
+    suspend fun getCounter(
+        @Query("id") id: String
+    ): Response<CounterResponseModel>
 
     @GET("V2/vendorList")
     suspend fun getVandor(

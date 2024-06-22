@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.tirupati.vendor.R
 
@@ -97,7 +98,8 @@ class ImageCamAdapter(private val images: MutableList<Uri>, private val onClickL
             VIEW_TYPE_IMAGE -> {
                 val imageHolder = holder as ImageViewHolder
                 val imageUri = images[position]
-                imageHolder.imageView.setImageURI(imageUri)
+                imageHolder.imageView.setImageDrawable(ContextCompat.getDrawable(imageHolder.imageView.context,R.drawable.pdf))
+//                imageHolder.imageView.setImageURI(imageUri)
                 imageHolder.deleteButton.setOnClickListener {
                     onClickListener.onDeleteImageClick(position)
                 }
