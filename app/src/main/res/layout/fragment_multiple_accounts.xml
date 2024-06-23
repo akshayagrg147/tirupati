@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:fontFamily="@font/montserrat_semibold"
-                    android:text="Edit Profile"
+                    android:text="Multiple Owner Detail"
                     android:layout_weight="1"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -102,7 +102,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/_4sdp"
-                        android:background="@drawable/rounded_dashed_border_vivamagenta_all"
                         android:orientation="vertical"
                         android:visibility="gone"
                         android:paddingHorizontal="@dimen/_12sdp">
@@ -246,7 +245,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/_4sdp"
-                        android:background="@drawable/rounded_dashed_border_vivamagenta_all"
                         android:orientation="vertical"
                         android:paddingHorizontal="@dimen/_12sdp"
                         android:visibility="visible"
@@ -262,10 +260,11 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginTop="@dimen/_12sdp"
                                 android:layout_marginBottom="@dimen/_5sdp"
+                                android:textStyle="bold"
                                 android:fontFamily="@font/montserrat_medium"
-                                android:text="Second Vendor Details"
+                                android:text="Second Owner Details"
                                 android:textColor="@color/black"
-                                android:textFontWeight="8"
+
                                 android:textSize="@dimen/_13ssp" />
 
 
@@ -290,7 +289,7 @@
                             <EditText
                                 android:id="@+id/EtVSecondName"
                                 style="@style/et_login_signup"
-                                android:hint="Vendor Name"
+                                android:hint="Owner's Full Name"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -302,6 +301,7 @@
                             android:id="@+id/firstSEmail"
                             style="@style/text_Box"
                             android:layout_width="match_parent"
+                            android:textColorHint="@color/black"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
                             app:boxCornerRadiusBottomEnd="12dp"
@@ -317,7 +317,7 @@
                             <EditText
                                 android:id="@+id/inputSecondVendorEmail"
                                 style="@style/et_login_signup"
-                                android:hint="Email"
+                                android:hint="Owner's Email"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -345,7 +345,7 @@
                             <EditText
                                 android:id="@+id/secondVContact"
                                 style="@style/et_login_signup"
-                                android:hint="Contact Number"
+                                android:hint="Owner's Contact Number"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
                                 android:maxLength="50"
@@ -373,7 +373,7 @@
                             <EditText
                                 android:id="@+id/secondVAdhar"
                                 style="@style/et_login_signup"
-                                android:hint="Adhar Card"
+                                android:hint="Owner's Adhar Card"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -387,7 +387,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/_4sdp"
-                        android:background="@drawable/rounded_dashed_border_vivamagenta_all"
                         android:orientation="vertical"
                         android:paddingHorizontal="@dimen/_12sdp"
                         android:visibility="gone">
@@ -403,9 +402,9 @@
                                 android:layout_marginTop="@dimen/_12sdp"
                                 android:layout_marginBottom="@dimen/_5sdp"
                                 android:fontFamily="@font/montserrat_medium"
-                                android:text="Third Vendor Details"
+                                android:text="Third Owner Details"
                                 android:textColor="@color/black"
-                                android:textFontWeight="8"
+                             android:textStyle="bold"
                                 android:textSize="@dimen/_13ssp" />
 
                             <ImageView
@@ -437,7 +436,7 @@
                             <EditText
                                 android:id="@+id/EtVThirdName"
                                 style="@style/et_login_signup"
-                                android:hint="Vendor Name"
+                                android:hint="Owner's Full Name"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -453,6 +452,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
                             app:boxCornerRadiusBottomEnd="12dp"
+                            android:textColorHint="@color/black"
                             app:boxCornerRadiusBottomStart="12dp"
                             app:boxCornerRadiusTopEnd="12dp"
                             app:boxCornerRadiusTopStart="12dp"
@@ -465,7 +465,7 @@
                             <EditText
                                 android:id="@+id/inputThirdVendorEmail"
                                 style="@style/et_login_signup"
-                                android:hint="Email"
+                                android:hint="Owner's Email"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -493,7 +493,7 @@
                             <EditText
                                 android:id="@+id/thirdVContact"
                                 style="@style/et_login_signup"
-                                android:hint="Contact Number"
+                                android:hint="Owner's Contact Number"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
                                 android:maxLength="50"
@@ -521,7 +521,7 @@
                             <EditText
                                 android:id="@+id/thirdVAdhar"
                                 style="@style/et_login_signup"
-                                android:hint="Adhar Card"
+                                android:hint="Owner's Adhar Card"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -537,7 +537,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/_4sdp"
-                        android:background="@drawable/rounded_dashed_border_vivamagenta_all"
                         android:orientation="vertical"
                         android:paddingHorizontal="@dimen/_12sdp"
                         android:visibility="gone">
@@ -552,10 +551,10 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginTop="@dimen/_12sdp"
                                 android:layout_marginBottom="@dimen/_5sdp"
+                                android:textStyle="bold"
                                 android:fontFamily="@font/montserrat_medium"
-                                android:text="Fourth Vendor Details"
+                                android:text="Fourth Owner Details"
                                 android:textColor="@color/black"
-                                android:textFontWeight="8"
                                 android:textSize="@dimen/_13ssp" />
 
                             <ImageView
@@ -587,7 +586,7 @@
                             <EditText
                                 android:id="@+id/EtVFourthName"
                                 style="@style/et_login_signup"
-                                android:hint="Vendor Name"
+                                android:hint="Owner's Full Name"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -600,6 +599,7 @@
                             android:id="@+id/fourthVEmail"
                             style="@style/text_Box"
                             android:layout_width="match_parent"
+                            android:textColorHint="@color/black"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
                             app:boxCornerRadiusBottomEnd="12dp"
@@ -615,7 +615,7 @@
                             <EditText
                                 android:id="@+id/inputfourthVendorEmail"
                                 style="@style/et_login_signup"
-                                android:hint="Email"
+                                android:hint="Owner's Email"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -643,7 +643,7 @@
                             <EditText
                                 android:id="@+id/fourthVContact"
                                 style="@style/et_login_signup"
-                                android:hint="Contact Number"
+                                android:hint="Owner's Contact Number"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
                                 android:maxLength="50"
@@ -671,7 +671,7 @@
                             <EditText
                                 android:id="@+id/fourthVAdhar"
                                 style="@style/et_login_signup"
-                                android:hint="Adhar Card"
+                                android:hint="Owner's Adhar Card"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -698,7 +698,7 @@
                     android:layout_marginTop="@dimen/_80sdp"
                     android:background="@drawable/square_filled_black"
                     android:fontFamily="@font/monsrt_bold"
-                    android:text="Sign Up"
+                    android:text="Continue"
                     android:textColor="@color/white" />
 
                 <View

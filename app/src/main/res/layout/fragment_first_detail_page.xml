@@ -149,6 +149,7 @@
                     app:boxStrokeErrorColor="@color/brightRed"
                     app:counterMaxLength="50"
                     app:endIconCheckable="true"
+                    android:textColorHint="@color/black"
                     app:errorEnabled="true"
                     app:hintAnimationEnabled="true"
                     app:hintTextColor="@color/colorPrimaryVariant">

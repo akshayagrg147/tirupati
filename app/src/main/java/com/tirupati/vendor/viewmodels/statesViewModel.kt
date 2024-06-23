@@ -3,6 +3,7 @@ package com.tirupati.vendor.viewmodels
 import androidx.lifecycle.ViewModel
 import com.tirupati.vendor.model.CounterResponseModel
 import com.tirupati.vendor.model.StateResponse
+import com.tirupati.vendor.model.UpdatePoDetailsRequest
 import com.tirupati.vendor.model.getCitiesResponse
 import com.tirupati.vendor.model.itemListResponse
 import com.tirupati.vendor.model.uomDataResponse
@@ -66,6 +67,11 @@ class StateVMRepository @Inject constructor(private val apiService: ApiService) 
     suspend fun getCounter(header: HashMap<String, String>,id:String):NetworkState<CounterResponseModel>{
         return safeApiCall {
             apiService.getCounter(header,id)
+        }
+    }
+    suspend fun saveCounterPo(header: HashMap<String, String>,body: UpdatePoDetailsRequest):NetworkState<CounterResponseModel>{
+        return safeApiCall {
+            apiService.saveUpdatepoDetails(header,body)
         }
     }
 

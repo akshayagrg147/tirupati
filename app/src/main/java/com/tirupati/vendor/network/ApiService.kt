@@ -9,6 +9,7 @@ import com.tirupati.vendor.model.POID_RESPONSE
 import com.tirupati.vendor.model.PoDetailsResponse
 import com.tirupati.vendor.model.PurchaseOrderResponse
 import com.tirupati.vendor.model.StateResponse
+import com.tirupati.vendor.model.UpdatePoDetailsRequest
 import com.tirupati.vendor.model.UploadsDetailResponse
 import com.tirupati.vendor.model.VendorListModel
 import com.tirupati.vendor.model.getCitiesResponse
@@ -17,6 +18,7 @@ import com.tirupati.vendor.model.uomDataResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -87,6 +89,12 @@ suspend fun getLogIn(
     suspend fun getCounter(
         @HeaderMap headers: Map<String, String>,
         @Query("id") id: String
+    ): Response<CounterResponseModel>
+
+    @POST("V2/updatepoDetails")
+    suspend fun saveUpdatepoDetails(
+        @HeaderMap headers: Map<String, String>,
+        @Body body: UpdatePoDetailsRequest
     ): Response<CounterResponseModel>
 
     @GET("V2/vendorList")

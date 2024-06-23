@@ -92,6 +92,8 @@ class LandingVendorSActivity : AppCompatActivity(), ToolbarTitleChangeListener {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.landing_screen)
         binding = ActivityLandingVendorSactivityBinding.inflate(layoutInflater)
+        binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.NAME
+        binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.NAME
         val view: View = binding.root
         setContentView(view)
         toolbar = findViewById(R.id.main_toolbar)
@@ -133,7 +135,7 @@ class LandingVendorSActivity : AppCompatActivity(), ToolbarTitleChangeListener {
         binding.sideOptions.txtManageNav.setOnClickListener {
             closeDrawer()
             toolbar.setNavigationIcon(R.drawable.menu)
-            navController.navigate(R.id.gateEntryFragment)
+            navController.navigate(R.id.polistfragment)
         }
 
         findViewById<TextView>(R.id.txtLogoutItem).setOnClickListener {
