@@ -55,6 +55,14 @@ class LandingScreenGateKeeperActivity : AppCompatActivity(), ToolbarTitleChangeL
 
             }
         }
+        fun changeTitle(title:String){
+            if(LandingScreenGateKeeperActivity.toolbarC !=null){
+                val titleTextVw = LandingScreenGateKeeperActivity.toolbarC!!.findViewById<TextView>(R.id.toolbarTitle)
+                titleTextVw.setText(title)
+
+
+            }
+        }
 
         fun showIcon(changed:Boolean=false){
 

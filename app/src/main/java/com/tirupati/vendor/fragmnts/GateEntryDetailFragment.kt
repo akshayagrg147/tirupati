@@ -21,6 +21,7 @@ import com.tirupati.vendor.model.POIDRESPONSEDATA
 import com.tirupati.vendor.model.VendorRESPONSEDATAX
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.ui.LandingScreenGateKeeperActivity
+import com.tirupati.vendor.ui.LandingVendorActivity
 import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -158,9 +159,23 @@ class GateEntryDetailFragment : Fragment() {
 //        }
     }
 
+
     override fun onDestroy() {
         super.onDestroy()
         LandingScreenGateKeeperActivity.changeIcon()
+    }
+    override fun onResume() {
+        super.onResume()
+        LandingScreenGateKeeperActivity.changeTitle("Gate Entry Details")
+        LandingScreenGateKeeperActivity.showIcon(true)
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        LandingScreenGateKeeperActivity.changeTitle("Gate Entry Details")
+        LandingScreenGateKeeperActivity.showIcon(false)
+
     }
 
     private fun validateUI(binding: FragmentGateEntryDetailBinding): Boolean {

@@ -16,6 +16,7 @@ import com.tirupati.vendor.helper.interfaces.OnItemClickListGateKeeper
 import com.tirupati.vendor.model.VendorRESPONSEDATAX
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.ui.LandingScreenGateKeeperActivity
+import com.tirupati.vendor.ui.LandingVendorActivity
 import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -59,12 +60,14 @@ class GateEntryFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        LandingScreenGateKeeperActivity.changeTitle("Gate Entry Details")
         LandingScreenGateKeeperActivity.showIcon(true)
 
     }
 
     override fun onPause() {
         super.onPause()
+        LandingScreenGateKeeperActivity.changeTitle("Gate Entry Details")
         LandingScreenGateKeeperActivity.showIcon(false)
 
     }
