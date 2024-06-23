@@ -1,16 +1,16 @@
 
-ˆkotlin:S1172w">Use "_" instead of this unused lambda parameter "destination".(Í™ƒüûÿÿÿÿ8›€Ö‹2J$4480591e-6afd-471f-a603-9165a57d270e
-jkotlin:S6615i" Remove this useless initializer.(åÙ×ƒşÿÿÿÿ8›€Ö‹2J$ff838c6d-fae9-4105-9636-9f4e0ec57354
-hkotlin:S125]"Remove this commented out code.(Øû³°üÿÿÿÿ8œ€Ö‹2J$2a00d95d-0445-41c5-ab65-06ac00bcb88f
-hkotlin:S125t"Remove this commented out code.(õíı®ıÿÿÿÿ8œ€Ö‹2J$9ae96251-0be1-42e3-9ceb-03fdd9de7748
-hkotlin:S125x"Remove this commented out code.(ÏŒš²ûÿÿÿÿ8œ€Ö‹2J$0459ad18-64d5-4fce-bb69-bafcf72ea2fe
-ikotlin:S125‚"Remove this commented out code.(¿ø¢¨úÿÿÿÿ8œ€Ö‹2J$a4017a31-d9e6-4c25-89b8-8375121259de
-dkotlin:S125”"Remove this commented out code.(ÿøÁ8œ€Ö‹2J$2a681f5b-2934-495e-b420-9a78aa5c2a12
-ikotlin:S125£"Remove this commented out code.(¡²æ£üÿÿÿÿ8€Ö‹2J$fc8e418b-9878-42cc-8a27-41de359a80a1
-ikotlin:S125Æ"Remove this commented out code.(ö´óùÿÿÿÿ8€Ö‹2J$7a81d0f8-3f9f-456d-b473-f58142e83b81
-dkotlin:S125ß"Remove this commented out code.(¼š÷ƒ8€Ö‹2J$02b26079-7e56-4ceb-81ac-d289331d4267
-€kotlin:S1144˜"5Remove this unused private "setHamburgerIcon" method.(³Ïòùÿÿÿÿ8€Ö‹2J$a1b5a598-dd2a-4e02-b195-4bba91b8bc5f
-nkotlin:S108É")Either remove or fill this block of code.(ñ¿ÿÄ8Ÿ€Ö‹2J$caeaf883-20a9-4b7d-b6ce-110f56a14932
-nkotlin:S108Ì")Either remove or fill this block of code.(ßâƒ‚8Ÿ€Ö‹2J$efbbbd37-f476-40ef-8bed-2b7f14f009c3
-mkotlin:S108Ï")Either remove or fill this block of code.(Ä†•8Ÿ€Ö‹2J$2c14592b-af92-4c7d-b3fe-443f018dc0af
-skotlin:S108Ò")Either remove or fill this block of code.(±ß–ûÿÿÿÿ8Ÿ€Ö‹2J$7bc45b9d-7993-48f2-a655-40aee1f1580f
+ˆkotlin:S1172y">Use "_" instead of this unused lambda parameter "destination".(Í™ƒüûÿÿÿÿ8­¤ğ£„2J$6003468a-ba30-4657-9be0-02396c8764d1
+jkotlin:S6615k" Remove this useless initializer.(åÙ×ƒşÿÿÿÿ8®¤ğ£„2J$e680d1dd-7579-4990-8149-15bf5a9da9f9
+hkotlin:S125]"Remove this commented out code.(Øû³°üÿÿÿÿ8°¤ğ£„2J$1bfd78da-ef87-4ddf-a867-1a4a8625826b
+hkotlin:S125v"Remove this commented out code.(õíı®ıÿÿÿÿ8°¤ğ£„2J$03f1a1bc-4b27-4003-93a5-1e9c90a2a14e
+hkotlin:S125z"Remove this commented out code.(ÏŒš²ûÿÿÿÿ8±¤ğ£„2J$ea3b6994-5fe3-4bc3-a825-f17e9a389518
+ikotlin:S125„"Remove this commented out code.(¿ø¢¨úÿÿÿÿ8±¤ğ£„2J$aeddb174-46ae-4074-adfa-973f4d3cee64
+dkotlin:S125–"Remove this commented out code.(ÿøÁ8±¤ğ£„2J$055beb70-57ca-46bc-aa61-3b3a826ea9aa
+ikotlin:S125¥"Remove this commented out code.(¡²æ£üÿÿÿÿ8±¤ğ£„2J$7c4f23fc-7be7-4579-9783-03c22c28badd
+ikotlin:S125È"Remove this commented out code.(ö´óùÿÿÿÿ8²¤ğ£„2J$c080f8fb-248e-484c-937d-91b7b4e22743
+dkotlin:S125á"Remove this commented out code.(¼š÷ƒ8²¤ğ£„2J$008786e7-509c-4526-b2d4-1633b6060930
+€kotlin:S1144š"5Remove this unused private "setHamburgerIcon" method.(³Ïòùÿÿÿÿ8¶¤ğ£„2J$02c1ce5c-a6f9-4257-9ae6-d1d29967d965
+nkotlin:S108Ë")Either remove or fill this block of code.(ñ¿ÿÄ8¹¤ğ£„2J$39c1d1ba-a10e-4d8e-bff5-fc788f0d0abc
+nkotlin:S108Î")Either remove or fill this block of code.(ßâƒ‚8¹¤ğ£„2J$6261986f-7422-467e-a2ab-5c66a60d5eaa
+mkotlin:S108Ñ")Either remove or fill this block of code.(Ä†•8¹¤ğ£„2J$68c6b4b6-54f0-462d-8fc5-3b8efc9f98ab
+skotlin:S108Ô")Either remove or fill this block of code.(±ß–ûÿÿÿÿ8¹¤ğ£„2J$885262c7-2d77-4f7b-affd-20c4fcc360cb

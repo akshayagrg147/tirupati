@@ -63,4 +63,5 @@ data class CounterResponseModel(
         @SerializedName("VID")
         var vid: String? = null
     ) : Parcelable
+
 }

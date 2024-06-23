@@ -165,6 +165,7 @@
                     android:layout_height="wrap_content"
                     app:boxCornerRadiusBottomEnd="12dp"
                     app:boxCornerRadiusBottomStart="12dp"
+                    android:textColorHint="@color/black"
                     app:boxCornerRadiusTopEnd="12dp"
                     app:boxCornerRadiusTopStart="12dp"
                     app:boxStrokeErrorColor="@color/brightRed"
