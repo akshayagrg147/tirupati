@@ -2,6 +2,7 @@ package com.tirupati.vendor.di
 
 
 import android.content.Context
+import com.grapesnberries.curllogger.CurlLoggerInterceptor
 
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.network.ApiService
@@ -48,6 +49,7 @@ class ApplicationModule {
             OkHttpClient.Builder()
                 .addInterceptor(headerInterceptor)
                 .addInterceptor(loggingInterceptor)
+                .addInterceptor(CurlLoggerInterceptor())
                 .addInterceptor { chain ->
                     val request = chain.request()
                     val response = chain.proceed(request)
