@@ -93,7 +93,7 @@ class LandingVendorSActivity : AppCompatActivity(), ToolbarTitleChangeListener {
 //        setContentView(R.layout.landing_screen)
         binding = ActivityLandingVendorSactivityBinding.inflate(layoutInflater)
         binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.NAME
-        binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.NAME
+        binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.CONTACT_EMAIL
         val view: View = binding.root
         setContentView(view)
         toolbar = findViewById(R.id.main_toolbar)
