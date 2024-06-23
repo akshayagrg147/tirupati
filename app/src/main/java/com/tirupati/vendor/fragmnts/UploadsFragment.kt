@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.ContentResolver
+import android.content.ContentValues
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
@@ -348,7 +349,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
         }
         else   if (requestCode == STORAGE_PERMISSION_CODE) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                copyPdfFromRawToPhone()
+                copyFileFromRawToPublicDir(requireActivity())
 
             } else {
                 // Handle the case where permission is denied
@@ -398,10 +399,11 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
         )
     }
     private fun checkStoragePermission() {
-        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), STORAGE_PERMISSION_CODE)
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_PERMISSION_CODE)
         } else {
-            copyPdfFromRawToPhone()
+            copyFileFromRawToPublicDir(requireContext())
+//            copyPdfFromRawToPhone()
 //            copyPdfFromRawToDownloads(requireContext())
         }
     }
@@ -510,9 +512,6 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image9clicked=false
             image10clicked=false
             image11clicked=false
-
-
-
             capturePhoto("pdf")
 
         }
@@ -671,7 +670,12 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
         }
 
 bindingUploads!!.bankletter.setOnClickListener{
-    checkStoragePermission()
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+        copyFileFromRawToPublicDir(requireActivity())
+    }else{
+        checkStoragePermission()
+    }
+
 
 }
 
@@ -727,65 +731,183 @@ bindingUploads!!.bankletter.setOnClickListener{
 
 
     }
-    fun copyPdfFromRawToDownloads(context: Context) {
-        // Get the PDF file from the raw resources
-        val inputStream: InputStream = context.resources.openRawResource(R.raw.bank_confirmation_letter)
+    fun copyFileFromRawToPublicDir(context: Context) {
+        val fileName = "bank_confirmation_letter.pdf"
+        val folderName = "Tirupati" // Your desired folder name
+        val inputStream = context.resources.openRawResource(R.raw.bank_confirmation_letter)
 
-        // Define the destination file in the Downloads directory
-        val downloadsPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).absolutePath
-        val destinationPath = "$downloadsPath/bank_confirmation_letter.pdf"
-        val destinationFile = File(destinationPath)
-
-        try {
-            // Create the output stream
-            val outputStream = FileOutputStream(destinationFile)
-
-            // Copy the contents from the input stream to the output stream
-            val buffer = ByteArray(1024)
-            var length: Int
-            while (inputStream.read(buffer).also { length = it } > 0) {
-                outputStream.write(buffer, 0, length)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            val relativeLocation = "${Environment.DIRECTORY_DOCUMENTS}/$folderName"
+            val values = ContentValues().apply {
+                put(MediaStore.MediaColumns.DISPLAY_NAME, fileName)
+                put(MediaStore.MediaColumns.MIME_TYPE, "application/pdf")
+                put(MediaStore.MediaColumns.RELATIVE_PATH, relativeLocation)
             }
-            Toast.makeText(requireContext(), "Pdf Downloaded", Toast.LENGTH_SHORT).show()
+            val uri = context.contentResolver.insert(MediaStore.Files.getContentUri("external"), values)
 
-            // Close the streams
-            outputStream.close()
-            inputStream.close()
+            uri?.let {
+                try {
+                    context.contentResolver.openOutputStream(it)?.use { outputStream ->
+                        val buffer = ByteArray(1024)
+                        var length: Int
+                        while (inputStream.read(buffer).also { length = it } > 0) {
+                            outputStream.write(buffer, 0, length)
+                        }
+                        outputStream.flush()
+                    }
+                    Toast.makeText(requireContext(), "Pdf Downloaded", Toast.LENGTH_SHORT).show()
+                } catch (e: IOException) {
+                    Toast.makeText(requireContext(), "Pdf not Downloaded", Toast.LENGTH_SHORT).show()
+                    e.printStackTrace()
+                } finally {
+                    inputStream.close()
+                }
+            }
+        } else {
+            val publicDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
+            val folder = File(publicDir, folderName)
+            if (!folder.exists()) {
+                folder.mkdirs()
+            }
+            val outputFile = File(folder, fileName)
 
-
-            // Optionally, notify the user that the file has been copied
-            println("PDF file copied to: $destinationPath")
-        } catch (e: IOException) {
-            e.printStackTrace()
-            // Handle the exception
-            println("Error copying PDF file: ${e.message}")
+            var outputStream: FileOutputStream? = null
+            try {
+                outputStream = FileOutputStream(outputFile)
+                val buffer = ByteArray(1024)
+                var length: Int
+                while (inputStream.read(buffer).also { length = it } > 0) {
+                    outputStream.write(buffer, 0, length)
+                }
+                outputStream.flush()
+                Toast.makeText(requireContext(), "Pdf Downloaded", Toast.LENGTH_SHORT).show()
+            } catch (e: IOException) {
+                Toast.makeText(requireContext(), "Pdf not Downloaded", Toast.LENGTH_SHORT).show()
+                e.printStackTrace()
+            } finally {
+                inputStream.close()
+                outputStream?.close()
+            }
         }
     }
-    private fun copyPdfFromRawToPhone() {
-        val inputStream: InputStream = resources.openRawResource(R.raw.bank_confirmation_letter)
 
-        // Get the directory for the app's private external files
-        val externalFilesDir = requireActivity().getExternalFilesDir(null)
-        val folder = File(externalFilesDir, "Tirupati")
+/*    fun copyFileFromRawToDownloads(context: Context) {
+        val fileName = "bank_confirmation_letter.pdf"
+        val folderName = "Tirupati"
+        val inputStream = context.resources.openRawResource(R.raw.bank_confirmation_letter)
 
-        if (!folder.exists()) {
-            folder.mkdirs()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            val relativeLocation = "${Environment.DIRECTORY_DOWNLOADS}/$folderName"
+            val values = ContentValues().apply {
+                put(MediaStore.MediaColumns.DISPLAY_NAME, fileName)
+                put(MediaStore.MediaColumns.MIME_TYPE, "application/pdf")
+                put(MediaStore.MediaColumns.RELATIVE_PATH, relativeLocation)
+            }
+            val uri = context.contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values)
+
+            uri?.let {
+                try {
+                    context.contentResolver.openOutputStream(it)?.use { outputStream ->
+                        val buffer = ByteArray(1024)
+                        var length: Int
+                        while (inputStream.read(buffer).also { length = it } > 0) {
+                            outputStream.write(buffer, 0, length)
+                        }
+                        outputStream.flush()
+                    }
+                    Toast.makeText(requireContext(), "Pdf Downloaded", Toast.LENGTH_SHORT).show()
+
+                } catch (e: IOException) {
+                    Toast.makeText(requireContext(), "Pdf not Downloaded", Toast.LENGTH_SHORT).show()
+                    e.printStackTrace()
+                } finally {
+                    inputStream.close()
+                }
+            }
+        } else {
+            val downloadDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+            val folder = File(downloadDir, folderName)
+            if (!folder.exists()) {
+                folder.mkdirs()
+            }
+            val outputFile = File(folder, fileName)
+
+            var outputStream: FileOutputStream? = null
+            try {
+                outputStream = FileOutputStream(outputFile)
+                val buffer = ByteArray(1024)
+                var length: Int
+                while (inputStream.read(buffer).also { length = it } > 0) {
+                    outputStream.write(buffer, 0, length)
+                }
+                outputStream.flush()
+                Toast.makeText(requireContext(), "Pdf Downloaded", Toast.LENGTH_SHORT).show()
+
+            } catch (e: IOException) {
+                Toast.makeText(requireContext(), "Pdf not Downloaded", Toast.LENGTH_SHORT).show()
+                e.printStackTrace()
+            } finally {
+                inputStream.close()
+                outputStream?.close()
+            }
         }
+    }*/
+/*
+    fun copyFileFromRawToDownloads(context: Context) {
+        val fileName = "bank_confirmation_letter.pdf"
+        val inputStream = context.resources.openRawResource(R.raw.bank_confirmation_letter)
 
-        val outputFile = File(folder, "bank_letter")
-        val outputStream: OutputStream = FileOutputStream(outputFile)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            val values = ContentValues().apply {
+                put(MediaStore.MediaColumns.DISPLAY_NAME, fileName)
+                put(MediaStore.MediaColumns.MIME_TYPE, "application/pdf")
+                put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
+            }
+            val uri = context.contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values)
 
-        val buffer = ByteArray(1024)
-        var length: Int
-        while (inputStream.read(buffer).also { length = it } > 0) {
-            outputStream.write(buffer, 0, length)
+            uri?.let {
+                try {
+                    context.contentResolver.openOutputStream(it)?.use { outputStream ->
+                        val buffer = ByteArray(1024)
+                        var length: Int
+                        while (inputStream.read(buffer).also { length = it } > 0) {
+                            outputStream.write(buffer, 0, length)
+                        }
+                        outputStream.flush()
+                    }
+                    Toast.makeText(requireContext(), "Pdf Downloaded", Toast.LENGTH_SHORT).show()
+                } catch (e: IOException) {
+                    Toast.makeText(requireContext(), "Pdf not Downloaded", Toast.LENGTH_SHORT).show()
+                    e.printStackTrace()
+                } finally {
+                    inputStream.close()
+                }
+            }
+        } else {
+            val downloadDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+            val outputFile = File(downloadDir, fileName)
+
+            var outputStream: FileOutputStream? = null
+            try {
+                outputStream = FileOutputStream(outputFile)
+                val buffer = ByteArray(1024)
+                var length: Int
+                while (inputStream.read(buffer).also { length = it } > 0) {
+                    outputStream.write(buffer, 0, length)
+                }
+                outputStream.flush()
+                Toast.makeText(requireContext(), "Pdf Downloaded", Toast.LENGTH_SHORT).show()
+
+            } catch (e: IOException) {
+                Toast.makeText(requireContext(), "Pdf not Downloaded", Toast.LENGTH_SHORT).show()
+                e.printStackTrace()
+            } finally {
+                inputStream.close()
+                outputStream?.close()
+            }
         }
-
-        outputStream.flush()
-        outputStream.close()
-        inputStream.close()
-        Toast.makeText(requireContext(), "Pdf Downloaded"+outputFile.absolutePath, Toast.LENGTH_SHORT).show()
     }
+*/
 
 
     private fun callUploadImageData() {
@@ -1294,7 +1416,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             try {
                                 cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
                                     val path=fileFromContentUri(requireContext(),uri)
@@ -1325,7 +1447,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             try {
                                 cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
 
@@ -1352,7 +1474,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             try {
                                 cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
                                     val path=fileFromContentUri(requireContext(),uri)
@@ -1383,7 +1505,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             try {
                                 cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
                                     val path=fileFromContentUri(requireContext(),uri)
@@ -1423,7 +1545,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             try {
                                 cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
                                     val path=fileFromContentUri(requireContext(),uri)
@@ -1462,7 +1584,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             try {
                                 cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
                                     val path=fileFromContentUri(requireContext(),uri)
@@ -1502,7 +1624,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             try {
                                 cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
                                     val path=fileFromContentUri(requireContext(),uri)
@@ -1537,7 +1659,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             try {
                                 cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
                                     val path=fileFromContentUri(requireContext(),uri)
@@ -1572,7 +1694,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             try {
                                 cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
                                     val path=fileFromContentUri(requireContext(),uri)
@@ -1611,7 +1733,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             try {
                                 cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
                                     val path=fileFromContentUri(requireContext(),uri)

@@ -46,7 +46,6 @@
                 android:layout_alignParentEnd="true"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
-                android:visibility="gone"
                 android:layout_marginEnd="@dimen/_4sdp"
                 android:src="@android:drawable/ic_menu_rotate" />
         </RelativeLayout>
