@@ -453,6 +453,10 @@ class VendorQotationFragment : Fragment() {
                 val videoUri: Uri? = result.data?.data
                 videoUri?.let {
                     displayVideoThumbnail(requireContext(),it, binding?.thumbnail)
+                    val file = File(getPathFromUri(requireContext(), it))
+                    val requestFile = file.asRequestBody("video/*".toMediaTypeOrNull())
+                    val part = MultipartBody.Part.createFormData("QUOTATION_ATTACHMENT[]", file.name, requestFile)
+                    multipart=part
                 }
 
 
@@ -460,6 +464,16 @@ class VendorQotationFragment : Fragment() {
             }
         }
 
+    }
+    private fun getPathFromUri(context: Context, uri: Uri): String {
+        var filePath: String? = null
+        val cursor = context.contentResolver.query(uri, arrayOf(MediaStore.Video.Media.DATA), null, null, null)
+        cursor?.use {
+            if (it.moveToFirst()) {
+                filePath = it.getString(it.getColumnIndexOrThrow(MediaStore.Video.Media.DATA))
+            }
+        }
+        return filePath ?: throw IllegalArgumentException("Could not get file path from URI")
     }
 
     private fun getItemDetails() {

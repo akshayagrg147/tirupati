@@ -73,6 +73,9 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
+import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -91,6 +94,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
     var locationName = ""
     var latitude = 0.0
     var longitude = 0.0
+    private val STORAGE_PERMISSION_CODE = 101
     private val signUpVM: SignUpUploadsViewModel by viewModels()
     private val LOCATION_PERMISSION_REQUEST = 100
 
@@ -342,6 +346,14 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                 ).show()
             }
         }
+        else   if (requestCode == STORAGE_PERMISSION_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                copyPdfFromRawToPhone()
+
+            } else {
+                // Handle the case where permission is denied
+            }
+        }
     }
 
     private fun setUpLocationListener() {
@@ -385,6 +397,15 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             Looper.myLooper()
         )
     }
+    private fun checkStoragePermission() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), STORAGE_PERMISSION_CODE)
+        } else {
+            copyPdfFromRawToPhone()
+//            copyPdfFromRawToDownloads(requireContext())
+        }
+    }
+
     fun showSettingsAlert() {
         val alertDialog = AlertDialog.Builder(context)
         alertDialog.setTitle("SETTINGS")
@@ -415,6 +436,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             findNavController(). popBackStack()
 
         }
+
 
         bindingUploads!!.imageListRCPDF.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         bindingUploads!!.imageListRCPDF.itemAnimator = null
@@ -648,7 +670,10 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
         }
 
+bindingUploads!!.bankletter.setOnClickListener{
+    checkStoragePermission()
 
+}
 
         bindingUploads!!.btnSignUpDone.setOnClickListener {
             if (validateUI(bindingUploads!!)) {
@@ -701,6 +726,65 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
         longitude =LONGITUDE
 
 
+    }
+    fun copyPdfFromRawToDownloads(context: Context) {
+        // Get the PDF file from the raw resources
+        val inputStream: InputStream = context.resources.openRawResource(R.raw.bank_confirmation_letter)
+
+        // Define the destination file in the Downloads directory
+        val downloadsPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).absolutePath
+        val destinationPath = "$downloadsPath/bank_confirmation_letter.pdf"
+        val destinationFile = File(destinationPath)
+
+        try {
+            // Create the output stream
+            val outputStream = FileOutputStream(destinationFile)
+
+            // Copy the contents from the input stream to the output stream
+            val buffer = ByteArray(1024)
+            var length: Int
+            while (inputStream.read(buffer).also { length = it } > 0) {
+                outputStream.write(buffer, 0, length)
+            }
+            Toast.makeText(requireContext(), "Pdf Downloaded", Toast.LENGTH_SHORT).show()
+
+            // Close the streams
+            outputStream.close()
+            inputStream.close()
+
+
+            // Optionally, notify the user that the file has been copied
+            println("PDF file copied to: $destinationPath")
+        } catch (e: IOException) {
+            e.printStackTrace()
+            // Handle the exception
+            println("Error copying PDF file: ${e.message}")
+        }
+    }
+    private fun copyPdfFromRawToPhone() {
+        val inputStream: InputStream = resources.openRawResource(R.raw.bank_confirmation_letter)
+
+        // Get the directory for the app's private external files
+        val externalFilesDir = requireActivity().getExternalFilesDir(null)
+        val folder = File(externalFilesDir, "Tirupati")
+
+        if (!folder.exists()) {
+            folder.mkdirs()
+        }
+
+        val outputFile = File(folder, "bank_letter")
+        val outputStream: OutputStream = FileOutputStream(outputFile)
+
+        val buffer = ByteArray(1024)
+        var length: Int
+        while (inputStream.read(buffer).also { length = it } > 0) {
+            outputStream.write(buffer, 0, length)
+        }
+
+        outputStream.flush()
+        outputStream.close()
+        inputStream.close()
+        Toast.makeText(requireContext(), "Pdf Downloaded"+outputFile.absolutePath, Toast.LENGTH_SHORT).show()
     }
 
 

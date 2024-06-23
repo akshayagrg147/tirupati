@@ -6,6 +6,8 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -31,7 +33,7 @@
         android:theme="@style/Theme.Tirupati">
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.tirupati.vendor.provider_paths"
+            android:authorities="com.tirupati.vendor.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -53,6 +55,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCw-Je4CcmISXUcgyDBSauoVxcy0HLR4eU" />
         <activity
             android:name=".ui.LandingScreenActivity"
             android:exported="false" />

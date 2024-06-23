@@ -366,7 +366,7 @@ class DispatchFragment : Fragment() {
             selectImage()
         }
         binding?.btnGateEntryDone?.setOnClickListener{
-            val apiKey = "YOUR_API_KEY_HERE"
+            val apiKey = "AIzaSyCw-Je4CcmISXUcgyDBSauoVxcy0HLR4eU"
             val addressConverter = AddressConverter(apiKey)
             var convertAddress:String?=null
 
@@ -450,12 +450,28 @@ class DispatchFragment : Fragment() {
                 val videoUri: Uri? = result.data?.data
                 videoUri?.let {
                     displayVideoThumbnail(requireContext(),it, binding?.thumbnail)
+                    val file = File(getPathFromUri(requireContext(), it))
+                    val requestFile = file.asRequestBody("video/*".toMediaTypeOrNull())
+                    val part = MultipartBody.Part.createFormData("DISPATCH_DOC[]", file.name, requestFile)
+                    multipart=part
                 }
+
 
                 // Handle the videoUri, like playing the video or saving it
             }
         }
     }
+    private fun getPathFromUri(context: Context, uri: Uri): String {
+        var filePath: String? = null
+        val cursor = context.contentResolver.query(uri, arrayOf(MediaStore.Video.Media.DATA), null, null, null)
+        cursor?.use {
+            if (it.moveToFirst()) {
+                filePath = it.getString(it.getColumnIndexOrThrow(MediaStore.Video.Media.DATA))
+            }
+        }
+        return filePath ?: throw IllegalArgumentException("Could not get file path from URI")
+    }
+
     private fun displayVideoThumbnail(context: Context, uri: Uri, imageView: ImageView?) {
         binding?.thumbnail?.visibility=View.VISIBLE
         binding?.uploadDocument?.visibility=View.GONE
