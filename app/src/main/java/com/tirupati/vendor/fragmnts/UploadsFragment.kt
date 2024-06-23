@@ -731,6 +731,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                     is NetworkState.Success -> {
                         bindingUploads!!.loginProgressBar.progressBar.hidden()
                         toast("Registered Successfully!!")
+                        findNavController().navigate(R.id.logInFragment2)
 
 //                    binding?.listOpts?.adapter!!.notifyDataSetChanged()
 
@@ -884,61 +885,6 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             }
         }
 
-    }
-    fun generateImageFromPdf(pdfUri: Uri?) {
-        val pageNumber = 0
-        val pdfiumCore: PdfiumCore = PdfiumCore(requireContext())
-        try {
-            val fd: ParcelFileDescriptor? = requireContext().getContentResolver().openFileDescriptor(pdfUri!!, "r")
-            val pdfDocument: com.shockwave.pdfium.PdfDocument? = pdfiumCore.newDocument(fd)
-            pdfiumCore.openPage(pdfDocument, pageNumber)
-            val width: Int = pdfiumCore.getPageWidthPoint(pdfDocument, pageNumber)
-            val height: Int = pdfiumCore.getPageHeightPoint(pdfDocument, pageNumber)
-            val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-            pdfiumCore.renderPageBitmap(pdfDocument, bmp, pageNumber, 0, 0, width, height)
-            saveImage(bmp)
-            pdfiumCore.closeDocument(pdfDocument) // important!
-        } catch (e: java.lang.Exception) {
-            //todo with exception
-        }
-    }
-    private fun getImageUri(inContext: Context?, inImage: Bitmap): Uri {
-
-        val tempFile = File.createTempFile("temprentpk", ".png")
-        val bytes = ByteArrayOutputStream()
-        inImage.compress(Bitmap.CompressFormat.PNG, 100, bytes)
-        val bitmapData = bytes.toByteArray()
-
-        val fileOutPut = FileOutputStream(tempFile)
-        fileOutPut.write(bitmapData)
-        fileOutPut.flush()
-        fileOutPut.close()
-        return Uri.fromFile(tempFile)
-    }
-    val FOLDER: String = Environment.getExternalStorageDirectory().toString() + "/PDF"
-    private fun saveImage(bmp: Bitmap) {
-        var out: FileOutputStream? = null
-        try {
-            val folder = File(FOLDER)
-            if (!folder.exists()) folder.mkdirs()
-            val file = File(folder, "PDF.png")
-            out = FileOutputStream(file)
-           var image =  bmp.compress(Bitmap.CompressFormat.PNG, 100, out)
-           var toShowImg = getImageUri(requireContext(),bmp)
-            adapter.addImage(toShowImg)
-            images2.add(File(selectedPaths))
-            second = filesToMultipartParts("",images2)
-
-        // bmp is your Bitmap instance
-        } catch (e: java.lang.Exception) {
-            //todo with exception
-        } finally {
-            try {
-                out?.close()
-            } catch (e: java.lang.Exception) {
-                //todo with exception
-            }
-        }
     }
 
     private fun createImageFile(): File {
@@ -1299,12 +1245,11 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
 
-
                                     adapter.addImage(uri)
                                     val path=fileFromContentUri(requireContext(),uri)
 ////
                                     images2.add(compressFile(path,requireContext()))
-                                    second = filesToMultipartPartsPDF("COM_PAN_CARD",images2,requireContext())
+                                    second = filesToMultipartPartsPDF("COM_PAN_CARD[]",images2,requireContext())
                                 }
                             } finally {
 

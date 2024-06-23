@@ -110,7 +110,7 @@ class BankDetailFragment : Fragment() {
                     args.putString("ACCOUNT_TYPE",bindingThirdPage!!.accountTypes.text.toString())
                     args.putString("IFSC",bindingThirdPage!!.ifscET.text.toString())
                     args.putString("BRANCH_NAME",bindingThirdPage!!.branchET.text.toString())
-                    args.putString("PINCODE",bindingThirdPage!!.branchET.text.toString())
+                    args.putString("PINCODE",bindingThirdPage!!.pinET.text.toString())
                    if(bindingThirdPage!!.MsmeswOnOff.isChecked){
                        args.putString("MSME","1")
                    }else{args.putString("MSME","0")}
