@@ -51,7 +51,7 @@
                     android:clickable="false"
                     android:focusable="false"
                     android:hint="Vendor Name"
-                    android:text="@{model.counterDetails.vendorName}"
+                    android:text="@{model.counterDetails.responseData.vendorName}"
                     android:imeOptions="actionDone" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:clickable="false"
                     android:focusable="false"
-                    android:text="@{model.counterDetails.nameOfOrganization}"
+                    android:text="@{model.counterDetails.responseData.nameOfOrganization}"
                     android:hint="Name of the organisation"
                     android:imeOptions="actionDone" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -103,7 +103,7 @@
                     android:focusable="false"
                     android:fontFamily="@font/montserrat_regular"
                     android:hint="Item Detail"
-                    android:text="@{model.counterDetails.itemName}"
+                    android:text="@{model.counterDetails.responseData.itemName}"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="text"
                     android:maxLength="50"
@@ -136,7 +136,7 @@
                     android:focusable="false"
                     android:fontFamily="@font/montserrat_regular"
                     android:hint="UoM"
-                    android:text="@{model.counterDetails.uomName}"
+                    android:text="@{model.counterDetails.responseData.uomName}"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="text"
                     android:maxLength="50"
@@ -165,7 +165,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="false"
-                    android:text="@{model.counterDetails.icode}"
+                    android:text="@{model.counterDetails.responseData.icode}"
                     android:focusable="false"
                     android:hint="HSN/SAC Code" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -191,7 +191,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Quantity"
-                    android:text="@{model.counterDetails.poqty}"
+                    android:text="@{model.counterDetails.responseData.poqty}"
                     android:imeOptions="actionDone"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -213,15 +213,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Rate"
-                    android:text="@{model.counterDetails.ratepUom}"
+                    android:text="@{model.counterDetails.responseData.ratepUom}"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="You have two chances left to counter this rate.
-Executing this will result in PO rejection." />
+                android:text="@{model.counterDetails.message}"
+              />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/text_Box"
@@ -245,7 +245,7 @@ Executing this will result in PO rejection." />
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_38sdp"
                     android:focusable="false"
-                    android:text="@{model.counterDetails.paymentTerms}"
+                    android:text="@{model.counterDetails.responseData.paymentTerms}"
                     android:fontFamily="@font/montserrat_regular"
                     android:hint="Payment Terms"
                     android:importantForAutofill="noExcludeDescendants"
@@ -275,7 +275,7 @@ Executing this will result in PO rejection." />
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Amount Exclusive GST"
-                    android:text="@{model.counterDetails.amount}"
+                    android:text="@{model.counterDetails.responseData.amount}"
                     android:imeOptions="actionDone"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -298,7 +298,7 @@ Executing this will result in PO rejection." />
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Delivery Terms"
-                    android:text="@{model.counterDetails.deliveryTerms}"
+                    android:text="@{model.counterDetails.responseData.deliveryTerms}"
                     android:imeOptions="actionDone"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -325,7 +325,7 @@ Executing this will result in PO rejection." />
                     android:hint="Remarks"
                     android:imeOptions="actionDone"
                     android:lines="4"
-                    android:text="@{model.counterDetails.remarks}"
+                    android:text="@{model.counterDetails.responseData.remarks}"
                     android:padding="8dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -337,7 +337,7 @@ Executing this will result in PO rejection." />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{model.counterDetails.counterRemark}"
+                android:text="@{model.counterDetails.responseData.counterRemark}"
                 android:hint="very high cost"/>
 
             <ImageView

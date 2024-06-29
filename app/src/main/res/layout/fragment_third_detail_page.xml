@@ -210,7 +210,8 @@
                         style="@style/et_login_signup"
                         android:hint="IFSC"
                         android:importantForAutofill="noExcludeDescendants"
-                        android:inputType="text"
+
+                        android:inputType="textCapCharacters"
                         android:textAllCaps="true"
                         android:maxLength="50"
                         android:outlineAmbientShadowColor="@color/blue_light" />
@@ -384,7 +385,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_height="@dimen/_23sdp"
                             android:textColor="@color/black"
-                            android:text="Multiple Accounts"/>
+                            android:text="Multiple Owners"/>
 
                         <androidx.appcompat.widget.SwitchCompat
                             android:id="@+id/multipleAccountswOnOff"

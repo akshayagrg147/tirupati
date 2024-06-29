@@ -108,8 +108,9 @@
                     <EditText
                         style="@style/et_login_signup"
                         android:hint="IFSC"
+                        android:inputType="textCapCharacters"
                         android:importantForAutofill="noExcludeDescendants"
-                        android:inputType="text"
+
                         android:maxLength="50"
                         android:outlineAmbientShadowColor="@color/blue_light" />
 

@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.FragmentPoListBinding
 import com.tirupati.vendor.helper.SessionManager
+import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.ResponseData
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.ui.LandingVendorActivity
@@ -79,6 +81,7 @@ class PoListFragment : Fragment() {
 
 
     fun callTheListPo() {
+        bindingS!!.loginProgressBar.progressBar.shown()
         val header = HashMap<String, String>()
         header["Accept"] = "application/json"
         header["version"] = "1"
@@ -90,6 +93,7 @@ class PoListFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success -> {
+                    bindingS!!.loginProgressBar.progressBar.hidden()
 
                    bindingS?.recyclerView?.adapter=PoAdapter(requireContext(),response.body.RESPONSEDATA)
 
@@ -102,20 +106,26 @@ class PoListFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*> -> {
+                    bindingS!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
+                    bindingS!!.loginProgressBar.progressBar.hidden()
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
+                    bindingS!!.loginProgressBar.progressBar.hidden()
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+                    bindingS!!.loginProgressBar.progressBar.hidden()
                 }
 
                 else -> {
+                    bindingS!!.loginProgressBar.progressBar.hidden()
                 }
+
             }
 
 

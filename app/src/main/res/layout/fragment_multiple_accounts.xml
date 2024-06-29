@@ -373,9 +373,9 @@
                             <EditText
                                 android:id="@+id/secondVAdhar"
                                 style="@style/et_login_signup"
-                                android:hint="Owner's Adhar Card"
+                                android:hint="Owner's Pan Card"
+                                android:inputType="textCapCharacters"
                                 android:importantForAutofill="noExcludeDescendants"
-                                android:inputType="text"
                                 android:maxLength="50"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 

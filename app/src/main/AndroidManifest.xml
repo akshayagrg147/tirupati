@@ -57,7 +57,7 @@
         </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCw-Je4CcmISXUcgyDBSauoVxcy0HLR4eU" />
+            android:value="AIzaSyBPlX3AuJuNr8bsZaaL2QQOI4weEkZkBb0" />
         <activity
             android:name=".ui.LandingScreenActivity"
             android:exported="false" />

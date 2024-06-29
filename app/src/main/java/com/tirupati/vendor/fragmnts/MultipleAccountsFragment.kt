@@ -1,15 +1,18 @@
 package com.tirupati.vendor.fragmnts
 
 import android.os.Bundle
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 
 import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.FragmentMultipleAccountsBinding
+import com.tirupati.vendor.utils.toast
 
 
 class MultipleAccountsFragment : Fragment() {
@@ -161,6 +164,9 @@ class MultipleAccountsFragment : Fragment() {
                Navigation.findNavController(bindingUploads!!.root)
                    .navigate(R.id.action_multipleAccountsFragment_to_uploadsFragment, args)
            }
+            else{
+               Toast.makeText(requireContext(), "Data Incomplete ",  Toast.LENGTH_SHORT).show()
+           }
         }
         bindingUploads?.secondAdded?.setOnClickListener{
             bindingUploads?.firstLL?.visibility = View.GONE
@@ -185,8 +191,46 @@ class MultipleAccountsFragment : Fragment() {
     }
 
     private fun validateUI(bindingUploads: FragmentMultipleAccountsBinding): Boolean {
+        if (bindingUploads.secondAccountll.visibility == View.VISIBLE) {
+            if (!isValid(bindingUploads.EtVSecondName.text) ||
+                !isValid(bindingUploads.secondVContact.text) ||
+                !isValid(bindingUploads.inputSecondVendorEmail.text) ||
+                !isValid(bindingUploads.secondVAdhar.text)
+            ) {
+                return false
+            }
+
+
+        }
+         if (bindingUploads.thirdAccountll.visibility == View.VISIBLE) {
+            if (!isValid(bindingUploads.EtVThirdName.text) ||
+                !isValid(bindingUploads.thirdVContact.text) ||
+                !isValid(bindingUploads.inputThirdVendorEmail.text) ||
+                !isValid(bindingUploads.thirdVAdhar.text)
+            ) {
+                return false
+            }
+
+
+        }
+        if (bindingUploads.fourthAccountll.visibility == View.VISIBLE) {
+            if (!isValid(bindingUploads.EtVFourthName.text) ||
+                !isValid(bindingUploads.fourthVContact.text) ||
+                !isValid(bindingUploads.inputfourthVendorEmail.text) ||
+                !isValid(bindingUploads.fourthVAdhar.text)
+            ) {
+                return false
+            }
+
+
+        }
 
         return true
     }
+
+    private fun isValid(text: Editable?): Boolean {
+        return text != null && text.toString().isNotEmpty()
+    }
+
 
 }

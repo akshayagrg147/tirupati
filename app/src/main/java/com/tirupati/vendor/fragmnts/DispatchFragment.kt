@@ -15,6 +15,8 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.os.Handler
+import android.os.Looper
 import android.provider.MediaStore
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -366,7 +368,7 @@ class DispatchFragment : Fragment() {
             selectImage()
         }
         binding?.btnGateEntryDone?.setOnClickListener{
-            val apiKey = "AIzaSyCw-Je4CcmISXUcgyDBSauoVxcy0HLR4eU"
+            val apiKey = "AIzaSyBPlX3AuJuNr8bsZaaL2QQOI4weEkZkBb0"
             val addressConverter = AddressConverter(apiKey)
             var convertAddress:String?=null
 
@@ -388,7 +390,7 @@ class DispatchFragment : Fragment() {
                 val orderDate = binding?.orderDate?.text.toString()
                 val purchaseNo = binding?.purchaseNo?.text.toString()
 
-                    if (orderDate.isEmpty() || purchaseNo.isEmpty() || convertAddress?.isEmpty()==true || latitude==0.00 || longitude==0.00) {
+                    if (orderDate.isEmpty() || purchaseNo.isEmpty() || convertAddress?.isEmpty()==true || latitude==0.00 || longitude==0.00|| multipart==null) {
                         // Return with a message indicating that some fields are empty
                         val emptyFields = mutableListOf<String>()
                         if (orderDate.isEmpty()) emptyFields.add("Order Date")
@@ -396,6 +398,7 @@ class DispatchFragment : Fragment() {
                         if (convertAddress?.isEmpty()==true) emptyFields.add("Location Name")
                         if (latitude==0.00) emptyFields.add("Latitude")
                         if (longitude==0.00) emptyFields.add("Longitude")
+                        if (multipart==null) emptyFields.add("Image")
 
                         val message = "The following fields are empty: ${emptyFields.joinToString(", ")}"
                         // Show the message to the user (you can use Toast, Snackbar, or any other method)
@@ -419,7 +422,9 @@ class DispatchFragment : Fragment() {
 
                             is NetworkState.Success -> {
                                 Toast.makeText(context, "Dispatched", Toast.LENGTH_SHORT).show()
-                                findNavController(). popBackStack()
+                                Handler(Looper.getMainLooper()).postDelayed({
+                                    findNavController().popBackStack()
+                                }, 1000)
 
 
                             }
@@ -450,10 +455,14 @@ class DispatchFragment : Fragment() {
                 val videoUri: Uri? = result.data?.data
                 videoUri?.let {
                     displayVideoThumbnail(requireContext(),it, binding?.thumbnail)
-                    val file = File(getPathFromUri(requireContext(), it))
-                    val requestFile = file.asRequestBody("video/*".toMediaTypeOrNull())
-                    val part = MultipartBody.Part.createFormData("DISPATCH_DOC[]", file.name, requestFile)
-                    multipart=part
+
+                    val videoFile1 = createTempFileFromUri(requireContext(), it)
+                    videoFile1?.let { file ->
+                        val requestFileNew = file.asRequestBody("video/*".toMediaTypeOrNull())
+                        val part = MultipartBody.Part.createFormData("DISPATCH_DOC[]", file.name, requestFileNew)
+
+                        multipart = part
+                    }
                 }
 
 
@@ -461,7 +470,30 @@ class DispatchFragment : Fragment() {
             }
         }
     }
-    private fun getPathFromUri(context: Context, uri: Uri): String {
+
+    fun createTempFileFromUri(context: Context, uri: Uri): File? {
+        return try {
+            val inputStream = context.contentResolver.openInputStream(uri)
+            val tempFile = File.createTempFile("temp_video", ".mp4", context.cacheDir)
+            inputStream?.use { input ->
+                tempFile.outputStream().use { output ->
+                    input.copyTo(output)
+                }
+            }
+            tempFile
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
+
+    fun getFileFromUri(context: Context, uri: Uri): File? {
+        val filePath = getPathFromUri(context, uri)
+        return filePath?.let { File(it) }
+    }
+
+    // Function to get the file path from Uri (specifically for video in this case)
+    private fun getPathFromUri(context: Context, uri: Uri): String? {
         var filePath: String? = null
         val cursor = context.contentResolver.query(uri, arrayOf(MediaStore.Video.Media.DATA), null, null, null)
         cursor?.use {
@@ -469,7 +501,7 @@ class DispatchFragment : Fragment() {
                 filePath = it.getString(it.getColumnIndexOrThrow(MediaStore.Video.Media.DATA))
             }
         }
-        return filePath ?: throw IllegalArgumentException("Could not get file path from URI")
+        return filePath
     }
 
     private fun displayVideoThumbnail(context: Context, uri: Uri, imageView: ImageView?) {

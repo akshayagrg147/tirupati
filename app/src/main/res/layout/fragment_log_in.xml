@@ -76,9 +76,10 @@
         <EditText
             android:id="@+id/inputUserGST"
             style="@style/et_login_signup"
+            android:inputType="textCapCharacters"
             android:hint="GST Number"
             android:importantForAutofill="noExcludeDescendants"
-            android:inputType="text"
+
             android:textSize="16sp"
             android:outlineAmbientShadowColor="@color/blue_light" />
 

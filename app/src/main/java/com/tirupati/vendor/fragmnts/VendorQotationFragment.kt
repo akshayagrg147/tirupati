@@ -14,7 +14,11 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.os.Handler
+import android.os.Looper
 import android.provider.MediaStore
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -79,12 +83,57 @@ class VendorQotationFragment : Fragment() {
     lateinit var itemDetail:String
     lateinit var paymentTerm:String
     lateinit var itemId:String
+     var itemRate:Int?=0
+    var iteQuantity:Int?=0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = VendorQuotationFormBinding.inflate(inflater, container, false)
+
+        binding?.quantity?.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Code to execute before text is changed
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val quantityText = s.toString()
+                val rateText = binding?.rate?.text.toString()
+
+                val quantity = quantityText.toDoubleOrNull() ?: 0.0
+                val rate = rateText.toDoubleOrNull() ?: 0.0
+
+                binding?.amountTotal?.setText((quantity * rate).toString())
+                // Code to execute when text is changing
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Code to execute after text has changed
+            }
+        })
+
+        binding?.rate?.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Code to execute before text is changed
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val quantityText = binding?.quantity?.text.toString()
+                val rateText = s.toString()
+
+                val quantity = quantityText.toDoubleOrNull() ?: 0.0
+                val rate = rateText.toDoubleOrNull() ?: 0.0
+
+                binding?.amountTotal?.setText((quantity * rate).toString())
+                // Code to execute when text is changing
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Code to execute after text has changed
+            }
+        })
+
         binding?.btnAddPurchase?.setOnClickListener { onSubmitClicked() }
         binding?.uploadDocument?.setOnClickListener{
             selectImage()
@@ -336,8 +385,13 @@ class VendorQotationFragment : Fragment() {
                 is NetworkState.Success -> {
                     if(response.body.STATUS){
                         Toast.makeText(context,"updated",Toast.LENGTH_SHORT).show()
-                        findNavController(). popBackStack()
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            findNavController().popBackStack()
+                        }, 1000)
 
+                    }
+                    else{
+                        Toast.makeText(context,"not authorized",Toast.LENGTH_SHORT).show()
                     }
 
 
@@ -350,12 +404,15 @@ class VendorQotationFragment : Fragment() {
                 }
 
                 is NetworkState.NetworkException -> {
+                    Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
+                    Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+                    Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
                 }
 
                 else -> {
@@ -453,10 +510,13 @@ class VendorQotationFragment : Fragment() {
                 val videoUri: Uri? = result.data?.data
                 videoUri?.let {
                     displayVideoThumbnail(requireContext(),it, binding?.thumbnail)
-                    val file = File(getPathFromUri(requireContext(), it))
-                    val requestFile = file.asRequestBody("video/*".toMediaTypeOrNull())
-                    val part = MultipartBody.Part.createFormData("QUOTATION_ATTACHMENT[]", file.name, requestFile)
-                    multipart=part
+                    val videoFile1 = createTempFileFromUri(requireContext(), it)
+                    videoFile1?.let { file ->
+                        val requestFileNew = file.asRequestBody("video/*".toMediaTypeOrNull())
+                        val part = MultipartBody.Part.createFormData("QUOTATION_ATTACHMENT[]", file.name, requestFileNew)
+
+                        multipart = part
+                    }
                 }
 
 
@@ -464,6 +524,21 @@ class VendorQotationFragment : Fragment() {
             }
         }
 
+    }
+    fun createTempFileFromUri(context: Context, uri: Uri): File? {
+        return try {
+            val inputStream = context.contentResolver.openInputStream(uri)
+            val tempFile = File.createTempFile("temp_video", ".mp4", context.cacheDir)
+            inputStream?.use { input ->
+                tempFile.outputStream().use { output ->
+                    input.copyTo(output)
+                }
+            }
+            tempFile
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
     }
     private fun getPathFromUri(context: Context, uri: Uri): String {
         var filePath: String? = null
@@ -599,10 +674,11 @@ class VendorQotationFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*>->{
-                    // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+                     Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException->{
+
                 }
                 is NetworkState.HttpErrors.InternalServerError->{
                 }

@@ -100,7 +100,10 @@ class LandingVendorSActivity : AppCompatActivity(), ToolbarTitleChangeListener {
         toolbarV=toolbar
         toolbar.title = title
         setSupportActionBar(toolbar)
-
+        val reload:ImageView = findViewById<ImageView>(R.id.otp_back_iv)
+        reload.setOnClickListener {
+            onToolbarButtonClick()
+        }
 
         drawerLayout = findViewById(R.id.drawer_acedamy)
         val navView: NavigationView = findViewById(R.id.navigationView)
@@ -168,7 +171,7 @@ class LandingVendorSActivity : AppCompatActivity(), ToolbarTitleChangeListener {
             navController, drawerLayout
         )
     }
-    fun onToolbarButtonClick(reload: ImageView) {
+    fun onToolbarButtonClick() {
         val fragment = supportFragmentManager.findFragmentById(R.id.app_flow_vendor)
         if (fragment is NavHostFragment) {
 

@@ -170,6 +170,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all"
                     android:visibility="visible"
+                    android:paddingLeft="@dimen/_10sdp"
                     android:layout_marginVertical="@dimen/_7sdp"
                     tools:visibility="visible"
                     >

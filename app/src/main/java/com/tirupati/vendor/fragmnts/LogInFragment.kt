@@ -119,9 +119,10 @@ class LogInFragment : Fragment() {
 
 
     fun logInRequest(gstNumber: String) {
+        binding!!.loginProgressBar.progressBar.shown()
         lifecycleScope.launch {
             var response = logInVm.getLogIn(gstNumber)
-            binding!!.loginProgressBar.progressBar.shown()
+
 
             when (response) {
                 is NetworkState.Success->{
@@ -148,16 +149,22 @@ class LogInFragment : Fragment() {
                 is NetworkState.NetworkException->{
                     binding!!.loginProgressBar.progressBar.hidden()
 
+                        showCustomDialog(requireContext(),response.msg.toString(), "Error")
+
+
                 }
                 is NetworkState.HttpErrors.InternalServerError->{
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(),response.msg.toString(), "Error")
 
                 }
                 is NetworkState.HttpErrors.ResourceNotFound->{
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(),response.msg.toString(), "Error")
 
                 }
                 else->{
+                    showCustomDialog(requireContext(),"something went wrong", "Error")
                     binding!!.loginProgressBar.progressBar.hidden()
 
                 }

@@ -18,7 +18,7 @@ import javax.inject.Inject
 class CounterViewModel @Inject constructor(private val stateVMRepo: StateVMRepository) :
     ViewModel() {
 
-        var counterDetails = ObservableField<CounterResponseModel.RESPONSEDATA>()
+        var counterDetails = ObservableField<CounterResponseModel>()
     private val _navigateBack = MutableLiveData<Boolean>()
     val navigateBack: LiveData<Boolean> get() = _navigateBack
 
@@ -41,7 +41,7 @@ class CounterViewModel @Inject constructor(private val stateVMRepo: StateVMRepos
 
                 is NetworkState.Success -> {
                     withContext(Dispatchers.Main){
-                        counterDetails.set(response.body.responseData)
+                        counterDetails.set(response.body)
                     }
                 }
 
@@ -67,7 +67,7 @@ class CounterViewModel @Inject constructor(private val stateVMRepo: StateVMRepos
 
     }
     fun callSubmitCounterApi(header: HashMap<String, String>, body: UpdatePoDetailsRequest) {
-        body.PO_ID= counterDetails.get()?.poid
+        body.PO_ID= counterDetails.get()?.responseData?.poid
 
         viewModelScope.launch {
             var response = stateVMRepo.saveCounterPo(header,body)

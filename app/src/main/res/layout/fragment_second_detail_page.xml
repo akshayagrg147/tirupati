@@ -264,8 +264,8 @@
                         android:id="@+id/GSTnumberEt"
                         style="@style/et_login_signup"
                         android:hint="Organisation's GST Number"
+                        android:inputType="textCapCharacters"
                         android:importantForAutofill="noExcludeDescendants"
-                        android:inputType="text"
                         android:textAllCaps="true"
                         android:maxLength="50"
                         android:outlineAmbientShadowColor="@color/blue_light" />

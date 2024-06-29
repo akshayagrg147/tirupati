@@ -26,6 +26,9 @@
             android:contentDescription="add"
             app:backgroundTint="@color/white"
             app:rippleColor="@color/white" />
+    <include
+        android:id="@+id/loginProgressBar"
+        layout="@layout/layout_progress_bar" />
 
 
 </RelativeLayout>

@@ -58,6 +58,7 @@ import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.VendorRESPONSEDATAX
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.ui.LandingScreenGateKeeperActivity
+import com.tirupati.vendor.utils.AddressConverter
 import com.tirupati.vendor.utils.toast
 import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
 import com.tirupati.vendor.viewmodels.SignUpUploadsViewModel
@@ -92,7 +93,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
     lateinit var sessionManager: SessionManager
     private val images = mutableListOf<Uri>()
     private lateinit var adapter: ImageCamAdapter
-    var locationName = ""
+    var locationName = "hardcoded test"
     var latitude = 0.0
     var longitude = 0.0
     private val STORAGE_PERMISSION_CODE = 101
@@ -373,6 +374,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
         ) {
             return
         }
+
         fusedLocationProviderClient.requestLocationUpdates(
             locationRequest,
             object : LocationCallback() {
@@ -534,6 +536,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                 )
             } else {
                 setUpLocationListener()
+
             if(locationName.isNotEmpty()){
                 image1clicked=false
                 image2clicked=false
@@ -709,23 +712,25 @@ bindingUploads!!.bankletter.setOnClickListener{
         adapter.removeImage(position)
     }
     private fun getCompleteAddressString(LATITUDE: Double, LONGITUDE: Double) {
-        var strAdd = ""
-        val geocoder = Geocoder(requireContext(), Locale.getDefault())
-        try {
-            val addresses: List<Address>? = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1)
-            if (addresses != null) {
-                val returnedAddress: Address = addresses[0]
-                val strReturnedAddress = StringBuilder()
-                for (i in 0..returnedAddress.getMaxAddressLineIndex()) {
-                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n")
-                }
-                strAdd = strReturnedAddress.toString()
+        val apiKey = "AIzaSyBPlX3AuJuNr8bsZaaL2QQOI4weEkZkBb0"
+        val addressConverter = AddressConverter(apiKey)
+        var convertAddress:String?=null
+
+        addressConverter.getAddressFromLatLng(LATITUDE?:0.00, LONGITUDE?:0.00) { address ->
+            if (address != null) {
+                locationName=address
+                // Use the address here
+                println(address)
+            } else {
+
+                // Handle error
             }
-        } catch (e: Exception) {
-            e.printStackTrace()
         }
 
-        locationName = strAdd
+
+
+
+
         latitude = LATITUDE
         longitude =LONGITUDE
 
@@ -913,6 +918,18 @@ bindingUploads!!.bankletter.setOnClickListener{
     private fun callUploadImageData() {
 
         println("$latitude,$longitude,$locationName,$org_name,$org_contact, $org_email,$business_org_name,$ownerName,$legalName,$ownerContact,$ownerEmail,$podName,$ownerPan,$podWhatsapp,$addressName$country,$state,$city,$pinCode,$orgGst,$orgPAN$orgBank,$accountNumber,$accountType,$ifsc,$branchName,$branchPin ,$v1Name,$v1Contact,$v1Email,$v1Adhar,$v2Name,$v2Contact,$v2Email,$v2Adhar,$v3Name,$v3Contact,$v3Email,$v3Adhar")
+        println("first: ${first?.get(0)}, isEmpty: ${first.isNullOrEmpty()}")
+        println("second: ${second?.get(0)}, isEmpty: ${second.isNullOrEmpty()}")
+        println("third: $third, isEmpty: ${third.isNullOrEmpty()}")
+        println("fourth: $fourth, isEmpty: ${fourth.isNullOrEmpty()}")
+        println("fifth: $fifth, isEmpty: ${fifth.isNullOrEmpty()}")
+        println("sixth: $sixth, isEmpty: ${sixth.isNullOrEmpty()}")
+        println("seventh: $seventh, isEmpty: ${seventh.isNullOrEmpty()}")
+        println("eighth: $eighth, isEmpty: ${eighth.isNullOrEmpty()}")
+        println("ninth: $ninth, isEmpty: ${ninth.isNullOrEmpty()}")
+        println("tenth: $tenth, isEmpty: ${tenth.isNullOrEmpty()}")
+
+
         bindingUploads!!.loginProgressBar.progressBar.shown()
 
             lifecycleScope.launch {
@@ -948,25 +965,30 @@ bindingUploads!!.bankletter.setOnClickListener{
                     is NetworkState.Error<*> -> {
                         bindingUploads!!.loginProgressBar.progressBar.hidden()
 
-                        // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                     }
 
                     is NetworkState.NetworkException -> {
+                        Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+
                         bindingUploads!!.loginProgressBar.progressBar.hidden()
 
                     }
 
                     is NetworkState.HttpErrors.InternalServerError -> {
+                        Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                         bindingUploads!!.loginProgressBar.progressBar.hidden()
 
                     }
 
                     is NetworkState.HttpErrors.ResourceNotFound -> {
+                        Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                         bindingUploads!!.loginProgressBar.progressBar.hidden()
 
                     }
 
                     else -> {
+                        Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
                         bindingUploads!!.loginProgressBar.progressBar.hidden()
 
                     }
@@ -1048,18 +1070,27 @@ bindingUploads!!.bankletter.setOnClickListener{
                 arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE),
                 0
             )
+
         } else {
+
             if(typeOfStroge=="cam"){
+
                 val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                if (takePictureIntent.resolveActivity(requireActivity().packageManager) != null) {
-                    try {
+                try {
+
                         photoFile = createImageFile()
                         if (photoFile != null) {
-                            val photoURI = FileProvider.getUriForFile(
-                                requireContext(),
-                                requireContext().applicationContext.packageName + ".provider_paths",
-                                photoFile!!
-                            )
+                            val photoURI = if (Build.VERSION.SDK_INT >= 24) {
+                                requireContext().packageName
+                                FileProvider.getUriForFile(
+                                    requireContext(),
+                                    requireContext().packageName + ".provider",
+                                    photoFile!!
+                                )
+                            } else {
+                                Uri.fromFile(photoFile)
+                            }
+
                             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
                             startActivityForResult(takePictureIntent, RC_TAKE_PHOTO)
                         } else {
@@ -1067,12 +1098,10 @@ bindingUploads!!.bankletter.setOnClickListener{
                         }
                     } catch (ex: Exception) {
                         Log.e("CameraError", "Exception: ${ex.message}")
-                        toast(ex.message.toString())
+                        Toast.makeText(requireContext(), ex.message.toString(), Toast.LENGTH_SHORT).show()
                     }
-                } else {
-                    Log.e("CameraError", "No camera app found")
-                    toast("Error")
-                }
+
+
             }
             else{
                 val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
@@ -1887,33 +1916,8 @@ bindingUploads!!.bankletter.setOnClickListener{
     }
 
     private fun compressFile(inputFile: File, context: Context): File {
-        val outputDir = context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
-        val outputFile = File.createTempFile("compressed_", ".zip", outputDir)
 
-        val buffer = ByteArray(1024)
-
-        try {
-            val fileOutputStream = FileOutputStream(outputFile)
-            val zipOutputStream = ZipOutputStream(fileOutputStream)
-
-            val fileInputStream = FileInputStream(inputFile)
-            zipOutputStream.putNextEntry(ZipEntry(inputFile.name))
-
-            var length: Int
-            while (fileInputStream.read(buffer).also { length = it } > 0) {
-                zipOutputStream.write(buffer, 0, length)
-            }
-
-            zipOutputStream.closeEntry()
-            zipOutputStream.close()
-            fileInputStream.close()
-            fileOutputStream.close()
-
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-        return outputFile
+        return inputFile
     }
 
 }
