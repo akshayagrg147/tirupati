@@ -138,7 +138,7 @@ class ImageCamAdapter(private val images: MutableList<Uri>, private val onClickL
 
     inner class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageViewFB)
-        val deleteButton: ImageButton = itemView.findViewById(R.id.deleteButton)
+        val deleteButton: ImageView = itemView.findViewById(R.id.deleteButton)
     }
 
     inner class AddImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

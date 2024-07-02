@@ -29,6 +29,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
@@ -982,7 +983,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                     is NetworkState.Success -> {
                         bindingUploads!!.loginProgressBar.progressBar.hidden()
                         toast("Registered Successfully!!")
-                        findNavController().navigate(R.id.logInFragment2)
+                        showCustomDialog()
+
 
 //                    binding?.listOpts?.adapter!!.notifyDataSetChanged()
 
@@ -1027,6 +1029,31 @@ bindingUploads!!.bankletter.setOnClickListener{
 
 
     }
+
+
+    private fun showCustomDialog() {
+        // Inflate the custom layout
+        val customView = layoutInflater.inflate(R.layout.success_popup, null)
+
+        // Build the dialog
+        val dialog = AlertDialog.Builder(requireContext())
+            .setView(customView)
+            .setCancelable(true)
+            .create()
+
+        // Handle button click inside the custom layout
+        val dialogButton = customView.findViewById<TextView>(R.id.success)
+
+
+        dialogButton.setOnClickListener {
+            findNavController().navigate(R.id.logInFragment2)
+            dialog.dismiss()
+        }
+
+        // Show the dialog
+        dialog.show()
+    }
+
 
     private fun validateUI(binding: FragmentUploadsBinding): Boolean {
 

@@ -47,12 +47,13 @@
 
                         <ImageView
                             android:layout_below="@+id/uploadVendorTV"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+
                             android:scaleType="fitXY"
                             android:padding="@dimen/_6sdp"
                             android:id="@+id/InvoiceimageView"
-                            android:src="@drawable/appbg"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pdf"/>
 
                         <ImageView
                             android:layout_below="@+id/uploadVendorTV"
@@ -139,12 +140,13 @@
                             />
                         <ImageView
                             android:layout_below="@+id/uploadewayTV"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+
                             android:scaleType="fitXY"
                             android:padding="@dimen/_6sdp"
                             android:id="@+id/ewayBilimageView"
-                            android:src="@drawable/appbg"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pdf"/>
 
                         <ImageView
                             android:layout_below="@+id/uploadewayTV"
@@ -217,11 +219,12 @@
 
                         <ImageView
                             android:layout_below="@id/uploadeInvoiceTV"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pdf"
                             android:scaleType="fitXY"
                             android:id="@+id/eInvoiceimageView"
-                            android:src="@drawable/appbg"/>
+                         />
 
                         <ImageView
                             android:id="@+id/deleteeInvoice"
@@ -294,11 +297,12 @@
 
                         <ImageView
                             android:layout_below="@+id/uploadweightSlipTV"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pdf"
                             android:scaleType="fitXY"
                             android:id="@+id/weightSlip"
-                            android:src="@drawable/appbg"/>
+                    />
 
                         <ImageView
                             android:id="@+id/deleteWeightSlip"
@@ -369,10 +373,11 @@
                         <ImageView
                             android:layout_below="@+id/uploadeImgBhiTV"
                             android:id="@+id/imageslipBhiwadi"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pdf"
                             android:scaleType="fitXY"
-                            android:src="@drawable/appbg"/>
+                         />
 
                         <ImageView
                             android:layout_below="@+id/uploadeImgBhiTV"
@@ -446,10 +451,11 @@
                         <ImageView
                             android:layout_below="@+id/uploadTransporterTV"
                             android:id="@+id/ImgtransportBilty"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pdf"
                             android:scaleType="fitXY"
-                            android:src="@drawable/appbg"/>
+                            />
 
                         <ImageView
                             android:layout_below="@+id/uploadTransporterTV"
@@ -523,10 +529,11 @@
                         <ImageView
                             android:layout_below="@+id/uploadTollReceiptTV"
                             android:id="@+id/ImgTollReceipt"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pdf"
                             android:scaleType="fitXY"
-                            android:src="@drawable/appbg"/>
+                           />
 
                         <ImageView
                             android:layout_below="@+id/uploadTollReceiptTV"

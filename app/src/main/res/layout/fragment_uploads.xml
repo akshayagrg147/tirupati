@@ -111,9 +111,10 @@
                         android:layout_below="@+id/tvGST"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:src="@drawable/pdf"
                         android:scaleType="fitXY"
                         android:padding="@dimen/_6sdp"
-                        android:src="@drawable/pdf"/>
+                   />
 
                     <ImageView
                         android:id="@+id/deleteGst"
@@ -275,11 +276,12 @@
                     <ImageView
                         android:id="@+id/IVelecBill"
                         android:layout_below="@+id/TvElecBill"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pdf"
                         android:scaleType="fitXY"
                         android:padding="@dimen/_6sdp"
-                        android:src="@drawable/appbg"/>
+                      />
 
                     <ImageView
                         android:id="@+id/deleteIVElecBill"
@@ -288,7 +290,7 @@
                         android:layout_width="@dimen/_14sdp"
                         android:layout_height="@dimen/_14sdp"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="69dp"
+                        android:layout_marginStart="43dp"
                         android:layout_marginEnd="3dp"
                         android:src="@drawable/ic_delete"
                         />
@@ -352,11 +354,12 @@
                     <ImageView
                         android:id="@+id/IVrentDead"
                         android:layout_below="@+id/TvRentDead"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pdf"
                         android:scaleType="fitXY"
                         android:padding="@dimen/_6sdp"
-                        android:src="@drawable/appbg"/>
+                       />
 
                     <ImageView
                         android:id="@+id/deleteRentDead"
@@ -364,7 +367,7 @@
                         android:layout_width="@dimen/_14sdp"
                         android:layout_height="@dimen/_14sdp"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="69dp"
+                        android:layout_marginStart="43dp"
                         android:layout_marginEnd="3dp"
                         android:src="@drawable/ic_delete"
                         />
@@ -433,7 +436,7 @@
                         android:layout_height="@dimen/_80sdp"
                         android:scaleType="fitXY"
                         android:padding="@dimen/_6sdp"
-                        android:src="@drawable/appbg"/>
+                     />
 
                     <ImageView
                         android:id="@+id/IVdeletegodownImg"
@@ -441,8 +444,9 @@
                         android:layout_below="@+id/TvGodown"
                         android:layout_width="@dimen/_14sdp"
                         android:layout_height="@dimen/_14sdp"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="69dp"
+
+
+
                         android:layout_marginEnd="3dp"
                         android:src="@drawable/ic_delete"
                         />
@@ -507,11 +511,12 @@
                     <ImageView
                         android:id="@+id/cancelledCIv"
                         android:layout_below="@+id/Tvcheque"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pdf"
                         android:scaleType="fitXY"
                         android:padding="@dimen/_6sdp"
-                        android:src="@drawable/appbg"/>
+                       />
 
                     <ImageView
                         android:id="@+id/deleteChequeIV"
@@ -519,7 +524,7 @@
                         android:layout_width="@dimen/_14sdp"
                         android:layout_height="@dimen/_14sdp"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="69dp"
+                        android:layout_marginStart="43dp"
                         android:layout_marginEnd="3dp"
                         android:src="@drawable/ic_delete"
                         />
@@ -583,11 +588,12 @@
                     <ImageView
                         android:id="@+id/adhaarIV"
                         android:layout_below="@+id/TvAdharCard"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pdf"
                         android:scaleType="fitXY"
                         android:padding="@dimen/_6sdp"
-                        android:src="@drawable/appbg"/>
+                     />
 
                     <ImageView
                         android:id="@+id/deleteAdharIv"
@@ -595,7 +601,7 @@
                         android:layout_width="@dimen/_14sdp"
                         android:layout_height="@dimen/_14sdp"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="69dp"
+                        android:layout_marginStart="43dp"
                         android:layout_marginEnd="3dp"
                         android:src="@drawable/ic_delete"
                         />
@@ -658,11 +664,12 @@
                     <ImageView
                         android:id="@+id/bankConfirmIV"
                         android:layout_below="@+id/TvBankConfirmation"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pdf"
                         android:scaleType="fitXY"
                         android:padding="@dimen/_6sdp"
-                        android:src="@drawable/appbg"/>
+                      />
 
                     <ImageView
                         android:id="@+id/deleteBankConfirmIV"
@@ -670,7 +677,7 @@
                         android:layout_width="@dimen/_14sdp"
                         android:layout_height="@dimen/_14sdp"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="69dp"
+                        android:layout_marginStart="43dp"
                         android:layout_marginEnd="3dp"
                         android:src="@drawable/ic_delete"
                         />
@@ -758,11 +765,12 @@
                     <ImageView
                         android:id="@+id/ITRimageView"
                         android:layout_below="@+id/TvITR"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pdf"
                         android:scaleType="fitXY"
                         android:padding="@dimen/_6sdp"
-                        android:src="@drawable/appbg"/>
+                     />
 
                     <ImageView
                         android:id="@+id/deleteITRIV"
@@ -770,7 +778,7 @@
                         android:layout_width="@dimen/_14sdp"
                         android:layout_height="@dimen/_14sdp"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="69dp"
+                        android:layout_marginStart="43dp"
                         android:layout_marginEnd="3dp"
                         android:src="@drawable/ic_delete"
                         />
@@ -833,11 +841,12 @@
                     <ImageView
                         android:id="@+id/MSMEImageView"
                         android:layout_below="@+id/TvMSME"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pdf"
                         android:scaleType="fitXY"
                         android:padding="@dimen/_6sdp"
-                        android:src="@drawable/appbg"/>
+                     />
 
                     <ImageView
                         android:id="@+id/deleteMSMEImageView"
@@ -846,7 +855,7 @@
                         android:layout_width="@dimen/_14sdp"
                         android:layout_height="@dimen/_14sdp"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="69dp"
+                        android:layout_marginStart="43dp"
                         android:layout_marginEnd="3dp"
                         android:src="@drawable/ic_delete"
                         />
@@ -911,11 +920,12 @@
                     <ImageView
                         android:id="@+id/eInvoiceimageView"
                         android:layout_below="@+id/uploadEInvoiceTV"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"
+
                         android:scaleType="fitXY"
                         android:padding="@dimen/_6sdp"
-                        android:src="@drawable/appbg"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pdf"/>
 
                     <ImageView
                         android:id="@+id/deleteEInvoice"
@@ -923,7 +933,7 @@
                         android:layout_width="@dimen/_14sdp"
                         android:layout_height="@dimen/_14sdp"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="69dp"
+                        android:layout_marginStart="43dp"
                         android:layout_marginEnd="3dp"
                         android:src="@drawable/ic_delete"
                         />

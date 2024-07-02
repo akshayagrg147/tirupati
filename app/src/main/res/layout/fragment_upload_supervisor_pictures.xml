@@ -36,12 +36,13 @@
 
                 <ImageView
                     android:layout_below="@+id/uploadVendorTV"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pdf"
                     android:scaleType="fitXY"
                     android:padding="@dimen/_6sdp"
                     android:id="@+id/InvoiceimageView"
-                    android:src="@drawable/appbg"/>
+                />
 
                 <ImageView
                     android:layout_below="@+id/uploadVendorTV"
@@ -110,12 +111,13 @@
 
                 <ImageView
                     android:layout_below="@+id/uploadTollReceipt"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pdf"
                     android:scaleType="fitXY"
                     android:padding="@dimen/_6sdp"
                     android:id="@+id/tollReceiptimageView"
-                    android:src="@drawable/appbg"/>
+                   />
 
                 <ImageView
                     android:layout_below="@+id/uploadTollReceipt"
@@ -182,12 +184,13 @@
 
                 <ImageView
                     android:layout_below="@+id/uploadTollVehicleRC"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pdf"
                     android:scaleType="fitXY"
                     android:padding="@dimen/_6sdp"
                     android:id="@+id/vehicleRCimageView"
-                    android:src="@drawable/appbg"/>
+                  />
 
                 <ImageView
                     android:layout_below="@+id/uploadTollVehicleRC"
@@ -254,12 +257,13 @@
 
                 <ImageView
                     android:layout_below="@+id/uploadDrivinLC"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pdf"
                     android:scaleType="fitXY"
                     android:padding="@dimen/_6sdp"
                     android:id="@+id/uploadDrivinLCImageView"
-                    android:src="@drawable/appbg"/>
+                  />
 
                 <ImageView
                     android:layout_below="@+id/uploadDrivinLC"

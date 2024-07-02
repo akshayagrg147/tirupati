@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmnts.GateEntryDetailFragment">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/shapeImageView"
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_marginTop="@dimen/_23sdp"
+        android:src="@drawable/success"
+
+        style="@style/Style.App.circleImageView"
+        />
+    <AutoCompleteTextView
+        android:id="@+id/purchaseNo"
+        style="@style/et_login_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monsrt_bold"
+
+        android:text="Your profile registration has been completed successfully!"
+
+        android:focusable="false"
+        android:importantForAutofill="noExcludeDescendants"
+
+
+
+        android:outlineAmbientShadowColor="@color/blue_light"
+        android:paddingStart="@dimen/_15sdp" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/success"
+            style="@style/loginButton"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:fontFamily="@font/monsrt_bold"
+            android:background="@drawable/square_filled_black"
+
+            android:text="Proced"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>
