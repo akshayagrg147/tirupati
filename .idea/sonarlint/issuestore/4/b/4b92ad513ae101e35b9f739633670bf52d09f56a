@@ -1,5 +1,5 @@
 
-fkotlin:S6615Ñ" Remove this useless initializer.(²©Ž 8Þ‘ç›„2J$28dc79c8-e4d5-4049-8c5a-6ab10a40b619
-ikotlin:S125†"Remove this commented out code.(Žñ£¹ÿÿÿÿÿ8à‘ç›„2J$4cd1e3c1-e673-4462-888d-92fc6f3c9b5c
-—kotlin:S3776J"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(©Àùè8é‘ç›„2J$4d629200-0e96-4817-b499-f06751ab32d5
-ˆkotlin:S6511Ò"=Merge chained "if" statements into a single "when" statement.(…ù‚×üÿÿÿÿ8ë‘ç›„2J$8b70e51c-ee0a-42c2-8d95-6ae35724a325
+fkotlin:S6615Ñ" Remove this useless initializer.(²©Ž 8Þ‘ç›„2J$b85636ab-403e-4dd0-84f9-695abd562f37
+ikotlin:S125†"Remove this commented out code.(Žñ£¹ÿÿÿÿÿ8à‘ç›„2J$4cf9c1d6-92af-4949-aec7-692dd8c88d54
+—kotlin:S3776J"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(©Àùè8é‘ç›„2J$e177615d-4815-4d0f-abdb-e0e81ced73cf
+ˆkotlin:S6511Ò"=Merge chained "if" statements into a single "when" statement.(…ù‚×üÿÿÿÿ8ë‘ç›„2J$0cc27261-fe09-413e-8b62-85c5fe67dcf9

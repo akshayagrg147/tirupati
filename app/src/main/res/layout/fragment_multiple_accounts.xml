@@ -521,7 +521,7 @@
                             <EditText
                                 android:id="@+id/thirdVAdhar"
                                 style="@style/et_login_signup"
-                                android:hint="Owner's Adhar Card"
+                                android:hint="Owner's Pan Card"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -671,7 +671,7 @@
                             <EditText
                                 android:id="@+id/fourthVAdhar"
                                 style="@style/et_login_signup"
-                                android:hint="Owner's Adhar Card"
+                                android:hint="Owner's Pan Card"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"

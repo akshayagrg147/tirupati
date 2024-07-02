@@ -8,7 +8,7 @@ abstract class NetworkCall {
     suspend fun <T : Any> safeApiCall(call: suspend () -> Response<T>): NetworkState<T> {
         return try {
             val response = call.invoke()
-            Log.d("kjkjkj",response.toString())
+                Log.d("kjkjkj",response.toString())
 
             if (response.isSuccessful) {
                 NetworkState.Success(response.body()!!)

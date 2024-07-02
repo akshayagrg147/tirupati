@@ -112,17 +112,17 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
     var allowLocation = false
 
-    private val images1 = ArrayList<File>()
-    private val images2 = ArrayList<File>()
-    private val images3 = ArrayList<File>()
-    private val images4 = ArrayList<File>()
+    private val pdf1 = ArrayList<File>()
+    private val pdf2 = ArrayList<File>()
+    private val pdf3 = ArrayList<File>()
+    private val pdf4 = ArrayList<File>()
     private val images5 = ArrayList<File>()
-    private val images6 = ArrayList<File>()
-    private val images7 = ArrayList<File>()
-    private val images8 = ArrayList<File>()
-    private val images9 = ArrayList<File>()
-    private val images10 = ArrayList<File>()
-    private val images11 = ArrayList<File>()
+    private val pdf6 = ArrayList<File>()
+    private val pdf7 = ArrayList<File>()
+    private val pdf8 = ArrayList<File>()
+    private val pdf9 = ArrayList<File>()
+    private val pdf10 = ArrayList<File>()
+    private val pdf11 = ArrayList<File>()
 
     private var image1:String = ""
     private var image1clicked:Boolean = false
@@ -164,11 +164,11 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
     private var image10:String=""
     private var image10clicked:Boolean = false
-    private var tenth:ArrayList<MultipartBody.Part?>?=null
+    private var tenth:ArrayList<MultipartBody.Part?>? =arrayListOf()
 
     private var image11:String=""
     private var image11clicked:Boolean = false
-    private var elevnth:ArrayList<MultipartBody.Part?>?=null
+    private var elevnth:ArrayList<MultipartBody.Part?>? =arrayListOf()
 
     var org_name =""
     var org_contact = ""
@@ -194,9 +194,11 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
     var ifsc = ""
     var branchName = ""
     var branchPin = ""
+    var msme = "0"
+    var einvoice = "0"
 
 
-    var MSME= ""
+
     var EINVOICE = ""
     var MULTIPLE_ACCOUNTS=""
 
@@ -244,6 +246,9 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             pinCode =args.getString("PIN","")
             orgGst =args.getString("ORG_GST","")
             orgPAN =args.getString("ORG_PAN","")
+                msme =args.getString("MSME","0")
+                einvoice =args.getString("EINVOICE","0")
+                MULTIPLE_ACCOUNTS =args.getString("OTHERAPPLICABLE","0")
             //NEW ADDED
             orgBank= args.getString("BANK_NAME","")
             accountNumber =args.getString("ACCOUNT_NUMBER","")
@@ -280,7 +285,9 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                 branchName =args.getString("BRANCH_NAME","")
                 branchPin =args.getString("PINCODE","")
 
-
+                msme =args.getString("MSME","0")
+                einvoice =args.getString("EINVOICE","0")
+                MULTIPLE_ACCOUNTS =args.getString("OTHERAPPLICABLE","0")
 
                 args.putString("MSME","")
                 args.putString("EINVOICE","")
@@ -306,6 +313,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
             }
         }
+
 
 
     }
@@ -438,6 +446,26 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
         bindingUploads = FragmentUploadsBinding.inflate(inflater, container, false)
         bindingUploads?.btnBackForm?.setOnClickListener{
             findNavController(). popBackStack()
+
+        }
+        if(msme=="1"){
+            bindingUploads?.MsmeLL?.visibility=View.VISIBLE
+            bindingUploads?.MsmeRL?.visibility=View.GONE
+
+
+        }
+        else{
+            bindingUploads?.MsmeLL?.visibility=View.GONE
+            bindingUploads?.MsmeRL?.visibility=View.GONE
+
+        }
+        if(einvoice=="1"){
+            bindingUploads?.eInvRL?.visibility=View.GONE
+            bindingUploads?.eInvLL?.visibility=View.VISIBLE
+        }
+        else{
+            bindingUploads?.eInvRL?.visibility=View.GONE
+            bindingUploads?.eInvLL?.visibility=View.GONE
 
         }
 
@@ -944,8 +972,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                     ownerName,ownerContact,ownerEmail,
                     org_name,legalName,ownerName,ownerContact,ownerEmail,podName,ownerPan,podWhatsapp,
                     addressName,"1",state,city,pinCode,orgGst,orgPAN,
-                    orgBank,accountNumber,accountType,branchName,ifsc,MSME,EINVOICE,
-                    first!!,second!!,third!!,fourth!!,fifth!!,sixth!!,seventh!!,eighth!!,ninth!!,tenth!!,elevnth!!
+                    orgBank,accountNumber,accountType,branchName,ifsc,msme,einvoice,
+                    first!!,second!!,third!!,fourth!!,fifth!!,sixth!!,seventh!!,eighth!!,ninth!!,tenth?: arrayListOf(),elevnth?: arrayListOf()
 
                 )
 
@@ -1003,19 +1031,19 @@ bindingUploads!!.bankletter.setOnClickListener{
     private fun validateUI(binding: FragmentUploadsBinding): Boolean {
 
         var status = false
-        if (images1.isEmpty()) {
+        if (pdf1.isEmpty()) {
             showCustomDialog(requireContext(), "Please upload GST certificate","Error")
             status = false
         }
-        else if (images2.isEmpty()) {
+        else if (pdf2.isEmpty()) {
             showCustomDialog(requireContext(), "Please upload Owner's Pancard","Error")
             status = false
         }
-        else if (images3.isEmpty()) {
+        else if (pdf3.isEmpty()) {
             showCustomDialog(requireContext(), "Please upload Electricity bill","Error")
             status = false
         }
-        else if (images4.isEmpty()) {
+        else if (pdf4.isEmpty()) {
             showCustomDialog(requireContext(), "Please upload Rent dead","Error")
             status = false
         }
@@ -1024,33 +1052,51 @@ bindingUploads!!.bankletter.setOnClickListener{
             status = false
         }
 //        ==========================================================
-        else if (images6.isEmpty()) {
+        else if (pdf6.isEmpty()) {
             showCustomDialog(requireContext(), "Please upload cancelled cheque","Error")
             status = false
         }
-        else if (images7.isEmpty()) {
+        else if (pdf7.isEmpty()) {
             showCustomDialog(requireContext(), "Please upload Organisation PAN card","Error")
             status = false
         }
-        else if (images8.isEmpty()) {
+        else if (pdf8.isEmpty()) {
             showCustomDialog(requireContext(), "Please upload Bank confirmation letter","Error")
             status = false
         }
-        else if (images9.isEmpty()) {
+        else if (pdf9.isEmpty()) {
             showCustomDialog(requireContext(), "Please upload ITR Acknowledgement","Error")
             status = false
         }
-        else if (images10.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload MSME","Error")
-            status = false
+        else if(msme=="1") {
+            if (pdf10.isEmpty()) {
+                showCustomDialog(requireContext(), "Please upload MSME", "Error")
+                status = false
+            }
+            else{
+                if(einvoice=="1"){
+                    if (pdf11.isEmpty()) {
+                        showCustomDialog(requireContext(), "Please upload E-Invoice Applicable","Error")
+                        status = false
+                    }
+                    else{
+                        return true
+                    }
+
+                }
+                else {
+                    return true
+                }
+
+            }
         }
-        else if (images11.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload E-Invoice Applicable","Error")
-            status = false
+        else if(einvoice=="1"){
+            if (pdf11.isEmpty()) {
+                showCustomDialog(requireContext(), "Please upload E-Invoice Applicable","Error")
+                status = false
+            }
+
         }
-
-
-
         else {
             return true
         }
@@ -1104,10 +1150,11 @@ bindingUploads!!.bankletter.setOnClickListener{
 
             }
             else{
-                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-                intent.addCategory(Intent.CATEGORY_OPENABLE)
-                intent.type = "application/pdf"
-                startActivityForResult(intent, PICK_PDF_REQUEST_CODE)
+                val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
+                    type = "application/pdf"
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                }
+                startActivityForResult(Intent.createChooser(intent, "Select PDF"), PICK_PDF_REQUEST_CODE)
                 /*var intentPDF=Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                     type = "application/pdf"
                     addCategory(Intent.CATEGORY_OPENABLE)
@@ -1137,10 +1184,19 @@ bindingUploads!!.bankletter.setOnClickListener{
         mCurrentPhotoPath = image.absolutePath
         return image
     }
-    private fun filesToMultipartParts(keyName:String,imageFiles: List<File>): ArrayList<MultipartBody.Part?> {
+    private fun filesToMultipartPartsImage(keyName:String,imageFile: List<File>): ArrayList<MultipartBody.Part?> {
         val parts = ArrayList<MultipartBody.Part?>()
-        for (file in imageFiles) {
+        for (file in imageFile) {
             val requestFile = file.asRequestBody("image/*".toMediaTypeOrNull())
+            val part = MultipartBody.Part.createFormData(keyName, file.name, requestFile)
+            parts.add(part)
+        }
+        return parts
+    }
+    private fun filesToMultipartParts(keyName: String, pdfFiles: List<File>): ArrayList<MultipartBody.Part?> {
+        val parts = ArrayList<MultipartBody.Part?>()
+        for (file in pdfFiles) {
+            val requestFile = file.asRequestBody("application/pdf".toMediaTypeOrNull())
             val part = MultipartBody.Part.createFormData(keyName, file.name, requestFile)
             parts.add(part)
         }
@@ -1176,16 +1232,17 @@ bindingUploads!!.bankletter.setOnClickListener{
 
                 when {
                     image1clicked -> {
-                        val file1 =getImageFromUri(Uri.fromFile(File(selectedPaths)))
+
 
 
 //                        gstCerRL
 //                        gstIv
 //                        deleteGst
 //                        gstCerLL
+                        val file1 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
 
-                        images1.add(compressFile(file1!!,requireContext()))
-                        first= filesToMultipartParts("GST_CERTIFICATE[]",images1)
+                        pdf1.add(compressFile(file1!!,requireContext()))
+                        first= filesToMultipartParts("GST_CERTIFICATE[]",pdf1)
                         bindingUploads?.gstCerLL?.visibility = View.GONE
                         bindingUploads!!.gstCerRL.visibility = View.VISIBLE
                         bindingUploads!!.gstIv.setImageURI(Uri.fromFile(File(selectedPaths)))
@@ -1224,10 +1281,10 @@ bindingUploads!!.bankletter.setOnClickListener{
 
 
 
-                        val file3 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
+                        val file3 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
 
-                        images3.add(compressFile(file3!!,requireContext()))
-                        third= filesToMultipartParts("ELECTRIC_BILL[]",images3)
+                        pdf3.add(compressFile(file3!!,requireContext()))
+                        third= filesToMultipartParts("ELECTRIC_BILL[]",pdf3)
 
 //                        eleBillRL
 //                        IVelecBill
@@ -1247,10 +1304,10 @@ bindingUploads!!.bankletter.setOnClickListener{
                     }
                     image4clicked -> {
 
-                        val file4 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
+                        val file4 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
 
-                        images4.add(compressFile(file4!!,requireContext()))
-                        fourth= filesToMultipartParts("RENT_DOC[]",images4)
+                        pdf4.add(compressFile(file4!!,requireContext()))
+                        fourth= filesToMultipartParts("RENT_DOC[]",pdf4)
 
 //                        rentDeaRL
 //                        IVrentDead
@@ -1268,10 +1325,10 @@ bindingUploads!!.bankletter.setOnClickListener{
                     }
                     image5clicked -> {
 
-                        val file5 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
+                        val file5 = uriToFile(Uri.fromFile(File(selectedPaths)))
 
                         images5.add(compressFile(file5!!,requireContext()))
-                        fifth= filesToMultipartParts("GODOWN_PIC[]",images5)
+                        fifth= filesToMultipartPartsImage("GODOWN_PIC[]",images5)
 
 
 //                        godwonRL
@@ -1293,10 +1350,10 @@ bindingUploads!!.bankletter.setOnClickListener{
 
                     image6clicked -> {
 
-                        val file6 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
+                        val file6 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
 
-                        images6.add(compressFile(file6!!,requireContext()))
-                        sixth= filesToMultipartParts("CANCEL_CHEQUE[]",images6)
+                        pdf6.add(compressFile(file6!!,requireContext()))
+                        sixth= filesToMultipartParts("CANCEL_CHEQUE[]",pdf6)
 //                        ccRL
 //                        cancelledCIv
 //                        deleteChequeIV
@@ -1314,10 +1371,10 @@ bindingUploads!!.bankletter.setOnClickListener{
                     }
                     image7clicked -> {
 
-                        val file7 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
+                        val file7 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
 
-                        images7.add(compressFile(file7!!,requireContext()))
-                        seventh= filesToMultipartParts("OWNER_AADHAR[]",images7)
+                        pdf7.add(compressFile(file7!!,requireContext()))
+                        seventh= filesToMultipartParts("OWNER_AADHAR[]",pdf7)
 
 //                        adharRL
 //                        adhaarIV
@@ -1336,11 +1393,11 @@ bindingUploads!!.bankletter.setOnClickListener{
                     }
                     image8clicked -> {
 
-                        val file8 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
+                        val file8 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
 
-                        images8.add(compressFile(file8!!,requireContext()))
+                        pdf8.add(compressFile(file8!!,requireContext()))
 
-                        eighth= filesToMultipartParts("BANK_CONF_LETTER[]",images8)
+                        eighth= filesToMultipartParts("BANK_CONF_LETTER[]",pdf8)
 //                        BCRL
 //                        bankConfirmIV
 //                        deleteBankConfirmIV
@@ -1360,10 +1417,10 @@ bindingUploads!!.bankletter.setOnClickListener{
 //                        ITRimageView
 //                        deleteITRIV
 //                        itrLL
-                        val file9 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
+                        val file9 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
 
-                        images9.add(compressFile(file9!!,requireContext()))
-                        ninth= filesToMultipartParts("ITR_ACK[]",images9)
+                        pdf9.add(compressFile(file9!!,requireContext()))
+                        ninth= filesToMultipartParts("ITR_ACK[]",pdf9)
 
                         bindingUploads?.itrLL?.visibility = View.GONE
                         bindingUploads!!.itrRL.visibility = View.VISIBLE
@@ -1377,10 +1434,10 @@ bindingUploads!!.bankletter.setOnClickListener{
                     }
                     image10clicked -> {
 
-                        val file10 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
+                        val file10 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
 
-                        images10.add(compressFile(file10!!,requireContext()))
-                        tenth= filesToMultipartParts("MSME[]",images10)
+                        pdf10.add(compressFile(file10!!,requireContext()))
+                        tenth= filesToMultipartParts("MSME[]",pdf10)
 //                        MsmeRL
 //                        MSMEImageView
 //                        deleteMSMEImageView
@@ -1397,11 +1454,11 @@ bindingUploads!!.bankletter.setOnClickListener{
                     }
                     image11clicked -> {
 
-                        val file11 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
+                        val file11 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
 
-                        images11.add(compressFile(file11!!,requireContext()))
+                        pdf11.add(compressFile(file11!!,requireContext()))
 
-                        elevnth= filesToMultipartParts("E_INVOICE[]",images11)
+                        elevnth= filesToMultipartParts("E_INVOICE[]",pdf11)
 //                        eInvRL
 //                        eInvoiceimageView
 //                        deleteEInvoice
@@ -1430,61 +1487,43 @@ bindingUploads!!.bankletter.setOnClickListener{
                 // The user selected a PDF file.
                 // You can use this URI to read or display the PDF.
                 val selectedPdfUri: Uri = uri1
-
-                val uri: Uri = selectedPdfUri
-                val uriString = uri.toString()
+                val uriString = selectedPdfUri.toString()
                 val myFile = File(uriString)
                 val path = myFile.absolutePath
                 var displayName: String? = null
 
-                when{
+
+                val file = getImageFromUri(uri=selectedPdfUri ?: return)
+
+                when {
                     image1clicked -> {
 
-                        if (uriString.startsWith("content://")) {
-                            var cursor: Cursor? = null
-                            try {
-                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-                                if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
-                                    Log.d("lllllllllll",displayName)
-                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-                                    val path=fileFromContentUri(requireContext(),uri)
-                                    images1.add(compressFile(path,requireContext()))
-                                    first= filesToMultipartParts("GST_CERTIFICATE[]",images1)
-                                    bindingUploads?.gstCerLL?.visibility = View.GONE
-                                    bindingUploads!!.gstCerRL.visibility = View.VISIBLE
-                                    bindingUploads!!.gstIv.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
 
-                                    bindingUploads!!.deleteGst.setOnClickListener {
-                                        bindingUploads?.gstCerLL?.visibility = View.VISIBLE
-                                        bindingUploads!!.gstCerRL.visibility = View.GONE
-                                    }
-                                }
-                            } finally {
+                        pdf1.add(file)
+                        first = filesToMultipartParts("GST_CERTIFICATE[]", pdf1)
+                        bindingUploads?.gstCerLL?.visibility = View.GONE
+                        bindingUploads!!.gstCerRL.visibility = View.VISIBLE
+                        bindingUploads!!.gstIv.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
 
-                                cursor!!.close()
-                            }
-                        } else if (uriString.startsWith("file://")) {
-                            displayName = myFile.name
-                            Log.d("lllllllllll",displayName)
-
+                        bindingUploads!!.deleteGst.setOnClickListener {
+                            bindingUploads?.gstCerLL?.visibility = View.VISIBLE
+                            bindingUploads!!.gstCerRL.visibility = View.GONE
                         }
                     }
                     image2clicked -> {
                         if (uriString.startsWith("content://")) {
                             var cursor: Cursor? = null
                             try {
-                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
+                                cursor = requireActivity().contentResolver.query(selectedPdfUri, null, null, null, null)
                                 if (cursor != null && cursor.moveToFirst()) {
                                     displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                     Log.d("lllllllllll",displayName)
                                     val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-
                                     adapter.addImage(uri)
-                                    val path=fileFromContentUri(requireContext(),uri)
+                                    val path=getImageFromUri(requireContext(),uri)
 ////
-                                    images2.add(compressFile(path,requireContext()))
-                                    second = filesToMultipartPartsPDF("COM_PAN_CARD[]",images2,requireContext())
+                                    pdf2.add(compressFile(path,requireContext()))
+                                    second = filesToMultipartPartsPDF("COM_PAN_CARD[]",pdf2,requireContext())
                                 }
                             } finally {
 
@@ -1497,315 +1536,106 @@ bindingUploads!!.bankletter.setOnClickListener{
                         }
                     }
                     image3clicked -> {
+                        pdf3.add(file)
+                        third = filesToMultipartParts("ELECTRIC_BILL[]", pdf3)
+                        bindingUploads?.eleBillLL?.visibility = View.GONE
+                        bindingUploads!!.eleBillRL.visibility = View.VISIBLE
+                        bindingUploads!!.IVelecBill.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
 
-                        if (uriString.startsWith("content://")) {
-                            var cursor: Cursor? = null
-                            try {
-                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-                                if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
-                                    Log.d("lllllllllll",displayName)
-                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-                                    val path=fileFromContentUri(requireContext(),uri)
-                                    images3.add(compressFile(path,requireContext()))
-                                    third= filesToMultipartParts("ELECTRIC_BILL[]",images3)
-                                    bindingUploads?.eleBillLL?.visibility = View.GONE
-                                    bindingUploads!!.eleBillRL.visibility = View.VISIBLE
-                                    bindingUploads!!.IVelecBill.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
-                                    bindingUploads!!.deleteIVElecBill.setOnClickListener {
-                                        bindingUploads?.eleBillLL?.visibility = View.VISIBLE
-                                        bindingUploads!!.eleBillRL.visibility = View.GONE
-                                    }
-                                }
-                            } finally {
-                                cursor!!.close()
-                            }
-                        } else if (uriString.startsWith("file://")) {
-                            displayName = myFile.name
-                            Log.d("lllllllllll",displayName)
+                        bindingUploads!!.deleteIVElecBill.setOnClickListener {
+                            bindingUploads?.eleBillLL?.visibility = View.VISIBLE
+                            bindingUploads!!.eleBillRL.visibility = View.GONE
                         }
-
-
                     }
                     image4clicked -> {
+                        pdf4.add(file)
+                        fourth = filesToMultipartParts("RENT_DOC[]", pdf4)
+                        bindingUploads?.rentDeaLL?.visibility = View.GONE
+                        bindingUploads!!.rentDeaRL.visibility = View.VISIBLE
+                        bindingUploads!!.IVrentDead.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
 
-                        if (uriString.startsWith("content://")) {
-                            var cursor: Cursor? = null
-                            try {
-                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-                                if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
-                                    Log.d("lllllllllll",displayName)
-                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-                                    val path=fileFromContentUri(requireContext(),uri)
-                                    images4.add(compressFile(path,requireContext()))
-                                    fourth= filesToMultipartParts("RENT_DOC[]",images4)
-
-//                        rentDeaRL
-//                        IVrentDead
-//                        deleteRentDead
-//                        rentDeaLL
-                                    bindingUploads?.rentDeaLL?.visibility = View.GONE
-                                    bindingUploads!!.rentDeaRL.visibility = View.VISIBLE
-                                    bindingUploads!!.IVrentDead.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
-                                    bindingUploads!!.deleteRentDead.setOnClickListener {
-                                        bindingUploads?.rentDeaLL?.visibility = View.VISIBLE
-                                        bindingUploads!!.rentDeaRL.visibility = View.GONE
-
-                                    }
-                                }
-                            } finally {
-
-                                cursor!!.close()
-                            }
-                        } else if (uriString.startsWith("file://")) {
-                            displayName = myFile.name
-                            Log.d("lllllllllll",displayName)
-
+                        bindingUploads!!.deleteRentDead.setOnClickListener {
+                            bindingUploads?.rentDeaLL?.visibility = View.VISIBLE
+                            bindingUploads!!.rentDeaRL.visibility = View.GONE
                         }
-
-
-
                     }
                     image6clicked -> {
+                        pdf6.add(file)
+                        sixth = filesToMultipartParts("CANCEL_CHEQUE[]", pdf6)
+                        bindingUploads?.ccLL?.visibility = View.GONE
+                        bindingUploads!!.ccRL.visibility = View.VISIBLE
+                        bindingUploads!!.cancelledCIv.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
 
-                        if (uriString.startsWith("content://")) {
-                            var cursor: Cursor? = null
-                            try {
-                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-                                if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
-                                    Log.d("lllllllllll",displayName)
-                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-                                    val path=fileFromContentUri(requireContext(),uri)
-                                    images6.add(compressFile(path,requireContext()))
-                                    sixth= filesToMultipartParts("CANCEL_CHEQUE[]",images6)
-//                        ccRL
-//                        cancelledCIv
-//                        deleteChequeIV
-//                        ccLL
-
-                                    bindingUploads?.ccLL?.visibility = View.GONE
-                                    bindingUploads!!.ccRL.visibility = View.VISIBLE
-                                    bindingUploads!!.cancelledCIv.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
-                                    bindingUploads!!.deleteChequeIV.setOnClickListener {
-                                        bindingUploads?.ccLL?.visibility = View.VISIBLE
-                                        bindingUploads!!.ccRL.visibility = View.GONE
-
-                                    }
-                                }
-                            } finally {
-
-                                cursor!!.close()
-                            }
-                        } else if (uriString.startsWith("file://")) {
-                            displayName = myFile.name
-                            Log.d("lllllllllll",displayName)
-
+                        bindingUploads!!.deleteChequeIV.setOnClickListener {
+                            bindingUploads?.ccLL?.visibility = View.VISIBLE
+                            bindingUploads!!.ccRL.visibility = View.GONE
                         }
-
-
-
                     }
                     image7clicked -> {
-                        if (uriString.startsWith("content://")) {
-                            var cursor: Cursor? = null
-                            try {
-                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-                                if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
-                                    Log.d("lllllllllll",displayName)
-                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-                                    val path=fileFromContentUri(requireContext(),uri)
-                                    images7.add(compressFile(path,requireContext()))
-                                    seventh= filesToMultipartParts("OWNER_AADHAR[]",images7)
+                        pdf7.add(file)
+                        seventh = filesToMultipartParts("OWNER_AADHAR[]", pdf7)
+                        bindingUploads?.adharLL?.visibility = View.GONE
+                        bindingUploads!!.adharRL.visibility = View.VISIBLE
+                        bindingUploads!!.adhaarIV.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
 
-//                        adharRL
-//                        adhaarIV
-//                        deleteAdharIv
-//                        adharLL
-                                    bindingUploads?.adharLL?.visibility = View.GONE
-                                    bindingUploads!!.adharRL.visibility = View.VISIBLE
-                                    bindingUploads!!.adhaarIV.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
-                                    bindingUploads!!.deleteAdharIv.setOnClickListener {
-                                        bindingUploads?.adharLL?.visibility = View.VISIBLE
-                                        bindingUploads!!.adharRL.visibility = View.GONE
-                                        seventh!!.clear()
-
-                                    }
-                                }
-                            } finally {
-
-                                cursor!!.close()
-                            }
-                        } else if (uriString.startsWith("file://")) {
-                            displayName = myFile.name
-                            Log.d("lllllllllll",displayName)
-
+                        bindingUploads!!.deleteAdharIv.setOnClickListener {
+                            bindingUploads?.adharLL?.visibility = View.VISIBLE
+                            bindingUploads!!.adharRL.visibility = View.GONE
+                            seventh!!.clear()
                         }
-
-
-
                     }
                     image8clicked -> {
-                        if (uriString.startsWith("content://")) {
-                            var cursor: Cursor? = null
-                            try {
-                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-                                if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
-                                    Log.d("lllllllllll",displayName)
-                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-                                    val path=fileFromContentUri(requireContext(),uri)
-                                    images8.add(compressFile(path,requireContext()))
+                        pdf8.add(file)
+                        eighth = filesToMultipartParts("BANK_CONF_LETTER[]", pdf8)
+                        bindingUploads?.BCLL?.visibility = View.GONE
+                        bindingUploads!!.BCRL.visibility = View.VISIBLE
+                        bindingUploads!!.bankConfirmIV.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
 
-                                    eighth= filesToMultipartParts("BANK_CONF_LETTER[]",images8)
-                                    bindingUploads?.BCLL?.visibility = View.GONE
-                                    bindingUploads!!.BCRL.visibility = View.VISIBLE
-                                    bindingUploads!!.bankConfirmIV.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
-                                    bindingUploads!!.deleteBankConfirmIV.setOnClickListener {
-                                        bindingUploads?.BCLL?.visibility = View.VISIBLE
-                                        bindingUploads!!.BCRL.visibility = View.GONE
-
-                                    }
-                                }
-                            } finally {
-
-                                cursor!!.close()
-                            }
-                        } else if (uriString.startsWith("file://")) {
-                            displayName = myFile.name
-                            Log.d("lllllllllll",displayName)
-
+                        bindingUploads!!.deleteBankConfirmIV.setOnClickListener {
+                            bindingUploads?.BCLL?.visibility = View.VISIBLE
+                            bindingUploads!!.BCRL.visibility = View.GONE
                         }
-
-
-
                     }
                     image9clicked -> {
-                        if (uriString.startsWith("content://")) {
-                            var cursor: Cursor? = null
-                            try {
-                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-                                if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
-                                    Log.d("lllllllllll",displayName)
-                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-                                    val path=fileFromContentUri(requireContext(),uri)
-                                    images9.add(compressFile(path,requireContext()))
-                                    ninth= filesToMultipartParts("ITR_ACK[]",images9)
+                        pdf9.add(file)
+                        ninth = filesToMultipartParts("ITR_ACK[]", pdf9)
+                        bindingUploads?.itrLL?.visibility = View.GONE
+                        bindingUploads!!.itrRL.visibility = View.VISIBLE
+                        bindingUploads!!.ITRimageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
 
-                                    bindingUploads?.itrLL?.visibility = View.GONE
-                                    bindingUploads!!.itrRL.visibility = View.VISIBLE
-                                    bindingUploads!!.ITRimageView.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
-                                    bindingUploads!!.deleteITRIV.setOnClickListener {
-                                        bindingUploads?.itrLL?.visibility = View.VISIBLE
-                                        bindingUploads!!.itrRL.visibility = View.GONE
-
-                                    }
-                                }
-                            } finally {
-
-                                cursor!!.close()
-                            }
-                        } else if (uriString.startsWith("file://")) {
-                            displayName = myFile.name
-                            Log.d("lllllllllll",displayName)
-
+                        bindingUploads!!.deleteITRIV.setOnClickListener {
+                            bindingUploads?.itrLL?.visibility = View.VISIBLE
+                            bindingUploads!!.itrRL.visibility = View.GONE
                         }
-
-
-
                     }
                     image10clicked -> {
-                        if (uriString.startsWith("content://")) {
-                            var cursor: Cursor? = null
-                            try {
-                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-                                if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
-                                    Log.d("lllllllllll",displayName)
-                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-                                    val path=fileFromContentUri(requireContext(),uri)
-                                    images10.add(compressFile(path,requireContext()))
-                                    tenth= filesToMultipartParts("MSME[]",images10)
-//                        MsmeRL
-//                        MSMEImageView
-//                        deleteMSMEImageView
-//                        MsmeLL
-                                    bindingUploads?.MsmeLL?.visibility = View.GONE
-                                    bindingUploads!!.MsmeRL.visibility = View.VISIBLE
-                                    bindingUploads!!.MSMEImageView.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
-                                    bindingUploads!!.deleteMSMEImageView.setOnClickListener {
-                                        bindingUploads?.MsmeLL?.visibility = View.VISIBLE
-                                        bindingUploads!!.MsmeRL.visibility = View.GONE
+                        pdf10.add(file)
+                        tenth = filesToMultipartParts("MSME[]", pdf10)
+                        bindingUploads?.MsmeLL?.visibility = View.GONE
+                        bindingUploads!!.MsmeRL.visibility = View.VISIBLE
+                        bindingUploads!!.MSMEImageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
 
-                                    }
-                                }
-                            } finally {
-
-                                cursor!!.close()
-                            }
-                        } else if (uriString.startsWith("file://")) {
-                            displayName = myFile.name
-                            Log.d("lllllllllll",displayName)
-
+                        bindingUploads!!.deleteMSMEImageView.setOnClickListener {
+                            bindingUploads?.MsmeLL?.visibility = View.VISIBLE
+                            bindingUploads!!.MsmeRL.visibility = View.GONE
                         }
-
-
-
                     }
                     image11clicked -> {
+                        pdf11.add(file)
+                        elevnth = filesToMultipartParts("E_INVOICE[]", pdf11)
+                        bindingUploads?.eInvLL?.visibility = View.GONE
+                        bindingUploads!!.eInvRL.visibility = View.VISIBLE
+                        bindingUploads!!.eInvoiceimageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
 
-                        if (uriString.startsWith("content://")) {
-                            var cursor: Cursor? = null
-                            try {
-                                cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-                                if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
-                                    Log.d("lllllllllll",displayName)
-                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-                                    val path=fileFromContentUri(requireContext(),uri)
-                                    images11.add(compressFile(path,requireContext()))
-
-                                    elevnth= filesToMultipartParts("E_INVOICE[]",images11)
-//                        eInvRL
-//                        eInvoiceimageView
-//                        deleteEInvoice
-//                        eInvLL
-
-                                    bindingUploads?.eInvLL?.visibility = View.GONE
-                                    bindingUploads!!.eInvRL.visibility = View.VISIBLE
-                                    bindingUploads!!.eInvoiceimageView.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.pdf))
-                                    bindingUploads!!.deleteEInvoice.setOnClickListener {
-                                        bindingUploads?.eInvLL?.visibility = View.VISIBLE
-                                        bindingUploads!!.eInvRL.visibility = View.GONE
-
-                                    }
-                                }
-                            } finally {
-
-                                cursor!!.close()
-                            }
-                        } else if (uriString.startsWith("file://")) {
-                            displayName = myFile.name
-                            Log.d("lllllllllll",displayName)
-
+                        bindingUploads!!.deleteEInvoice.setOnClickListener {
+                            bindingUploads?.eInvLL?.visibility = View.VISIBLE
+                            bindingUploads!!.eInvRL.visibility = View.GONE
                         }
-
-
-
-
                     }
                 }
-
-
-//                adapter.addImage(toShowImg)
-//
-//                images2.add(FileUtilsPdf.getPathFromUri(requireContext(),selectedPdfUri))
-//                second = filesToMultipartParts("FRONT_BACK_PICTURE_OF_VEHICLE_WITH_DRIVER[]",images2)
-                }
             }
+        }
+
         else {
             toast("Request cancelled or something went wrong.")
         }
@@ -1839,7 +1669,7 @@ bindingUploads!!.bankletter.setOnClickListener{
 
         return tempFile
     }
-    private fun getImageFromUri(imageUri: Uri?): File? {
+    private fun uriToFile(imageUri: Uri?): File? {
         imageUri?.let { uri ->
             val mimeType = getMimeType(requireContext(), uri)
             mimeType?.let {
@@ -1849,6 +1679,18 @@ bindingUploads!!.bankletter.setOnClickListener{
             }
         }
         return null
+    }
+    fun getImageFromUri(context: Context?=requireContext(), uri: Uri): File {
+        val inputStream: InputStream? = context?.contentResolver?.openInputStream(uri)
+        val outputFile = File(context?.cacheDir, "${System.currentTimeMillis()}.pdf") // Replace with desired file name and location
+
+        inputStream?.use { input ->
+            FileOutputStream(outputFile).use { output ->
+                input.copyTo(output)
+            }
+        }
+
+        return outputFile
     }
 
 

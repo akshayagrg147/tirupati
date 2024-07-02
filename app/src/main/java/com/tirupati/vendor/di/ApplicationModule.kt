@@ -2,6 +2,7 @@ package com.tirupati.vendor.di
 
 
 import android.content.Context
+import com.google.gson.GsonBuilder
 import com.grapesnberries.curllogger.CurlLoggerInterceptor
 
 import com.tirupati.vendor.helper.SessionManager
@@ -69,12 +70,17 @@ class ApplicationModule {
     @Provides
     fun provideRetrofit(
         okHttpClient: OkHttpClient
-    ): Retrofit =
-        Retrofit.Builder()
+    ): Retrofit {
+        val gson = GsonBuilder()
+            .setLenient()
+            .create()
+        return Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(ApiService.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
+    }
+
 
     @Provides
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)

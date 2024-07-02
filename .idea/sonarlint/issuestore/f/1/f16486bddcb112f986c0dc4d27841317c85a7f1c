@@ -1,22 +1,22 @@
 
-jkotlin:S6615~" Remove this useless initializer.(ö¹öüÿÿÿÿ8Šÿú—…2J$ddbb9b14-5b5c-4c32-8404-57525d678c83
-kkotlin:S6615—" Remove this useless initializer.(ö¹öüÿÿÿÿ8Šÿú—…2J$2025a21a-e93f-42a1-aeec-0d8c534b3390
-dkotlin:S125"Remove this commented out code.(Ìß¡8’ÿú—…2J$45392d5c-4d40-441a-8287-a0ccb34be541
-skotlin:S108¥")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8›ÿú—…2J$dede78dd-20fb-4acf-a6b6-e9c73bca2a53
-nkotlin:S108µ")Either remove or fill this block of code.(ñ¿ÿÄ8›ÿú—…2J$41abbb01-def6-4ccc-ba45-b097ceaa879e
-nkotlin:S108¸")Either remove or fill this block of code.(ßâƒ‚8›ÿú—…2J$05512111-fdcc-4d34-9d61-ebd6a572e3a5
-mkotlin:S108»")Either remove or fill this block of code.(Ä†•8›ÿú—…2J$5881d6ff-0f26-4a58-af2e-f71a5e95fdb2
-skotlin:S108¾")Either remove or fill this block of code.(±ß–ûÿÿÿÿ8›ÿú—…2J$e89b32bd-6ef1-41c8-81bc-a73f93388a7a
-|kotlin:S1135E"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8ÿú—…2J$f99e6ef8-8112-4e5a-9f96-42bd674aab16
-ukotlin:S1481}"0Remove this unused "bitmapImage" local variable.(ıĞç8Ÿÿú—…2J$3e0020a7-64bd-4709-aee0-d44812e4e72b
-mkotlin:S1481µ"'Remove this unused "cw" local variable.(Éó‹Â8Ÿÿú—…2J$05ca6434-ab97-4673-9f00-de6f796bd0a5
-dkotlin:S1128'"Remove this unused import.(µ““ûÿÿÿÿ8¢ÿú—…2J$ed4e91ee-96e4-411a-95c5-5acdd8a53882
-_kotlin:S1128-"Remove this unused import.(‰±ˆ8¢ÿú—…2J$86ebb8a1-459f-403f-b945-3887bf6d551b
-dkotlin:S1128<"Remove this unused import.(åÉˆúÿÿÿÿÿ8¢ÿú—…2J$9693c0a8-bdee-41da-af17-e96fc60d1688
-ikotlin:S1874‹"#Deprecated code should not be used.(òô’Ò8¤ÿú—…2J$2e748ef0-547c-42bf-b4a1-ed999f76d1a9
-hkotlin:S1874^"#Deprecated code should not be used.(¿©¡í8¤ÿú—…2J$7ea361dc-f8bc-4362-8dd8-128bfa810eba
-˜kotlin:S3776É"RRefactor this method to reduce its Cognitive Complexity from 45 to the 15 allowed.(ëü«8¥ÿú—…2J$7d1e89dd-c13b-490d-a414-753a64652eb1
-–kotlin:S6516{"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8¨ÿú—…2J$6264b75b-02f7-4ada-90a5-bbdb6f69d6cd
-tkotlin:S1066¹".Merge this "if" statement with the nested one.(¥Ä¬á8¨ÿú—…2J$c03fcaed-1bf4-42cc-adb4-a6d09d0b5b3e
-ˆkotlin:S6511è"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8¨ÿú—…2J$9eac8a9a-16b4-4eb0-a072-1c56d0edb6b6
-¦secrets:S6334ó"_Make sure this Google API Key is either secured or revoked, changed, and removed from the code.(ºÄĞ·8†ºÚ§„2J$3da55540-b43c-4e75-986b-6d180722ee50
+jkotlin:S6615~" Remove this useless initializer.(ö¹öüÿÿÿÿ8Šÿú—…2J$dde027c4-e073-4145-9697-ca2f355a2795
+kkotlin:S6615—" Remove this useless initializer.(ö¹öüÿÿÿÿ8Šÿú—…2J$68301061-4a83-462a-8329-6b4f7abaf5d6
+dkotlin:S125"Remove this commented out code.(Ìß¡8’ÿú—…2J$9137aa16-a75d-4810-b1ba-e6756eb3e7b2
+skotlin:S108¥")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8›ÿú—…2J$cce2c291-8d6a-4e35-8a01-74e45abe6ef9
+nkotlin:S108µ")Either remove or fill this block of code.(ñ¿ÿÄ8›ÿú—…2J$f105f9fb-a421-4365-a580-d10e8d7d443f
+nkotlin:S108¸")Either remove or fill this block of code.(ßâƒ‚8›ÿú—…2J$dc7e77b3-abdb-45e0-baa9-b2310774ac65
+mkotlin:S108»")Either remove or fill this block of code.(Ä†•8›ÿú—…2J$a5153ec4-89cf-424d-90f9-1198dc8c4e6a
+skotlin:S108¾")Either remove or fill this block of code.(±ß–ûÿÿÿÿ8›ÿú—…2J$ba47113f-753e-41f4-a167-3f16bffefec2
+|kotlin:S1135E"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8ÿú—…2J$b3190441-13d7-41bd-baa7-b8e31f79ad83
+ukotlin:S1481}"0Remove this unused "bitmapImage" local variable.(ıĞç8Ÿÿú—…2J$6678c348-9ae5-4dc8-b4b1-ad4999d12a3b
+mkotlin:S1481µ"'Remove this unused "cw" local variable.(Éó‹Â8Ÿÿú—…2J$839e21d8-f946-4804-adf5-51918503ee9b
+dkotlin:S1128'"Remove this unused import.(µ““ûÿÿÿÿ8¢ÿú—…2J$fb072bc3-363c-41ae-a817-ddcfd6921df3
+_kotlin:S1128-"Remove this unused import.(‰±ˆ8¢ÿú—…2J$07222149-4cc6-431c-a9a2-d723cb785349
+dkotlin:S1128<"Remove this unused import.(åÉˆúÿÿÿÿÿ8¢ÿú—…2J$8c61a6c0-3761-416e-a995-07de224aece1
+ikotlin:S1874‹"#Deprecated code should not be used.(òô’Ò8¤ÿú—…2J$da1e196a-b5de-4d50-99f6-a345468a0721
+hkotlin:S1874^"#Deprecated code should not be used.(¿©¡í8¤ÿú—…2J$f55471fb-ca66-4c1d-8dfd-7866257ae297
+˜kotlin:S3776É"RRefactor this method to reduce its Cognitive Complexity from 45 to the 15 allowed.(ëü«8¥ÿú—…2J$2ad0ae06-f573-4912-93f5-3223cdaf89c3
+–kotlin:S6516{"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8¨ÿú—…2J$a6ded986-2522-4ba5-bd45-47aeb31b7ebe
+tkotlin:S1066¹".Merge this "if" statement with the nested one.(¥Ä¬á8¨ÿú—…2J$18bbecff-de04-4ef7-b6e4-17ea1a74c805
+ˆkotlin:S6511è"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8¨ÿú—…2J$5e5dbdb6-d9ab-476b-84e1-fccb8e58ec98
+¦secrets:S6334ó"_Make sure this Google API Key is either secured or revoked, changed, and removed from the code.(ºÄĞ·8†ºÚ§„2J$2f58e7fc-b071-49d0-836b-533db2ac45e5

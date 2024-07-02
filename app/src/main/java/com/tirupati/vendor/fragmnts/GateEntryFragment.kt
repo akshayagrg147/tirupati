@@ -12,6 +12,7 @@ import androidx.navigation.Navigation
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.MenuAdapter
 import com.tirupati.vendor.databinding.FragmentGateEntryBinding
+import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.helper.interfaces.OnItemClickListGateKeeper
 import com.tirupati.vendor.model.VendorRESPONSEDATAX
 import com.tirupati.vendor.network.NetworkState

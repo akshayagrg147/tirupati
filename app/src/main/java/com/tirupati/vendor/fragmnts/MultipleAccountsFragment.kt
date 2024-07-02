@@ -190,47 +190,62 @@ class MultipleAccountsFragment : Fragment() {
         return bindingUploads!!.root
     }
 
+
+
+
     private fun validateUI(bindingUploads: FragmentMultipleAccountsBinding): Boolean {
         if (bindingUploads.secondAccountll.visibility == View.VISIBLE) {
-            if (!isValid(bindingUploads.EtVSecondName.text) ||
-                !isValid(bindingUploads.secondVContact.text) ||
-                !isValid(bindingUploads.inputSecondVendorEmail.text) ||
-                !isValid(bindingUploads.secondVAdhar.text)
+            if (!isValidName(bindingUploads.EtVSecondName.text.toString()) ||
+                !isValidContact(bindingUploads.secondVContact.text.toString()) ||
+                !isValidEmail(bindingUploads.inputSecondVendorEmail.text.toString()) ||
+                !isValidAadhar(bindingUploads.secondVAdhar.text.toString())
             ) {
                 return false
             }
-
-
         }
-         if (bindingUploads.thirdAccountll.visibility == View.VISIBLE) {
-            if (!isValid(bindingUploads.EtVThirdName.text) ||
-                !isValid(bindingUploads.thirdVContact.text) ||
-                !isValid(bindingUploads.inputThirdVendorEmail.text) ||
-                !isValid(bindingUploads.thirdVAdhar.text)
+
+        if (bindingUploads.thirdAccountll.visibility == View.VISIBLE) {
+            if (!isValidName(bindingUploads.EtVThirdName.text.toString()) ||
+                !isValidContact(bindingUploads.thirdVContact.text.toString()) ||
+                !isValidEmail(bindingUploads.inputThirdVendorEmail.text.toString()) ||
+                !isValidAadhar(bindingUploads.thirdVAdhar.text.toString())
             ) {
                 return false
             }
-
-
         }
+
         if (bindingUploads.fourthAccountll.visibility == View.VISIBLE) {
-            if (!isValid(bindingUploads.EtVFourthName.text) ||
-                !isValid(bindingUploads.fourthVContact.text) ||
-                !isValid(bindingUploads.inputfourthVendorEmail.text) ||
-                !isValid(bindingUploads.fourthVAdhar.text)
+            if (!isValidName(bindingUploads.EtVFourthName.text.toString()) ||
+                !isValidContact(bindingUploads.fourthVContact.text.toString()) ||
+                !isValidEmail(bindingUploads.inputfourthVendorEmail.text.toString()) ||
+                !isValidAadhar(bindingUploads.fourthVAdhar.text.toString())
             ) {
                 return false
             }
-
-
         }
 
         return true
     }
 
-    private fun isValid(text: Editable?): Boolean {
-        return text != null && text.toString().isNotEmpty()
+    fun isValidName(name: String): Boolean {
+        return name.isNotEmpty()
     }
+
+    fun isValidContact(contact: String): Boolean {
+        val contactPattern = Regex("^\\d{10}$")
+        return contactPattern.matches(contact)
+    }
+
+    fun isValidEmail(email: String): Boolean {
+        val emailPattern = Regex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
+        return emailPattern.matches(email)
+    }
+
+    fun isValidAadhar(aadhar: String): Boolean {
+        val aadharPattern = Regex("^\\d{12}$")
+        return aadharPattern.matches(aadhar)
+    }
+
 
 
 }

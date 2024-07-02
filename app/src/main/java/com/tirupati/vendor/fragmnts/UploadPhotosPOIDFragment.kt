@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -295,15 +296,17 @@ class UploadPhotosPOIDFragment : Fragment() {
         return parts
     }
     private fun uploadALlToServer() {
-
+        bindingUploads!!.loginProgressBar.progressBar.shown()
             lifecycleScope.launch {
-                bindingUploads!!.loginProgressBar.progressBar.shown()
+
 
                 val header = HashMap<String, String>()
                 header["Accept"] = "application/json"
                 header["version"] = "1"
                 header["Authorization"] = "${sessionManager.loginToken}"
                 header["userID"]="${sessionManager.user?.RESPONSEDATA?.USER_ID}"
+
+
                 val response =
                     uploadViewModel.postUploadsGatekeeper(
                         header,
@@ -489,7 +492,7 @@ class UploadPhotosPOIDFragment : Fragment() {
                     val file7 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
 
                     images7.add(file7!!)
-                    sixth= filesToMultipartParts("UPLOAD_TOLLRECEIPT[]",images6)
+                    seventh= filesToMultipartParts("UPLOAD_TOLLRECEIPT[]",images6)
 
                     bindingUploads?.tollReceiptLL?.visibility = View.GONE
                     bindingUploads!!.tollReceiptRL.visibility = View.VISIBLE
@@ -616,11 +619,16 @@ class UploadPhotosPOIDFragment : Fragment() {
                 try {
                     photoFile = createImageFile()
                     if (photoFile != null) {
-                        val photoURI = FileProvider.getUriForFile(
-                            requireContext(),
-                            requireContext().applicationContext.packageName + ".provider_paths",
-                            photoFile!!
-                        )
+                        val photoURI = if (Build.VERSION.SDK_INT >= 24) {
+                            requireContext().packageName
+                            FileProvider.getUriForFile(
+                                requireContext(),
+                                requireContext().packageName + ".provider",
+                                photoFile!!
+                            )
+                        } else {
+                            Uri.fromFile(photoFile)
+                        }
                         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
                         startActivityForResult(takePictureIntent, RC_TAKE_PHOTO)
                     } else {

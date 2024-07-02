@@ -136,7 +136,7 @@ suspend fun getLogIn(
     ): Response<PurchaseOrderResponse>
 
 
-    @GET("V2/checklistAgainstGE")
+    @GET("V2/vendorPOList")
     suspend fun getVandorTypeCompany(
         @Query("id") input: String
     ): Response<POID_RESPONSE>
