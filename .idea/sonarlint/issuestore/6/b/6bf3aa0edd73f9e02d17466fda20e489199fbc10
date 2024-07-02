@@ -1,16 +1,9 @@
 
-akotlin:S125;"Remove this commented out code.(æ—ÒşÿÿÿÿJ$2a516c0f-f781-43a1-a690-532e241e81cd
-akotlin:S125h"Remove this commented out code.(ö´óùÿÿÿÿJ$fbc891e4-52e9-43d9-a26e-74746840f5cb
-bkotlin:S125¹"Remove this commented out code.(ö´óùÿÿÿÿJ$48abcfe4-9fe6-4e1d-b684-26540ac40cf1
-kkotlin:S108P")Either remove or fill this block of code.(ÁÂÈÅûÿÿÿÿJ$d39b8e5e-c8f6-4d51-8f44-a72b96ebfd09
-fkotlin:S108{")Either remove or fill this block of code.(å¥‡J$2efc74e0-83c6-4ef0-9886-c8213312158f
-gkotlin:S108¼")Either remove or fill this block of code.(ñ¿ÿÄJ$be459b24-f325-4e37-9902-770b40437343
-gkotlin:S108¿")Either remove or fill this block of code.(ßâƒ‚J$b5e31900-73f0-4706-9d3a-a97d7cffda6f
-fkotlin:S108Â")Either remove or fill this block of code.(Ä†•J$09aede12-343c-48d5-b2d3-5dae8add2108
-lkotlin:S108Å")Either remove or fill this block of code.(±ß–ûÿÿÿÿJ$e6515d68-1961-4bf5-923f-ef187ad5f014
-fkotlin:S108k")Either remove or fill this block of code.(ñ¿ÿÄJ$75575d8a-d120-4313-810d-cd91db53d0ea
-fkotlin:S108n")Either remove or fill this block of code.(ßâƒ‚J$034fb60f-c5ea-476d-8beb-9fa945710090
-ekotlin:S108q")Either remove or fill this block of code.(Ä†•J$e5255a28-8c31-4957-a685-67e178347f5e
-kkotlin:S108t")Either remove or fill this block of code.(±ß–ûÿÿÿÿJ$2a1821fd-f4f2-4bbf-a105-2320227e2b1a
-skotlin:S1481Ñ"4Remove this unused "mCountDownTimer" local variable.(†„ÿ¢J$3820184b-28ba-4a55-ab6e-d10592cb6371
-jkotlin:S6519„"+Replace "equals" with binary operator "==".(Ù·£öJ$7a7a8834-a6b6-4809-86f2-077c2ec0186f
+akotlin:S125="Remove this commented out code.(æ—ÒşÿÿÿÿJ$17b629b0-b7bf-44b1-9dcb-201bb30e2502
+akotlin:S125m"Remove this commented out code.(ö´óùÿÿÿÿJ$b6398432-6248-48f7-8c55-0fae8ca83963
+bkotlin:S125Å"Remove this commented out code.(ö´óùÿÿÿÿJ$36bc0036-4038-4b82-bf65-e04dc63f7109
+kkotlin:S108R")Either remove or fill this block of code.(ÁÂÈÅûÿÿÿÿJ$dfc24e8f-01bf-4432-abdb-7af53f2984c2
+gkotlin:S108„")Either remove or fill this block of code.(å¥‡J$b83bf901-859f-4846-8299-cc85e76c7cf3
+skotlin:S1481á"4Remove this unused "mCountDownTimer" local variable.(†„ÿ¢J$263f9c79-76e8-4ade-9ae2-7f8862145e80
+9kotlin:S1128"Remove this unused import.(ƒ¨¡ü8º›‡2
+jkotlin:S6519"+Replace "equals" with binary operator "==".(Ù·£öJ$3cc8b713-e737-4efe-86c2-7aa3af4a208d

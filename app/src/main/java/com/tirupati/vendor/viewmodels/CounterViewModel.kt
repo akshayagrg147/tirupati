@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.model.CounterResponseModel
 import com.tirupati.vendor.model.UpdatePoDetailsRequest
 import com.tirupati.vendor.network.NetworkState
@@ -46,19 +47,24 @@ class CounterViewModel @Inject constructor(private val stateVMRepo: StateVMRepos
                 }
 
                 is NetworkState.Error<*> -> {
+
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
+
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
+
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+
                 }
 
                 else -> {
+
                 }
             }
 
@@ -69,16 +75,19 @@ class CounterViewModel @Inject constructor(private val stateVMRepo: StateVMRepos
     fun callSubmitCounterApi(header: HashMap<String, String>, body: UpdatePoDetailsRequest) {
         body.PO_ID= counterDetails.get()?.responseData?.poid
 
+
         viewModelScope.launch {
             var response = stateVMRepo.saveCounterPo(header,body)
 
             when (response) {
 
                 is NetworkState.Success -> {
+
                     onNavigationSuccess()
                 }
 
                 is NetworkState.Error<*> -> {
+
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 

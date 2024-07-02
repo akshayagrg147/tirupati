@@ -12,6 +12,8 @@ import androidx.lifecycle.lifecycleScope
 import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.FragmentPurchaseOrderClickBinding
 import com.tirupati.vendor.helper.SessionManager
+import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.ResponseData
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.ui.LandingVendorSActivity
@@ -47,6 +49,7 @@ class PurchaseOrderClickFragment : Fragment() {
     }
 
     private fun callingApiPoDetails(poNo: String) {
+        binding!!.loginProgressBar.progressBar.shown()
         val header = HashMap<String, String>()
         header["Accept"] = "application/json"
         header["version"] = "1"
@@ -58,6 +61,7 @@ class PurchaseOrderClickFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                if(!response.body.STATUS)
                    return@launch
                     binding?.apply {
@@ -82,19 +86,24 @@ class PurchaseOrderClickFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*> -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
 
                 else -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
             }
 

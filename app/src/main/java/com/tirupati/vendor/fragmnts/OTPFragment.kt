@@ -11,6 +11,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.tirupati.vendor.databinding.FragmentOTPBinding
 import com.tirupati.vendor.helper.SessionManager
+import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.ui.LandingScreenCustomerActivity
 import com.tirupati.vendor.ui.LandingScreenGateKeeperActivity
@@ -89,6 +91,7 @@ class OTPFragment : Fragment() {
         bindingOTP!!.resend.setOnClickListener {
             if (callApi) {
                 bindingOTP?.resend?.visibility=View.GONE
+                bindingOTP!!.loginProgressBar.progressBar.shown()
 
                 lifecycleScope.launch {
                     var response = logInVm.getLogIn(GST)
@@ -96,24 +99,30 @@ class OTPFragment : Fragment() {
                     when (response) {
 
                         is NetworkState.Success -> {
+                            bindingOTP!!.loginProgressBar.progressBar.hidden()
                             OTPReceived = response.body.OTP
                             initViews()
                         }
 
                         is NetworkState.Error<*> -> {
+                            bindingOTP!!.loginProgressBar.progressBar.hidden()
                             // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                         }
 
                         is NetworkState.NetworkException -> {
+                            bindingOTP!!.loginProgressBar.progressBar.hidden()
                         }
 
                         is NetworkState.HttpErrors.InternalServerError -> {
+                            bindingOTP!!.loginProgressBar.progressBar.hidden()
                         }
 
                         is NetworkState.HttpErrors.ResourceNotFound -> {
+                            bindingOTP!!.loginProgressBar.progressBar.hidden()
                         }
 
                         else -> {
+                            bindingOTP!!.loginProgressBar.progressBar.hidden()
                         }
                     }
 
@@ -150,12 +159,14 @@ class OTPFragment : Fragment() {
     }
 
     fun callVerifiedOTP() {
+        bindingOTP!!.loginProgressBar.progressBar.shown()
         lifecycleScope.launch {
             var response = logInVm.getOtpVerified(bindingOTP?.otpValueVOFF?.text.toString(), Mobile, UserType)
 
             when (response) {
 
                 is NetworkState.Success -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
                     sessionManager.user= response.body
                     var type= sessionManager.user!!.USER_TYPE
                     //Gatekeeper
@@ -182,19 +193,24 @@ class OTPFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*> -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
                 }
 
                 else -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
                 }
             }
 

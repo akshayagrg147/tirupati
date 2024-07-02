@@ -198,7 +198,7 @@ class MultipleAccountsFragment : Fragment() {
             if (!isValidName(bindingUploads.EtVSecondName.text.toString()) ||
                 !isValidContact(bindingUploads.secondVContact.text.toString()) ||
                 !isValidEmail(bindingUploads.inputSecondVendorEmail.text.toString()) ||
-                !isValidAadhar(bindingUploads.secondVAdhar.text.toString())
+                !isValidPan(bindingUploads.secondVAdhar.text.toString())
             ) {
                 return false
             }
@@ -208,7 +208,7 @@ class MultipleAccountsFragment : Fragment() {
             if (!isValidName(bindingUploads.EtVThirdName.text.toString()) ||
                 !isValidContact(bindingUploads.thirdVContact.text.toString()) ||
                 !isValidEmail(bindingUploads.inputThirdVendorEmail.text.toString()) ||
-                !isValidAadhar(bindingUploads.thirdVAdhar.text.toString())
+                !isValidPan(bindingUploads.thirdVAdhar.text.toString())
             ) {
                 return false
             }
@@ -218,7 +218,7 @@ class MultipleAccountsFragment : Fragment() {
             if (!isValidName(bindingUploads.EtVFourthName.text.toString()) ||
                 !isValidContact(bindingUploads.fourthVContact.text.toString()) ||
                 !isValidEmail(bindingUploads.inputfourthVendorEmail.text.toString()) ||
-                !isValidAadhar(bindingUploads.fourthVAdhar.text.toString())
+                !isValidPan(bindingUploads.fourthVAdhar.text.toString())
             ) {
                 return false
             }
@@ -241,10 +241,11 @@ class MultipleAccountsFragment : Fragment() {
         return emailPattern.matches(email)
     }
 
-    fun isValidAadhar(aadhar: String): Boolean {
-        val aadharPattern = Regex("^\\d{12}$")
-        return aadharPattern.matches(aadhar)
+    fun isValidPan(pan: String): Boolean {
+        val panPattern = Regex("^[A-Z]{5}[0-9]{4}[A-Z]\$")
+        return panPattern.matches(pan)
     }
+
 
 
 

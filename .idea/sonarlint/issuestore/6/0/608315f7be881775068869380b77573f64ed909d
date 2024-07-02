@@ -1,16 +1,19 @@
 
-kotlin:S1172q">Use "_" instead of this unused lambda parameter "destination".(Í™ƒüûÿÿÿÿJ$45a0acfe-c6d2-4e00-9e14-6e13974d3c43
-ckotlin:S6615e" Remove this useless initializer.(åÙ×ƒşÿÿÿÿJ$7f509f73-4849-43c4-8d8f-1355bdbe8e2c
-\kotlin:S1256"Remove this commented out code.(î¢©‡J$b1197c6b-8090-4034-96a9-c2852d618012
-akotlin:S125V"Remove this commented out code.(Øû³°üÿÿÿÿJ$5ec5d7fd-17aa-4a34-b870-f5bc41f06a3a
-akotlin:S125r"Remove this commented out code.(ÏŒš²ûÿÿÿÿJ$d4cb9334-b9a5-49c3-8c09-31793df44d1c
-akotlin:S125|"Remove this commented out code.(¿ø¢¨úÿÿÿÿJ$c60c09a6-6b68-4fc1-a0dd-95f8a73e7f66
-]kotlin:S125"Remove this commented out code.(ÿøÁJ$37cc4fc4-88d2-4ed7-a052-81e1bd51a751
-bkotlin:S125œ"Remove this commented out code.(¡²æ£üÿÿÿÿJ$397a59a2-4eff-4bbf-8b6e-1db3b904c7d7
-bkotlin:S125³"Remove this commented out code.(ö´óùÿÿÿÿJ$308e1b13-a011-4305-9929-6d22046130db
-]kotlin:S125Ì"Remove this commented out code.(¼š÷ƒJ$437a9dc2-e103-4aa0-9e93-2e1197cc396e
-ykotlin:S1144‘"5Remove this unused private "setHamburgerIcon" method.(³ÏòùÿÿÿÿJ$ad59f49c-4c14-492e-90f6-062575e81130
-gkotlin:S108¶")Either remove or fill this block of code.(ñ¿ÿÄJ$d64f5c9c-8b7a-4be1-8674-371436e676dc
-gkotlin:S108¹")Either remove or fill this block of code.(ßâƒ‚J$2e5dec6b-083c-442e-99b0-f1cb39fe993d
-fkotlin:S108¼")Either remove or fill this block of code.(Ä†•J$7e4fe598-acbb-4ed5-ab7c-2a78079245b0
-lkotlin:S108¿")Either remove or fill this block of code.(±ß–ûÿÿÿÿJ$1cedba3d-a4ca-428a-9667-dea57c467560
+kotlin:S1172s">Use "_" instead of this unused lambda parameter "destination".(Í™ƒüûÿÿÿÿJ$be357cda-f3e5-4c77-9768-aa8ff1af1a07
+ckotlin:S6615g" Remove this useless initializer.(åÙ×ƒşÿÿÿÿJ$cee1a9d3-9672-4bec-b4dc-ca2ea6de9de4
+„kotlin:S6619¥">Remove this useless non-null assertion !!, it always succeeds.(Ø„šå8œîá’‡2J$844f0ce8-13c1-42b4-b14d-3df340fe99ec
+„kotlin:S6619¬">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8œîá’‡2J$fda15548-2b32-4e59-8323-747d6ec59dcc
+„kotlin:S6619·">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8œîá’‡2J$56e2ad3a-ec5e-47fd-a04f-78583cebf062
+„kotlin:S6619¼">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8œîá’‡2J$d9895e30-c39c-4f59-be15-4d9e1201ee30
+„kotlin:S6619À">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8œîá’‡2J$77eede62-837e-4b89-87b7-b22c0c65ec7a
+„kotlin:S6619Ä">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8œîá’‡2J$bbbe6848-92e5-45d3-9323-d2da4b06652b
+„kotlin:S6619È">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8Èãµ•‡2J$90cce397-5aa6-4e33-bd3e-6d5ff2fc18fb
+\kotlin:S1258"Remove this commented out code.(î¢©‡J$f497eab4-9cac-407d-a5c9-bfa2b93a9682
+akotlin:S125X"Remove this commented out code.(Øû³°üÿÿÿÿJ$97d54ca4-84f2-4723-8036-70482e8bc007
+akotlin:S125t"Remove this commented out code.(ÏŒš²ûÿÿÿÿJ$39d6e7b2-b281-463a-b322-1f17984f182c
+akotlin:S125~"Remove this commented out code.(¿ø¢¨úÿÿÿÿJ$f33abbc4-e8ce-4d90-863b-a8805dd6cfaa
+]kotlin:S125"Remove this commented out code.(ÿøÁJ$05a3ff63-d949-4ea3-b6ad-9e6992b3020c
+bkotlin:S125"Remove this commented out code.(¡²æ£üÿÿÿÿJ$566665fd-f36f-4377-9d20-556db3037953
+bkotlin:S125¸"Remove this commented out code.(ö´óùÿÿÿÿJ$291dea8f-30f9-4515-9a24-d07905570495
+]kotlin:S125Õ"Remove this commented out code.(¼š÷ƒJ$414ba831-ed9e-4b93-9f04-0fcafe3feae3
+ykotlin:S1144“"5Remove this unused private "setHamburgerIcon" method.(³ÏòùÿÿÿÿJ$4b6cd062-de09-44dc-a57c-1542beeebd84

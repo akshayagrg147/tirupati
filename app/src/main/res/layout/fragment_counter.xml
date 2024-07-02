@@ -94,6 +94,9 @@
                 app:errorEnabled="true"
                 app:hintAnimationEnabled="true"
                 app:hintTextColor="@color/colorPrimaryVariant">
+                <include
+                    android:id="@+id/loginProgressBar"
+                    layout="@layout/layout_progress_bar" />
 
                 <AutoCompleteTextView
                     android:id="@+id/payment_terms"
@@ -395,6 +398,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp" />
+
         </LinearLayout>
 
 

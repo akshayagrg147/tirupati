@@ -324,4 +324,7 @@
 
 </LinearLayout>
     </RelativeLayout>
+    <include
+        android:id="@+id/loginProgressBar"
+        layout="@layout/layout_progress_bar" />
 </RelativeLayout>

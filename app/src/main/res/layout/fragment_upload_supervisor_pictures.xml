@@ -36,8 +36,8 @@
 
                 <ImageView
                     android:layout_below="@+id/uploadVendorTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:src="@drawable/pdf"
                     android:scaleType="fitXY"
                     android:padding="@dimen/_6sdp"
@@ -111,8 +111,8 @@
 
                 <ImageView
                     android:layout_below="@+id/uploadTollReceipt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:src="@drawable/pdf"
                     android:scaleType="fitXY"
                     android:padding="@dimen/_6sdp"
@@ -129,7 +129,7 @@
                     android:layout_marginStart="69dp"
                     android:layout_marginEnd="3dp"
                     android:src="@android:drawable/ic_menu_delete"
-                    app:tint="@color/white" />
+                     />
 
             </RelativeLayout>
             <LinearLayout
@@ -184,8 +184,8 @@
 
                 <ImageView
                     android:layout_below="@+id/uploadTollVehicleRC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:src="@drawable/pdf"
                     android:scaleType="fitXY"
                     android:padding="@dimen/_6sdp"
@@ -202,7 +202,7 @@
                     android:layout_marginStart="69dp"
                     android:layout_marginEnd="3dp"
                     android:src="@android:drawable/ic_menu_delete"
-                    app:tint="@color/white" />
+                   />
 
             </RelativeLayout>
             <LinearLayout
@@ -257,8 +257,8 @@
 
                 <ImageView
                     android:layout_below="@+id/uploadDrivinLC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:src="@drawable/pdf"
                     android:scaleType="fitXY"
                     android:padding="@dimen/_6sdp"
@@ -275,7 +275,7 @@
                     android:layout_marginStart="69dp"
                     android:layout_marginEnd="3dp"
                     android:src="@android:drawable/ic_menu_delete"
-                    app:tint="@color/white" />
+                     />
 
             </RelativeLayout>
 

@@ -21,6 +21,9 @@
         app:defaultNavHost="true"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:navGraph="@navigation/nav_menu_vendor"/>
+    <include
+        android:id="@+id/loginProgressBar"
+        layout="@layout/layout_progress_bar" />
 
 
     <com.google.android.material.navigation.NavigationView

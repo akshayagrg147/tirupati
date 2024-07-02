@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import com.tirupati.vendor.databinding.FragmentCounterBinding
 import com.tirupati.vendor.helper.SessionManager
 import androidx.lifecycle.Observer
+import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.UpdatePoDetailsRequest
 import com.tirupati.vendor.ui.LandingVendorSActivity
 import com.tirupati.vendor.viewmodels.CounterViewModel
@@ -48,6 +50,7 @@ class CounterFragment : Fragment() {
         }
         viewModel.navigateBack.observe(viewLifecycleOwner, Observer { shouldNavigateBack ->
             if (shouldNavigateBack) {
+                binding!!.loginProgressBar.progressBar.hidden()
                 // Navigate back
                 Toast.makeText(context,"Updated Success",Toast.LENGTH_SHORT).show()
                 requireActivity().supportFragmentManager.popBackStack()
@@ -65,6 +68,7 @@ class CounterFragment : Fragment() {
             header["version"] = "1"
             header["Authorization"] = "${sessionManager.loginToken}"
             header["userID"]="${sessionManager.user?.RESPONSEDATA?.USER_ID}"
+            binding!!.loginProgressBar.progressBar.shown()
             viewModel.callSubmitCounterApi(header, UpdatePoDetailsRequest(RATE = binding.rate.text.toString(), QUANTITY = binding.quantity.text.toString(), REMARKS = binding.remarks.text.toString()))
         }
     }

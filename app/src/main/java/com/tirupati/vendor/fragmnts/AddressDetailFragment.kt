@@ -15,9 +15,11 @@ import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.CityAdapter
 import com.tirupati.vendor.adapters.StateAdapter
 import com.tirupati.vendor.databinding.FragmentSecondDetailPageBinding
+import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.helper.isValidGST
 import com.tirupati.vendor.helper.isValidPINcode
 import com.tirupati.vendor.helper.showCustomDialog
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.CityList
 import com.tirupati.vendor.model.ResponseDataPo
 import com.tirupati.vendor.network.NetworkState
@@ -159,6 +161,7 @@ class AddressDetailFragment : Fragment() {
 
 
     private fun getCities(Stateid: String) {
+        bindingSecondPage!!.loginProgressBar.progressBar.shown()
         stateCode = Stateid
         bindingSecondPage!!.citiesList.text.clear()
         lifecycleScope.launch {
@@ -167,6 +170,7 @@ class AddressDetailFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                     cityList= response.body.RESPONSEDATA
 //                    initializeAdapter(branchList)
 
@@ -175,16 +179,21 @@ class AddressDetailFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*>->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.InternalServerError->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.ResourceNotFound->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
                 else->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
             }
 
@@ -380,28 +389,35 @@ fun getStates(stateName: ArrayList<ResponseDataPo>) {
 }
 
     private fun getStatesfromServer() {
+        bindingSecondPage!!.loginProgressBar.progressBar.shown()
         lifecycleScope.launch {
             var response = statesviewModel.getStatesList()
 
             when (response) {
 
                 is NetworkState.Success->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                     stateName= response.body.RESPONSEDATA
 //                    initializeAdapter(branchList)
                     getStates(stateName)
                 }
 
                 is NetworkState.Error<*>->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.InternalServerError->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.ResourceNotFound->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
                 else->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
             }
 

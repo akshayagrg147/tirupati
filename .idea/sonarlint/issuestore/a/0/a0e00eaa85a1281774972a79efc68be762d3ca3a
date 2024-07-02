@@ -1,24 +1,18 @@
 
-qkotlin:S6615¾"&The value assigned here is never used.(–µş¬ıÿÿÿÿ8•åÑ—…2J$3e023d1e-f7c4-45ed-83ac-ffa2d4cafc70
-kkotlin:S6615Á" Remove this useless initializer.(ö¹öüÿÿÿÿ8•åÑ—…2J$7bb57463-0343-4fe9-9a76-1efa8ac198a7
-kotlin:S6615ø";Remove this variable, which is assigned but never accessed.(´Ø³Í8•åÑ—…2J$3c249862-6cf1-4769-b611-ba58f5b1b1d6
-ikotlin:S125Ô"Remove this commented out code.(ö´óùÿÿÿÿ8—åÑ—…2J$4ebf1a41-36d2-4f73-be09-c640aa8ced6d
-~kotlin:S1144Ÿ"3Remove this unused private "getPathFromUri" method.(õŠ×¸şÿÿÿÿ8åÑ—…2J$67d78332-1beb-4d55-acf4-7dad0b5b1fac
-‚kotlin:S1144İ"7Remove this unused private "getRealPathFromURI" method.(†”ğÊùÿÿÿÿ8 åÑ—…2J$78584bac-afe5-4555-8e52-6f55681af168
-skotlin:S108¢")Either remove or fill this block of code.(±ß–ûÿÿÿÿ8¤åÑ—…2J$bf629630-491a-4c78-bb3e-82d8b0b4e15e
-nkotlin:S108×")Either remove or fill this block of code.(ñ¿ÿÄ8¤åÑ—…2J$bda32f36-fc7c-43cb-886b-1ec4bc813deb
-nkotlin:S108Ù")Either remove or fill this block of code.(ßâƒ‚8¤åÑ—…2J$88e5875c-4b3a-4dac-bc37-b7189f71d156
-mkotlin:S108Û")Either remove or fill this block of code.(Ä†•8¤åÑ—…2J$b7258ca6-78bc-46fe-a855-08bef12d726f
-skotlin:S108İ")Either remove or fill this block of code.(±ß–ûÿÿÿÿ8¤åÑ—…2J$61fc48db-07ab-43b0-879c-2f0affa9cff5
-nkotlin:S108¨")Either remove or fill this block of code.(ñ¿ÿÄ8¤åÑ—…2J$008ba1f6-7e1c-4490-85b0-80ad9d908723
-nkotlin:S108«")Either remove or fill this block of code.(ßâƒ‚8¤åÑ—…2J$71562cf8-7f89-4bd4-abd9-57110c81f680
-mkotlin:S108­")Either remove or fill this block of code.(Ä†•8¤åÑ—…2J$4ffb6519-ab89-4b06-aec4-a0cca554f107
-skotlin:S108¯")Either remove or fill this block of code.(±ß–ûÿÿÿÿ8¤åÑ—…2J$3a1d5796-fc8d-4d40-9fef-b4379fa5d1f4
-skotlin:S108Î")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8¤åÑ—…2J$4e3bab73-054b-41cb-b823-22ea67407d4d
-ykotlin:S1481Â"3Remove this unused "imageByteArray" local variable.(çú8¨åÑ—…2J$4c8bfa5d-789c-4f51-b7ab-d2bf9f7941be
-mkotlin:S1481ß"'Remove this unused "cw" local variable.(Éó‹Â8¨åÑ—…2J$8a53270a-924d-477a-ba28-342eeb959cdf
- kotlin:S1192“"UDefine a constant instead of duplicating this literal "something went wrong" 4 times.(ªÅ–üùÿÿÿÿ8†àÛ—…2J$183c6dac-c649-4629-b73c-65d787b5f676
-ikotlin:S1874³"#Deprecated code should not be used.(òô’Ò8®åÑ—…2J$90ab30b0-a221-4118-a171-32ccd99f3300
-—kotlin:S6516¥"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8²åÑ—…2J$a5c3f359-87c1-4c57-af53-4f23288cd6fc
-tkotlin:S1066ã".Merge this "if" statement with the nested one.(¥Ä¬á8²åÑ—…2J$1491569c-ccfa-4b54-b46f-b2fe5502f85c
-ˆkotlin:S6511’"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8³åÑ—…2J$19157338-2389-4319-86af-25f33501bfd1
+qkotlin:S6615À"&The value assigned here is never used.(–µş¬ıÿÿÿÿ8•åÑ—…2J$3e023d1e-f7c4-45ed-83ac-ffa2d4cafc70
+kkotlin:S6615Ã" Remove this useless initializer.(ö¹öüÿÿÿÿ8•åÑ—…2J$7bb57463-0343-4fe9-9a76-1efa8ac198a7
+kotlin:S6615‰";Remove this variable, which is assigned but never accessed.(´Ø³Í8•åÑ—…2J$3c249862-6cf1-4769-b611-ba58f5b1b1d6
+ikotlin:S125ß"Remove this commented out code.(ö´óùÿÿÿÿ8—åÑ—…2J$4ebf1a41-36d2-4f73-be09-c640aa8ced6d
+~kotlin:S1144®"3Remove this unused private "getPathFromUri" method.(õŠ×¸şÿÿÿÿ8åÑ—…2J$67d78332-1beb-4d55-acf4-7dad0b5b1fac
+‚kotlin:S1144ì"7Remove this unused private "getRealPathFromURI" method.(†”ğÊùÿÿÿÿ8 åÑ—…2J$78584bac-afe5-4555-8e52-6f55681af168
+skotlin:S108Ğ")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8¤åÑ—…2J$4e3bab73-054b-41cb-b823-22ea67407d4d
+ykotlin:S1481Ä"3Remove this unused "imageByteArray" local variable.(çú8¨åÑ—…2J$4c8bfa5d-789c-4f51-b7ab-d2bf9f7941be
+mkotlin:S1481á"'Remove this unused "cw" local variable.(Éó‹Â8¨åÑ—…2J$8a53270a-924d-477a-ba28-342eeb959cdf
+ kotlin:S1192˜"UDefine a constant instead of duplicating this literal "something went wrong" 4 times.(ªÅ–üùÿÿÿÿ8†àÛ—…2J$183c6dac-c649-4629-b73c-65d787b5f676
+mkotlin:S1871›"MThis branch's code block is the same as the block for the branch on line 406.(ñ¿ÿÄ8¬›‡2
+mkotlin:S1871 "MThis branch's code block is the same as the block for the branch on line 406.(ßâƒ‚8¬›‡2
+lkotlin:S1871¥"MThis branch's code block is the same as the block for the branch on line 406.(Ä†•8­›‡2
+ikotlin:S1874µ"#Deprecated code should not be used.(òô’Ò8®åÑ—…2J$90ab30b0-a221-4118-a171-32ccd99f3300
+—kotlin:S6516§"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8²åÑ—…2J$a5c3f359-87c1-4c57-af53-4f23288cd6fc
+tkotlin:S1066å".Merge this "if" statement with the nested one.(¥Ä¬á8²åÑ—…2J$1491569c-ccfa-4b54-b46f-b2fe5502f85c
+ˆkotlin:S6511”"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8³åÑ—…2J$19157338-2389-4319-86af-25f33501bfd1

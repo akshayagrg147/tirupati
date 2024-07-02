@@ -13,7 +13,9 @@ import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.SuperviserMenuAdapter
 import com.tirupati.vendor.databinding.FragmentCustomerBinding
 import com.tirupati.vendor.helper.SessionManager
+import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.helper.interfaces.OnItemClickListSupervisor
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.GateRESPONSEDATA
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.ui.LandingScreenCustomerActivity
@@ -119,10 +121,11 @@ class CustomerFragment : Fragment() {
             header["userID"]="${sessionManager.user?.RESPONSEDATA?.USER_ID}"
 
             var response = gateKeeperVm.getSuperViserData(header)
-
+            binding!!.loginProgressBar.progressBar.shown()
             when (response) {
 
                 is NetworkState.Success -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                     LandingScreenCustomerActivity.listOfAllCompanySuperviser = response.body.RESPONSEDATA
                     println(LandingScreenCustomerActivity.listOfAllCompanySuperviser.toString())
                     val listingAdapter = SuperviserMenuAdapter( requireContext(),
@@ -147,19 +150,24 @@ class CustomerFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*> -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
 
                 else -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
             }
 

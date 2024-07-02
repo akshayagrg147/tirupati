@@ -44,6 +44,8 @@ import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.FragmentDispatchBinding
 import com.tirupati.vendor.databinding.FragmentPurchaseOrderClickBinding
 import com.tirupati.vendor.helper.SessionManager
+import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.PurchaseOrderRequest
 import com.tirupati.vendor.model.ResponseData
 import com.tirupati.vendor.network.NetworkState
@@ -405,6 +407,7 @@ class DispatchFragment : Fragment() {
                         // For example:
                         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
                     } else {
+                        binding!!.loginProgressBar.progressBar.shown()
                         var response = gateKeeperVm.passDispatchOrder(
                             header,
                             multipart,
@@ -421,6 +424,7 @@ class DispatchFragment : Fragment() {
                         when (response) {
 
                             is NetworkState.Success -> {
+                                binding!!.loginProgressBar.progressBar.hidden()
                                 Toast.makeText(context, "Dispatched", Toast.LENGTH_SHORT).show()
                                 Handler(Looper.getMainLooper()).postDelayed({
                                     findNavController().popBackStack()
@@ -430,20 +434,25 @@ class DispatchFragment : Fragment() {
                             }
 
                             is NetworkState.Error<*> -> {
+                                binding!!.loginProgressBar.progressBar.hidden()
                                 Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
                                     .show()
                             }
 
                             is NetworkState.NetworkException -> {
+                                binding!!.loginProgressBar.progressBar.hidden()
                             }
 
                             is NetworkState.HttpErrors.InternalServerError -> {
+                                binding!!.loginProgressBar.progressBar.hidden()
                             }
 
                             is NetworkState.HttpErrors.ResourceNotFound -> {
+                                binding!!.loginProgressBar.progressBar.hidden()
                             }
 
                             else -> {
+                                binding!!.loginProgressBar.progressBar.hidden()
                             }
                         }
                     }

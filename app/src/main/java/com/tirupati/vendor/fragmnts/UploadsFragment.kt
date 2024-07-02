@@ -982,7 +982,7 @@ bindingUploads!!.bankletter.setOnClickListener{
 
                     is NetworkState.Success -> {
                         bindingUploads!!.loginProgressBar.progressBar.hidden()
-                        toast("Registered Successfully!!")
+
                         showCustomDialog()
 
 
@@ -1538,29 +1538,10 @@ bindingUploads!!.bankletter.setOnClickListener{
                         }
                     }
                     image2clicked -> {
-                        if (uriString.startsWith("content://")) {
-                            var cursor: Cursor? = null
-                            try {
-                                cursor = requireActivity().contentResolver.query(selectedPdfUri, null, null, null, null)
-                                if (cursor != null && cursor.moveToFirst()) {
-                                    displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
-                                    Log.d("lllllllllll",displayName)
-                                    val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-                                    adapter.addImage(uri)
-                                    val path=getImageFromUri(requireContext(),uri)
-////
-                                    pdf2.add(compressFile(path,requireContext()))
-                                    second = filesToMultipartPartsPDF("COM_PAN_CARD[]",pdf2,requireContext())
-                                }
-                            } finally {
+                        pdf2.add(file)
+                        adapter.addImage(selectedPdfUri)
+                        second = filesToMultipartPartsPDF("COM_PAN_CARD[]",pdf2,requireContext())
 
-                                cursor!!.close()
-                            }
-                        } else if (uriString.startsWith("file://")) {
-                            displayName = myFile.name
-                            Log.d("lllllllllll",displayName)
-
-                        }
                     }
                     image3clicked -> {
                         pdf3.add(file)

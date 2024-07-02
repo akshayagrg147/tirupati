@@ -23,7 +23,9 @@ import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.LandingScreenGatekeeperBinding
 import com.tirupati.vendor.fragmnts.GateEntryFragment
 import com.tirupati.vendor.helper.SessionManager
+import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.helper.interfaces.ToolbarTitleChangeListener
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.VendorRESPONSEDATAX
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
@@ -160,12 +162,14 @@ class LandingScreenGateKeeperActivity : AppCompatActivity(), ToolbarTitleChangeL
         )
     }
     fun callTheListApi() {
+        binding!!.loginProgressBar.progressBar.shown()
         lifecycleScope.launch {
             var response = gateKeeperVm.getCompanyList()
 
             when (response) {
 
                 is NetworkState.Success -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                     listOfAllCompany.clear()
 
                     listOfAllCompany = response.body.RESPONSEDATA
@@ -176,19 +180,24 @@ class LandingScreenGateKeeperActivity : AppCompatActivity(), ToolbarTitleChangeL
                 }
 
                 is NetworkState.Error<*> -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
 
                 else -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
             }
 

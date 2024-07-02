@@ -240,7 +240,7 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
             header["version"] = "1"
             header["Authorization"] = "${sessionManager.loginToken}"
             header["userID"]="${sessionManager.user?.RESPONSEDATA?.USER_ID}"
-
+            bindingPic!!.loginProgressBar.progressBar.shown()
             val response =
                 uploadViewModel.postUploadsSupervisor(
                     header,supervisorData!!.GEID,supervisorData!!.SLID_REF,vehNo,grossWT,tareWT,netWT,

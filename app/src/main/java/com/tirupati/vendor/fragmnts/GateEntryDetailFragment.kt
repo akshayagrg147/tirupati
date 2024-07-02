@@ -16,7 +16,9 @@ import androidx.navigation.Navigation
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.GateKeeperPoidAdapter
 import com.tirupati.vendor.databinding.FragmentGateEntryDetailBinding
+import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.helper.showCustomDialog
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.POIDRESPONSEDATA
 import com.tirupati.vendor.model.VendorRESPONSEDATAX
 import com.tirupati.vendor.network.NetworkState
@@ -202,26 +204,33 @@ class GateEntryDetailFragment : Fragment() {
         return status
     }
     private fun callListShowApi() {
+        bindingGateEntryFragment!!.loginProgressBar.progressBar.shown()
         lifecycleScope.launch {
             var response = companyPoidVM.getCompanyPoId(Alldata!!.VID)
 
             when (response) {
 
                 is NetworkState.Success->{
+                    bindingGateEntryFragment!!.loginProgressBar.progressBar.hidden()
                     getAccountType(response.body.RESPONSEDATA)
                 }
 
                 is NetworkState.Error<*>->{
+                    bindingGateEntryFragment!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException->{
+                    bindingGateEntryFragment!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.InternalServerError->{
+                    bindingGateEntryFragment!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.ResourceNotFound->{
+                    bindingGateEntryFragment!!.loginProgressBar.progressBar.hidden()
                 }
                 else->{
+                    bindingGateEntryFragment!!.loginProgressBar.progressBar.hidden()
                 }
             }
 

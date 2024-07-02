@@ -44,6 +44,8 @@ import com.tirupati.vendor.adapters.PaymentTermsAdapter
 import com.tirupati.vendor.adapters.SpinnerAdapter
 import com.tirupati.vendor.databinding.VendorQuotationFormBinding
 import com.tirupati.vendor.helper.SessionManager
+import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.ResponseDataItem
 import com.tirupati.vendor.model.UOMData
 import com.tirupati.vendor.model.vendorQuoationRequest
@@ -367,6 +369,7 @@ class VendorQotationFragment : Fragment() {
     }
 
     private fun onSubmitClicked() {
+        binding!!.loginProgressBar.progressBar.shown()
         val rate = binding?.rate?.text.toString().trim()
         val quantity = binding?.quantity?.text.toString().trim()
         val totalAmount = binding?.amountTotal?.text.toString().trim()
@@ -383,6 +386,7 @@ class VendorQotationFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                     if(response.body.STATUS){
                         Toast.makeText(context,"updated",Toast.LENGTH_SHORT).show()
                         Handler(Looper.getMainLooper()).postDelayed({
@@ -400,22 +404,27 @@ class VendorQotationFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*> -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                      Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                     Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                     Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                     Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
                 }
 
                 else -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
             }
 
@@ -427,13 +436,14 @@ class VendorQotationFragment : Fragment() {
 
     }
     private fun getuomList() {
-
+        binding!!.loginProgressBar.progressBar.shown()
         lifecycleScope.launch {
             var response = vendorFormVM.getUomList()
 
             when (response) {
 
                 is NetworkState.Success->{
+                    binding!!.loginProgressBar.progressBar.hidden()
 
                     itemDetail=response.body.RESPONSEDATA[0].UOMID
                     binding?.itemDetail?.setText(response.body.RESPONSEDATA[0].UOMCODE)
@@ -465,16 +475,21 @@ class VendorQotationFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*>->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.InternalServerError->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.ResourceNotFound->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
                 else->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
             }
 
@@ -618,6 +633,7 @@ class VendorQotationFragment : Fragment() {
     }
 
     private fun getPaymentTerms() {
+        binding!!.loginProgressBar.progressBar.shown()
         lifecycleScope.launch {
             val header = HashMap<String, String>()
             header["Accept"] = "application/json"
@@ -629,6 +645,7 @@ class VendorQotationFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                     var clicked:Boolean=true
 
                     // Assuming you have a PaymentTermsAdapter that takes a context and a list of ResponseDataItem
@@ -674,17 +691,22 @@ class VendorQotationFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*>->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                      Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException->{
+                    binding!!.loginProgressBar.progressBar.hidden()
 
                 }
                 is NetworkState.HttpErrors.InternalServerError->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.ResourceNotFound->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
                 else->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
             }
 
