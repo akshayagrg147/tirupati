@@ -223,7 +223,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
-        adapter = ImageCamAdapter(images, this)
+        adapter = ImageCamAdapter(images, this,false)
 
         val args= arguments
         if(args!=null){
@@ -961,7 +961,7 @@ bindingUploads!!.bankletter.setOnClickListener{
 
         bindingUploads!!.loginProgressBar.progressBar.shown()
 
-            lifecycleScope.launch {
+            lifecycleScope.launch(Dispatchers.IO) {
                 val header = HashMap<String, String>()
                 header["Accept"] = "application/json"
                 header["version"] = "1"
@@ -981,9 +981,12 @@ bindingUploads!!.bankletter.setOnClickListener{
                 when (response) {
 
                     is NetworkState.Success -> {
-                        bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        withContext(Dispatchers.Main){
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
 
-                        showCustomDialog()
+                            showCustomDialog()
+                        }
+
 
 
 //                    binding?.listOpts?.adapter!!.notifyDataSetChanged()
@@ -993,33 +996,46 @@ bindingUploads!!.bankletter.setOnClickListener{
                     }
 
                     is NetworkState.Error<*> -> {
-                        bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        withContext(Dispatchers.Main) {
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
 
-                        Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
+                                .show()
+                        }
                     }
 
                     is NetworkState.NetworkException -> {
-                        Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
+                                .show()
 
-                        bindingUploads!!.loginProgressBar.progressBar.hidden()
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        }
 
                     }
 
                     is NetworkState.HttpErrors.InternalServerError -> {
+                        withContext(Dispatchers.Main){
                         Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
-                        bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        bindingUploads!!.loginProgressBar.progressBar.hidden()}
 
                     }
 
                     is NetworkState.HttpErrors.ResourceNotFound -> {
-                        Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
-                        bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
+                                .show()
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        }
 
                     }
 
                     else -> {
-                        Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
-                        bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(context, "something went wrong", Toast.LENGTH_SHORT)
+                                .show()
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        }
 
                     }
                 }

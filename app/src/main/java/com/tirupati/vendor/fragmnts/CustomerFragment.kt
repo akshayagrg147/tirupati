@@ -65,7 +65,7 @@ class CustomerFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        LandingScreenCustomerActivity.showIcon(true)
+        LandingScreenCustomerActivity.showIcon(false)
         LandingScreenCustomerActivity.changeTitle("Checklist Against")
 
 

@@ -16,12 +16,14 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
 import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.LandingScreenGatekeeperBinding
 import com.tirupati.vendor.fragmnts.GateEntryFragment
+import com.tirupati.vendor.fragmnts.PoListFragment
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.helper.interfaces.ToolbarTitleChangeListener
@@ -95,6 +97,7 @@ class LandingScreenGateKeeperActivity : AppCompatActivity(), ToolbarTitleChangeL
         setSupportActionBar(toolbar)
         val reload:ImageView = findViewById<ImageView>(R.id.otp_back_iv)
         reload.setOnClickListener {
+
           callTheListApi()
         }
 
@@ -162,45 +165,14 @@ class LandingScreenGateKeeperActivity : AppCompatActivity(), ToolbarTitleChangeL
         )
     }
     fun callTheListApi() {
-        binding!!.loginProgressBar.progressBar.shown()
-        lifecycleScope.launch {
-            var response = gateKeeperVm.getCompanyList()
+        val fragment = supportFragmentManager.findFragmentById(R.id.host_fragment_appflow_gatekeeper)
+        if (fragment is NavHostFragment) {
 
-            when (response) {
+            val childFragment = fragment.childFragmentManager.primaryNavigationFragment
+            if (childFragment is GateEntryFragment) {
 
-                is NetworkState.Success -> {
-                    binding!!.loginProgressBar.progressBar.hidden()
-                    listOfAllCompany.clear()
-
-                    listOfAllCompany = response.body.RESPONSEDATA
-
-
-                    GateEntryFragment.reloadUi()
-
-                }
-
-                is NetworkState.Error<*> -> {
-                    binding!!.loginProgressBar.progressBar.hidden()
-                    // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
-                }
-
-                is NetworkState.NetworkException -> {
-                    binding!!.loginProgressBar.progressBar.hidden()
-                }
-
-                is NetworkState.HttpErrors.InternalServerError -> {
-                    binding!!.loginProgressBar.progressBar.hidden()
-                }
-
-                is NetworkState.HttpErrors.ResourceNotFound -> {
-                    binding!!.loginProgressBar.progressBar.hidden()
-                }
-
-                else -> {
-                    binding!!.loginProgressBar.progressBar.hidden()
-                }
+                childFragment.doSomethingOnButtonClick()
             }
-
 
         }
 

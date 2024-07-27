@@ -127,7 +127,7 @@
                     style="@style/et_login_signup"
                     android:hint="Vehicle Number"
                     android:importantForAutofill="noExcludeDescendants"
-                    android:inputType="text"
+                    android:inputType="textCapCharacters"
                     android:textAllCaps="true"
                     android:maxLength="50"
                     android:outlineAmbientShadowColor="@color/blue_light" />

@@ -55,7 +55,8 @@ class GatekeeperListUploadsViewModel  @Inject constructor(private val gateUpload
                                       tollReceipt: ArrayList<MultipartBody.Part?>,
                                       vehicleRc: ArrayList<MultipartBody.Part?>,
                                       driverLic: ArrayList<MultipartBody.Part?>,
-                                      frontBack: ArrayList<MultipartBody.Part?>
+                                      frontBack: ArrayList<MultipartBody.Part?>,
+                                      emptyVechile: ArrayList<MultipartBody.Part?>
     ): NetworkState<UploadsDetailResponse>  {
         return gateUploadVMRepo.superVisorUploads(
             headers,
@@ -65,7 +66,7 @@ class GatekeeperListUploadsViewModel  @Inject constructor(private val gateUpload
             GROSSWEIGHT,
             TAREWEIGHT,
             NETWEIGHT,
-            loadVehicle,tollReceipt,vehicleRc,driverLic,frontBack
+            loadVehicle,tollReceipt,vehicleRc,driverLic,frontBack,emptyVechile
         )
     }
 
@@ -115,7 +116,8 @@ class GatekeeperUploadsRepository @Inject constructor(private val apiService: Ap
         tollReceipt: ArrayList<MultipartBody.Part?>,
         vehicleRc: ArrayList<MultipartBody.Part?>,
         driverLic: ArrayList<MultipartBody.Part?>,
-        frontBack: ArrayList<MultipartBody.Part?>): NetworkState<UploadsDetailResponse> {
+        frontBack: ArrayList<MultipartBody.Part?>,
+        emptyVechile: ArrayList<MultipartBody.Part?>,): NetworkState<UploadsDetailResponse> {
 
         return safeApiCall {
 
@@ -127,7 +129,7 @@ class GatekeeperUploadsRepository @Inject constructor(private val apiService: Ap
                 GROSSWEIGHT.toRequestBody(),
                 TAREWEIGHT.toRequestBody(),
                 NETWEIGHT.toRequestBody(),
-                loadVehicle,tollReceipt,vehicleRc,driverLic,frontBack)
+                loadVehicle,tollReceipt,vehicleRc,driverLic,frontBack,emptyVechile)
         }
     }
 

@@ -30,10 +30,8 @@ abstract class NetworkCall {
                 }
             }
 
-        } catch (error: JsonSyntaxException) {
-            NetworkState.NetworkException("Server Model Issue")
-        }catch (error: IOException) {
-            NetworkState.NetworkException("Server Model Issue"+error.message)
+        } catch (error: Exception) {
+            NetworkState.NetworkException(error.message?:"something went wrong")
         }
     }
 }

@@ -1,72 +1,80 @@
 
-vkotlin:S1172¢"0Remove this unused function parameter "binding".(é÷×Ä8ª¶‘‡2J$f94987bf-594b-4271-b25f-7bc33943d54d
-{kotlin:S1172è"0Remove this unused function parameter "context".(äÕå¨üÿÿÿÿ8ª¶‘‡2J$acf7f139-b721-41d4-85d8-c314a7209f8a
-wkotlin:S1172«"2Use "_" instead of these unused lambda parameters.(Š‡Ãa8ª¶‘‡2J$6c2d038a-c0b2-42f0-8fa3-6ff602f6833e
-€kotlin:S899Ğ";Do something with the "Boolean" value returned by "delete".(ø¸ºÀ8‚ª¶‘‡2J$21034688-994a-4cb6-b540-9ca0b8c4d8f2
-†kotlin:S6619ì";Remove this useless elvis operation ?:, it always succeeds.(İ›çéÿÿÿÿÿ8†ª¶‘‡2J$0942cbc1-dd04-48ef-af05-8db3e9af0f3c
-†kotlin:S6619ì";Remove this useless elvis operation ?:, it always succeeds.(İ›çéÿÿÿÿÿ8†ª¶‘‡2J$d8a8dbc0-7fb8-481e-8ee2-531b64200258
-kotlin:S6619ó";Remove this useless elvis operation ?:, it always succeeds.(‹˜ú•8†ª¶‘‡2J$3f3e4258-64b1-43fb-b98c-e84046113a00
-‰kotlin:S6619÷	">Remove this useless non-null assertion !!, it always succeeds.(ğ¯…ûÿÿÿÿ8‡ª¶‘‡2J$2958a567-6694-4a59-a9d5-3e08579ecaa1
-„kotlin:S6619¡
-">Remove this useless non-null assertion !!, it always succeeds.(ÀÓº¸8‡ª¶‘‡2J$0d1593e9-49a1-4182-a07a-d4e3e6a33235
-„kotlin:S6619¸
-">Remove this useless non-null assertion !!, it always succeeds.(”ÚÓô8‡ª¶‘‡2J$3d0077fc-5991-492a-8d37-c97c462cae91
-‰kotlin:S6619æ
-">Remove this useless non-null assertion !!, it always succeeds.(¡Ş¡ƒşÿÿÿÿ8‡ª¶‘‡2J$7d65e916-a937-4aa8-935e-60177eaa2c8a
-‰kotlin:S6619û
-">Remove this useless non-null assertion !!, it always succeeds.(Æ¢ğ¦ùÿÿÿÿ8‡ª¶‘‡2J$d82ed41a-4b17-4f76-82ca-bbc7b5eec9bc
-‰kotlin:S6619‘">Remove this useless non-null assertion !!, it always succeeds.(ÅçÛŞüÿÿÿÿ8‡ª¶‘‡2J$acfee792-a780-41cf-b7a1-a08060104d1f
-ƒkotlin:S6619©">Remove this useless non-null assertion !!, it always succeeds.(¦è¥*8‡ª¶‘‡2J$941c137f-ed8e-4107-b31c-063091dc8c16
-„kotlin:S6619º">Remove this useless non-null assertion !!, it always succeeds.(–’ãÏ8‡ª¶‘‡2J$12581069-6f0e-4f96-a39f-e5cb9775d335
-‰kotlin:S6619Î">Remove this useless non-null assertion !!, it always succeeds.(é‰¬íşÿÿÿÿ8‡ª¶‘‡2J$2a98b7cc-5ffa-4909-90f6-08d72396f5b6
-ikotlin:S125¡"Remove this commented out code.(ˆ¨Ëüüÿÿÿÿ8ˆª¶‘‡2J$59efcbc8-76ea-46b9-8bda-bb0f9bf3a432
-ikotlin:S125ñ"Remove this commented out code.(— ûéıÿÿÿÿ8ˆª¶‘‡2J$801775d2-195c-435e-8811-88c3d3294405
-dkotlin:S125¼"Remove this commented out code.(Œ˜±Œ8‰ª¶‘‡2J$baf2fa75-6786-4f27-96ba-3b4baaa36b93
-dkotlin:S125ù"Remove this commented out code.(–±Ù8‰ª¶‘‡2J$3eb491d8-ba3e-4c95-894a-4eb2afa0724d
-dkotlin:S125İ"Remove this commented out code.(‡éË¦8‰ª¶‘‡2J$50354f5d-98bd-4672-9d74-b296d9195601
-dkotlin:S125¡	"Remove this commented out code.(ãÚÊÃ8Šª¶‘‡2J$c889b147-f896-4c5f-9f6f-2f605c9b7a72
-ikotlin:S125‘
-"Remove this commented out code.(Úšˆúÿÿÿÿ8Šª¶‘‡2J$d608f9b7-c5fc-4b20-81e0-a640919e3067
-ikotlin:S125«
-"Remove this commented out code.(ö§ƒ’ùÿÿÿÿ8Šª¶‘‡2J$3ca18219-3f87-460a-bff7-c96f7918055f
-˜kotlin:S117ç"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ßÁâüÿÿÿÿ8ª¶‘‡2J$2f6897d6-892c-4660-bd76-992f6ef71892
-˜kotlin:S117ç"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ßÁâüÿÿÿÿ8ª¶‘‡2J$105875fe-4fdd-4e1a-86b3-4d45ff1dedde
-gkotlin:S6310Ú"Avoid hardcoded dispatchers.(ò•¤Ùùÿÿÿÿ8ª¶‘‡2J$6c55766a-d59d-4e49-bd00-9d6fcf9855b9
-nkotlin:S108â")Either remove or fill this block of code.(÷¦¦Ò8ªª¶‘‡2J$21723f0c-7405-4393-9b4a-0bd59ab3d21e
-skotlin:S108á")Either remove or fill this block of code.(±ß–ûÿÿÿÿ8ªª¶‘‡2J$8abdc64b-ee9a-43e2-8c00-6e8fb7e55c3c
-}kotlin:S1135Ô"2Complete the task associated to this TODO comment.(áÃæùÿÿÿÿ8°ª¶‘‡2J$658cd945-5554-465a-8c73-cfbf9bc9fec8
-~kotlin:S1481ê"3Remove this unused "convertAddress" local variable.(‚–£öşÿÿÿÿ8´ª¶‘‡2J$7d3f24ae-9d41-45ae-a95b-ced3091ae76d
-{kotlin:S1481ğ"0Remove this unused "displayName" local variable.(ş¬¶ûÿÿÿÿ8´ª¶‘‡2J$176f5452-8325-4186-8d76-f563b18fca87
-nkotlin:S1481ï")Remove this unused "path" local variable.(æ’³#8´ª¶‘‡2J$b2cf9332-85ec-4add-8c25-672b211dafb6
-{kotlin:S1481ğ"0Remove this unused "displayName" local variable.(ş¬¶ûÿÿÿÿ8´ª¶‘‡2J$4dfe1387-c824-4b0f-9847-9f25c4d59bb9
-nkotlin:S1481ï")Remove this unused "path" local variable.(æ’³#8´ª¶‘‡2J$c43ce28d-987b-4373-bd84-93efcc9e410e
-^kotlin:S1128"Remove this unused import.(é±§Q8ºª¶‘‡2J$042cb100-822d-4539-b859-bbf37446ec3b
-dkotlin:S1128"Remove this unused import.(Ô¼³úÿÿÿÿÿ8ºª¶‘‡2J$8ad8e013-76f7-4bcc-b638-1af085de907f
-_kotlin:S1128"Remove this unused import.(ÁÈÚø8ºª¶‘‡2J$718f8bfe-2bb3-4979-aa9d-1760c466160d
-_kotlin:S1128"Remove this unused import.(—˜å¿8ºª¶‘‡2J$4970af54-2597-41a2-86c5-d162bebfc304
-_kotlin:S1128"Remove this unused import.(¼¡‘Í8ºª¶‘‡2J$cb5e5e42-0ced-4a16-8127-c6d1237721fb
-_kotlin:S1128"Remove this unused import.(´¥ø´8ºª¶‘‡2J$cf80a752-0948-4b2b-bbca-f60653884c03
-dkotlin:S1128"Remove this unused import.(ã²ı úÿÿÿÿ8ºª¶‘‡2J$3663c593-285f-4621-87c6-f2ee8373b799
-_kotlin:S1128)"Remove this unused import.(“Û‚Ò8ºª¶‘‡2J$eeaaffe4-b4c7-40d2-afa7-4c049a3c2bad
-_kotlin:S11281"Remove this unused import.(°ü¢ï8ºª¶‘‡2J$47b831fe-137c-4a3b-9e09-46907dad4e26
->kotlin:S1128="Remove this unused import.(àŒşÿÿÿÿ8ø›‡2
-_kotlin:S1128K"Remove this unused import.(äÓßã8ºª¶‘‡2J$769fb3fa-38b1-4f36-ba00-b862ae4e9b77
-_kotlin:S1128M"Remove this unused import.(ãèü‡8ºª¶‘‡2J$1ad4ea6a-6143-4c78-a2ca-6e68bad842fc
-dkotlin:S1128Q"Remove this unused import.( ¹íúÿÿÿÿ8ºª¶‘‡2J$f872ca65-746e-42fc-96c0-595ce00b9bd7
-dkotlin:S1128T"Remove this unused import.(Úœåùÿÿÿÿ8ºª¶‘‡2J$8ccbadc7-28ab-4225-a960-69ab78d3c727
-_kotlin:S1128U"Remove this unused import.(Ó‹„8ºª¶‘‡2J$214fad10-8f3e-4792-8a4c-c3c18794ab45
-_kotlin:S1128V"Remove this unused import.(Üÿúº8ºª¶‘‡2J$50365236-bec0-44e0-9a6e-ab94198a49c1
-–kotlin:S1192‰"PDefine a constant instead of duplicating this literal "application/pdf" 4 times.(Úö£å8¼ª¶‘‡2J$8338dd9a-e071-4178-9aa4-2bc2f4619fe6
-”kotlin:S1871ğ"NThis branch's code block is the same as the block for the branch on line 1001.(ßâƒ‚8¾ª¶‘‡2J$fa3cabb0-7041-482f-b400-22a5b7c1fc05
-“kotlin:S1871ö"NThis branch's code block is the same as the block for the branch on line 1001.(Ä†•8¾ª¶‘‡2J$ac210acf-9500-44e9-93ee-d56c9cfa17e4
-nkotlin:S1874Ç"#Deprecated code should not be used.(´¾ø½ıÿÿÿÿ8Àª¶‘‡2J$2ded0f48-3402-441f-901d-a43ecafc3592
-ikotlin:S1874	"#Deprecated code should not be used.(–ø”8Àª¶‘‡2J$e7c8f623-e360-4cad-9108-dca254d0b796
-nkotlin:S1874 	"#Deprecated code should not be used.(ßÀ›æıÿÿÿÿ8Àª¶‘‡2J$43c4fe74-5801-47b9-9ac3-aeff74ecaf69
-ikotlin:S1874Ù	"#Deprecated code should not be used.(Ó•»ë8Àª¶‘‡2J$27d57867-16e4-4a68-936c-8928fbeb70e9
-ikotlin:S1874ä	"#Deprecated code should not be used.(‚´Ã¬8Àª¶‘‡2J$2f606655-1f15-441a-a705-a1baf1f29ec7
-˜kotlin:S3776¹"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(©Àùè8Áª¶‘‡2J$0314ef04-c673-4aeb-afd5-52bc59517ef9
-˜kotlin:S3776¢"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(é÷×Ä8Áª¶‘‡2J$4d7342a7-691b-4f69-b8e1-907edbb07813
-˜kotlin:S3776ï"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ß»Š…8Áª¶‘‡2J$7b6d21b3-7920-4a3a-9424-0aef1d58119e
-—kotlin:S6516°"LReplace explicit functional interface implementation with lambda expression.(Ü¦ÏÛûÿÿÿÿ8Çª¶‘‡2J$c413483b-e705-41c9-8445-dab4fe6be08b
-ˆkotlin:S6511¥"=Merge chained "if" statements into a single "when" statement.(â¨ÿÿÿÿÿ8Éª¶‘‡2J$a1cb4cff-7e22-4cda-b9cc-775c2db6cd25
-¦secrets:S6334è"_Make sure this Google API Key is either secured or revoked, changed, and removed from the code.(ºÄĞ·8Ù„‘À†2J$bbbbd168-e678-40da-b6a4-d4999dc21ebf
+vkotlin:S1172²"0Remove this unused function parameter "binding".(é÷×Ä8ªÕé2J$2fbc371c-5f0b-4f17-a054-8acb7859c331
+{kotlin:S1172ø"0Remove this unused function parameter "context".(äÕå¨üÿÿÿÿ8ªÕé2J$6279138f-eb6f-494c-bf4d-2c512c7ec6c2
+wkotlin:S1172«"2Use "_" instead of these unused lambda parameters.(Š‡Ãa8ªÕé2J$eb6089c1-6520-4575-8ce5-fc5994ab3fb7
+€kotlin:S899à";Do something with the "Boolean" value returned by "delete".(ø¸ºÀ8¬Õé2J$a0fa6a77-2dbf-4806-b535-fdc965802acb
+\kotlin:S6619İ"7Remove this useless non-null check, it always succeeds.(ö¢ú´ûÿÿÿÿ8ò¾éª2
+†kotlin:S6619ì";Remove this useless elvis operation ?:, it always succeeds.(İ›çéÿÿÿÿÿ8²Õé2J$6d2f2bc3-cc44-4d73-8e05-72aa839dfffc
+†kotlin:S6619ì";Remove this useless elvis operation ?:, it always succeeds.(İ›çéÿÿÿÿÿ8²Õé2J$8746026e-bd36-4296-8f1d-a10bac284dfa
+kotlin:S6619ƒ";Remove this useless elvis operation ?:, it always succeeds.(‹˜ú•8³Õé2J$2341f8c7-228b-4b53-ad75-58c59552ef6a
+‰kotlin:S6619‡
+">Remove this useless non-null assertion !!, it always succeeds.(ğ¯…ûÿÿÿÿ8³Õé2J$cd6da5fe-00a0-4524-be1a-641da5ebb55f
+„kotlin:S6619±
+">Remove this useless non-null assertion !!, it always succeeds.(ÀÓº¸8³Õé2J$e8896b94-6ece-4324-8fa7-4208bec6a805
+„kotlin:S6619È
+">Remove this useless non-null assertion !!, it always succeeds.(”ÚÓô8³Õé2J$15f59fe9-f0f2-4ffc-aef3-7ce6c3fb4d4b
+‰kotlin:S6619ö
+">Remove this useless non-null assertion !!, it always succeeds.(¡Ş¡ƒşÿÿÿÿ8³Õé2J$6c772de1-d2a2-4a53-adef-674a17e5abde
+‰kotlin:S6619‹">Remove this useless non-null assertion !!, it always succeeds.(Æ¢ğ¦ùÿÿÿÿ8³Õé2J$fffe8934-13fe-44b7-9542-168506d68f79
+‰kotlin:S6619¡">Remove this useless non-null assertion !!, it always succeeds.(ÅçÛŞüÿÿÿÿ8³Õé2J$b12c8d79-6d5f-4700-95ad-04f8b89d6f6b
+ƒkotlin:S6619¹">Remove this useless non-null assertion !!, it always succeeds.(¦è¥*8³Õé2J$ba8569e4-f80b-42a0-a1c0-35f70e114e46
+„kotlin:S6619Ê">Remove this useless non-null assertion !!, it always succeeds.(–’ãÏ8³Õé2J$4d51e249-bc3f-48e7-854a-3f3bc76c1952
+‰kotlin:S6619Ş">Remove this useless non-null assertion !!, it always succeeds.(é‰¬íşÿÿÿÿ8³Õé2J$4aca15ba-4f3a-42d8-baa4-6d8a77352498
+ikotlin:S125¡"Remove this commented out code.(ˆ¨Ëüüÿÿÿÿ8´Õé2J$2a6379a4-2cc2-439d-8e94-8a33ccbfdad8
+ikotlin:S125ñ"Remove this commented out code.(— ûéıÿÿÿÿ8µÕé2J$a990f387-72fc-468b-8406-adead7be6945
+dkotlin:S125¼"Remove this commented out code.(Œ˜±Œ8·Õé2J$7ea845af-9c09-4f81-8d38-1ab4edd1e87b
+dkotlin:S125ù"Remove this commented out code.(–±Ù8¸Õé2J$dd6f397c-ed82-4fcb-a7dc-703561e67e8b
+dkotlin:S125à"Remove this commented out code.(‡éË¦8¸Õé2J$d98fb04a-5543-4ad7-8250-b05b86e0ae03
+dkotlin:S125±	"Remove this commented out code.(ãÚÊÃ8¸Õé2J$98d58593-7f67-4762-9863-46bd343d5e2d
+ikotlin:S125¡
+"Remove this commented out code.(Úšˆúÿÿÿÿ8¸Õé2J$ecd35f3e-b11c-4f9f-aab2-b88a0063691c
+ikotlin:S125»
+"Remove this commented out code.(ö§ƒ’ùÿÿÿÿ8¸Õé2J$e7fb9e83-ab73-466b-89a0-a42be3e724e7
+˜kotlin:S117ç"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ßÁâüÿÿÿÿ8ÁÕé2J$09fc429c-8002-45c7-8dfe-dfa093fe9d5b
+˜kotlin:S117ç"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ßÁâüÿÿÿÿ8ÁÕé2J$dc73167d-a72c-46f9-8a6c-664b226cf996
+gkotlin:S6310ê"Avoid hardcoded dispatchers.(ò•¤Ùùÿÿÿÿ8ÁÕé2J$359409d4-c272-4eec-95c4-065a6fe9e721
+akotlin:S6310Ä"Avoid hardcoded dispatchers.(©ÓœW8ÁÕé2J$a10e93d3-76a3-48b9-a6c6-d14c02efcda4
+bkotlin:S6310Ø"Avoid hardcoded dispatchers.(Í¡·Ş8ÂÕé2J$effe37bb-e36a-423a-903e-d63cd3db8038
+bkotlin:S6310ç"Avoid hardcoded dispatchers.(Í¡·Ş8ÂÕé2J$fcfc04e5-75af-4155-9787-6c8bc901e3ac
+bkotlin:S6310ğ"Avoid hardcoded dispatchers.(Í¡·Ş8ÂÕé2J$45f0ff9e-0df2-4564-b568-786b52c22a1d
+bkotlin:S6310ú"Avoid hardcoded dispatchers.(Í¡·Ş8ÂÕé2J$e30edcb3-908f-4ecf-adce-3cffd2aa6900
+bkotlin:S6310"Avoid hardcoded dispatchers.(Í¡·Ş8ÂÕé2J$ed357f95-ea62-4ebd-a327-f82784795b8f
+bkotlin:S6310Š"Avoid hardcoded dispatchers.(Í¡·Ş8ÂÕé2J$5d17dea4-0ffc-49f8-92af-098de2a2511b
+nkotlin:S108â")Either remove or fill this block of code.(÷¦¦Ò8æÕé2J$a857397e-55f6-4924-b87f-a5884a852e77
+skotlin:S108ñ")Either remove or fill this block of code.(±ß–ûÿÿÿÿ8æÕé2J$efd27c0e-3f89-43f8-9982-7a278da515a7
+}kotlin:S1135Ô"2Complete the task associated to this TODO comment.(áÃæùÿÿÿÿ8ñÕé2J$85687af5-a4db-4f51-ad4b-d3f6fae69885
+~kotlin:S1481ê"3Remove this unused "convertAddress" local variable.(‚–£öşÿÿÿÿ8öÕé2J$578e252d-9765-429d-8b24-392a723f3dd9
+{kotlin:S1481€"0Remove this unused "displayName" local variable.(ş¬¶ûÿÿÿÿ8öÕé2J$685c7f58-90a3-4258-a82a-3d02484477e0
+nkotlin:S1481ÿ")Remove this unused "path" local variable.(æ’³#8öÕé2J$069bd408-7578-4c90-b743-0043958827af
+{kotlin:S1481€"0Remove this unused "displayName" local variable.(ş¬¶ûÿÿÿÿ8öÕé2J$eaf68ebb-268f-4182-a6f4-d3dfcf5153fc
+nkotlin:S1481ÿ")Remove this unused "path" local variable.(æ’³#8÷Õé2J$1551dde7-456a-4ccf-bae0-74fdb2887504
+^kotlin:S1128"Remove this unused import.(é±§Q8ÿÕé2J$e1bc0425-7d4c-4a6b-b7b2-a484f43f5a0e
+dkotlin:S1128"Remove this unused import.(Ô¼³úÿÿÿÿÿ8ÿÕé2J$1ed546f0-af8d-4019-9806-e0acaf6d9583
+_kotlin:S1128"Remove this unused import.(ÁÈÚø8ÿÕé2J$63c625ac-d6fb-4ee1-a6dd-d75d97384877
+_kotlin:S1128"Remove this unused import.(—˜å¿8ÿÕé2J$9b14bfbb-89c4-4701-a51e-dc7decd45ef2
+_kotlin:S1128"Remove this unused import.(¼¡‘Í8ÿÕé2J$df5a23a0-0d71-466b-be72-de1064e486ca
+_kotlin:S1128"Remove this unused import.(´¥ø´8ÿÕé2J$6a1a33de-bacd-4866-b5c4-bc9f905e1913
+dkotlin:S1128"Remove this unused import.(ã²ı úÿÿÿÿ8ÿÕé2J$2d81f670-0751-46ea-92c0-1288762ca4e7
+_kotlin:S1128)"Remove this unused import.(“Û‚Ò8ÿÕé2J$fffa2d81-e1aa-4526-8d5a-030caa46fa13
+_kotlin:S11281"Remove this unused import.(°ü¢ï8ÿÕé2J$c607f8ae-a9f5-4dab-95e5-87fb0af2ed88
+>kotlin:S1128="Remove this unused import.(àŒşÿÿÿÿ8³¿éª2
+_kotlin:S1128K"Remove this unused import.(äÓßã8ÿÕé2J$4a5fc5b9-baf4-4798-87bb-3c7a549ae211
+_kotlin:S1128M"Remove this unused import.(ãèü‡8ÿÕé2J$cb882f88-0a87-4f8f-b44e-70c7c7498d55
+dkotlin:S1128Q"Remove this unused import.( ¹íúÿÿÿÿ8ÿÕé2J$4f8bd10b-cd49-423f-a5b8-255008466dde
+dkotlin:S1128T"Remove this unused import.(Úœåùÿÿÿÿ8ÿÕé2J$035e8666-77b2-4ca1-9d8a-268be63a98b6
+_kotlin:S1128U"Remove this unused import.(Ó‹„8ÿÕé2J$1570a1f3-d899-42a1-b56c-a6d522c1dda3
+_kotlin:S1128V"Remove this unused import.(Üÿúº8ÿÕé2J$48c6b6e3-d7c2-4de9-ab5a-6a1b82ff5187
+–kotlin:S1192‰"PDefine a constant instead of duplicating this literal "application/pdf" 4 times.(Úö£å8‚Öé2J$5cc74ead-1eee-41dc-ab3d-2d4222259b1e
+”kotlin:S1871ù"NThis branch's code block is the same as the block for the branch on line 1007.(ßâƒ‚8…Öé2J$781e48a2-2f45-4ae4-92de-6a7583f9200f
+“kotlin:S1871€"NThis branch's code block is the same as the block for the branch on line 1007.(Ä†•8…Öé2J$8b9d2899-647a-498e-8fa1-82e402ea6a5a
+nkotlin:S1874Ç"#Deprecated code should not be used.(´¾ø½ıÿÿÿÿ8‡Öé2J$a7ab04ea-9e0c-4c2f-8ffd-2a6ad6496add
+ikotlin:S1874 	"#Deprecated code should not be used.(–ø”8‡Öé2J$b290414f-affb-4f85-8798-4a0f02f8b92c
+nkotlin:S1874°	"#Deprecated code should not be used.(ßÀ›æıÿÿÿÿ8‡Öé2J$01f462ae-2407-499f-857a-8d3c078671ae
+ikotlin:S1874é	"#Deprecated code should not be used.(Ó•»ë8‡Öé2J$2def3fce-fa60-4197-add6-05f2dd91d66a
+ikotlin:S1874ô	"#Deprecated code should not be used.(‚´Ã¬8‡Öé2J$f7b0d06b-7524-4c3f-b8d2-d5b2a2ec305c
+˜kotlin:S3776¹"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(©Àùè8ˆÖé2J$5b23c22e-8306-4a85-a8a8-17b069ec2d9c
+˜kotlin:S3776²"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(é÷×Ä8ˆÖé2J$91d0c614-72af-48ec-ac42-a0a816f3751e
+˜kotlin:S3776ÿ"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ß»Š…8‰Öé2J$35ea8abe-0164-4ada-a273-bca8f71693d5
+—kotlin:S6516°"LReplace explicit functional interface implementation with lambda expression.(Ü¦ÏÛûÿÿÿÿ8’Öé2J$519bc96a-23e1-4470-a0db-f0816ecb68bf
+ˆkotlin:S6511µ"=Merge chained "if" statements into a single "when" statement.(â¨ÿÿÿÿÿ8•Öé2J$c2bc68c3-aa54-40b5-896e-fb8d8c4512e1
+¦secrets:S6334è"_Make sure this Google API Key is either secured or revoked, changed, and removed from the code.(ºÄĞ·8Ù„‘À†2J$3e0d1cef-bc2d-4589-b8a0-caffb1d245bf

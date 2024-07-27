@@ -83,6 +83,7 @@ class VendorQotationFragment : Fragment() {
     lateinit var sessionManager: SessionManager
     lateinit var deliverTerm:String
     lateinit var itemDetail:String
+    lateinit var uomDetail:String
     lateinit var paymentTerm:String
     lateinit var itemId:String
      var itemRate:Int?=0
@@ -373,6 +374,7 @@ class VendorQotationFragment : Fragment() {
         val rate = binding?.rate?.text.toString().trim()
         val quantity = binding?.quantity?.text.toString().trim()
         val totalAmount = binding?.amountTotal?.text.toString().trim()
+        val paymentTerm=binding?.paymentTerms?.text.toString().trim()
         val remarks = binding?.remarks?.text.toString().trim()
 
         val header = HashMap<String, String>()
@@ -381,7 +383,7 @@ class VendorQotationFragment : Fragment() {
         header["Authorization"] = "${sessionManager.loginToken}"
         header["userID"]="${sessionManager.user?.RESPONSEDATA?.USER_ID}"
         lifecycleScope.launch {
-            var response = gateKeeperVm.saveVendorQuationR(header, multipart,vendorQuoationRequest(UOM_ID = itemDetail, TOTAL_AMOUNT = totalAmount, DELIVERY_TERMS = deliverTerm, REMARKS = remarks, QUANTITY = quantity, PAYMENT_TERMS = paymentTerm, RATE = rate, ITEM_ID = itemId))
+            var response = gateKeeperVm.saveVendorQuationR(header, multipart,vendorQuoationRequest(UOM_ID = uomDetail, TOTAL_AMOUNT = totalAmount, DELIVERY_TERMS = deliverTerm, REMARKS = remarks, QUANTITY = quantity, PAYMENT_TERMS = paymentTerm, RATE = rate, ITEM_ID = itemId))
 
             when (response) {
 
@@ -445,30 +447,30 @@ class VendorQotationFragment : Fragment() {
                 is NetworkState.Success->{
                     binding!!.loginProgressBar.progressBar.hidden()
 
-                    itemDetail=response.body.RESPONSEDATA[0].UOMID
-                    binding?.itemDetail?.setText(response.body.RESPONSEDATA[0].UOMCODE)
+                    uomDetail=response.body.RESPONSEDATA[0].UOMID
+                    binding?.uom?.setText(response.body.RESPONSEDATA[0].UOMCODE)
 
                     val customDropDownAdapter3 =
                         DeliveryTermsAdapter(requireContext(),  response.body.RESPONSEDATA)
-                    binding?.itemDetail?.setAdapter(customDropDownAdapter3)
+                    binding?.uom?.setAdapter(customDropDownAdapter3)
 
 
-                    binding?.itemDetail?.threshold=1
-                    binding?.itemDetail?.setKeyListener(null);
-                    binding?.itemDetail?.setOnClickListener {
+                    binding?.uom?.threshold=1
+                    binding?.uom?.setKeyListener(null);
+                    binding?.uom?.setOnClickListener {
                         (it as AutoCompleteTextView).showDropDown()
                     }
-                    binding?.itemDetail?.setOnFocusChangeListener { v, hasFocus ->
+                    binding?.uom?.setOnFocusChangeListener { v, hasFocus ->
                         if (hasFocus) {
                             (v as AutoCompleteTextView).showDropDown()
                         }
                     }
 
-                    binding?.itemDetail?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
+                    binding?.uom?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
                         val selectedModel = parent.adapter.getItem(position) as UOMData
                         if (selectedModel != null) {
-                            itemDetail=selectedModel.UOMID
-                            binding?.itemDetail?.setText(selectedModel.UOMCODE)
+                            uomDetail=selectedModel.UOMID
+                            binding?.uom?.setText(selectedModel.UOMCODE)
                         }
                     }
 
@@ -653,28 +655,28 @@ class VendorQotationFragment : Fragment() {
                     val initialItem = response.body.RESPONSEDATA[0]
 
 // Set initial values
-                    paymentTerm = initialItem.NAME
-                    binding?.paymentTerms?.setText(paymentTerm)
+                    itemDetail = initialItem.NAME
+                    binding?.itemDetail?.setText(itemDetail)
                     itemId = initialItem.ITEMID
                     binding?.hsnSacCode?.setText(initialItem.HSNDESCRIPTION)
 
 // Set the adapter to the AutoCompleteTextView
-                    binding?.paymentTerms?.setAdapter(customDropDownAdapter3)
+                    binding?.itemDetail?.setAdapter(customDropDownAdapter3)
 
-                    binding?.paymentTerms?.threshold=1
-                    binding?.paymentTerms?.setKeyListener(null);
-                    binding?.paymentTerms?.setOnClickListener {
+                    binding?.itemDetail?.threshold=1
+                    binding?.itemDetail?.setKeyListener(null);
+                    binding?.itemDetail?.setOnClickListener {
                         (it as AutoCompleteTextView).showDropDown()
                     }
 
-                    binding?.paymentTerms?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
+                    binding?.itemDetail?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
                         val selectedItem = parent.adapter.getItem(position) as ResponseDataItem
                         // Do whatever you want with the selected model object here
                         if (selectedItem != null) {
-                            paymentTerm = selectedItem.NAME
+                            itemDetail = selectedItem.NAME
                             clicked=true
                             itemId = selectedItem.ITEMID
-                            binding?.paymentTerms?.setText(paymentTerm)
+                            binding?.itemDetail?.setText(itemDetail)
                             binding?.hsnSacCode?.setText(selectedItem.HSNDESCRIPTION)
                         }
                     }

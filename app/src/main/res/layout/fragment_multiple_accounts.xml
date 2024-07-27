@@ -375,6 +375,7 @@
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Pan Card"
                                 android:inputType="textCapCharacters"
+
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:maxLength="50"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
@@ -523,7 +524,7 @@
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Pan Card"
                                 android:importantForAutofill="noExcludeDescendants"
-                                android:inputType="text"
+                                android:inputType="textCapCharacters"
                                 android:maxLength="50"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
@@ -673,7 +674,7 @@
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Pan Card"
                                 android:importantForAutofill="noExcludeDescendants"
-                                android:inputType="text"
+                                android:inputType="textCapCharacters"
                                 android:maxLength="50"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 

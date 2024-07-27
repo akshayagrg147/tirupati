@@ -81,23 +81,24 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
 
     private var image1:String = ""
     private var image1clicked:Boolean = false
-    private var first:ArrayList<MultipartBody.Part?>?=null
+    private var first:ArrayList<MultipartBody.Part?>?= ArrayList()
 
     private var image2:String = ""
     private var image2clicked:Boolean = false
-    private var second:ArrayList<MultipartBody.Part?>?=null
+    private var second:ArrayList<MultipartBody.Part?>?= ArrayList()
 
     private var image3:String = ""
     private var image3clicked:Boolean = false
-    private var third:ArrayList<MultipartBody.Part?>?=null
+    private var third:ArrayList<MultipartBody.Part?>?= ArrayList()
 
     private var image4:String = ""
     private var image4clicked:Boolean = false
-    private var fourth:ArrayList<MultipartBody.Part?>?=null
+    private var image5clicked:Boolean = false
+    private var fourth:ArrayList<MultipartBody.Part?>?= ArrayList()
 
 
-    private var fifth:ArrayList<MultipartBody.Part?>?=null
-    private var sixth:ArrayList<MultipartBody.Part?>?=null
+    private var fifth:ArrayList<MultipartBody.Part?>?= ArrayList()
+    private var sixth:ArrayList<MultipartBody.Part?>?= ArrayList()
     var supervisorData: GateRESPONSEDATA? = null
 
     var vendorName=""
@@ -140,13 +141,15 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
 
         bindingPic!!.imageListRC.layoutManager = LinearLayoutManager(requireContext())
 
-        adapter = ImageCamAdapter(images, this)
+        adapter = ImageCamAdapter(images, this,true)
         val weightChange = tareWT.toDouble()
         if(weightChange>.00){
             bindingPic!!.tollReceiptLL.visibility = View.GONE
             bindingPic!!.vehicleRcLL.visibility = View.GONE
             bindingPic!!.drivingLicenceLL.visibility = View.GONE
             bindingPic!!.frntBackLL.visibility = View.GONE
+            bindingPic!!.vendorEL.visibility = View.VISIBLE
+            bindingPic?.vendorLL?.visibility = View.GONE
 
 
         }
@@ -219,6 +222,17 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
             capturePhoto()
 
         }
+        bindingPic!!.loadVehicleEl.setOnClickListener{
+            image1clicked=false
+            image2clicked=false
+            image3clicked = false
+            image4clicked=false
+            image5clicked=true
+
+
+
+            capturePhoto()
+        }
 
 
             bindingPic!!.btnSupervisorDone.setOnClickListener {
@@ -244,7 +258,7 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
             val response =
                 uploadViewModel.postUploadsSupervisor(
                     header,supervisorData!!.GEID,supervisorData!!.SLID_REF,vehNo,grossWT,tareWT,netWT,
-                    first!!,second!!,third!!,fourth!!,fifth!!
+                    first?: ArrayList(),second?:ArrayList(),third?:ArrayList(),fourth?:ArrayList(),fifth?:ArrayList(),sixth?:ArrayList()
                 )
 
             when (response) {
@@ -253,7 +267,7 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
                     bindingPic!!.loginProgressBar.progressBar.hidden()
 
                     toast("${response.body.MESSAGE}")
-                    requireActivity().moveToActivity(LandingScreenGateKeeperActivity::class.java)
+                    requireActivity().moveToActivity(LandingScreenCustomerActivity::class.java)
                     requireActivity().finish()
                   /*  val args = Bundle()
 
@@ -262,22 +276,26 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
                 }
 
                 is NetworkState.Error<*> -> {
+                    toast("${response.msg}")
                     bindingPic!!.loginProgressBar.progressBar.hidden()
 
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
+                    toast("${response.msg}")
                     bindingPic!!.loginProgressBar.progressBar.hidden()
 
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
+                    toast("${response.msg}")
                     bindingPic!!.loginProgressBar.progressBar.hidden()
 
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+                    toast("${response.msg}")
                     bindingPic!!.loginProgressBar.progressBar.hidden()
 
                 }
@@ -295,6 +313,13 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
     private fun validateUI(binding: FragmentUploadSupervisorPicturesBinding): Boolean {
 
         var status = false
+        if (images6.isEmpty()) {
+            showCustomDialog(requireContext(), "Image Video of Empty vehicle can't be Empty","Error")
+            status = false
+        }
+        if(tareWT.toDouble()>.00){
+            return true
+        }
         if (images1.isEmpty()) {
             showCustomDialog(requireContext(), "Image Video of Load vehicle can't be Empty","Error")
             status = false
@@ -343,7 +368,7 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
                     if (photoFile != null) {
                         val photoURI = FileProvider.getUriForFile(
                             requireContext(),
-                            requireContext().applicationContext.packageName + ".provider_paths",
+                            requireContext().packageName + ".provider",
                             photoFile!!
                         )
                         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
@@ -496,6 +521,27 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
                         bindingPic!!.deleteDrivinLC.setOnClickListener {
                             bindingPic?.drivingLicenceLL?.visibility = View.VISIBLE
                             bindingPic!!.drivingLicenceRL.visibility = View.GONE
+
+                        }
+
+                    }
+                    image5clicked -> {
+                        val file4 = getImageFromUri(Uri.fromFile(File(selectedPaths)))
+                        bindingPic!!.emptyElImageView.setImageURI(Uri.fromFile(File(selectedPaths)))
+                        images6.add(file4!!)
+                        sixth= filesToMultipartParts("VIDEO_EMPTY_VEHICLE[]",images6)
+
+                        //                    drivingLicenceRL
+                        //                    uploadDrivinLCImageView
+                        //                    deleteDrivinLC
+                        //                    drivingLicenceLL
+
+                        bindingPic?.vendorEL?.visibility = View.GONE
+                        bindingPic!!.emptyEl.visibility = View.VISIBLE
+                        bindingPic!!.uploadDrivinLCImageView.setImageURI(Uri.fromFile(File(selectedPaths)))
+                        bindingPic!!.emptyElImageView.setOnClickListener {
+                            bindingPic?.vendorEL?.visibility = View.VISIBLE
+                            bindingPic!!.emptyEl.visibility = View.GONE
 
                         }
 

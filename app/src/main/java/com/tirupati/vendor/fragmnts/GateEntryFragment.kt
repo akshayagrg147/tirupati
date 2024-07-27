@@ -167,5 +167,9 @@ class GateEntryFragment : Fragment() {
 
     }
 
+    fun doSomethingOnButtonClick() {
+        callTheListApi()
+    }
+
 
 }

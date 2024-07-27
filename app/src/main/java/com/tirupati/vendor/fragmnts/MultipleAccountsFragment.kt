@@ -164,9 +164,7 @@ class MultipleAccountsFragment : Fragment() {
                Navigation.findNavController(bindingUploads!!.root)
                    .navigate(R.id.action_multipleAccountsFragment_to_uploadsFragment, args)
            }
-            else{
-               Toast.makeText(requireContext(), "Data Incomplete ",  Toast.LENGTH_SHORT).show()
-           }
+
         }
         bindingUploads?.secondAdded?.setOnClickListener{
             bindingUploads?.firstLL?.visibility = View.GONE
@@ -195,31 +193,58 @@ class MultipleAccountsFragment : Fragment() {
 
     private fun validateUI(bindingUploads: FragmentMultipleAccountsBinding): Boolean {
         if (bindingUploads.secondAccountll.visibility == View.VISIBLE) {
-            if (!isValidName(bindingUploads.EtVSecondName.text.toString()) ||
-                !isValidContact(bindingUploads.secondVContact.text.toString()) ||
-                !isValidEmail(bindingUploads.inputSecondVendorEmail.text.toString()) ||
-                !isValidPan(bindingUploads.secondVAdhar.text.toString())
-            ) {
+            if (!isValidName(bindingUploads.EtVSecondName.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Owner Full Name", Toast.LENGTH_SHORT).show()
+                return false
+            }
+            if (!isValidContact(bindingUploads.secondVContact.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Owner Contact No", Toast.LENGTH_SHORT).show()
+                return false
+            }
+            if (!isValidEmail(bindingUploads.inputSecondVendorEmail.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Email Id", Toast.LENGTH_SHORT).show()
+                return false
+            }
+            if (!isValidPan(bindingUploads.secondVAdhar.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Pan card", Toast.LENGTH_SHORT).show()
                 return false
             }
         }
 
         if (bindingUploads.thirdAccountll.visibility == View.VISIBLE) {
-            if (!isValidName(bindingUploads.EtVThirdName.text.toString()) ||
-                !isValidContact(bindingUploads.thirdVContact.text.toString()) ||
-                !isValidEmail(bindingUploads.inputThirdVendorEmail.text.toString()) ||
-                !isValidPan(bindingUploads.thirdVAdhar.text.toString())
-            ) {
+            if (!isValidName(bindingUploads.EtVThirdName.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Owner Full Name", Toast.LENGTH_SHORT).show()
+                return false
+            }
+            if (!isValidContact(bindingUploads.thirdVContact.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Owner Contact No", Toast.LENGTH_SHORT).show()
+                return false
+            }
+            if (!isValidEmail(bindingUploads.inputThirdVendorEmail.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Email Id", Toast.LENGTH_SHORT).show()
+                return false
+            }
+            if (!isValidPan(bindingUploads.thirdVAdhar.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Pan card", Toast.LENGTH_SHORT).show()
                 return false
             }
         }
 
         if (bindingUploads.fourthAccountll.visibility == View.VISIBLE) {
-            if (!isValidName(bindingUploads.EtVFourthName.text.toString()) ||
-                !isValidContact(bindingUploads.fourthVContact.text.toString()) ||
-                !isValidEmail(bindingUploads.inputfourthVendorEmail.text.toString()) ||
-                !isValidPan(bindingUploads.fourthVAdhar.text.toString())
-            ) {
+            if (!isValidName(bindingUploads.EtVFourthName.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Owner Full Name", Toast.LENGTH_SHORT).show()
+                return false
+            }
+            if (!isValidContact(bindingUploads.fourthVContact.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Owner Contact No", Toast.LENGTH_SHORT).show()
+                return false
+            }
+            if (!isValidEmail(bindingUploads.inputfourthVendorEmail.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Email Id", Toast.LENGTH_SHORT).show()
+                return false
+            }
+            if (!isValidPan(bindingUploads.fourthVAdhar.text.toString())) {
+                Toast.makeText(bindingUploads.root.context, "Invalid Pan card", Toast.LENGTH_SHORT).show()
                 return false
             }
         }

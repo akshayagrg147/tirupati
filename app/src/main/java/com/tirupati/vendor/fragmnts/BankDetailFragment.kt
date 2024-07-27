@@ -110,7 +110,7 @@ class BankDetailFragment : Fragment() {
                     args.putString("ACCOUNT_TYPE",bindingThirdPage!!.accountTypes.text.toString())
                     args.putString("IFSC",bindingThirdPage!!.ifscET.text.toString())
                     args.putString("BRANCH_NAME",bindingThirdPage!!.branchET.text.toString())
-                    args.putString("PINCODE",bindingThirdPage!!.pinET.text.toString())
+                    args.putString("PINCODE",pinCode)
                    if(bindingThirdPage!!.MsmeswOnOff.isChecked){
                        args.putString("MSME","1")
                    }else{args.putString("MSME","0")}
@@ -237,17 +237,17 @@ class BankDetailFragment : Fragment() {
             status = false
 
         }
-        else if(binding.pinET.text.toString().isNullOrEmpty()){
-            showCustomDialog(requireContext(),"PIN code can't be Empty","Error")
-            status = false
-
-        }
-
-        else if(!binding.pinET.text.toString().isValidPINcode()){
-            showCustomDialog(requireContext(),"PIN code not Valid","Error")
-            status = false
-
-        }
+//        else if(binding.pinET.text.toString().isNullOrEmpty()){
+//            showCustomDialog(requireContext(),"PIN code can't be Empty","Error")
+//            status = false
+//
+//        }
+//
+//        else if(!binding.pinET.text.toString().isValidPINcode()){
+//            showCustomDialog(requireContext(),"PIN code not Valid","Error")
+//            status = false
+//
+//        }
 
 
         else {

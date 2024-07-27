@@ -67,7 +67,8 @@
             android:id="@+id/edt5"
             android:layout_width="@dimen/_45sdp"
             android:layout_height="@dimen/_45sdp"
-            android:background="@drawable/otp2"
+            android:background="@drawable/squared_black_border_all"
+
             android:gravity="center"
             android:inputType="number"
             android:lines="1"
@@ -80,7 +81,8 @@
             android:id="@+id/edt6"
             android:layout_width="@dimen/_45sdp"
             android:layout_height="@dimen/_45sdp"
-            android:background="@drawable/otp2"
+            android:background="@drawable/squared_black_border_all"
+
             android:gravity="center"
             android:inputType="number"
             android:lines="1"

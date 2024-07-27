@@ -62,6 +62,7 @@ class EditSupervisorFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         LandingScreenCustomerActivity.changeTitle("Checklist Against GE")
+        LandingScreenCustomerActivity.showIcon(true)
 
 
     }
@@ -69,6 +70,7 @@ class EditSupervisorFragment : Fragment() {
     override fun onPause() {
         super.onPause()
         LandingScreenCustomerActivity.changeTitle("Checklist Against GE")
+        LandingScreenCustomerActivity.showIcon(false)
 
     }
 

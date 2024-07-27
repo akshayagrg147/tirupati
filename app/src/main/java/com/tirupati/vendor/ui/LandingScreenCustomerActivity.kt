@@ -59,6 +59,7 @@ class LandingScreenCustomerActivity : AppCompatActivity(), ToolbarTitleChangeLis
                 titleTextVw.setText(title)
 
 
+
             }
         }
 

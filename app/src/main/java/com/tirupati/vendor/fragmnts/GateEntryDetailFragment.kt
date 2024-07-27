@@ -169,7 +169,7 @@ class GateEntryDetailFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         LandingScreenGateKeeperActivity.changeTitle("Gate Entry Details")
-        LandingScreenGateKeeperActivity.showIcon(true)
+        LandingScreenGateKeeperActivity.showIcon(false)
 
     }
 

@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.tirupati.vendor.R
 
 
@@ -54,7 +55,7 @@ import com.tirupati.vendor.R
         val deleteButton: ImageButton = itemView.findViewById(R.id.deleteButton)
     }
 }*/
-class ImageCamAdapter(private val images: MutableList<Uri>, private val onClickListener: OnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ImageCamAdapter(private val images: MutableList<Uri>, private val onClickListener: OnClickListener,val shouldShowImage:Boolean) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     interface OnClickListener {
         fun onAddImageClick()
@@ -98,7 +99,12 @@ class ImageCamAdapter(private val images: MutableList<Uri>, private val onClickL
             VIEW_TYPE_IMAGE -> {
                 val imageHolder = holder as ImageViewHolder
                 val imageUri = images[position]
-                imageHolder.imageView.setImageDrawable(ContextCompat.getDrawable(imageHolder.imageView.context,R.drawable.pdf))
+                if(shouldShowImage)
+                    Glide.with(holder.itemView.context)
+                        .load(imageUri)
+                        .into(imageHolder.imageView)
+                else
+                    imageHolder.imageView.setImageDrawable(ContextCompat.getDrawable(imageHolder.imageView.context,R.drawable.pdf))
 //                imageHolder.imageView.setImageURI(imageUri)
                 imageHolder.deleteButton.setOnClickListener {
                     onClickListener.onDeleteImageClick(position)

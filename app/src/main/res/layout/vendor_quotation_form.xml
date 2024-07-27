@@ -91,7 +91,7 @@
                 app:hintTextColor="@color/colorPrimaryVariant">
 
                 <AutoCompleteTextView
-                    android:id="@+id/payment_terms"
+                    android:id="@+id/item_detail"
                     style="@style/et_login_signup"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_38sdp"
@@ -123,7 +123,7 @@
                 app:hintTextColor="@color/colorPrimaryVariant">
 
                 <AutoCompleteTextView
-                    android:id="@+id/item_detail"
+                    android:id="@+id/uom"
                     style="@style/et_login_signup"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_38sdp"
@@ -212,6 +212,49 @@
                     android:layout_height="wrap_content"
                     android:hint="Rate" />
             </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/payment_terms"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Payment Terms" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/text_Box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeErrorColor="@color/brightRed"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorPrimaryVariant">
+
+                <EditText
+                    android:id="@+id/amount_total"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:focusable="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Amount Exclusive GST" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/text_Box"
@@ -234,7 +277,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_38sdp"
                     android:focusable="true"
-                    android:hint="Legal Entity Type"
+                    android:hint="Delivery Terms"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="text"
                     android:fontFamily="@font/montserrat_regular"
@@ -246,28 +289,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/text_Box"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:boxCornerRadiusBottomEnd="12dp"
-                app:boxCornerRadiusBottomStart="12dp"
-                app:boxCornerRadiusTopEnd="12dp"
-                app:boxCornerRadiusTopStart="12dp"
-                app:boxStrokeErrorColor="@color/brightRed"
-                app:errorEnabled="true"
-                app:hintTextColor="@color/colorPrimaryVariant">
-
-                <EditText
-                    android:id="@+id/amount_total"
-                    android:imeOptions="actionDone"
-                    android:inputType="number"
-                    android:focusable="false"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Amount" />
-            </com.google.android.material.textfield.TextInputLayout>
 
 
 
