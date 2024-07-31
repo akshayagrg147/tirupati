@@ -100,6 +100,7 @@
             <EditText
                 android:id="@+id/etNameOrg"
                 style="@style/et_login_signup"
+                android:textCursorDrawable="@null"
                 android:imeOptions="actionDone"
                 android:hint="Name of Organisation"
                 android:importantForAutofill="noExcludeDescendants"
@@ -127,6 +128,7 @@
                 <EditText
                     android:id="@+id/etContactNumber"
                     style="@style/et_login_signup"
+                    android:textCursorDrawable="@null"
                     android:imeOptions="actionDone"
                     android:hint="Organisation's Contact Number"
                     android:importantForAutofill="noExcludeDescendants"
@@ -153,6 +155,7 @@
                 <EditText
                     android:id="@+id/etOrgEmailNumber"
                     style="@style/et_login_signup"
+                    android:textCursorDrawable="@null"
                     android:hint="Organisation's Email ID"
                     android:imeOptions="actionDone"
                     android:importantForAutofill="noExcludeDescendants"

@@ -38,12 +38,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.tirupati.vendor.ProgressDialogHelper
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.DeliveryTermsAdapter
 import com.tirupati.vendor.adapters.PaymentTermsAdapter
 import com.tirupati.vendor.adapters.SpinnerAdapter
 import com.tirupati.vendor.databinding.VendorQuotationFormBinding
 import com.tirupati.vendor.helper.SessionManager
+import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.ResponseDataItem
 import com.tirupati.vendor.model.UOMData
 import com.tirupati.vendor.model.vendorQuoationRequest
@@ -427,6 +430,8 @@ class VendorQotationFragment : Fragment() {
 
     }
     private fun getuomList() {
+        var progressDialogHelper= ProgressDialogHelper(requireContext())
+
 
         lifecycleScope.launch {
             var response = vendorFormVM.getUomList()
@@ -434,6 +439,7 @@ class VendorQotationFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success->{
+                    binding!!.loginProgressBar.progressBar.shown()
 
                     itemDetail=response.body.RESPONSEDATA[0].UOMID
                     binding?.itemDetail?.setText(response.body.RESPONSEDATA[0].UOMCODE)
@@ -465,16 +471,21 @@ class VendorQotationFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*>->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.InternalServerError->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.ResourceNotFound->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
                 else->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
             }
 
@@ -618,6 +629,8 @@ class VendorQotationFragment : Fragment() {
     }
 
     private fun getPaymentTerms() {
+        var progressDialogHelper= ProgressDialogHelper(requireContext())
+
         lifecycleScope.launch {
             val header = HashMap<String, String>()
             header["Accept"] = "application/json"
@@ -629,6 +642,7 @@ class VendorQotationFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success->{
+                    binding!!.loginProgressBar.progressBar.shown()
                     var clicked:Boolean=true
 
                     // Assuming you have a PaymentTermsAdapter that takes a context and a list of ResponseDataItem
@@ -674,17 +688,22 @@ class VendorQotationFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*>->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                      Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException->{
+                    binding!!.loginProgressBar.progressBar.hidden()
 
                 }
                 is NetworkState.HttpErrors.InternalServerError->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.ResourceNotFound->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
                 else->{
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
             }
 

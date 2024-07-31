@@ -9,7 +9,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lltitle"
+
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_12sdp">
@@ -101,6 +101,7 @@
                     android:id="@+id/billNumber"
                     style="@style/et_login_signup"
                     android:hint="Bill Number"
+                    android:textCursorDrawable="@null"
                     android:textAllCaps="true"
                     android:inputType="text"
                     android:maxLength="50"
@@ -127,6 +128,7 @@
                     android:id="@+id/vehicleNumber"
                     style="@style/et_login_signup"
                     android:hint="Vehicle Number"
+                    android:textCursorDrawable="@null"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="text"
                     android:textAllCaps="true"
@@ -154,6 +156,7 @@
                     style="@style/et_login_signup"
                     android:hint="Bill Date"
                     android:id="@+id/billDate"
+                    android:textCursorDrawable="@null"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="text"
                     android:focusable="false"
@@ -188,5 +191,7 @@
             android:textColor="@color/white" />
 
     </LinearLayout>
-
+    <include
+        android:id="@+id/loginProgressBar"
+        layout="@layout/layout_progress_bar" />
 </RelativeLayout>

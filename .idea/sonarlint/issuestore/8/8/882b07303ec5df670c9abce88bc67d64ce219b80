@@ -1,20 +1,0 @@
-
-_kotlin:S6615Î" Remove this useless initializer.(²© J$d0c4870d-88e0-4904-bb5c-5a0c7ea8faf2
-akotlin:S125g"Remove this commented out code.(åÆ»«ÿÿÿÿÿJ$11b669fa-cc7c-4a9e-9678-21fd8d728eb9
-]kotlin:S125‹"Remove this commented out code.(›ŠàÅJ$32fd39e5-56ac-40fa-a26e-b56f56cc08c4
-bkotlin:S125²"Remove this commented out code.(ö´óùÿÿÿÿJ$35355c0a-c2fa-407a-b593-b5b539b88854
-]kotlin:S125©"Remove this commented out code.(ÜèâJ$bb509683-2200-4367-a164-47abadd1dbc9
-]kotlin:S125Â"Remove this commented out code.(–±ÙJ$6ea1f1c4-a05f-4fb5-875f-e2d9a5b31037
-bkotlin:S125ë"Remove this commented out code.(ïÂÏ‰ùÿÿÿÿJ$11493b34-16db-41f9-842f-8bc68e6fd4e8
-]kotlin:S125ó"Remove this commented out code.(¥©óäJ$b8f07d9a-c09e-4802-884b-b558d9be10cc
-bkotlin:S125‹"Remove this commented out code.(ö´óùÿÿÿÿJ$78742a71-8456-48dd-b2c3-db8b120dc1cd
-‘kotlin:S117¡"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ä´›¶üÿÿÿÿJ$71d72ddd-7297-43c6-999f-6188a31db181
-gkotlin:S108µ")Either remove or fill this block of code.(ñ¿ÿÄJ$b4fd01a3-a838-4871-b357-9d52be712aa6
-gkotlin:S108·")Either remove or fill this block of code.(ßâƒ‚J$18b7ce4e-b37f-4773-9aa3-a31fbbda9905
-fkotlin:S108¹")Either remove or fill this block of code.(Ä†•J$94da03f5-accd-495e-a405-0de03a8dcd06
-lkotlin:S108»")Either remove or fill this block of code.(±ß–ûÿÿÿÿJ$36d5e4c8-46fe-4435-b4af-60fc423aeec4
-gkotlin:S108")Either remove or fill this block of code.(ñ¿ÿÄJ$62deeca2-2437-44b1-af04-59f48d22f8e8
-gkotlin:S108")Either remove or fill this block of code.(ßâƒ‚J$bc2ec0ba-ca97-4bd9-bad1-c877d777c9fa
-fkotlin:S108’")Either remove or fill this block of code.(Ä†•J$aafd7338-2f89-4458-b3d7-a8562c771616
-lkotlin:S108”")Either remove or fill this block of code.(±ß–ûÿÿÿÿJ$3f79b52e-b74a-468e-b447-646ebc34e45c
-kotlin:S6511Ï"=Merge chained "if" statements into a single "when" statement.(ıÖº¸úÿÿÿÿJ$f4942ec9-8e77-4816-91b0-09a95b106881

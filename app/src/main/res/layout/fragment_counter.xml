@@ -50,6 +50,7 @@
                     android:layout_height="wrap_content"
                     android:clickable="false"
                     android:focusable="false"
+                    android:textCursorDrawable="@null"
                     android:hint="Vendor Name"
                     android:text="@{model.counterDetails.responseData.vendorName}"
                     android:imeOptions="actionDone" />
@@ -323,6 +324,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="top"
                     android:hint="Remarks"
+                    android:textCursorDrawable="@null"
                     android:imeOptions="actionDone"
                     android:lines="4"
                     android:text="@{model.counterDetails.responseData.remarks}"

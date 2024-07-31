@@ -99,6 +99,7 @@
                 <EditText
                     android:id="@+id/billNumber"
                     style="@style/et_login_signup"
+                    android:textCursorDrawable="@null"
                     android:hint="Bill Number"
                     android:textAllCaps="true"
                     android:inputType="text"
@@ -126,6 +127,7 @@
                     android:id="@+id/vehicleNumber"
                     style="@style/et_login_signup"
                     android:hint="Vehicle Number"
+                    android:textCursorDrawable="@null"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="text"
                     android:textAllCaps="true"
@@ -153,6 +155,7 @@
                     style="@style/et_login_signup"
                     android:hint="Bill Date"
                     android:id="@+id/billDate"
+                    android:textCursorDrawable="@null"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="text"
                     android:focusable="false"

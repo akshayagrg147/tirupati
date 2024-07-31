@@ -150,6 +150,7 @@
                             <EditText
                                 android:id="@+id/EtVFirstName"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Vendor Name"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
@@ -178,6 +179,7 @@
                                 android:id="@+id/inputFirstVendorEmail"
                                 style="@style/et_login_signup"
                                 android:hint="Email"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -204,6 +206,7 @@
                             <EditText
                                 android:id="@+id/firstVContact"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Contact Number"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
@@ -231,6 +234,7 @@
                             <EditText
                                 android:id="@+id/firstVAdhar"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Adhar Card"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
@@ -290,6 +294,7 @@
                                 android:id="@+id/EtVSecondName"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Full Name"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -318,6 +323,7 @@
                                 android:id="@+id/inputSecondVendorEmail"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Email"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -345,6 +351,7 @@
                             <EditText
                                 android:id="@+id/secondVContact"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Owner's Contact Number"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
@@ -374,6 +381,7 @@
                                 android:id="@+id/secondVAdhar"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Pan Card"
+                                android:textCursorDrawable="@null"
                                 android:inputType="textCapCharacters"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:maxLength="50"
@@ -436,6 +444,7 @@
                             <EditText
                                 android:id="@+id/EtVThirdName"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Owner's Full Name"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
@@ -465,6 +474,7 @@
                             <EditText
                                 android:id="@+id/inputThirdVendorEmail"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Owner's Email"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
@@ -493,6 +503,7 @@
                             <EditText
                                 android:id="@+id/thirdVContact"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Owner's Contact Number"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
@@ -521,6 +532,7 @@
                             <EditText
                                 android:id="@+id/thirdVAdhar"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Owner's Adhar Card"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
@@ -587,6 +599,7 @@
                                 android:id="@+id/EtVFourthName"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Full Name"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -615,6 +628,7 @@
                             <EditText
                                 android:id="@+id/inputfourthVendorEmail"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Owner's Email"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
@@ -643,6 +657,7 @@
                             <EditText
                                 android:id="@+id/fourthVContact"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Owner's Contact Number"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
@@ -671,6 +686,7 @@
                             <EditText
                                 android:id="@+id/fourthVAdhar"
                                 style="@style/et_login_signup"
+                                android:textCursorDrawable="@null"
                                 android:hint="Owner's Adhar Card"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"

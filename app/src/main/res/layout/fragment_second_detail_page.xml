@@ -99,6 +99,7 @@
                     <EditText
                         android:id="@+id/addressET"
                         style="@style/et_login_signup"
+                        android:textCursorDrawable="@null"
                         android:hint="Address"
                         android:fontFamily="@font/montserrat_regular"
                         android:importantForAutofill="noExcludeDescendants"
@@ -180,6 +181,7 @@
                         android:id="@+id/statesList"
                         style="@style/et_login_signup"
                         android:layout_width="match_parent"
+                        android:textCursorDrawable="@null"
                         android:layout_height="wrap_content"
                         android:hint="State"
                         android:focusable="false" />
@@ -239,6 +241,7 @@
                     <EditText
                         android:id="@+id/etPinCode"
                         style="@style/et_login_signup"
+                        android:textCursorDrawable="@null"
                         android:hint="Pincode"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="number"
@@ -264,6 +267,7 @@
                         android:id="@+id/GSTnumberEt"
                         style="@style/et_login_signup"
                         android:hint="Organisation's GST Number"
+                        android:textCursorDrawable="@null"
                         android:inputType="textCapCharacters"
                         android:importantForAutofill="noExcludeDescendants"
                         android:textAllCaps="true"
@@ -289,6 +293,7 @@
                         android:id="@+id/PANEt"
                         style="@style/et_login_signup"
                         android:hint="Organisation's PAN Number"
+                        android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:textAllCaps="true"
@@ -324,4 +329,7 @@
 
 </LinearLayout>
     </RelativeLayout>
+    <include
+        android:id="@+id/loginProgressBar"
+        layout="@layout/layout_progress_bar" />
 </RelativeLayout>

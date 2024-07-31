@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
+import com.tirupati.vendor.ProgressDialogHelper
 import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.FragmentLogInBinding
 import com.tirupati.vendor.helper.SessionManager
@@ -126,6 +127,9 @@ class LogInFragment : Fragment() {
 
             when (response) {
                 is NetworkState.Success->{
+                    binding!!.loginProgressBar.progressBar.shown()
+                    var progressDialogHelper= ProgressDialogHelper(requireContext())
+
                     binding!!.loginProgressBar.progressBar.hidden()
 
                     var otp=response.body.OTP

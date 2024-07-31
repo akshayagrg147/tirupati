@@ -40,6 +40,7 @@
                         android:id="@+id/inputUserFirstName"
                         style="@style/et_login_signup"
                         android:hint="Bank Name"
+                        android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
@@ -61,6 +62,7 @@
                     <EditText
                         style="@style/et_login_signup"
                         android:hint="Account Number"
+                        android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
@@ -82,6 +84,7 @@
                     <EditText
                         style="@style/et_login_signup"
                         android:hint="Account Type"
+                        android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"

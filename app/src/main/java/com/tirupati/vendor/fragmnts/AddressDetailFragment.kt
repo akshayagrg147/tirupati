@@ -11,13 +11,17 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+
+import com.tirupati.vendor.ProgressDialogHelper
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.CityAdapter
 import com.tirupati.vendor.adapters.StateAdapter
 import com.tirupati.vendor.databinding.FragmentSecondDetailPageBinding
+import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.helper.isValidGST
 import com.tirupati.vendor.helper.isValidPINcode
 import com.tirupati.vendor.helper.showCustomDialog
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.CityList
 import com.tirupati.vendor.model.ResponseDataPo
 import com.tirupati.vendor.network.NetworkState
@@ -161,12 +165,19 @@ class AddressDetailFragment : Fragment() {
     private fun getCities(Stateid: String) {
         stateCode = Stateid
         bindingSecondPage!!.citiesList.text.clear()
+
+        var progressDialogHelper= ProgressDialogHelper(requireContext())
+
+        // Example usage
+
         lifecycleScope.launch {
             var response = statesviewModel.getCitiesList(Stateid)
 
             when (response) {
 
                 is NetworkState.Success->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.shown()
+                    progressDialogHelper.showProgressDialog()
                     cityList= response.body.RESPONSEDATA
 //                    initializeAdapter(branchList)
 
@@ -175,6 +186,8 @@ class AddressDetailFragment : Fragment() {
                 }
 
                 is NetworkState.Error<*>->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
+                    progressDialogHelper.dismissProgressDialog()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
@@ -185,6 +198,7 @@ class AddressDetailFragment : Fragment() {
                 is NetworkState.HttpErrors.ResourceNotFound->{
                 }
                 else->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
             }
 
@@ -380,28 +394,34 @@ fun getStates(stateName: ArrayList<ResponseDataPo>) {
 }
 
     private fun getStatesfromServer() {
+        var progressDialogHelper= ProgressDialogHelper(requireContext())
+
         lifecycleScope.launch {
             var response = statesviewModel.getStatesList()
 
             when (response) {
 
                 is NetworkState.Success->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.shown()
                     stateName= response.body.RESPONSEDATA
 //                    initializeAdapter(branchList)
                     getStates(stateName)
                 }
 
                 is NetworkState.Error<*>->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
                 is NetworkState.HttpErrors.InternalServerError->{
                 }
                 is NetworkState.HttpErrors.ResourceNotFound->{
                 }
                 else->{
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                 }
             }
 

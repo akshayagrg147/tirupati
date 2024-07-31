@@ -76,6 +76,8 @@
         <EditText
             android:id="@+id/inputUserGST"
             style="@style/et_login_signup"
+            android:textCursorDrawable="@null"
+
             android:inputType="textCapCharacters"
             android:hint="GST Number"
             android:importantForAutofill="noExcludeDescendants"
