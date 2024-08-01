@@ -163,10 +163,10 @@ class AddressDetailFragment : Fragment() {
 
 
     private fun getCities(Stateid: String) {
+        bindingSecondPage!!.loginProgressBar.progressBar.shown()
         stateCode = Stateid
         bindingSecondPage!!.citiesList.text.clear()
 
-        var progressDialogHelper= ProgressDialogHelper(requireContext())
 
         // Example usage
 
@@ -176,8 +176,8 @@ class AddressDetailFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success->{
-                    bindingSecondPage!!.loginProgressBar.progressBar.shown()
-                    progressDialogHelper.showProgressDialog()
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
+
                     cityList= response.body.RESPONSEDATA
 //                    initializeAdapter(branchList)
 
@@ -187,7 +187,6 @@ class AddressDetailFragment : Fragment() {
 
                 is NetworkState.Error<*>->{
                     bindingSecondPage!!.loginProgressBar.progressBar.hidden()
-                    progressDialogHelper.dismissProgressDialog()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
@@ -394,7 +393,7 @@ fun getStates(stateName: ArrayList<ResponseDataPo>) {
 }
 
     private fun getStatesfromServer() {
-        var progressDialogHelper= ProgressDialogHelper(requireContext())
+        bindingSecondPage!!.loginProgressBar.progressBar.shown()
 
         lifecycleScope.launch {
             var response = statesviewModel.getStatesList()
@@ -402,7 +401,7 @@ fun getStates(stateName: ArrayList<ResponseDataPo>) {
             when (response) {
 
                 is NetworkState.Success->{
-                    bindingSecondPage!!.loginProgressBar.progressBar.shown()
+                    bindingSecondPage!!.loginProgressBar.progressBar.hidden()
                     stateName= response.body.RESPONSEDATA
 //                    initializeAdapter(branchList)
                     getStates(stateName)

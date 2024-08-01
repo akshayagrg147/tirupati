@@ -127,7 +127,6 @@ class LogInFragment : Fragment() {
 
             when (response) {
                 is NetworkState.Success->{
-                    binding!!.loginProgressBar.progressBar.shown()
                     var progressDialogHelper= ProgressDialogHelper(requireContext())
 
                     binding!!.loginProgressBar.progressBar.hidden()

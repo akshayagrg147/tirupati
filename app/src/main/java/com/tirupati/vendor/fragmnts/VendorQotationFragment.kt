@@ -432,14 +432,14 @@ class VendorQotationFragment : Fragment() {
     private fun getuomList() {
         var progressDialogHelper= ProgressDialogHelper(requireContext())
 
-
+        binding!!.loginProgressBar.progressBar.shown()
         lifecycleScope.launch {
             var response = vendorFormVM.getUomList()
 
             when (response) {
 
                 is NetworkState.Success->{
-                    binding!!.loginProgressBar.progressBar.shown()
+                    binding!!.loginProgressBar.progressBar.hidden()
 
                     itemDetail=response.body.RESPONSEDATA[0].UOMID
                     binding?.itemDetail?.setText(response.body.RESPONSEDATA[0].UOMCODE)
@@ -630,7 +630,7 @@ class VendorQotationFragment : Fragment() {
 
     private fun getPaymentTerms() {
         var progressDialogHelper= ProgressDialogHelper(requireContext())
-
+        binding!!.loginProgressBar.progressBar.shown()
         lifecycleScope.launch {
             val header = HashMap<String, String>()
             header["Accept"] = "application/json"
@@ -642,7 +642,7 @@ class VendorQotationFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success->{
-                    binding!!.loginProgressBar.progressBar.shown()
+                    binding!!.loginProgressBar.progressBar.hidden()
                     var clicked:Boolean=true
 
                     // Assuming you have a PaymentTermsAdapter that takes a context and a list of ResponseDataItem

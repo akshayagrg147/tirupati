@@ -205,6 +205,7 @@ class GateEntryDetailFragment : Fragment() {
         return status
     }
     private fun callListShowApi() {
+        bindingGateEntryFragment!!.loginProgressBar.progressBar.shown()
         var progressDialogHelper= ProgressDialogHelper(requireContext())
 
         lifecycleScope.launch {
@@ -213,7 +214,7 @@ class GateEntryDetailFragment : Fragment() {
             when (response) {
 
                 is NetworkState.Success->{
-                    bindingGateEntryFragment!!.loginProgressBar.progressBar.shown()
+                    bindingGateEntryFragment!!.loginProgressBar.progressBar.hidden()
                     getAccountType(response.body.RESPONSEDATA)
                 }
 

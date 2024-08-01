@@ -3,6 +3,7 @@ package com.tirupati.vendor.fragmnts
 import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.ContentResolver
 import android.content.ContentValues
 import android.content.Context
@@ -10,17 +11,11 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
-import android.location.Address
-import android.location.Geocoder
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
-import android.os.FileUtils.copy
 import android.os.Looper
-import android.os.ParcelFileDescriptor
 import android.provider.MediaStore
 import android.provider.OpenableColumns
 import android.provider.Settings
@@ -29,6 +24,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
+import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -39,7 +37,6 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -47,22 +44,16 @@ import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
-import com.shockwave.pdfium.PdfiumCore
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.ImageCamAdapter
-import com.tirupati.vendor.adapters.MenuAdapter
 import com.tirupati.vendor.databinding.FragmentUploadsBinding
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
-import com.tirupati.vendor.helper.interfaces.OnItemClickListGateKeeper
 import com.tirupati.vendor.helper.showCustomDialog
 import com.tirupati.vendor.helper.shown
-import com.tirupati.vendor.model.VendorRESPONSEDATAX
 import com.tirupati.vendor.network.NetworkState
-import com.tirupati.vendor.ui.LandingScreenGateKeeperActivity
 import com.tirupati.vendor.utils.AddressConverter
 import com.tirupati.vendor.utils.toast
-import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
 import com.tirupati.vendor.viewmodels.SignUpUploadsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -70,22 +61,15 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import org.apache.commons.io.FileUtils
-import java.io.ByteArrayOutputStream
 import java.io.File
-import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
-import java.io.InputStream
-import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Date
-import java.util.Locale
-import java.util.zip.ZipEntry
-import java.util.zip.ZipOutputStream
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
@@ -707,8 +691,9 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
         }
 
         bindingUploads!!.btnSignUpDone.setOnClickListener {
+            successPopUp()
 
-            callUploadImageData()
+                callUploadImageData()
 
         }
 
@@ -977,8 +962,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
                 is NetworkState.Success -> {
                     bindingUploads!!.loginProgressBar.progressBar.hidden()
-                    toast("Registered Successfully!!")
-                    findNavController().navigate(R.id.logInFragment2)
+                    successPopUp()
 
 //                    binding?.listOpts?.adapter!!.notifyDataSetChanged()
 
@@ -1023,6 +1007,27 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
 
     }
+
+    private fun successPopUp() {
+        val inflater = layoutInflater
+        val dialogView: View = inflater.inflate(R.layout.successlayout, null)
+
+        // Create the dialog
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(dialogView)
+        dialog.setTitle("Custom Dialog")
+
+        // Find and set up the button
+        val button: TextView = dialogView.findViewById(R.id.btnAddPurchase)
+        button.setOnClickListener {
+            findNavController().navigate(R.id.logInFragment2)
+
+            dialog.dismiss() // Close the dialog when button is clicked
+        }
+
+        dialog.show()
+    }
+
 
     private fun validateUI(binding: FragmentUploadsBinding): Boolean {
 
@@ -1140,8 +1145,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                                     if (cursor != null && cursor.moveToFirst()) {
                                         displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                         Log.d("lllllllllll",displayName)
-                                        val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
-
+                                        val uri = Uri.parse(uriString)
                                         adapter.addImage(uri)
                                         val path=uri.toFile(requireContext())
 ////
@@ -1167,7 +1171,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                                     if (cursor != null && cursor.moveToFirst()) {
                                         displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                         Log.d("lllllllllll",displayName)
-                                        val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                        val uri = Uri.parse(uriString)
                                         val path=uri.toFile(requireContext())
                                         images3.add(compressFile(path!!,requireContext()))
                                         third= filesToMultipartParts("ELECTRIC_BILL[]",images3)
@@ -1198,7 +1202,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                                     if (cursor != null && cursor.moveToFirst()) {
                                         displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)?:0)
                                         Log.d("lllllllllll",displayName)
-                                        val uri = Uri.parse(("android.resource://" + requireContext().packageName).toString() + "/drawable/pdficon")
+                                        val uri = Uri.parse(uriString)
                                         val path=uri.toFile(requireContext())
                                         images4.add(compressFile(path!!,requireContext()))
                                         fourth= filesToMultipartParts("RENT_DOC[]",images4)
