@@ -40,6 +40,7 @@
                     android:id="@+id/etVendor"
                     style="@style/et_login_signup"
                     android:hint="Vendor"
+                    android:textCursorDrawable="@null"
 
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="text"
@@ -124,6 +125,7 @@
                 <EditText
                     style="@style/et_login_signup"
                     android:hint="Tare Weight"
+                    android:textCursorDrawable="@null"
                     android:id="@+id/etTare"
                     android:textCursorDrawable="@null"
                     android:focusable="false"

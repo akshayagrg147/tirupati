@@ -51,6 +51,7 @@
                     android:textCursorDrawable="@null"
                     android:clickable="false"
                     android:focusable="false"
+                    android:textCursorDrawable="@null"
                     android:hint="Vendor Name"
                     android:text="@{model.counterDetails.responseData.vendorName}"
                     android:imeOptions="actionDone" />

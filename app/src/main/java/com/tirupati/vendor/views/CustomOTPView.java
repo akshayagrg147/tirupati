@@ -42,50 +42,50 @@ public class CustomOTPView extends LinearLayout {
         binding = LayoutOtpViewBinding.inflate(inflater, this, true);
     }
 
-    public String getOtp() {
-        return binding.edt1.getText().toString() +
-                binding.edt2.getText().toString() +
-                binding.edt3.getText().toString() +
-                binding.edt4.getText().toString() /*+
-                binding.edt5.getText().toString() +
-                binding.edt6.getText().toString()*/ ;
-    }
-
-    public void setOtp(String otp) {
-        if (otp.length() >= 4) {
-            binding.edt1.setText(String.valueOf(otp.charAt(0)));
-            binding.edt2.setText(String.valueOf(otp.charAt(1)));
-            binding.edt3.setText(String.valueOf(otp.charAt(2)));
-            binding.edt4.setText(String.valueOf(otp.charAt(3)));
-/*
-            binding.edt5.setText(String.valueOf(otp.charAt(4)));
-            binding.edt6.setText(String.valueOf(otp.charAt(5)));
-*/
-        }
-    }
+//    public String getOtp() {
+//        return binding.edt1.getText().toString() +
+//                binding.edt2.getText().toString() +
+//                binding.edt3.getText().toString() +
+//                binding.edt4.getText().toString() /*+
+//                binding.edt5.getText().toString() +
+//                binding.edt6.getText().toString()*/ ;
+//    }
+//
+//    public void setOtp(String otp) {
+//        if (otp.length() >= 4) {
+//            binding.edt1.setText(String.valueOf(otp.charAt(0)));
+//            binding.edt2.setText(String.valueOf(otp.charAt(1)));
+//            binding.edt3.setText(String.valueOf(otp.charAt(2)));
+//            binding.edt4.setText(String.valueOf(otp.charAt(3)));
+///*
+//            binding.edt5.setText(String.valueOf(otp.charAt(4)));
+//            binding.edt6.setText(String.valueOf(otp.charAt(5)));
+//*/
+//        }
+//    }
   public void setBlankOtp() {
 
-            binding.edt1.setText("");
-            binding.edt2.setText("");
-            binding.edt3.setText("");
-            binding.edt4.setText("");
+//            binding.edt1.setText("");
+//            binding.edt2.setText("");
+//            binding.edt3.setText("");
+//            binding.edt4.setText("");
 
 
     }
 
     public void setUpViews() {
 
-        MyTextWatcher myTextWatcher1 = new MyTextWatcher(null, binding.edt2);
-        binding.edt1.setTag(myTextWatcher1);
-
-        MyTextWatcher myTextWatcher2 = new MyTextWatcher(binding.edt1, binding.edt3);
-        binding.edt2.setTag(myTextWatcher2);
-
-        MyTextWatcher myTextWatcher3 = new MyTextWatcher(binding.edt2, binding.edt4);
-        binding.edt3.setTag(myTextWatcher3);
-
-        MyTextWatcher myTextWatcher4 = new MyTextWatcher(binding.edt3, binding.edt5);
-        binding.edt4.setTag(myTextWatcher4);
+//        MyTextWatcher myTextWatcher1 = new MyTextWatcher(null, binding.edt2);
+//        binding.edt1.setTag(myTextWatcher1);
+//
+//        MyTextWatcher myTextWatcher2 = new MyTextWatcher(binding.edt1, binding.edt3);
+//        binding.edt2.setTag(myTextWatcher2);
+//
+//        MyTextWatcher myTextWatcher3 = new MyTextWatcher(binding.edt2, binding.edt4);
+//        binding.edt3.setTag(myTextWatcher3);
+//
+//        MyTextWatcher myTextWatcher4 = new MyTextWatcher(binding.edt3, binding.edt5);
+//        binding.edt4.setTag(myTextWatcher4);
 
 //        MyTextWatcher myTextWatcher5 = new MyTextWatcher(binding.edt4, binding.edt6);
 //        binding.edt5.setTag(myTextWatcher5);
@@ -122,24 +122,24 @@ public class CustomOTPView extends LinearLayout {
             }
         };
 
-        binding.edt1.addTextChangedListener(myTextWatcher1);
-        binding.edt2.addTextChangedListener(myTextWatcher2);
-        binding.edt3.addTextChangedListener(myTextWatcher3);
-        binding.edt4.addTextChangedListener(myTextWatcher4);
-//        binding.edt5.addTextChangedListener(myTextWatcher5);
-//        binding.edt6.addTextChangedListener(myTextWatcher6);
-
-        binding.edt1.setOnFocusChangeListener(onFocusChangeListener);
-        binding.edt2.setOnFocusChangeListener(onFocusChangeListener);
-        binding.edt3.setOnFocusChangeListener(onFocusChangeListener);
-        binding.edt4.setOnFocusChangeListener(onFocusChangeListener);
-//        binding.edt5.setOnFocusChangeListener(onFocusChangeListener);
-//        binding.edt6.setOnFocusChangeListener(onFocusChangeListener);
-
-        binding.edt1.setOnKeyListener(onKeyListener);
-        binding.edt2.setOnKeyListener(onKeyListener);
-        binding.edt3.setOnKeyListener(onKeyListener);
-        binding.edt4.setOnKeyListener(onKeyListener);
+//        binding.edt1.addTextChangedListener(myTextWatcher1);
+//        binding.edt2.addTextChangedListener(myTextWatcher2);
+//        binding.edt3.addTextChangedListener(myTextWatcher3);
+//        binding.edt4.addTextChangedListener(myTextWatcher4);
+////        binding.edt5.addTextChangedListener(myTextWatcher5);
+////        binding.edt6.addTextChangedListener(myTextWatcher6);
+//
+//        binding.edt1.setOnFocusChangeListener(onFocusChangeListener);
+//        binding.edt2.setOnFocusChangeListener(onFocusChangeListener);
+//        binding.edt3.setOnFocusChangeListener(onFocusChangeListener);
+//        binding.edt4.setOnFocusChangeListener(onFocusChangeListener);
+////        binding.edt5.setOnFocusChangeListener(onFocusChangeListener);
+////        binding.edt6.setOnFocusChangeListener(onFocusChangeListener);
+//
+//        binding.edt1.setOnKeyListener(onKeyListener);
+//        binding.edt2.setOnKeyListener(onKeyListener);
+//        binding.edt3.setOnKeyListener(onKeyListener);
+//        binding.edt4.setOnKeyListener(onKeyListener);
 //        binding.edt5.setOnKeyListener(onKeyListener);
 //        binding.edt6.setOnKeyListener(onKeyListener);
 
@@ -182,30 +182,30 @@ public class CustomOTPView extends LinearLayout {
     }
 
     private void changeBackgroundRes() {
+//
+//        if (TextUtils.isEmpty(binding.edt1.getText().toString())) {
+//          //  binding.edt1.setBackgroundResource(R.drawable.otp3_new);
+//        } else {
+//           // binding.edt1.setBackgroundResource(R.drawable.otp1);
+//        }
+//
+//        if (TextUtils.isEmpty(binding.edt2.getText().toString())) {
+//          //  binding.edt2.setBackgroundResource(R.drawable.otp2);
+//        } else {
+//           // binding.edt2.setBackgroundResource(R.drawable.otp1);
+//        }
+//
+//        if (TextUtils.isEmpty(binding.edt3.getText().toString())) {
+//           // binding.edt3.setBackgroundResource(R.drawable.otp2);
+//        } else {
+//          //  binding.edt3.setBackgroundResource(R.drawable.otp1);
+//        }
 
-        if (TextUtils.isEmpty(binding.edt1.getText().toString())) {
-          //  binding.edt1.setBackgroundResource(R.drawable.otp3_new);
-        } else {
-           // binding.edt1.setBackgroundResource(R.drawable.otp1);
-        }
-
-        if (TextUtils.isEmpty(binding.edt2.getText().toString())) {
-          //  binding.edt2.setBackgroundResource(R.drawable.otp2);
-        } else {
-           // binding.edt2.setBackgroundResource(R.drawable.otp1);
-        }
-
-        if (TextUtils.isEmpty(binding.edt3.getText().toString())) {
-           // binding.edt3.setBackgroundResource(R.drawable.otp2);
-        } else {
-          //  binding.edt3.setBackgroundResource(R.drawable.otp1);
-        }
-
-        if (TextUtils.isEmpty(binding.edt4.getText().toString())) {
-          //  binding.edt4.setBackgroundResource(R.drawable.otp2);
-        } else {
-           // binding.edt4.setBackgroundResource(R.drawable.otp1);
-        }
+//        if (TextUtils.isEmpty(binding.edt4.getText().toString())) {
+//          //  binding.edt4.setBackgroundResource(R.drawable.otp2);
+//        } else {
+//           // binding.edt4.setBackgroundResource(R.drawable.otp1);
+//        }
 
 //        if (TextUtils.isEmpty(binding.edt5.getText().toString())) {
 //            binding.edt5.setBackgroundResource(R.drawable.otp2);
