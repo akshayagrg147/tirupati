@@ -86,7 +86,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/lltitle">
 
-            <androidx.core.widget.NestedScrollView
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/_80sdp">
@@ -153,6 +153,7 @@
                                 android:hint="Vendor Name"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
+                                android:textCursorDrawable="@null"
                                 android:maxLength="50"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
@@ -178,6 +179,7 @@
                                 android:id="@+id/inputFirstVendorEmail"
                                 style="@style/et_login_signup"
                                 android:hint="Email"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -205,6 +207,7 @@
                                 android:id="@+id/firstVContact"
                                 style="@style/et_login_signup"
                                 android:hint="Contact Number"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
                                 android:maxLength="50"
@@ -232,6 +235,7 @@
                                 android:id="@+id/firstVAdhar"
                                 style="@style/et_login_signup"
                                 android:hint="Adhar Card"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -293,6 +297,7 @@
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
+                                android:textCursorDrawable="@null"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
                         </com.google.android.material.textfield.TextInputLayout>
@@ -320,6 +325,7 @@
                                 android:hint="Owner's Email"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
+                                android:textCursorDrawable="@null"
                                 android:maxLength="50"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
@@ -348,6 +354,7 @@
                                 android:hint="Owner's Contact Number"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
+                                android:textCursorDrawable="@null"
                                 android:maxLength="50"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
@@ -374,6 +381,7 @@
                                 android:id="@+id/secondVAdhar"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Pan Card"
+                                android:textCursorDrawable="@null"
                                 android:inputType="textCapCharacters"
 
                                 android:importantForAutofill="noExcludeDescendants"
@@ -438,6 +446,7 @@
                                 android:id="@+id/EtVThirdName"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Full Name"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -467,6 +476,7 @@
                                 android:id="@+id/inputThirdVendorEmail"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Email"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -495,6 +505,7 @@
                                 android:id="@+id/thirdVContact"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Contact Number"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
                                 android:maxLength="50"
@@ -523,6 +534,7 @@
                                 android:id="@+id/thirdVAdhar"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Pan Card"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="textCapCharacters"
                                 android:maxLength="50"
@@ -588,6 +600,7 @@
                                 android:id="@+id/EtVFourthName"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Full Name"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -617,6 +630,7 @@
                                 android:id="@+id/inputfourthVendorEmail"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Email"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
                                 android:maxLength="50"
@@ -645,6 +659,7 @@
                                 android:id="@+id/fourthVContact"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Contact Number"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
                                 android:maxLength="50"
@@ -673,6 +688,7 @@
                                 android:id="@+id/fourthVAdhar"
                                 style="@style/et_login_signup"
                                 android:hint="Owner's Pan Card"
+                                android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="textCapCharacters"
                                 android:maxLength="50"
@@ -682,7 +698,7 @@
 
                     </LinearLayout>
                 </LinearLayout>
-            </androidx.core.widget.NestedScrollView>
+            </ScrollView>
 
             <LinearLayout
                 android:layout_width="match_parent"

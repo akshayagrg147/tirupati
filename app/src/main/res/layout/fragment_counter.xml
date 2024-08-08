@@ -48,6 +48,7 @@
                     android:id="@+id/vendor_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@null"
                     android:clickable="false"
                     android:focusable="false"
                     android:hint="Vendor Name"
@@ -74,6 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="false"
+                    android:textCursorDrawable="@null"
                     android:focusable="false"
                     android:text="@{model.counterDetails.responseData.nameOfOrganization}"
                     android:hint="Name of the organisation"
@@ -168,6 +170,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="false"
+                    android:textCursorDrawable="@null"
                     android:text="@{model.counterDetails.responseData.icode}"
                     android:focusable="false"
                     android:hint="HSN/SAC Code" />
@@ -216,6 +219,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Rate"
+                    android:textCursorDrawable="@null"
                     android:text="@{model.counterDetails.responseData.ratepUom}"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -278,6 +282,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Amount Exclusive GST"
+                    android:textCursorDrawable="@null"
                     android:text="@{model.counterDetails.responseData.amount}"
                     android:imeOptions="actionDone"
                     android:inputType="number" />
@@ -301,6 +306,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Delivery Terms"
+                    android:textCursorDrawable="@null"
                     android:text="@{model.counterDetails.responseData.deliveryTerms}"
                     android:imeOptions="actionDone"
                     android:inputType="number" />
@@ -326,6 +332,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="top"
                     android:hint="Remarks"
+                    android:textCursorDrawable="@null"
                     android:imeOptions="actionDone"
                     android:lines="4"
                     android:text="@{model.counterDetails.responseData.remarks}"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<ScrollView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -101,6 +101,7 @@
                 android:id="@+id/etNameOrg"
                 style="@style/et_login_signup"
                 android:imeOptions="actionDone"
+                android:textCursorDrawable="@null"
                 android:hint="Name of Organisation"
                 android:importantForAutofill="noExcludeDescendants"
                 android:inputType="textPersonName"
@@ -128,6 +129,7 @@
                     android:id="@+id/etContactNumber"
                     style="@style/et_login_signup"
                     android:imeOptions="actionDone"
+                    android:textCursorDrawable="@null"
                     android:hint="Organisation's Contact Number"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="phone"
@@ -155,6 +157,7 @@
                     style="@style/et_login_signup"
                     android:hint="Organisation's Email ID"
                     android:imeOptions="actionDone"
+                    android:textCursorDrawable="@null"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="textEmailAddress"
                     android:maxLength="50"
@@ -202,5 +205,5 @@
     </RelativeLayout>
 
 </RelativeLayout>
-</androidx.core.widget.NestedScrollView>
+</ScrollView>
 

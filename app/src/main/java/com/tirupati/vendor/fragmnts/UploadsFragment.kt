@@ -994,6 +994,16 @@ bindingUploads!!.bankletter.setOnClickListener{
 
 
                     }
+                    is NetworkState.HttpErrors.ResourceForbidden -> {
+                        withContext(Dispatchers.Main) {
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
+                            Toast.makeText(
+                                context,
+                                "Access forbidden: ${response.msg}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
 
                     is NetworkState.Error<*> -> {
                         withContext(Dispatchers.Main) {

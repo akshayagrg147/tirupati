@@ -42,6 +42,7 @@
                     android:id="@+id/vendor_name"
                     android:clickable="false"
                     android:focusable="false"
+                    android:textCursorDrawable="@null"
                     android:imeOptions="actionDone"
 
 
@@ -68,6 +69,7 @@
                     style="@style/et_login_signup"
                     android:id="@+id/organisation_name"
                     android:clickable="false"
+                    android:textCursorDrawable="@null"
                     android:imeOptions="actionDone"
 
                     android:focusable="false"
@@ -160,6 +162,7 @@
                     android:id="@+id/hsn_sac_code"
                     android:layout_width="match_parent"
                     android:clickable="false"
+                    android:textCursorDrawable="@null"
                     android:focusable="false"
                     android:layout_height="wrap_content"
                     android:hint="HSN/SAC Code" />
@@ -185,6 +188,7 @@
                     android:id="@+id/quantity"
                     android:imeOptions="actionDone"
                     android:inputType="number"
+                    android:textCursorDrawable="@null"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Quantity" />
@@ -209,6 +213,7 @@
                     android:id="@+id/rate"
                     android:inputType="number"
                     android:layout_width="match_parent"
+                    android:textCursorDrawable="@null"
                     android:layout_height="wrap_content"
                     android:hint="Rate" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -228,6 +233,7 @@
                 <EditText
                     android:id="@+id/payment_terms"
                     android:inputType="number"
+                    android:textCursorDrawable="@null"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Payment Terms" />
@@ -248,6 +254,7 @@
                     android:id="@+id/amount_total"
                     android:imeOptions="actionDone"
                     android:inputType="number"
+                    android:textCursorDrawable="@null"
                     android:focusable="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -314,6 +321,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Remarks"
+                    android:textCursorDrawable="@null"
                     android:imeOptions="actionDone"
                     android:lines="4"
                     android:gravity="top"

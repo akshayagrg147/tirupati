@@ -66,7 +66,7 @@
                 android:src="@drawable/secondpage_image"
                 android:background="@color/white"/>
         </LinearLayout>
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_below="@+id/lltitle"
             android:layout_marginStart="@dimen/_12sdp"
@@ -100,6 +100,7 @@
                         android:id="@+id/addressET"
                         style="@style/et_login_signup"
                         android:hint="Address"
+                        android:textCursorDrawable="@null"
                         android:fontFamily="@font/montserrat_regular"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
@@ -137,6 +138,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Country"
+                        android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:focusable="false"
@@ -181,6 +183,7 @@
                         style="@style/et_login_signup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textCursorDrawable="@null"
                         android:hint="State"
                         android:focusable="false" />
 
@@ -240,6 +243,7 @@
                         android:id="@+id/etPinCode"
                         style="@style/et_login_signup"
                         android:hint="Pincode"
+                        android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="number"
                         android:outlineAmbientShadowColor="@color/blue_light" />
@@ -264,6 +268,7 @@
                         android:id="@+id/GSTnumberEt"
                         style="@style/et_login_signup"
                         android:hint="Organisation's GST Number"
+                        android:textCursorDrawable="@null"
                         android:inputType="textCapCharacters"
                         android:importantForAutofill="noExcludeDescendants"
                         android:textAllCaps="true"
@@ -289,6 +294,7 @@
                         android:id="@+id/PANEt"
                         style="@style/et_login_signup"
                         android:hint="Organisation's PAN Number"
+                        android:textCursorDrawable="@null"
                         android:inputType="textCapCharacters"
                         android:importantForAutofill="noExcludeDescendants"
                         android:textAllCaps="true"
@@ -301,7 +307,7 @@
 
             </LinearLayout>
 
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

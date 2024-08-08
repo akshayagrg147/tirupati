@@ -69,13 +69,14 @@
                 android:src="@drawable/firstpage_image" />
         </LinearLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lltitle"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_12sdp"
-            android:layout_marginEnd="@dimen/_12sdp">
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -95,6 +96,7 @@
                     app:boxCornerRadiusTopStart="12dp"
                     app:boxStrokeErrorColor="@color/brightRed"
                     app:counterMaxLength="50"
+
                     app:endIconCheckable="true"
                     app:errorEnabled="true"
                     app:hintAnimationEnabled="true"
@@ -103,13 +105,15 @@
                     <EditText
                         android:id="@+id/inputUserFirstName"
                         style="@style/et_login_signup"
-                        android:imeOptions="actionDone"
-
                         android:hint="Name of Orginazation"
+
+
+                        android:imeOptions="actionDone"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
-                        android:outlineAmbientShadowColor="@color/blue_light" />
+                        android:outlineAmbientShadowColor="@color/blue_light"
+                        android:textCursorDrawable="@null" />
 
                 </com.google.android.material.textfield.TextInputLayout>
                 <!--            <com.google.android.material.textfield.TextInputLayout-->
@@ -142,6 +146,7 @@
                     style="@style/text_Box"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
                     app:boxCornerRadiusBottomEnd="12dp"
                     app:boxCornerRadiusBottomStart="12dp"
                     app:boxCornerRadiusTopEnd="12dp"
@@ -149,7 +154,6 @@
                     app:boxStrokeErrorColor="@color/brightRed"
                     app:counterMaxLength="50"
                     app:endIconCheckable="true"
-                    android:textColorHint="@color/black"
                     app:errorEnabled="true"
                     app:hintAnimationEnabled="true"
                     app:hintTextColor="@color/colorPrimaryVariant">
@@ -159,10 +163,10 @@
                         style="@style/et_login_signup"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_38sdp"
+                        android:fontFamily="@font/montserrat_regular"
                         android:hint="Legal Entity Type"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
-                        android:fontFamily="@font/montserrat_regular"
                         android:maxLength="50"
                         android:outlineAmbientShadowColor="@color/blue_light"
                         android:paddingStart="@dimen/_15sdp" />
@@ -187,10 +191,11 @@
                     app:hintTextColor="@color/colorPrimaryVariant">
 
                     <EditText
+                        android:id="@+id/ownerFullNameET"
                         style="@style/et_login_signup"
                         android:hint="Owner's Full Name"
+                        android:textCursorDrawable="@null"
                         android:imeOptions="actionDone"
-                        android:id="@+id/ownerFullNameET"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
@@ -216,8 +221,9 @@
                     <EditText
                         android:id="@+id/ownerContactET"
                         style="@style/et_login_signup"
-                        android:imeOptions="actionDone"
                         android:hint="Owner's Contact Number"
+                        android:textCursorDrawable="@null"
+                        android:imeOptions="actionDone"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="phone"
                         android:maxLength="10"
@@ -244,8 +250,8 @@
                         android:id="@+id/emailOwnerET"
                         style="@style/et_login_signup"
                         android:hint="Owner's Email ID"
+                        android:textCursorDrawable="@null"
                         android:imeOptions="actionDone"
-                        android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
                         android:outlineAmbientShadowColor="@color/blue_light" />
@@ -272,12 +278,14 @@
                         style="@style/et_login_signup"
                         android:hint="POC Name"
                         android:imeOptions="actionDone"
+                        android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
                         android:outlineAmbientShadowColor="@color/blue_light" />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/text_Box"
                     android:layout_width="match_parent"
@@ -296,11 +304,12 @@
                     <EditText
                         android:id="@+id/ownerPanET"
                         style="@style/et_login_signup_caps"
-                        android:imeOptions="actionDone"
+                        android:textCursorDrawable="@null"
+
                         android:hint="Owner's Pan Card"
+                        android:imeOptions="actionDone"
                         android:inputType="textCapCharacters"
                         android:maxLength="50"
-                        android:capitalize="characters"
                         android:outlineAmbientShadowColor="@color/blue_light" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -323,39 +332,39 @@
                     <EditText
                         android:id="@+id/POCWhatsAppET"
                         style="@style/et_login_signup"
-                        android:imeOptions="actionDone"
                         android:hint="POC Whatsapp Number"
+                        android:textCursorDrawable="@null"
+                        android:imeOptions="actionDone"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="number"
+
                         android:maxLength="10"
                         android:outlineAmbientShadowColor="@color/blue_light" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <View
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_80sdp" />
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+
+                    <TextView
+                        android:id="@+id/btnFirstDone"
+                        style="@style/loginButton"
+                        android:layout_marginVertical="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:background="@drawable/square_filled_black"
+                        android:fontFamily="@font/monsrt_bold"
+                        android:text="Continue"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
             </LinearLayout>
 
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
 
-            <TextView
-                android:id="@+id/btnFirstDone"
-                style="@style/loginButton"
-                android:layout_marginVertical="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
-                android:background="@drawable/square_filled_black"
-                android:fontFamily="@font/monsrt_bold"
-                android:text="Continue"
-                android:textColor="@color/white" />
-
-        </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

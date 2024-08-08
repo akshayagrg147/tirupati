@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         >
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -41,6 +41,8 @@
                         android:id="@+id/inputUserFirstName"
                         style="@style/et_login_signup"
                         android:hint="Bank Name"
+                        android:textCursorDrawable="@null"
+
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
@@ -63,6 +65,7 @@
                     <EditText
                         style="@style/et_login_signup"
                         android:hint="Account Number"
+                        android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
@@ -85,6 +88,7 @@
                     <EditText
                         style="@style/et_login_signup"
                         android:hint="Account Type"
+                        android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
                         android:inputType="text"
                         android:maxLength="50"
@@ -109,6 +113,8 @@
                         style="@style/et_login_signup"
                         android:hint="IFSC"
                         android:inputType="textCapCharacters"
+
+                        android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
 
                         android:maxLength="50"
@@ -131,7 +137,9 @@
                     <EditText
                         style="@style/et_login_signup"
                         android:hint="Pincode"
+
                         android:importantForAutofill="noExcludeDescendants"
+                        android:textCursorDrawable="@null"
                         android:inputType="text"
                         android:maxLength="50"
                         android:outlineAmbientShadowColor="@color/blue_light" />
@@ -231,7 +239,7 @@
                     android:layout_height="@dimen/_40sdp"/>
             </LinearLayout>
 
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

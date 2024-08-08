@@ -2,8 +2,8 @@ package com.tirupati.vendor.di
 
 
 import android.content.Context
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.GsonBuilder
-import com.grapesnberries.curllogger.CurlLoggerInterceptor
 
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.network.ApiService
@@ -32,6 +32,10 @@ class ApplicationModule {
     @Provides
     fun provideOkHttpClient(@ApplicationContext context: Context, sessionManager: SessionManager) =
         (run {
+            val chuckerInterceptor: ChuckerInterceptor = ChuckerInterceptor.Builder(context)
+                .maxContentLength(250000L)
+                .alwaysReadResponseBody(true)
+                .build()
             val headerInterceptor = Interceptor { chain ->
                 val original = chain.request()
                 val builder = original.newBuilder()
@@ -50,7 +54,7 @@ class ApplicationModule {
             OkHttpClient.Builder()
                 .addInterceptor(headerInterceptor)
                 .addInterceptor(loggingInterceptor)
-                .addInterceptor(CurlLoggerInterceptor())
+                . addInterceptor(chuckerInterceptor)
                 .addInterceptor { chain ->
                     val request = chain.request()
                     val response = chain.proceed(request)

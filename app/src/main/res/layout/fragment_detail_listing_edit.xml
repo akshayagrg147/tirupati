@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragmnts.GateEntryDetailFragment">
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_12sdp"
@@ -101,6 +101,7 @@
                     style="@style/et_login_signup"
                     android:hint="Bill Number"
                     android:textAllCaps="true"
+                    android:textCursorDrawable="@null"
                     android:inputType="text"
                     android:maxLength="50"
                     android:outlineAmbientShadowColor="@color/blue_light" />
@@ -126,6 +127,7 @@
                     android:id="@+id/vehicleNumber"
                     style="@style/et_login_signup"
                     android:hint="Vehicle Number"
+                    android:textCursorDrawable="@null"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="textCapCharacters"
                     android:textAllCaps="true"
@@ -153,6 +155,7 @@
                     style="@style/et_login_signup"
                     android:hint="Bill Date"
                     android:id="@+id/billDate"
+                    android:textCursorDrawable="@null"
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="text"
                     android:focusable="false"
@@ -168,7 +171,7 @@
                 android:layout_height="@dimen/_40sdp" />
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
