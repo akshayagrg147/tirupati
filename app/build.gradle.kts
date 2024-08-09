@@ -10,6 +10,16 @@ android {
     namespace = "com.tirupati.vendor"
     compileSdk = 34
 
+    signingConfigs {
+
+        create("release") {
+            keyAlias = "key0"
+            keyPassword = "12345678"
+            storeFile = file("trupati.jks")
+            storePassword = "12345678"
+        }
+    }
+
     defaultConfig {
         applicationId = "com.tirupati.vendor"
         minSdk = 24
@@ -20,9 +30,11 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

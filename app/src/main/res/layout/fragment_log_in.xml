@@ -79,7 +79,6 @@
             android:textCursorDrawable="@null"
 
             android:inputType="textCapCharacters"
-            android:textCursorDrawable="@null"
             android:hint="GST Number"
             android:importantForAutofill="noExcludeDescendants"
 

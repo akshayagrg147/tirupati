@@ -138,10 +138,10 @@ class OTPFragment : Fragment() {
 
         bindingOTP!!.btnVerify.setOnClickListener {
 
-            if (bindingOTP?.otpValueVOFF?.text.toString().equals(OTPReceived)) {
+            if (bindingOTP?.otpValueVOFF?.text.toString() == OTPReceived) {
                 callVerifiedOTP()
             } else {
-                toast("OTP is not matched!")
+                toast("OTP is not matched!"+bindingOTP?.otpValueVOFF?.text.toString()+"--"+OTPReceived+"--")
             }
         }
 

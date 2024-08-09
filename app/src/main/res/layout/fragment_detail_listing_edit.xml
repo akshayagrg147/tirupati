@@ -99,7 +99,7 @@
                 <EditText
                     android:id="@+id/billNumber"
                     style="@style/et_login_signup"
-                    android:textCursorDrawable="@null"
+
                     android:hint="Bill Number"
                     android:textAllCaps="true"
                     android:textCursorDrawable="@null"

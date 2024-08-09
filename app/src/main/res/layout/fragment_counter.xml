@@ -48,7 +48,7 @@
                     android:id="@+id/vendor_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textCursorDrawable="@null"
+
                     android:clickable="false"
                     android:focusable="false"
                     android:textCursorDrawable="@null"

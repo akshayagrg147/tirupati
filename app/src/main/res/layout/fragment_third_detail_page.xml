@@ -101,7 +101,7 @@
                     <EditText
                         android:id="@+id/bankNameET"
                         style="@style/et_login_signup"
-                        android:textCursorDrawable="@null"
+
                         android:hint="Origanisation's Bank Name"
                         android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
@@ -211,7 +211,7 @@
                     <EditText
                         android:id="@+id/ifscET"
                         style="@style/et_login_signup"
-                        android:textCursorDrawable="@null"
+
                         android:hint="IFSC"
                         android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
@@ -241,7 +241,6 @@
                     <EditText
                         android:id="@+id/branchET"
                         style="@style/et_login_signup"
-                        android:textCursorDrawable="@null"
                         android:hint="Branch Name"
                         android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
@@ -272,7 +271,6 @@
                     <EditText
                         android:id="@+id/pinET"
                         style="@style/et_login_signup"
-                        android:textCursorDrawable="@null"
                         android:hint="Pincode"
                         android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"

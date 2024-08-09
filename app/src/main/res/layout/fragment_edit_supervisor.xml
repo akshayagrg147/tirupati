@@ -44,7 +44,7 @@
 
                     android:importantForAutofill="noExcludeDescendants"
                     android:inputType="text"
-                    android:textCursorDrawable="@null"
+
                     android:maxLength="50"
                     android:outlineAmbientShadowColor="@color/blue_light" />
 
@@ -125,7 +125,7 @@
                 <EditText
                     style="@style/et_login_signup"
                     android:hint="Tare Weight"
-                    android:textCursorDrawable="@null"
+
                     android:id="@+id/etTare"
                     android:textCursorDrawable="@null"
                     android:focusable="false"

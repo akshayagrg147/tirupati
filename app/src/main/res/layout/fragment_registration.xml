@@ -100,7 +100,7 @@
             <EditText
                 android:id="@+id/etNameOrg"
                 style="@style/et_login_signup"
-                android:textCursorDrawable="@null"
+
                 android:imeOptions="actionDone"
                 android:textCursorDrawable="@null"
                 android:hint="Name of Organisation"
@@ -129,7 +129,7 @@
                 <EditText
                     android:id="@+id/etContactNumber"
                     style="@style/et_login_signup"
-                    android:textCursorDrawable="@null"
+
                     android:imeOptions="actionDone"
                     android:textCursorDrawable="@null"
                     android:hint="Organisation's Contact Number"
@@ -157,7 +157,7 @@
                 <EditText
                     android:id="@+id/etOrgEmailNumber"
                     style="@style/et_login_signup"
-                    android:textCursorDrawable="@null"
+
                     android:hint="Organisation's Email ID"
                     android:imeOptions="actionDone"
                     android:textCursorDrawable="@null"
