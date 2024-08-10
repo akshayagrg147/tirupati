@@ -299,8 +299,14 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
                     bindingPic!!.loginProgressBar.progressBar.hidden()
 
                 }
+                is NetworkState.HttpErrors.BadRequest -> {
+                    toast("${response.msg}")
+                    bindingPic!!.loginProgressBar.progressBar.hidden()
+
+                }
 
                 else -> {
+                    toast("something went wrong")
                     bindingPic!!.loginProgressBar.progressBar.hidden()
 
                 }
@@ -313,11 +319,12 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
     private fun validateUI(binding: FragmentUploadSupervisorPicturesBinding): Boolean {
 
         var status = false
-        if (images6.isEmpty()) {
-            showCustomDialog(requireContext(), "Image Video of Empty vehicle can't be Empty","Error")
-            status = false
-        }
+
         if(tareWT.toDouble()>.00){
+            if (images6.isEmpty()) {
+                showCustomDialog(requireContext(), "Image Video of Empty vehicle can't be Empty","Error")
+                return false
+            }
             return true
         }
         if (images1.isEmpty()) {

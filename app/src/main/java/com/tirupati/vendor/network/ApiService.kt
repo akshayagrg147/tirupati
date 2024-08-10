@@ -198,7 +198,7 @@ suspend fun getLogIn(
         @Part image_url3: ArrayList<MultipartBody.Part?>,
         @Part image_url4: ArrayList<MultipartBody.Part?>,
         @Part image_url5: ArrayList<MultipartBody.Part?>,
-        @Part image_url6: ArrayList<MultipartBody.Part?>,):Response<UploadsDetailResponse>
+        @Part image_url6: ArrayList<MultipartBody.Part?>,):UploadsDetailResponse
 
 
 

@@ -119,9 +119,9 @@ class GatekeeperUploadsRepository @Inject constructor(private val apiService: Ap
         frontBack: ArrayList<MultipartBody.Part?>,
         emptyVechile: ArrayList<MultipartBody.Part?>,): NetworkState<UploadsDetailResponse> {
 
-        return safeApiCall {
-
-            apiService.superVisorUploadsForImages(
+        return try {
+            // Make API call using Retrofit suspend function
+            val response =  apiService.superVisorUploadsForImages(
                 headers,
                 GEID.toRequestBody()
                 ,VENDORID.toRequestBody(),
@@ -130,7 +130,29 @@ class GatekeeperUploadsRepository @Inject constructor(private val apiService: Ap
                 TAREWEIGHT.toRequestBody(),
                 NETWEIGHT.toRequestBody(),
                 loadVehicle,tollReceipt,vehicleRc,driverLic,frontBack,emptyVechile)
-        }
-    }
+            NetworkState.Success(response)
+        } catch (e: Exception) {
+            // Handle errors and exceptions
+            when (e) {
+                is retrofit2.HttpException -> {
+                    val errorMsg = e.response()?.errorBody()?.string() ?: "Unknown error"
+                    when (e.code()) {
+                        400 -> NetworkState.HttpErrors.BadRequest(errorMsg)
+                        401 -> NetworkState.HttpErrors.Unauthorized(errorMsg)
+                        403 -> NetworkState.HttpErrors.ResourceForbidden(errorMsg)
+                        404 -> NetworkState.HttpErrors.ResourceNotFound(errorMsg)
+                        500 -> NetworkState.HttpErrors.InternalServerError(errorMsg)
+                        502 -> NetworkState.HttpErrors.BadGateWay(errorMsg)
+                        503 -> NetworkState.HttpErrors.ServiceUnavailable(errorMsg)
+                        504 -> NetworkState.HttpErrors.ResourceRemoved(errorMsg)
+                        else -> NetworkState.HttpErrors.WrongData(e.response()?.errorBody())
+                    }
+                }
+
+                else -> NetworkState.NetworkException(e.localizedMessage ?: "Unknown network error")
+            }
+
+
+        }}
 
 }

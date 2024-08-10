@@ -581,7 +581,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="Adhaar Card"
+                        android:text="Organisation Pan Card"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -634,7 +634,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload Aadhar Card"
+                        android:text="Upload Organisation Pan Card"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -711,7 +711,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload Bank Confirmation"
+                        android:text="Upload Bank Confirmation Letter"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
