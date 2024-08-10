@@ -1,6 +1,8 @@
 package com.tirupati.vendor.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.tirupati.vendor.helper.toRequestBody
 import com.tirupati.vendor.model.GateKeeperEntryModel
 import com.tirupati.vendor.model.OTPverifiedModel
 import com.tirupati.vendor.model.POID_RESPONSE
@@ -17,6 +19,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.toRequestBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
@@ -32,16 +37,20 @@ class GatekeeperListViewModel  @Inject constructor(private val logInVMRepo:Gatek
         return logInVMRepo.getPoId(otp)
     }
 
-    suspend fun getSuperViserData(headers: HashMap<String, String>,):NetworkState<GateKeeperEntryModel>{
+    suspend fun getSuperViserData(headers: HashMap<String, String>):NetworkState<GateKeeperEntryModel>{
         return logInVMRepo.getListSuperviser(headers)
     }
-    suspend fun getpoList(headers: HashMap<String, String>,):NetworkState<PurchaseOrderResponse>{
+    suspend fun getpoList(headers: HashMap<String, String>):NetworkState<PurchaseOrderResponse>{
         return logInVMRepo.getpoList(headers)
     }
     suspend fun getPoDetail(headers: HashMap<String, String>,id:String):NetworkState<PoDetailsResponse>{
         return logInVMRepo.getPoDetail(headers,id)
     }
-    suspend fun saveVendorQuationR(headers: HashMap<String, String>,formaData: MultipartBody.Part?,body: vendorQuoationRequest,):NetworkState<UploadsDetailResponse>{
+    suspend fun saveVendorQuationR(
+        headers: HashMap<String, String>,
+        formaData: MultipartBody.Part?,
+        body: vendorQuoationRequest
+    ):NetworkState<UploadsDetailResponse>{
         return logInVMRepo.saveVendorQuoation(headers,formaData,body)
     }
 
@@ -79,14 +88,14 @@ class GatekeeperListRepository @Inject constructor(private val apiService: ApiSe
             apiService.getVandorTypeCompany(id_company)
         }
     }
-    suspend fun getListSuperviser(headers: HashMap<String, String>,): NetworkState<GateKeeperEntryModel> {
+    suspend fun getListSuperviser(headers: HashMap<String, String>): NetworkState<GateKeeperEntryModel> {
 
         return safeApiCall {
 
             apiService.getSuperVisor(headers)
         }
     }
-    suspend fun getpoList(headers: HashMap<String, String>,): NetworkState<PurchaseOrderResponse> {
+    suspend fun getpoList(headers: HashMap<String, String>): NetworkState<PurchaseOrderResponse> {
 
         return safeApiCall {
 
@@ -104,19 +113,50 @@ class GatekeeperListRepository @Inject constructor(private val apiService: ApiSe
     suspend fun saveVendorQuoation(
         headers: HashMap<String, String>,
         formaData: MultipartBody.Part?,
-        body: vendorQuoationRequest,): NetworkState<UploadsDetailResponse> {
-        val UOM_ID = body.UOM_ID.toRequestBody("multipart/form-data".toMediaTypeOrNull())
-        val TOTAL_AMOUNT = body.TOTAL_AMOUNT.toRequestBody("multipart/form-data".toMediaTypeOrNull())
-        val DELIVERY_TERMS = body.DELIVERY_TERMS.toRequestBody("multipart/form-data".toMediaTypeOrNull())
-        val REMARKS = body.REMARKS.toRequestBody("multipart/form-data".toMediaTypeOrNull())
-        val QUANTITY = body.QUANTITY.toRequestBody("multipart/form-data".toMediaTypeOrNull())
-        val PAYMENT_TERMS = body.PAYMENT_TERMS.toRequestBody("multipart/form-data".toMediaTypeOrNull())
-        val ITEM_ID = body.ITEM_ID.toRequestBody("multipart/form-data".toMediaTypeOrNull())
-        val RATE = body.RATE.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        body: vendorQuoationRequest,
+    ): NetworkState<UploadsDetailResponse> {
+        val uomId = body.UOM_ID.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val totalAmount = body.TOTAL_AMOUNT.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val deliveryTerms = body.DELIVERY_TERMS.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val remarks = body.REMARKS.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val quantity = body.QUANTITY.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val paymentTerms = body.PAYMENT_TERMS.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val itemId = body.ITEM_ID.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val rate = body.RATE.toRequestBody("multipart/form-data".toMediaTypeOrNull())
 
-        return safeApiCall {
 
-            apiService.saveVendorQuoation(headers,formaData,UOM_ID,TOTAL_AMOUNT,DELIVERY_TERMS,REMARKS,QUANTITY,PAYMENT_TERMS,ITEM_ID,RATE)
+//        return safeApiCall {
+//
+//            apiService.saveVendorQuoation(headers,formaData,UOM_ID,TOTAL_AMOUNT,DELIVERY_TERMS,REMARKS,QUANTITY,PAYMENT_TERMS,ITEM_ID,RATE)
+//        }
+
+        //formData.put("USERLOG_FILE", file.get(0).getName()); // Remove this line
+        return try {
+            // Make API call using Retrofit suspend function
+            val response = apiService.saveVendorQuoation(headers, formaData, uomId, totalAmount, deliveryTerms, remarks, quantity, paymentTerms, itemId, rate)
+            NetworkState.Success(response)
+        } catch (e: Exception) {
+            // Handle errors and exceptions
+            when (e) {
+                is retrofit2.HttpException -> {
+                    val errorMsg = e.response()?.errorBody()?.string() ?: "Unknown error"
+                    when (e.code()) {
+                        400 -> NetworkState.HttpErrors.BadRequest(errorMsg)
+                        401 -> NetworkState.HttpErrors.Unauthorized(errorMsg)
+                        403 -> NetworkState.HttpErrors.ResourceForbidden(errorMsg)
+                        404 -> NetworkState.HttpErrors.ResourceNotFound(errorMsg)
+                        500 -> NetworkState.HttpErrors.InternalServerError(errorMsg)
+                        502 -> NetworkState.HttpErrors.BadGateWay(errorMsg)
+                        503 -> NetworkState.HttpErrors.ServiceUnavailable(errorMsg)
+                        504 -> NetworkState.HttpErrors.ResourceRemoved(errorMsg)
+                        else -> NetworkState.HttpErrors.WrongData(e.response()?.errorBody())
+                    }
+                }
+
+                else -> NetworkState.NetworkException(e.localizedMessage ?: "Unknown network error")
+            }
+
+
         }
     }
     suspend fun passDispatchOrder(headers: HashMap<String, String>,formaData:MultipartBody.Part?,request:PurchaseOrderRequest): NetworkState<UploadsDetailResponse> {
@@ -125,10 +165,35 @@ class GatekeeperListRepository @Inject constructor(private val apiService: ApiSe
         val location_name = request.LOCATION_NAME.toRequestBody("multipart/form-data".toMediaTypeOrNull())
         val lat = request.LATITUDE.toRequestBody("multipart/form-data".toMediaTypeOrNull())
         val lng = request.LONGITUDE.toRequestBody("multipart/form-data".toMediaTypeOrNull())
-        return safeApiCall {
+        return try {
+            // Make API call using Retrofit suspend function
+            val response =  apiService.dispatchOrder(headers,formaData!!,podate,po_number,location_name,lat,lng)
+            NetworkState.Success(response)
+        } catch (e: Exception) {
+            // Handle errors and exceptions
+            when (e) {
+                is retrofit2.HttpException -> {
+                    val errorMsg = e.response()?.errorBody()?.string() ?: "Unknown error"
+                    when (e.code()) {
+                        400 -> NetworkState.HttpErrors.BadRequest(errorMsg)
+                        401 -> NetworkState.HttpErrors.Unauthorized(errorMsg)
+                        403 -> NetworkState.HttpErrors.ResourceForbidden(errorMsg)
+                        404 -> NetworkState.HttpErrors.ResourceNotFound(errorMsg)
+                        500 -> NetworkState.HttpErrors.InternalServerError(errorMsg)
+                        502 -> NetworkState.HttpErrors.BadGateWay(errorMsg)
+                        503 -> NetworkState.HttpErrors.ServiceUnavailable(errorMsg)
+                        504 -> NetworkState.HttpErrors.ResourceRemoved(errorMsg)
+                        else -> NetworkState.HttpErrors.WrongData(e.response()?.errorBody())
+                    }
+                }
 
-            apiService.dispatchOrder(headers,formaData!!,podate,po_number,location_name,lat,lng)
+                else -> NetworkState.NetworkException(e.localizedMessage ?: "Unknown network error")
+            }
+
+
         }
+
+
     }
 
 

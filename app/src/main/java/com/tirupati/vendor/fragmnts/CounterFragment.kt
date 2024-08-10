@@ -58,6 +58,11 @@ class CounterFragment : Fragment() {
                 // Handle the navigation event
                 viewModel.onNavigationHandled()
             }
+            else{
+                binding!!.loginProgressBar.progressBar.hidden()
+                Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
+
+            }
         })
         binding.btnAddPurchase.setOnClickListener {
             findNavController().navigateUp()

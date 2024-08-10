@@ -203,9 +203,10 @@ class SignUpUploadsRepository @Inject constructor(private val apiService: ApiSer
         imagelist11: ArrayList<MultipartBody.Part?>
     ): NetworkState<UploadsDetailResponse> {
 
-        return safeApiCall {
 
-            apiService.signUpCall(
+        return try {
+            // Make API call using Retrofit suspend function
+            val response = apiService.signUpCall(
                 headers,
                 LATITUDE.toRequestBody(),
                 LONGITUDE.toRequestBody(),
@@ -250,8 +251,8 @@ class SignUpUploadsRepository @Inject constructor(private val apiService: ApiSer
                 ACCOUNT_TYPE.toRequestBody(),
                 BANK_BRANCH.toRequestBody(),
                 IFSC_CODE!!.toRequestBody(),
-            MSME_APPLICABLE?.toRequestBody(),
-            E_INVOICE_APPLICABLE?.toRequestBody(),
+                MSME_APPLICABLE?.toRequestBody(),
+                E_INVOICE_APPLICABLE?.toRequestBody(),
                 imagelist1,
                 imagelist2,
                 imagelist3,
@@ -264,7 +265,32 @@ class SignUpUploadsRepository @Inject constructor(private val apiService: ApiSer
                 imagelist10,
                 imagelist11
             )
+            NetworkState.Success(response)
+        } catch (e: Exception) {
+            // Handle errors and exceptions
+            when (e) {
+                is retrofit2.HttpException -> {
+                    val errorMsg = e.response()?.errorBody()?.string() ?: "Unknown error"
+                    when (e.code()) {
+                        400 -> NetworkState.HttpErrors.BadRequest(errorMsg)
+                        401 -> NetworkState.HttpErrors.Unauthorized(errorMsg)
+                        403 -> NetworkState.HttpErrors.ResourceForbidden(errorMsg)
+                        404 -> NetworkState.HttpErrors.ResourceNotFound(errorMsg)
+                        500 -> NetworkState.HttpErrors.InternalServerError(errorMsg)
+                        502 -> NetworkState.HttpErrors.BadGateWay(errorMsg)
+                        503 -> NetworkState.HttpErrors.ServiceUnavailable(errorMsg)
+                        504 -> NetworkState.HttpErrors.ResourceRemoved(errorMsg)
+                        else -> NetworkState.HttpErrors.WrongData(e.response()?.errorBody())
+                    }
+                }
+
+                else -> NetworkState.NetworkException(e.localizedMessage ?: "Unknown network error")
+            }
+
+
         }
     }
+
+
 
 }

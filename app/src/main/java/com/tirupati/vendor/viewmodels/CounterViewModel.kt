@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.CounterResponseModel
 import com.tirupati.vendor.model.UpdatePoDetailsRequest
 import com.tirupati.vendor.network.NetworkState
@@ -83,24 +84,29 @@ class CounterViewModel @Inject constructor(private val stateVMRepo: StateVMRepos
 
                 is NetworkState.Success -> {
 
+
                     onNavigationSuccess()
                 }
 
                 is NetworkState.Error<*> -> {
-
+                    onNavigationHandled()
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
+                    onNavigationHandled()
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
+                    onNavigationHandled()
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+                    onNavigationHandled()
                 }
 
                 else -> {
+                    onNavigationHandled()
                 }
             }
 

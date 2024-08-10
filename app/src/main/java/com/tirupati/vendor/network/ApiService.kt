@@ -17,6 +17,7 @@ import com.tirupati.vendor.model.itemListResponse
 import com.tirupati.vendor.model.uomDataResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Field
@@ -128,7 +129,7 @@ suspend fun getLogIn(
     @Part("ITEM_ID") ITEM_ID: RequestBody,
     @Part("RATE") RATE: RequestBody
 
-): Response<UploadsDetailResponse>
+): UploadsDetailResponse
 
     @GET("V2/getpoList")
     suspend fun getpoList(
@@ -176,7 +177,7 @@ suspend fun getLogIn(
         @Part("LONGITUDE") lng: RequestBody
 
 
-    ): Response<UploadsDetailResponse>
+    ): UploadsDetailResponse
 
 
 
@@ -274,7 +275,7 @@ suspend fun getLogIn(
 
 
 
-    ):Response<UploadsDetailResponse>
+    ):UploadsDetailResponse
 
 }
 
