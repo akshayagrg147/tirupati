@@ -3,10 +3,15 @@ package com.tirupati.vendor.fragmnts
 import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
+
+import android.content.Intent
+import android.provider.Settings
+import android.location.LocationManager
 import android.content.ContentResolver
 import android.content.Context
+
 import android.content.ContextWrapper
-import android.content.Intent
+
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.location.Location
@@ -83,6 +88,8 @@ class DispatchFragment : Fragment() {
 
     private val gateKeeperVm: GatekeeperListViewModel by viewModels()
     private var currentPictureFile: File? = null
+    var latitude:Double?=0.00
+    var longitude:Double?=0.00
     var multipart: MultipartBody.Part ?=null
     @Inject
     lateinit var sessionManager: SessionManager
@@ -326,42 +333,74 @@ class DispatchFragment : Fragment() {
         }
     }
 
-
+    private fun checkAndPromptForLocation() {
+        val locationManager = context?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            // Location services are not enabled
+            val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+            startActivity(intent)  // Opens the location settings screen
+        } else {
+            if (ActivityCompat.checkSelfPermission(
+                    requireContext(),
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                    requireContext(),
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    requireActivity(),
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
+                    121
+                )
+                return
+            }
+            fusedLocationClient.lastLocation
+                .addOnCompleteListener(requireActivity(), OnCompleteListener<Location> { task ->
+                    if (task.isSuccessful && task.result != null) {
+                        val location = task.result
+                        latitude = location.latitude
+                        longitude = location.longitude
+                        // Use latitude and longitude as needed
+                    } else {
+                        // Handle failure to get location
+                    }
+                })
+            // Location services are enabled, proceed with your functionality
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.purchaseNo?.setText(objectResponseData?.PO_NO)
         binding?.orderDate?.setText(objectResponseData?.PO_DT)
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
-        if (ActivityCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                requireActivity(),
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
-                121
-            )
-            return
-        }
-        var latitude:Double?=0.00
-        var longitude:Double?=0.00
-        fusedLocationClient.lastLocation
-            .addOnCompleteListener(requireActivity(), OnCompleteListener<Location> { task ->
-                if (task.isSuccessful && task.result != null) {
-                    val location = task.result
-                     latitude = location.latitude
-                     longitude = location.longitude
-                    // Use latitude and longitude as needed
-                } else {
-                    // Handle failure to get location
+
+
+        videoCaptureLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val videoUri: Uri? = result.data?.data
+                videoUri?.let {
+                    displayVideoThumbnail(requireContext(),it, binding?.thumbnail)
+
+                    val videoFile1 = createTempFileFromUri(requireContext(), it)
+                    videoFile1?.let { file ->
+                        val requestFileNew = file.asRequestBody("video/*".toMediaTypeOrNull())
+                        val part = MultipartBody.Part.createFormData("DISPATCH_DOC[]", file.name, requestFileNew)
+
+                        multipart = part
+                    }
                 }
-            })
+
+
+                // Handle the videoUri, like playing the video or saving it
+            }
+        }
+
         binding?.uploadDocument?.setOnClickListener{
             selectImage()
 
@@ -457,27 +496,7 @@ class DispatchFragment : Fragment() {
                         }
                     }
             } }
-        videoCaptureLauncher = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
-        ) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val videoUri: Uri? = result.data?.data
-                videoUri?.let {
-                    displayVideoThumbnail(requireContext(),it, binding?.thumbnail)
 
-                    val videoFile1 = createTempFileFromUri(requireContext(), it)
-                    videoFile1?.let { file ->
-                        val requestFileNew = file.asRequestBody("video/*".toMediaTypeOrNull())
-                        val part = MultipartBody.Part.createFormData("DISPATCH_DOC[]", file.name, requestFileNew)
-
-                        multipart = part
-                    }
-                }
-
-
-                // Handle the videoUri, like playing the video or saving it
-            }
-        }
     }
 
     fun createTempFileFromUri(context: Context, uri: Uri): File? {
@@ -533,6 +552,7 @@ class DispatchFragment : Fragment() {
     }
     override fun onResume() {
         super.onResume()
+        checkAndPromptForLocation()
         LandingVendorSActivity.showIcon(false)
         LandingVendorSActivity.changeTitle("Dispatch Order")
 
