@@ -363,8 +363,14 @@ class DispatchFragment : Fragment() {
                         longitude = location.longitude
                         // Use latitude and longitude as needed
                     } else {
+                        Toast.makeText(requireActivity(), "error get", Toast.LENGTH_LONG).show()
+
                         // Handle failure to get location
                     }
+                }).addOnFailureListener(requireActivity(),{message->
+                    Log.d("errorget",message.message?:"")
+                    Toast.makeText(requireActivity(), message.message?:"error", Toast.LENGTH_LONG).show()
+
                 })
             // Location services are enabled, proceed with your functionality
         }
