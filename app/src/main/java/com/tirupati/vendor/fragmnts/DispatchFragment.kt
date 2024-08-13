@@ -424,84 +424,88 @@ class DispatchFragment : Fragment() {
                     convertAddress=address
                     // Use the address here
                     println(address)
-                } else {
-                    // Handle error
-                }
-            }
-            val header = HashMap<String, String>()
-            header["Accept"] = "application/json"
-            header["version"] = "1"
-            header["Authorization"] = "${sessionManager.loginToken}"
-            header["userID"]="${sessionManager.user?.RESPONSEDATA?.USER_ID}"
-            lifecycleScope.launch {
-                val orderDate = binding?.orderDate?.text.toString()
-                val purchaseNo = binding?.purchaseNo?.text.toString()
+                    val header = HashMap<String, String>()
+                    header["Accept"] = "application/json"
+                    header["version"] = "1"
+                    header["Authorization"] = "${sessionManager.loginToken}"
+                    header["userID"]="${sessionManager.user?.RESPONSEDATA?.USER_ID}"
+                    lifecycleScope.launch {
+                        val orderDate = binding?.orderDate?.text.toString()
+                        val purchaseNo = binding?.purchaseNo?.text.toString()
 
-                    if (orderDate.isEmpty() || purchaseNo.isEmpty() || convertAddress?.isEmpty()==true || latitude==0.00 || longitude==0.00|| multipart==null) {
-                        // Return with a message indicating that some fields are empty
-                        val emptyFields = mutableListOf<String>()
-                        if (orderDate.isEmpty()) emptyFields.add("Order Date")
-                        if (purchaseNo.isEmpty()) emptyFields.add("Purchase Number")
-                        if (convertAddress?.isEmpty()==true) emptyFields.add("Location Name")
-                        if (latitude==0.00) emptyFields.add("Latitude")
-                        if (longitude==0.00) emptyFields.add("Longitude")
-                        if (multipart==null) emptyFields.add("Image")
+                        if (orderDate.isEmpty() || purchaseNo.isEmpty() || convertAddress==null || convertAddress?.isEmpty()==true || latitude==0.00 || longitude==0.00|| multipart==null) {
+                            // Return with a message indicating that some fields are empty
+                            val emptyFields = mutableListOf<String>()
+                            if (orderDate.isEmpty()) emptyFields.add("Order Date")
+                            if (purchaseNo.isEmpty()) emptyFields.add("Purchase Number")
+                            if (convertAddress==null) emptyFields.add("Location Name")
+                            else{
+                                if (convertAddress?.isEmpty()==true) emptyFields.add("Location Name")
 
-                        val message = "The following fields are empty: ${emptyFields.joinToString(", ")}"
-                        // Show the message to the user (you can use Toast, Snackbar, or any other method)
-                        // For example:
-                        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-                    } else {
-                        binding!!.loginProgressBar.progressBar.shown()
-                        var response = gateKeeperVm.passDispatchOrder(
-                            header,
-                            multipart,
-                            PurchaseOrderRequest(
-                                PODATE = binding?.orderDate?.text.toString(),
-                                LOCATION_NAME = convertAddress?:"",
-                                PO_NUMBER = binding?.purchaseNo?.text.toString(),
-                                LONGITUDE = latitude.toString(),
-                                LATITUDE = longitude.toString()
+                            }
+                            if (latitude==0.00) emptyFields.add("Latitude")
+                            if (longitude==0.00) emptyFields.add("Longitude")
+                            if (multipart==null) emptyFields.add("Image")
+
+                            val message = "The following fields are empty: ${emptyFields.joinToString(", ")}"
+                            // Show the message to the user (you can use Toast, Snackbar, or any other method)
+                            // For example:
+                            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                        } else {
+                            binding!!.loginProgressBar.progressBar.shown()
+                            var response = gateKeeperVm.passDispatchOrder(
+                                header,
+                                multipart,
+                                PurchaseOrderRequest(
+                                    PODATE = binding?.orderDate?.text.toString(),
+                                    LOCATION_NAME = convertAddress?:"",
+                                    PO_NUMBER = binding?.purchaseNo?.text.toString(),
+                                    LONGITUDE = latitude.toString(),
+                                    LATITUDE = longitude.toString()
+                                )
                             )
-                        )
 
 
-                        when (response) {
+                            when (response) {
 
-                            is NetworkState.Success -> {
-                                binding!!.loginProgressBar.progressBar.hidden()
-                                Toast.makeText(context, "Dispatched", Toast.LENGTH_SHORT).show()
-                                Handler(Looper.getMainLooper()).postDelayed({
-                                    findNavController().popBackStack()
-                                }, 1000)
+                                is NetworkState.Success -> {
+                                    binding!!.loginProgressBar.progressBar.hidden()
+                                    Toast.makeText(context, "Dispatched", Toast.LENGTH_SHORT).show()
+                                    Handler(Looper.getMainLooper()).postDelayed({
+                                        findNavController().popBackStack()
+                                    }, 1000)
 
 
-                            }
+                                }
 
-                            is NetworkState.Error<*> -> {
-                                binding!!.loginProgressBar.progressBar.hidden()
-                                Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
-                                    .show()
-                            }
+                                is NetworkState.Error<*> -> {
+                                    binding!!.loginProgressBar.progressBar.hidden()
+                                    Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
+                                        .show()
+                                }
 
-                            is NetworkState.NetworkException -> {
-                                binding!!.loginProgressBar.progressBar.hidden()
-                            }
+                                is NetworkState.NetworkException -> {
+                                    binding!!.loginProgressBar.progressBar.hidden()
+                                }
 
-                            is NetworkState.HttpErrors.InternalServerError -> {
-                                binding!!.loginProgressBar.progressBar.hidden()
-                            }
+                                is NetworkState.HttpErrors.InternalServerError -> {
+                                    binding!!.loginProgressBar.progressBar.hidden()
+                                }
 
-                            is NetworkState.HttpErrors.ResourceNotFound -> {
-                                binding!!.loginProgressBar.progressBar.hidden()
-                            }
+                                is NetworkState.HttpErrors.ResourceNotFound -> {
+                                    binding!!.loginProgressBar.progressBar.hidden()
+                                }
 
-                            else -> {
-                                binding!!.loginProgressBar.progressBar.hidden()
+                                else -> {
+                                    binding!!.loginProgressBar.progressBar.hidden()
+                                }
                             }
                         }
-                    }
-            } }
+                    } }
+
+                }
+            }
+
 
     }
 
