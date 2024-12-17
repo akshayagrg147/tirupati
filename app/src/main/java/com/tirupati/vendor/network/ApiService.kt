@@ -201,10 +201,71 @@ suspend fun getLogIn(
         @Part image_url6: ArrayList<MultipartBody.Part?>,):UploadsDetailResponse
 
 
+    @Multipart
+    @POST("V2/CustomerRegister")
 
+    suspend fun signUpCustomerCall(
+        @HeaderMap headers: Map<String, String>,
+
+        @Part("LATITUDE") LATITUDE: RequestBody,
+        @Part("LONGITUDE") LONGITUDE: RequestBody,
+        @Part("GODOWN_LOCATION") GODOWN_LOCATION: RequestBody,
+
+        @Part("OTHERVENDORSAPPLICABLE") OTHERVENDORSAPPLICABLE: RequestBody,
+        @Part("C1_NAME") V1_NAME: RequestBody,
+        @Part("C1_EMAIL") V1_EMAIL: RequestBody,
+        @Part("C1_CONTACT_NO") V1_CONTACT_NO: RequestBody,
+        @Part("C1_PAN_NO") V1_AADHAR_NO: RequestBody,
+
+
+        @Part("C2_NAME") V2_NAME: RequestBody,
+        @Part("C2_EMAIL") V2_EMAIL: RequestBody,
+        @Part("C2_CONTACT_NO") V2_CONTACT_NO: RequestBody,
+        @Part("C2_PAN_NO") V2_AADHAR_NO: RequestBody,
+
+
+        @Part("C3_NAME") V3_NAME: RequestBody,
+        @Part("C3_EMAIL") V3_EMAIL: RequestBody,
+        @Part("C3_CONTACT_NO") V3_CONTACT_NO: RequestBody,
+        @Part("C3_PAN_NO") V3_AADHAR_NO: RequestBody,
+
+
+        @Part("OWNER_NAME") OWNER_NAME: RequestBody,
+        @Part("OWNER_CONTACT") OWNER_CONTACT: RequestBody,
+        @Part("OWNER_EMAIL") OWNER_EMAIL: RequestBody,
+        @Part("NAME_OF_ORGANISATION") NAME_OF_ORGANISATION: RequestBody,
+        @Part("CUSTOMER_LEGAL_NAME") VENDOR_LEGAL_NAME: RequestBody,
+        @Part("CONTACT_PERSON") CONTACT_PERSON: RequestBody,
+        @Part("CONTACT_NUMBER") CONTACT_NUMBER: RequestBody,
+        @Part("CONTACT_EMAIL") CONTACT_EMAIL: RequestBody,
+        @Part("ADDRESS") ADDRESS: RequestBody,
+        @Part("COUNTRY") COUNTRY: RequestBody,
+        @Part("STATE") STATE: RequestBody,
+        @Part("CITY") CITY: RequestBody,
+        @Part("PIN_CODE") PIN_CODE: RequestBody,
+        @Part("GSTIN") GSTIN: RequestBody,
+        @Part("PANCARD_NO") PANCARD_NO: RequestBody,
+        @Part("BANK_NAME") BANK_NAME: RequestBody,
+        @Part("ACCOUNT_NUMBER") ACCOUNT_NUMBER: RequestBody,
+        @Part("ACCOUNT_TYPE") ACCOUNT_TYPE: RequestBody,
+        @Part("BANK_BRANCH") BANK_BRANCH: RequestBody,
+        @Part("IFSC_CODE") IFSC_CODE: RequestBody,
+
+
+
+
+
+
+        @Part image_url1: ArrayList<MultipartBody.Part?>,
+        @Part image_url2: ArrayList<MultipartBody.Part?>,
+        @Part image_url3: ArrayList<MultipartBody.Part?>,
+
+
+
+
+        ):UploadsDetailResponse
     @Multipart
     @POST("V2/vendorRegister")
-
     suspend fun signUpCall(
         @HeaderMap headers: Map<String, String>,
 
@@ -276,6 +337,60 @@ suspend fun getLogIn(
 
 
     ):UploadsDetailResponse
+
+
+    @Multipart
+    @POST("V2/vendorRegister")
+    suspend fun signUpCallCustomer(
+        @HeaderMap headers: Map<String, String>,
+
+        @Part("LATITUDE") LATITUDE: RequestBody,
+        @Part("LONGITUDE") LONGITUDE: RequestBody,
+        @Part("GODOWN_LOCATION") GODOWN_LOCATION: RequestBody,
+
+        @Part("OTHERVENDORSAPPLICABLE") OTHERVENDORSAPPLICABLE: RequestBody,
+        @Part("V1_NAME") V1_NAME: RequestBody,
+        @Part("V1_EMAIL") V1_EMAIL: RequestBody,
+        @Part("V1_CONTACT_NO") V1_CONTACT_NO: RequestBody,
+        @Part("V1_AADHAR_NO") V1_AADHAR_NO: RequestBody,
+
+
+        @Part("V2_NAME") V2_NAME: RequestBody,
+        @Part("V2_EMAIL") V2_EMAIL: RequestBody,
+        @Part("V2_CONTACT_NO") V2_CONTACT_NO: RequestBody,
+        @Part("V2_AADHAR_NO") V2_AADHAR_NO: RequestBody,
+
+
+        @Part("V3_NAME") V3_NAME: RequestBody,
+        @Part("V3_EMAIL") V3_EMAIL: RequestBody,
+        @Part("V3_CONTACT_NO") V3_CONTACT_NO: RequestBody,
+        @Part("V3_AADHAR_NO") V3_AADHAR_NO: RequestBody,
+
+
+        @Part("OWNER_NAME") OWNER_NAME: RequestBody,
+        @Part("OWNER_CONTACT") OWNER_CONTACT: RequestBody,
+        @Part("OWNER_EMAIL") OWNER_EMAIL: RequestBody,
+        @Part("NAME_OF_ORGANISATION") NAME_OF_ORGANISATION: RequestBody,
+        @Part("VENDOR_LEGAL_NAME") VENDOR_LEGAL_NAME: RequestBody,
+        @Part("CONTACT_PERSON") CONTACT_PERSON: RequestBody,
+        @Part("CONTACT_NUMBER") CONTACT_NUMBER: RequestBody,
+        @Part("CONTACT_EMAIL") CONTACT_EMAIL: RequestBody,
+        @Part("ADDRESS") ADDRESS: RequestBody,
+        @Part("COUNTRY") COUNTRY: RequestBody,
+        @Part("STATE") STATE: RequestBody,
+        @Part("CITY") CITY: RequestBody,
+        @Part("PIN_CODE") PIN_CODE: RequestBody,
+        @Part("GSTIN") GSTIN: RequestBody,
+        @Part("PANCARD_NO") PANCARD_NO: RequestBody,
+        @Part("BANK_NAME") BANK_NAME: RequestBody,
+        @Part("ACCOUNT_NUMBER") ACCOUNT_NUMBER: RequestBody,
+        @Part("ACCOUNT_TYPE") ACCOUNT_TYPE: RequestBody,
+        @Part("BANK_BRANCH") BANK_BRANCH: RequestBody,
+        @Part("IFSC_CODE") IFSC_CODE: RequestBody,
+        @Part image_url1: ArrayList<MultipartBody.Part?>,
+        @Part image_url2: ArrayList<MultipartBody.Part?>,
+        @Part image_url3: ArrayList<MultipartBody.Part?>,
+        ):UploadsDetailResponse
 
 }
 

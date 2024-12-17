@@ -1,13 +1,15 @@
 
-kotlin:S1172v">Use "_" instead of this unused lambda parameter "destination".(Í™ƒüûÿÿÿÿJ$14abcb61-6a7d-41bd-9085-64a62271de50
-ckotlin:S6615j" Remove this useless initializer.(åÙ×ƒşÿÿÿÿJ$354b9337-43e6-4cdc-a695-578caa08744b
-\kotlin:S125:"Remove this commented out code.(î¢©‡J$ba1ab2db-5176-4988-a272-0b89084c4a34
-akotlin:S125Z"Remove this commented out code.(Øû³°üÿÿÿÿJ$4b2658c9-5329-4925-8963-c6e800c664c5
-akotlin:S125w"Remove this commented out code.(ÏŒš²ûÿÿÿÿJ$42ed9d1c-b721-429e-b64f-484578520f58
-bkotlin:S125"Remove this commented out code.(¿ø¢¨úÿÿÿÿJ$54171918-3898-4d95-8252-0f4be69e3249
-]kotlin:S125’"Remove this commented out code.(ÿøÁJ$e0fc2b0c-0038-4e01-afbf-07f468aae6c7
-bkotlin:S125¡"Remove this commented out code.(¡²æ£üÿÿÿÿJ$7c6ef949-87d0-4ad0-9e51-81e09d343eea
-]kotlin:S125¹"Remove this commented out code.(¼š÷ƒJ$74c3ef44-0901-43cf-b911-2ee88c075d1f
-ykotlin:S1144–"5Remove this unused private "setHamburgerIcon" method.(³ÏòùÿÿÿÿJ$7a64156b-d457-48fc-ac65-06bf902093c5
-dkotlin:S1128"Remove this unused import.(ÙÃä¡şÿÿÿÿ8¦ø¯‹ˆ2J$bdbca281-8c3c-4bd3-a857-ec8214389a62
-dkotlin:S1128#"Remove this unused import.(£ñ¹¸ûÿÿÿÿ8¦ø¯‹ˆ2J$651443b6-6c40-4597-b8d4-9c171413d846
+‚kotlin:S1172‹">Use "_" instead of this unused lambda parameter "destination".(Í™ƒüûÿÿÿÿJ$aac5d115-1a45-4866-9b82-dd659efd3491
+ckotlin:S6615" Remove this useless initializer.(åÙ×ƒşÿÿÿÿJ$4c5b7e82-7f2d-49b4-ad09-7e93c3b57da4
+\kotlin:S125:"Remove this commented out code.(î¢©‡J$9d20c052-0285-4d4c-b7dd-dc55bd77d394
+akotlin:S125Z"Remove this commented out code.(Øû³°üÿÿÿÿJ$61cd3c4b-0fcf-4cd7-9d92-0fc92ce2226b
+bkotlin:S125Œ"Remove this commented out code.(ÏŒš²ûÿÿÿÿJ$20b93584-cdc3-41ab-a7a2-a765820466ac
+bkotlin:S125–"Remove this commented out code.(¿ø¢¨úÿÿÿÿJ$08f6995c-8ad6-4547-b9c1-8a48853aa9af
+]kotlin:S125§"Remove this commented out code.(ÿøÁJ$335bc606-d317-4510-bc34-0e3cb8a06621
+bkotlin:S125¶"Remove this commented out code.(¡²æ£üÿÿÿÿJ$951556d1-6060-4f92-8a41-78a35bcf85fc
+]kotlin:S125Î"Remove this commented out code.(¼š÷ƒJ$f16c946b-0a49-477e-bc90-735c3a5edb56
+ykotlin:S1144«"5Remove this unused private "setHamburgerIcon" method.(³ÏòùÿÿÿÿJ$c778b5bd-2986-4bc0-946f-e4e71c7558ca
+dkotlin:S1128"Remove this unused import.(ÙÃä¡şÿÿÿÿ8¦ø¯‹ˆ2J$e9453f99-d651-4853-9f3a-c1d72a0f68e9
+dkotlin:S1128#"Remove this unused import.(£ñ¹¸ûÿÿÿÿ8¦ø¯‹ˆ2J$1ba5a208-d3a1-4c4c-bb20-ffabe0be8f93
+–kotlin:S1871h"LThis branch's code block is the same as the block for the branch on line 97.(×ø©üÿÿÿÿ8åå—´2J$47177222-4bbc-4824-b325-fd10cd55ecb1
+‚kotlin:S6511\"=Merge chained "if" statements into a single "when" statement.(è„­8Ê¢Ú³2J$512fcff4-b1ec-41d7-a89d-6b4e6b71b184

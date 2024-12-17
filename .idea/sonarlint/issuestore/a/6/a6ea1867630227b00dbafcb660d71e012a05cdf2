@@ -1,0 +1,23 @@
+
+‰kotlin:S1172’">Use "_" instead of this unused lambda parameter "destination".(Í™ƒüûÿÿÿÿ8Íâô¬2J$0ca7746c-fd78-4551-a6c1-3c37057e359a
+„kotlin:S6619É">Remove this useless non-null assertion !!, it always succeeds.(Ø„šå8ˆœ»‘¬2J$87d5fe66-4334-499b-9776-6cb59b90f48a
+„kotlin:S6619Õ">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8ˆœ»‘¬2J$616af36c-a621-41a9-b10c-02fca90f37a3
+„kotlin:S6619à">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8ˆœ»‘¬2J$4edbe001-5e02-4428-8c2c-44da7df21cd4
+„kotlin:S6619å">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8ˆœ»‘¬2J$307a1522-5f62-4ebe-bae3-fe350da80724
+„kotlin:S6619é">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8ˆœ»‘¬2J$dd507626-a6b6-4f65-913f-2110cc8b11c3
+„kotlin:S6619í">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8ˆœ»‘¬2J$3be8092f-c75a-4386-bf15-946aa039766b
+„kotlin:S6619ñ">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²8ˆœ»‘¬2J$c82d36e5-5ffc-46bf-82cb-18f5b0c41acc
+hkotlin:S125b"Remove this commented out code.(Øû³°üÿÿÿÿ8Ïâô¬2J$004b1b01-8eeb-49a3-bdf5-1addc107fbb8
+ikotlin:S125“"Remove this commented out code.(ÏŒš²ûÿÿÿÿ8Ïâô¬2J$b4399a26-356e-445c-9247-d5f39cd80f40
+ikotlin:S125œ"Remove this commented out code.(¿ø¢¨úÿÿÿÿ8Ïâô¬2J$38a1493a-0586-431b-9f09-8f4e07271f74
+dkotlin:S125£"Remove this commented out code.(ˆØÖ‰8Ğâô¬2J$04f30111-a317-49e3-be75-fe412cbfb7c5
+ikotlin:S125­"Remove this commented out code.(ÄÔâ©ùÿÿÿÿ8Öıı‘¬2J$f112940a-a7d1-48fb-b7f4-8a6c29d46dda
+dkotlin:S125³"Remove this commented out code.(ÿøÁ8Öıı‘¬2J$f460202b-38af-4c05-a53c-ba949dce9e1b
+ikotlin:S125Â"Remove this commented out code.(¡²æ£üÿÿÿÿ8Ğâô¬2J$b9248a37-ca78-4231-984d-cef428dc0b1c
+ikotlin:S125á"Remove this commented out code.(ö´óùÿÿÿÿ8Ğâô¬2J$88c3e022-9d78-4110-88ce-3da597cb76e8
+dkotlin:S125ÿ"Remove this commented out code.(¼š÷ƒ8Ğâô¬2J$259cd199-0590-422c-a7a2-7c816a7a35c9
+€kotlin:S1144·"5Remove this unused private "setHamburgerIcon" method.(³Ïòùÿÿÿÿ8Òâô¬2J$dc2d3b69-c158-4890-b761-3d81595fd3f7
+dkotlin:S1128"Remove this unused import.(œ‹İóÿÿÿÿÿ8ÉÍ»‘¬2J$68ea08f0-9281-40c6-8aeb-99721acae811
+kotlin:S1192g"KDefine a constant instead of duplicating this literal "Email:Null" 4 times.(ß›•’8×âô¬2J$6023bc92-1364-41a5-929e-6535c35963ef
+—kotlin:S1871q"MThis branch's code block is the same as the block for the branch on line 106.(×ø©üÿÿÿÿ8×âô¬2J$3b7f7297-746d-4ae4-9746-3b1652d92629
+‚kotlin:S6511e"=Merge chained "if" statements into a single "when" statement.(è„­8Ùâô¬2J$dcedb280-7024-4f79-8f10-0d0ba18f6446

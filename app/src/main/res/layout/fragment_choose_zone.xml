@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cardlayer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_230sdp"
+        android:scaleType="center"
+        android:background="@drawable/rounded_corners"
+        android:src="@drawable/app_logo_name"/>
+
+
+
+    <LinearLayout
+        android:layout_below="@+id/cardlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+
+        tools:context=".MainActivity"
+        android:padding="16dp">
+
+
+
+
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Metaluxe"
+            android:textColor="#C29370"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A unique platform for modern businesses\n\nMetaluxe is a comprehensive solution for smarter and faster business, offering unparalleled efficiency in copper transactions."
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:gravity="center" />
+
+        <!-- Choose any one text -->
+        <TextView
+            android:id="@+id/choose_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Choose any one of them"
+            android:fontFamily="@font/monsrt_bold"
+            android:textColor="@color/black"
+
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center" />
+
+        <!-- RadioGroup for Customer/Vendor selection -->
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:id="@+id/radio_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customer"
+                android:buttonTint="@color/radio_button_color_selector"
+
+
+                android:layout_marginEnd="16dp" />
+
+            <RadioButton
+                android:id="@+id/radio_vendor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:text="Vender"
+                android:buttonTint="@color/radio_button_color_selector"
+
+                />
+
+        </RadioGroup>
+
+        <!-- Continue Button -->
+
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/btn_continue"
+        style="@style/loginButton"
+        android:layout_alignParentBottom="true"
+
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/square_filled_black"
+        android:fontFamily="@font/monsrt_bold"
+        android:text="Continue"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

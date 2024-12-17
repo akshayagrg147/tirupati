@@ -1,6 +1,7 @@
 package com.tirupati.vendor.viewmodels
 
 import androidx.lifecycle.ViewModel
+import com.google.gson.JsonParser
 import com.tirupati.vendor.helper.toRequestBody
 import com.tirupati.vendor.model.UploadsDetailResponse
 import com.tirupati.vendor.network.ApiService
@@ -135,7 +136,10 @@ class GatekeeperUploadsRepository @Inject constructor(private val apiService: Ap
             // Handle errors and exceptions
             when (e) {
                 is retrofit2.HttpException -> {
-                    val errorMsg = e.response()?.errorBody()?.string() ?: "Unknown error"
+                    val jsonObject = JsonParser.parseString(e.response()?.errorBody()?.string()).asJsonObject
+
+                    val errorMsg =  jsonObject.get("MESSAGE")?.asString ?: "Unknown error"
+
                     when (e.code()) {
                         400 -> NetworkState.HttpErrors.BadRequest(errorMsg)
                         401 -> NetworkState.HttpErrors.Unauthorized(errorMsg)

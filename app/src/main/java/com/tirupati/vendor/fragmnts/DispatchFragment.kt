@@ -11,6 +11,7 @@ import android.content.ContentResolver
 import android.content.Context
 
 import android.content.ContextWrapper
+import android.content.DialogInterface
 
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -43,6 +44,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationAvailability
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.tasks.OnCompleteListener
 import com.tirupati.vendor.R
@@ -361,6 +366,7 @@ class DispatchFragment : Fragment() {
                         val location = task.result
                         latitude = location.latitude
                         longitude = location.longitude
+
                         // Use latitude and longitude as needed
                     } else {
                         Toast.makeText(requireActivity(), "error get", Toast.LENGTH_LONG).show()
@@ -374,6 +380,81 @@ class DispatchFragment : Fragment() {
                 })
             // Location services are enabled, proceed with your functionality
         }
+    }
+
+    private fun setUpLocationListener() {
+        val fusedLocationProviderClient =
+            LocationServices.getFusedLocationProviderClient(requireActivity())
+        // for getting the current location update after every 1 minute with high accuracy
+        val locationRequest = LocationRequest().setInterval(2000).setFastestInterval(30000)
+            .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+
+
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
+                121
+            )
+            return
+        }
+
+
+        fusedLocationProviderClient.requestLocationUpdates(
+            locationRequest,
+            object : LocationCallback() {
+                override fun onLocationResult(locationResult: LocationResult) {
+                    super.onLocationResult(locationResult)
+                    for (location in locationResult.locations) {
+                        if (location != null) {
+                            latitude = location.latitude
+                            longitude = location.longitude
+                            fusedLocationProviderClient.removeLocationUpdates(this)
+
+//
+                        } else {
+                            fusedLocationProviderClient.removeLocationUpdates(this)
+                           // showSettingsAlert()
+                        }
+                    }
+                    // Few more things we can do here:
+                    // For example: Update the location of user on server
+                }
+
+
+            },
+            Looper.myLooper()
+        )
+    }
+    fun showSettingsAlert() {
+        val locationManager = context?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+
+        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
+            return
+
+        val alertDialog = AlertDialog.Builder(context,R.style.DialogTheme)
+        alertDialog.setTitle("SETTINGS")
+        alertDialog.setMessage("Enable Location Provider! Go to settings menu?")
+        alertDialog.setPositiveButton("Settings")
+        { dialog, which ->
+            dialog.cancel()
+            val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+            startActivity(intent)
+        }
+        alertDialog.setNegativeButton("Cancel",
+            object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface, which: Int) {
+                    dialog.cancel()
+                }
+            })
+        alertDialog.show()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -502,6 +583,9 @@ class DispatchFragment : Fragment() {
                             }
                         }
                     } }
+                else{
+                    setUpLocationListener()
+                }
 
                 }
             }
@@ -562,7 +646,8 @@ class DispatchFragment : Fragment() {
     }
     override fun onResume() {
         super.onResume()
-        checkAndPromptForLocation()
+        showSettingsAlert()
+        setUpLocationListener()
         LandingVendorSActivity.showIcon(false)
         LandingVendorSActivity.changeTitle("Dispatch Order")
 

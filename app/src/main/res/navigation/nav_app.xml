@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_app"
-    app:startDestination="@id/logInFragment2">
+    app:startDestination="@id/chooseZone">
 
 
 
@@ -27,7 +27,16 @@
             android:id="@+id/action_homeAcademyFragment_to_openFormFragment"
             app:destination="@id/openFormFragment" />
         -->
+    <fragment
+        android:id="@+id/chooseZone"
+        android:name="com.tirupati.vendor.fragmnts.ChooseZoneFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_choosezone_loginfragment"
+            app:destination="@id/logInFragment2" />
 
+    </fragment>
 
     <fragment
         android:id="@+id/logInFragment2"
@@ -40,6 +49,9 @@
         <action
             android:id="@+id/action_logInFragment2_to_registrationFragment"
             app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_logInFragment2_to_choosefragment"
+            app:destination="@id/chooseZone" />
     </fragment>
     <fragment
         android:id="@+id/OTPFragment2"
@@ -54,6 +66,29 @@
         <action
             android:id="@+id/action_registrationFragment_to_firstDetailPageFragment"
             app:destination="@id/businessDetailFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_businessDetailCustomerFragment"
+            app:destination="@id/businessDetailCustomerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/businessDetailCustomerFragment"
+        android:name="com.tirupati.vendor.fragmnts.BuisnessDetailCustomerFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_buisness_detail_customer" >
+
+        <action
+            android:id="@+id/action_firstDetailPageFragment_to_multipleAccountFragment"
+            app:destination="@id/multipleAccountsCustomerFragment" />
+        <action
+            android:id="@+id/action_firstDetailPageFragment_to_bankAccountScreen"
+            app:destination="@id/bankAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankAccountFragment"
+        android:name="com.tirupati.vendor.fragmnts.BankAccountFragment"
+        android:label="fragment_first_detail_page"
+        tools:layout="@layout/fragment_bank_account" >
+
     </fragment>
     <fragment
         android:id="@+id/businessDetailFragment"
@@ -97,6 +132,15 @@
             app:destination="@id/OTPFragment2" />
     </fragment>
     <fragment
+        android:id="@+id/multipleAccountsCustomerFragment"
+        android:name="com.tirupati.vendor.fragmnts.MultipleAccountCustomerFragment"
+        android:label="MultipleAccountsFragment"
+        tools:layout="@layout/fragment_multiple_account_customer">
+        <action
+            android:id="@+id/action_multipleAccountsFragment_to_bankfragment"
+            app:destination="@id/bankAccountFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/multipleAccountsFragment"
         android:name="com.tirupati.vendor.fragmnts.MultipleAccountsFragment"
         android:label="MultipleAccountsFragment"
@@ -105,4 +149,5 @@
             android:id="@+id/action_multipleAccountsFragment_to_uploadsFragment"
             app:destination="@id/uploadsFragment" />
     </fragment>
+
 </navigation>

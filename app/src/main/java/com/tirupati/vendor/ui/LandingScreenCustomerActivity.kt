@@ -26,6 +26,7 @@ import com.tirupati.vendor.fragmnts.PoListFragment
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.helper.interfaces.ToolbarTitleChangeListener
+import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.GateRESPONSEDATA
 import com.tirupati.vendor.model.ResponseData
 import com.tirupati.vendor.network.NetworkState
@@ -57,10 +58,13 @@ class LandingScreenCustomerActivity : AppCompatActivity(), ToolbarTitleChangeLis
             if(toolbarS!=null){
                 val titleTextVw = toolbarS!!.findViewById<TextView>(R.id.toolbarTitle)
                 titleTextVw.setText(title)
+                if(title.equals("checklist against ge",true))
+                toolbarS?.setNavigationIcon(R.drawable.iv_back)
 
 
 
             }
+
         }
 
         fun changeIcon(){
@@ -92,6 +96,29 @@ class LandingScreenCustomerActivity : AppCompatActivity(), ToolbarTitleChangeLis
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.landing_screen)
         binding = LandingScreenSupervisorBinding.inflate(layoutInflater)
+
+        if (sessionManager.user?.USER_TYPE == "Vendor"){
+            binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.NAME?:"null"
+            binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.CONTACT_EMAIL?:"Email:Null"
+
+        }
+        else if (sessionManager.user?.USER_TYPE ==  "Gatekeeper"){
+
+
+            binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.USER_NAME?:"null"
+            binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.EMAIL?:"Email:Null"
+
+        }
+        else if (sessionManager.user?.USER_TYPE ==  "Superviser"){
+            binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.USER_NAME?:"null"
+            binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.EMAIL?:"Email:Null"
+        }else{
+
+            binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.NAME_OF_ORGANIZATION?:"null"
+            binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.EMAIL_ID?:"Email:Null"
+
+        }
+
         val view: View = binding.root
         setContentView(view)
          toolbar = findViewById(R.id.main_toolbar)
@@ -100,7 +127,7 @@ class LandingScreenCustomerActivity : AppCompatActivity(), ToolbarTitleChangeLis
         setSupportActionBar(toolbar)
         val reload:ImageView = findViewById<ImageView>(R.id.otp_back_iv)
         reload.setOnClickListener {
-          //  callTheListApiForSupervisor()
+            callTheListApiForSupervisor()
         }
 
         drawerLayout = findViewById(R.id.drawer_acedamy)
@@ -170,6 +197,7 @@ class LandingScreenCustomerActivity : AppCompatActivity(), ToolbarTitleChangeLis
         )
     }
     fun callTheListApiForSupervisor() {
+        binding!!.loginProgressBar.progressBar.shown()
         val header = HashMap<String, String>()
         header["Accept"] = "application/json"
         header["version"] = "1"

@@ -1,7 +1,13 @@
 package com.tirupati.vendor.utils
 
+import androidx.appcompat.widget.Toolbar
+import okhttp3.MultipartBody
+
 var DELAY_MS: Long = 800 //delay in milliseconds before task is to be executed
 var PERIOD_MS: Long = 5000
+ var first:ArrayList<MultipartBody.Part?>?=null
+ var second:ArrayList<MultipartBody.Part?>?=null
+ var third:ArrayList<MultipartBody.Part?>?=null
 
 //const val API_KEY = "AIzaSyDs6G4rQ3y1dIBYHBVZZcwHVvj9Msx0zT4"
 

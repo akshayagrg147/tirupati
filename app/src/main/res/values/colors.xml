@@ -79,6 +79,8 @@
     <color name="pink_light">#fff7e8</color>
     <color name="pink">#fce4e4</color>
     <color name="pink_dark">#ff8878</color>
+    <color name="selectedColor">#FF0000</color> <!-- Red when selected -->
+    <color name="unselectedColor">#000000</color>
     <color name="pinkish">#f0a6a5</color>
     <color name="magenta">#dc1a7a</color>
     <color name="lightBlack">#808080</color>

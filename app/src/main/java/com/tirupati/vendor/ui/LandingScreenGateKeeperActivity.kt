@@ -89,6 +89,27 @@ class LandingScreenGateKeeperActivity : AppCompatActivity(), ToolbarTitleChangeL
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.landing_screen)
         binding = LandingScreenGatekeeperBinding.inflate(layoutInflater)
+        if (sessionManager.user?.USER_TYPE == "Vendor"){
+            binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.NAME?:"-"
+            binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.CONTACT_EMAIL
+
+        }
+        else if (sessionManager.user?.USER_TYPE ==  "Gatekeeper"){
+
+
+            binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.USER_NAME?:"-"
+            binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.EMAIL
+
+        }
+        else if (sessionManager.user?.USER_TYPE ==  "Superviser"){
+            binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.USER_NAME?:"-"
+            binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.EMAIL
+        }else{
+
+            binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.NAME_OF_ORGANIZATION?:"-"
+            binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.EMAIL_ID
+
+        }
         val view: View = binding.root
         setContentView(view)
          toolbar = findViewById(R.id.main_toolbar)

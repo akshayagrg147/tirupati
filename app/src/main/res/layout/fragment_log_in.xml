@@ -12,6 +12,16 @@
         android:scaleType="center"
         android:background="@drawable/rounded_corners"
         android:src="@drawable/app_logo_name"/>
+    <ImageView
+        android:id="@+id/btn_back_form"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="16dp"
+        android:padding="1dp"
+        android:scaleType="centerInside"
+        android:layout_height="@dimen/_25sdp"
+
+        android:src="@drawable/left" />
 
 
 <RelativeLayout

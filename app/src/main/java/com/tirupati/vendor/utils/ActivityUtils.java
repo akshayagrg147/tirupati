@@ -8,6 +8,7 @@ import java.io.ByteArrayOutputStream;
 
 public class ActivityUtils {
 
+
     public static Bitmap scaleBitmap(Bitmap bitmapToScale, float newWidth, float newHeight) {
         if (bitmapToScale == null) {
             return null;

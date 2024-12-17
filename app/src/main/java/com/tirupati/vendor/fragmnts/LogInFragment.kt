@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import com.tirupati.vendor.ProgressDialogHelper
 import com.tirupati.vendor.R
@@ -32,6 +33,7 @@ class LogInFragment : Fragment() {
     private val logInVm: LogInViewModel by viewModels()
 
     private var binding: FragmentLogInBinding? = null
+    private var selectItem:String?=null
     var disableBtn = true
     @Inject
     lateinit var sessionManager: SessionManager
@@ -49,8 +51,27 @@ class LogInFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val args = arguments
+        if(args!=null) {
+            selectItem= args.getString("zoneselect", "")
+        }
         // Inflate the layout for this fragment
         binding = FragmentLogInBinding.inflate(inflater, container, false)
+        binding?.btnBackForm?.setOnClickListener {
+            val args = Bundle()
+            val navController = Navigation.findNavController(binding!!.root)
+
+            val navOptions = NavOptions.Builder()
+                .setPopUpTo(
+                    R.id.chooseZone,
+                    true
+                ) // Replace with your actual graph start destination
+                .build()
+
+            navController.navigate(R.id.action_logInFragment2_to_choosefragment, args, navOptions)
+        }
+
+
 
         val paint = binding!!.welcometitle.paint
         val width = paint.measureText(binding!!.welcometitle.text.toString())
@@ -100,6 +121,7 @@ class LogInFragment : Fragment() {
         }
         binding!!.signupReg.setOnClickListener {
             val args = Bundle()
+            args.putString("zoneselect",selectItem)
 
             Navigation.findNavController(binding!!.root).
             navigate(R.id.action_logInFragment2_to_registrationFragment, args)
@@ -139,6 +161,7 @@ class LogInFragment : Fragment() {
                     args.putString("OTP_IS",otp)
                     args.putString("PH_NO",phn_nbr)
                     args.putString("USERTYPE",type)
+                    args.putString("zoneselect",selectItem)
                     Navigation.findNavController(binding!!.root).
                     navigate(R.id.action_logInFragment2_to_OTPFragment2, args)
                 }

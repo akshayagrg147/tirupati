@@ -1,0 +1,38 @@
+
+fkotlin:S6615é" Remove this useless initializer.(²© 8ÃƒŞ™¬2J$d3142bdd-e942-4769-bf24-c019cc7a34c0
+dkotlin:S125ˆ"Remove this commented out code.(‡éË¦8ÄƒŞ™¬2J$8033ffc3-21fa-4869-b104-cf79581322a0
+ikotlin:S125Ó"Remove this commented out code.(ñ£¹ÿÿÿÿÿ8ÄƒŞ™¬2J$b3233ded-82fa-4d13-b155-a20f2eee16c7
+–kotlin:S117P"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(áèìW8ÆƒŞ™¬2J$f6df8d11-570b-4f7a-8eda-e418d90cd8ae
+—kotlin:S117Q"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(Ş—Ã‘8ÆƒŞ™¬2J$772774b9-c170-428f-975a-376e97fa6814
+œkotlin:S117R"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(Öå§Òÿÿÿÿÿ8ÆƒŞ™¬2J$0eae0a5a-0d73-4dbb-8341-a02ed84d9787
+—kotlin:S117S"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(áÄ„8ÆƒŞ™¬2J$ab0848c7-5953-49e9-b564-cdeb38b22025
+—kotlin:S117T"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ÿÓçÕ8ÆƒŞ™¬2J$7361baaf-df44-4739-bdc1-b0586db2f7cf
+œkotlin:S117U"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(üôï‹ÿÿÿÿÿ8ÆƒŞ™¬2J$c4ecb077-508a-45c9-8536-eea165b6efcb
+œkotlin:S117V"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ò®Í¡üÿÿÿÿ8ÆƒŞ™¬2J$f471cd8d-5b43-46ad-b630-225e407ac822
+œkotlin:S117W"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ùˆçÎşÿÿÿÿ8ÆƒŞ™¬2J$822bf932-f7e7-4d5d-be52-79d91d13b51e
+œkotlin:S117X"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(Õº´üÿÿÿÿ8ÆƒŞ™¬2J$e89e2ecb-79cc-469c-8108-77ba3f26539f
+—kotlin:S117Y"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(şƒœº8ÆƒŞ™¬2J$829880a8-3400-4b9b-833f-e19c0a94b4da
+—kotlin:S117Z"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(Ş¨¢ù8ÆƒŞ™¬2J$76d9f047-372d-4959-aa7e-eecebb3a29ae
+—kotlin:S117["SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ùËß8ÆƒŞ™¬2J$1d66f3c1-20b6-49d5-b781-2d8d623f6913
+—kotlin:S117`"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ÈÔı8ÆƒŞ™¬2J$87020b00-aedb-4065-a6a5-c68f1c39058e
+:kotlin:S6310f"Avoid hardcoded dispatchers.(©ÓœW8Ã´‚¡½2
+<kotlin:S6310€"Avoid hardcoded dispatchers.(Í¡·Ş8Ã´‚¡½2
+<kotlin:S6310"Avoid hardcoded dispatchers.(Í¡·Ş8Ã´‚¡½2
+<kotlin:S6310™"Avoid hardcoded dispatchers.(Í¡·Ş8Ã´‚¡½2
+<kotlin:S6310¢"Avoid hardcoded dispatchers.(Í¡·Ş8Ã´‚¡½2
+<kotlin:S6310¬"Avoid hardcoded dispatchers.(Í¡·Ş8Ã´‚¡½2
+<kotlin:S6310³"Avoid hardcoded dispatchers.(Í¡·Ş8Ã´‚¡½2
+<kotlin:S6310¼"Avoid hardcoded dispatchers.(Í¡·Ş8Ã´‚¡½2
+|kotlin:S1135#"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8ÊƒŞ™¬2J$65428ee8-d168-49b6-a540-114db2102256
+|kotlin:S1135/"2Complete the task associated to this TODO comment.(ğï¢öúÿÿÿÿ8ÊƒŞ™¬2J$cbc07767-3302-4d02-b764-ec6537b65884
+}kotlin:S1135¤"2Complete the task associated to this TODO comment.(ßíŠÿÿÿÿÿ8ÊƒŞ™¬2J$b9712ebe-9c7c-4273-8cc9-169ef3a177ec
+ukotlin:S1481E"0Remove this unused "legalEntity" local variable.(ôªòˆ8ËƒŞ™¬2J$ede18895-4459-436c-8d14-461fe65825aa
+dkotlin:S1128"Remove this unused import.(Ş¥›üøÿÿÿÿ8ÌƒŞ™¬2J$c9ec0148-fd78-4d79-a8cc-80853d198225
+dkotlin:S1128"Remove this unused import.(Ê¶ïòşÿÿÿÿ8ÌƒŞ™¬2J$a2c72586-b31f-49c5-91f1-b55b2ebb0da5
+_kotlin:S1128"Remove this unused import.( “³â8ÌƒŞ™¬2J$e558b2fd-ab12-4fb2-9df2-089ada243d6c
+>kotlin:S1128"Remove this unused import.(ø¥ş¿şÿÿÿÿ8É´‚¡½2
+9kotlin:S1128 "Remove this unused import.(àŞÍú8É´‚¡½2
+dkotlin:S1128!"Remove this unused import.( í»Òùÿÿÿÿ8ÌƒŞ™¬2J$18e52e65-d60a-454a-8e40-a5a31ded2fc3
+“kotlin:S1871«"MThis branch's code block is the same as the block for the branch on line 161.(ßâƒ‚8ÍƒŞ™¬2J$267b649b-2ca6-41f6-a28a-cb9e02935e51
+’kotlin:S1871²"MThis branch's code block is the same as the block for the branch on line 161.(Ä†•8ÍƒŞ™¬2J$f5abb852-e3f6-4847-b90a-c5f0cbd77ea8
+ˆkotlin:S6511ê"=Merge chained "if" statements into a single "when" statement.(…ù‚×üÿÿÿÿ8ĞƒŞ™¬2J$54d6f58c-aaf6-49e1-8052-06c4fd8b17e6

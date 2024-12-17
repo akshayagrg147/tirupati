@@ -21,6 +21,7 @@ import com.tirupati.vendor.utils.isValidEmail
 class RegistrationFragment : Fragment() {
     private var bindingReg: FragmentRegistrationBinding? = null
             var disableBtn = false
+    private var selectItem:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -31,7 +32,10 @@ class RegistrationFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         bindingReg = FragmentRegistrationBinding.inflate(inflater, container, false)
-
+        val args = arguments
+        if(args!=null) {
+            selectItem= args.getString("zoneselect", "")
+        }
         val paint = bindingReg!!.welcometitle.paint
         val width = paint.measureText(bindingReg!!.welcometitle.text.toString())
         val textShader: Shader = LinearGradient(0f, 0f, width, bindingReg!!.welcometitle.textSize, intArrayOf(
@@ -89,15 +93,28 @@ class RegistrationFragment : Fragment() {
 
 
     private fun callAPI() {
-
-        val args = Bundle()
+        if(selectItem=="1"){
+            val args = Bundle()
 //        NEW
-        args.putString("ORG_NAME",bindingReg!!.etNameOrg.text.toString())
-        args.putString("ORG_CONTACT",bindingReg!!.etContactNumber.text.toString())
-        args.putString("ORG_EMAIL",bindingReg!!.etOrgEmailNumber.text.toString())
+            args.putString("ORG_NAME",bindingReg!!.etNameOrg.text.toString())
+            args.putString("ORG_CONTACT",bindingReg!!.etContactNumber.text.toString())
+            args.putString("ORG_EMAIL",bindingReg!!.etOrgEmailNumber.text.toString())
 
-        Navigation.findNavController(bindingReg!!.root).
-        navigate(R.id.action_registrationFragment_to_firstDetailPageFragment, args)
+            Navigation.findNavController(bindingReg!!.root).
+            navigate(R.id.action_registrationFragment_to_businessDetailCustomerFragment, args)
+        }
+        else{
+            val args = Bundle()
+//        NEW
+            args.putString("ORG_NAME",bindingReg!!.etNameOrg.text.toString())
+            args.putString("ORG_CONTACT",bindingReg!!.etContactNumber.text.toString())
+            args.putString("ORG_EMAIL",bindingReg!!.etOrgEmailNumber.text.toString())
+
+            Navigation.findNavController(bindingReg!!.root).
+            navigate(R.id.action_registrationFragment_to_firstDetailPageFragment, args)
+        }
+
+
     }
 
     private fun validateUI(binding: FragmentRegistrationBinding): Boolean {

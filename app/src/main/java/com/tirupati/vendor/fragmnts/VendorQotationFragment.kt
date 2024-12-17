@@ -63,6 +63,7 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import org.apache.commons.io.FileUtils
 import java.io.ByteArrayOutputStream
 import java.io.File
+import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -107,7 +108,10 @@ class VendorQotationFragment : Fragment() {
                 val quantity = quantityText.toDoubleOrNull() ?: 0.0
                 val rate = rateText.toDoubleOrNull() ?: 0.0
 
-                binding?.amountTotal?.setText((quantity * rate).toString())
+                val decimalFormat = DecimalFormat("#")
+                decimalFormat.setMaximumFractionDigits(0) // No decimal places
+
+                binding!!.amountTotal.setText(decimalFormat.format(quantity * rate))
                 // Code to execute when text is changing
             }
 
@@ -127,8 +131,11 @@ class VendorQotationFragment : Fragment() {
 
                 val quantity = quantityText.toDoubleOrNull() ?: 0.0
                 val rate = rateText.toDoubleOrNull() ?: 0.0
+                val decimalFormat = DecimalFormat("#")
+                decimalFormat.setMaximumFractionDigits(0) // No decimal places
 
-                binding?.amountTotal?.setText((quantity * rate).toString())
+                binding!!.amountTotal.setText(decimalFormat.format(quantity * rate))
+
                 // Code to execute when text is changing
             }
 

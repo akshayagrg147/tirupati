@@ -1,9 +1,8 @@
 
-akotlin:S125="Remove this commented out code.(æ—ÒşÿÿÿÿJ$17b629b0-b7bf-44b1-9dcb-201bb30e2502
-akotlin:S125m"Remove this commented out code.(ö´óùÿÿÿÿJ$b6398432-6248-48f7-8c55-0fae8ca83963
-bkotlin:S125Å"Remove this commented out code.(ö´óùÿÿÿÿJ$36bc0036-4038-4b82-bf65-e04dc63f7109
-kkotlin:S108R")Either remove or fill this block of code.(ÁÂÈÅûÿÿÿÿJ$dfc24e8f-01bf-4432-abdb-7af53f2984c2
-gkotlin:S108„")Either remove or fill this block of code.(å¥‡J$b83bf901-859f-4846-8299-cc85e76c7cf3
-skotlin:S1481á"4Remove this unused "mCountDownTimer" local variable.(†„ÿ¢J$263f9c79-76e8-4ade-9ae2-7f8862145e80
-9kotlin:S1128"Remove this unused import.(ƒ¨¡ü8º›‡2
-jkotlin:S6519"+Replace "equals" with binary operator "==".(Ù·£öJ$3cc8b713-e737-4efe-86c2-7aa3af4a208d
+akotlin:S125@"Remove this commented out code.(æ—ÒşÿÿÿÿJ$e5f7600f-5eda-430c-9af7-f310f17cc585
+akotlin:S125p"Remove this commented out code.(ö´óùÿÿÿÿJ$1a55d282-85ec-482e-b416-c51f8609c1fd
+bkotlin:S125Ì"Remove this commented out code.(ö´óùÿÿÿÿJ$3ab4a6a7-67a6-46fb-ad5a-067ccb397640
+kkotlin:S108U")Either remove or fill this block of code.(ÁÂÈÅûÿÿÿÿJ$345e547a-7f07-4b7d-aec8-c9a7e0e997f4
+gkotlin:S108‡")Either remove or fill this block of code.(å¥‡J$aeaff9f9-33f1-4e40-9940-12a8f375ce41
+skotlin:S1481è"4Remove this unused "mCountDownTimer" local variable.(†„ÿ¢J$01e7a9ea-a7ed-4c92-80b9-fbfe8f8b24a8
+ˆkotlin:S6511±"=Merge chained "if" statements into a single "when" statement.(Ù–òûÿÿÿÿ8Ò®ì–¬2J$b9ce3ede-881d-463b-9109-445c58c5d340

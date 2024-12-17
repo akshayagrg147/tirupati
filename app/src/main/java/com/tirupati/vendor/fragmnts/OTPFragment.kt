@@ -14,6 +14,7 @@ import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.network.NetworkState
+import com.tirupati.vendor.ui.CustomerHomeActivity
 import com.tirupati.vendor.ui.LandingScreenCustomerActivity
 import com.tirupati.vendor.ui.LandingScreenGateKeeperActivity
 import com.tirupati.vendor.ui.LandingVendorActivity
@@ -34,6 +35,7 @@ class OTPFragment : Fragment() {
     lateinit var sessionManager: SessionManager
     lateinit var bundledData: Bundle
     var GST = ""
+    var  zoneselect=""
     var OTPReceived = ""
     var Mobile = ""
     var UserType = ""
@@ -49,6 +51,7 @@ class OTPFragment : Fragment() {
             Log.d("bndldata", bundledData.toString())
 
             GST = args.getString("GST", "")
+            zoneselect= args.getString("zoneselect", "")
             OTPReceived = args.getString("OTP_IS", "")
             Mobile = args.getString("PH_NO", "")
             UserType = args.getString("USERTYPE","")
@@ -183,6 +186,10 @@ class OTPFragment : Fragment() {
 //                        requireActivity().moveToActivity(LandingScreenCustomerActivity::class.java)
 //                        requireActivity().finish()//polist //24AAACC4175D1Z5
                         requireActivity().moveToActivity(LandingVendorSActivity::class.java)
+                        requireActivity().finish()
+                    }
+                    else if(zoneselect=="1"){
+                        requireActivity().moveToActivity(CustomerHomeActivity::class.java)
                         requireActivity().finish()
                     }
                     else{

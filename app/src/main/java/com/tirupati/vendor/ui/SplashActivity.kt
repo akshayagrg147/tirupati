@@ -75,7 +75,7 @@ class SplashActivity : /*BaseActivity<ActivitySplashBinding>*/AppCompatActivity(
                     }
 
                 }else{
-                    startActivity(Intent(this, SIgnInRegisterActivity::class.java))
+                    startActivity(Intent(this, CustomerHomeActivity::class.java))
 
                     finish()
                 }
