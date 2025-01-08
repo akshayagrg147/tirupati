@@ -1,6 +1,7 @@
 package com.tirupati.vendor.fragmnts
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,6 +38,13 @@ class BankDetailFragment : Fragment() {
     var pinCode = ""
     var orgGst = ""
     var orgPAN = ""
+    var selectItem=""
+
+    var POCEmailIdET=""
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +69,11 @@ class BankDetailFragment : Fragment() {
             pinCode = args.getString("PIN","")
             orgGst = args.getString("ORG_GST","")
             orgPAN =args.getString("ORG_PAN","")
+            selectItem= args.getString("selectItem","")
 
+            POCEmailIdET= args.getString("POCEmailIdET","")
+
+Log.d("selectItemselectItem",selectItem)
 
 
 
@@ -80,6 +92,10 @@ class BankDetailFragment : Fragment() {
         bindingThirdPage?.btnBackForm?.setOnClickListener{
             findNavController(). popBackStack()
 
+        }
+        if(selectItem=="1"){
+bindingThirdPage?.msmeApplicable1?.visibility=View.GONE
+            bindingThirdPage?.evoiceApplicable1?.visibility=View.GONE
         }
         bindingThirdPage?.btnThirdDone?.setOnClickListener {
             if(validateUI(bindingThirdPage!!))
@@ -104,6 +120,7 @@ class BankDetailFragment : Fragment() {
                     args.putString("PIN",pinCode)
                     args.putString("ORG_GST",orgGst)
                     args.putString("ORG_PAN",orgPAN)
+                    args.putString("selectItem",selectItem)
                     //NEW ADDED
                     args.putString("BANK_NAME",bindingThirdPage!!.bankNameET.text.toString())
                     args.putString("ACCOUNT_NUMBER",bindingThirdPage!!.accountNumberET.text.toString())
@@ -125,6 +142,11 @@ class BankDetailFragment : Fragment() {
                     }else{args.putString("OTHERAPPLICABLE","0")
                     }
 
+
+                    if(selectItem=="1"){
+
+                        args.putString("POCEmailIdET",POCEmailIdET)
+                    }
 
 
                     Navigation.findNavController(bindingThirdPage!!.root).navigate(
@@ -151,6 +173,7 @@ class BankDetailFragment : Fragment() {
                     args.putString("PIN",pinCode)
                     args.putString("ORG_GST",orgGst)
                     args.putString("ORG_PAN",orgPAN)
+                    args.putString("selectItem",selectItem)
 
                     //NEW ADDED
                     args.putString("BANK_NAME",bindingThirdPage!!.bankNameET.text.toString())
@@ -159,6 +182,10 @@ class BankDetailFragment : Fragment() {
                     args.putString("IFSC",bindingThirdPage!!.ifscET.text.toString())
                     args.putString("BRANCH_NAME",bindingThirdPage!!.branchET.text.toString())
                     args.putString("PINCODE",bindingThirdPage!!.branchET.text.toString())
+
+                    if(selectItem=="1"){
+                        args.putString("POCEmailIdET",POCEmailIdET)
+                    }
                     if(bindingThirdPage!!.MsmeswOnOff.isChecked){
                         args.putString("MSME","1")
                     }else{args.putString("MSME","0")}

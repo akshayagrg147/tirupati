@@ -63,6 +63,12 @@ class MultipleAccountsFragment : Fragment() {
     var EINVOICE = ""
     var MULTIPLE_ACCOUNTS=""
 
+
+    var POCEmailIdET=""
+    var selectItem=""
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val args= arguments
@@ -96,6 +102,10 @@ class MultipleAccountsFragment : Fragment() {
             MSME = args.getString("MSME","")
             EINVOICE = args.getString("EINVOICE","")
             MULTIPLE_ACCOUNTS = args.getString("OTHERAPPLICABLE","")
+            POCEmailIdET = args.getString("POCEmailIdET","")
+            selectItem= args.getString("selectItem","")
+
+
         }
 
     }
@@ -144,6 +154,10 @@ class MultipleAccountsFragment : Fragment() {
                args.putString("MSME",MSME)
                args.putString("EINVOICE",EINVOICE)
                args.putString("OTHERAPPLICABLE",MULTIPLE_ACCOUNTS)
+               args.putString("POCEmailIdET",POCEmailIdET)
+               args.putString("selectItem",selectItem)
+
+
 
 
                args.putString("V1_NAME",bindingUploads!!.EtVSecondName.text.toString()?:"")

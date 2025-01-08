@@ -2,15 +2,18 @@ package com.tirupati.vendor.fragmnts
 
 import android.os.Bundle
 import android.provider.CalendarContract.Colors
+import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import androidx.viewpager2.widget.ViewPager2
 import com.itextpdf.kernel.colors.Color
 import com.tirupati.vendor.R
 import com.tirupati.vendor.model.OrderStatusPagerAdapter
+import com.tirupati.vendor.ui.CustomerHomeActivity
 
 class OrderStatusCustomerFragment : Fragment(R.layout.fragment_order_status_customer) {
 
@@ -21,7 +24,11 @@ class OrderStatusCustomerFragment : Fragment(R.layout.fragment_order_status_cust
         val viewPager: ViewPager2 = view.findViewById(R.id.viewPager)
 
         // Set up the adapter for ViewPager2
-        viewPager.adapter = OrderStatusPagerAdapter(requireActivity())
+        viewPager.adapter = OrderStatusPagerAdapter(requireActivity()) { actionId, args ->
+
+            findNavController().navigate(actionId, args ?: Bundle())
+
+        }
         tabLayout.getTabAt(0)?.select()
         // Linking TabLayout and ViewPager2
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
@@ -62,5 +69,20 @@ class OrderStatusCustomerFragment : Fragment(R.layout.fragment_order_status_cust
                 ContextCompat.getColor(requireContext(), R.color.colorPrimary) // Selected text color (White)
             )
         }
+    }
+    override fun onResume() {
+        super.onResume()
+
+        CustomerHomeActivity.showIcon(true)
+        CustomerHomeActivity.changeTitle("")
+
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        CustomerHomeActivity.showIcon(true)
+        CustomerHomeActivity.changeTitle("")
+
     }
 }

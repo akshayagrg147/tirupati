@@ -1,60 +1,97 @@
 package com.tirupati.vendor.fragmnts
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.tirupati.vendor.R
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CustomerComplaintTabFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.tirupati.vendor.adapters.CustomerComplaintAdapter
+import com.tirupati.vendor.databinding.FragmentCustomerComplaintTabBinding
+import com.tirupati.vendor.helper.SessionManager
+import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.shown
+import com.tirupati.vendor.network.NetworkState
+import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+@AndroidEntryPoint
 class CustomerComplaintTabFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentCustomerComplaintTabBinding? = null
+    private val binding get() = _binding!!
+    private val gateKeeperVm: GatekeeperListViewModel by viewModels()
+    @Inject
+    lateinit var sessionManager: SessionManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_customer_complaint_tab, container, false)
+        _binding = FragmentCustomerComplaintTabBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CustomerComplaintTabFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CustomerComplaintTabFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        callTheListApiForSupervisor()
+    }
+    fun callTheListApiForSupervisor() {
+        binding!!.loginProgressBar.progressBar.shown()
+        lifecycleScope.launch {
+
+            val header = HashMap<String, String>()
+            header["Accept"] = "application/json"
+            header["version"] = "1"
+            header["Authorization"] = "${sessionManager.loginToken}"
+            header["userID"]="${sessionManager.user?.RESPONSEDATA?.USER_ID}"
+
+            var response = gateKeeperVm.getCustomerComplaintsList(header)
+
+            when (response) {
+
+                is NetworkState.Success -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
+                    binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+                    binding.recyclerView.adapter = CustomerComplaintAdapter( response.body.RESPONSEDATA)
+
+
+
+                }
+
+                is NetworkState.Error<*> -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
+                    // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+                }
+
+                is NetworkState.NetworkException -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
+                }
+
+                is NetworkState.HttpErrors.InternalServerError -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
+                }
+
+                is NetworkState.HttpErrors.ResourceNotFound -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
+                }
+
+                else -> {
+                    binding!!.loginProgressBar.progressBar.hidden()
                 }
             }
+
+
+        }
+
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

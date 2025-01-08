@@ -1,14 +1,18 @@
 package com.tirupati.vendor.viewmodels
 
+
+import SaveReportRequest
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.tirupati.vendor.helper.toRequestBody
+import com.tirupati.vendor.model.ApiResponse
 import com.tirupati.vendor.model.GateKeeperEntryModel
 import com.tirupati.vendor.model.OTPverifiedModel
 import com.tirupati.vendor.model.POID_RESPONSE
 import com.tirupati.vendor.model.PoDetailsResponse
 import com.tirupati.vendor.model.PurchaseOrderRequest
 import com.tirupati.vendor.model.PurchaseOrderResponse
+import com.tirupati.vendor.model.TicketResponse
 import com.tirupati.vendor.model.UploadsDetailResponse
 import com.tirupati.vendor.model.VendorListModel
 import com.tirupati.vendor.model.vendorQuoationRequest
@@ -32,6 +36,13 @@ class GatekeeperListViewModel  @Inject constructor(private val logInVMRepo:Gatek
         return logInVMRepo.getListOfroles()
     }
 
+    suspend fun getCustomerComplaintsList(headers: HashMap<String, String>):NetworkState<TicketResponse>{
+        return logInVMRepo.getCustomerComplaints(headers)
+    }
+    suspend fun setOrderNumber(orderNumber: String,headers: HashMap<String, String>):NetworkState<ApiResponse>{
+        return logInVMRepo.setOrderNumber(orderNumber,headers)
+    }
+
 
     suspend fun getCompanyPoId(otp:String):NetworkState<POID_RESPONSE>{
         return logInVMRepo.getPoId(otp)
@@ -53,6 +64,14 @@ class GatekeeperListViewModel  @Inject constructor(private val logInVMRepo:Gatek
     ):NetworkState<UploadsDetailResponse>{
         return logInVMRepo.saveVendorQuoation(headers,formaData,body)
     }
+    suspend fun setReportIssueR(
+        headers: HashMap<String, String>,
+        formaData: MultipartBody.Part?,
+        body: SaveReportRequest
+    ):NetworkState<UploadsDetailResponse>{
+        return logInVMRepo.setReportIssue(headers,formaData,body)
+    }
+
 
     suspend fun passDispatchOrder(headers: HashMap<String, String>, formaData: MultipartBody.Part?, request:PurchaseOrderRequest):NetworkState<UploadsDetailResponse>{
         return logInVMRepo.passDispatchOrder(headers,formaData,request)
@@ -72,6 +91,22 @@ class GatekeeperListRepository @Inject constructor(private val apiService: ApiSe
             apiService.getVandor()
         }
     }
+
+    suspend fun getCustomerComplaints(headers: HashMap<String, String>): NetworkState<TicketResponse> {
+
+        return safeApiCall {
+
+            apiService.getComplaintDetails(headers)
+        }
+    }
+    suspend fun setOrderNumber(orderNumber: String,headers: HashMap<String, String>): NetworkState<ApiResponse> {
+
+        return safeApiCall {
+
+            apiService.setOrderNumber(orderNumber,headers)
+        }
+    }
+
 
     suspend fun getOTPVerified(otp:String,mobile:String,userType:String): NetworkState<OTPverifiedModel> {
 
@@ -159,15 +194,68 @@ class GatekeeperListRepository @Inject constructor(private val apiService: ApiSe
 
         }
     }
+
+
+    suspend fun setReportIssue(
+        headers: HashMap<String, String>,
+        formaData: MultipartBody.Part?,
+        body: SaveReportRequest,
+    ): NetworkState<UploadsDetailResponse> {
+        val uomId = body.SOID_REF.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val totalAmount = body.BATCH_NO.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val deliveryTerms = body.COIL_NO.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val remarks = body.GROSS_WEIGHT.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val quantity = body.PALLET_WEIGHT.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val paymentTerms = body.NET_WEIGHT.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val itemId = body.ISSUE_TYPE.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val rate = body.ISSUE_DESCRIPTION.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+
+
+//        return safeApiCall {
+//
+//            apiService.saveVendorQuoation(headers,formaData,UOM_ID,TOTAL_AMOUNT,DELIVERY_TERMS,REMARKS,QUANTITY,PAYMENT_TERMS,ITEM_ID,RATE)
+//        }
+
+        //formData.put("USERLOG_FILE", file.get(0).getName()); // Remove this line
+        return try {
+            // Make API call using Retrofit suspend function
+            val response = apiService.reportIssueDone(headers, formaData, uomId, totalAmount, deliveryTerms, remarks, quantity, paymentTerms, itemId, rate)
+            NetworkState.Success(response)
+        } catch (e: Exception) {
+            // Handle errors and exceptions
+            when (e) {
+                is retrofit2.HttpException -> {
+                    val errorMsg = e.response()?.errorBody()?.string() ?: "Unknown error"
+                    when (e.code()) {
+                        400 -> NetworkState.HttpErrors.BadRequest(errorMsg)
+                        401 -> NetworkState.HttpErrors.Unauthorized(errorMsg)
+                        403 -> NetworkState.HttpErrors.ResourceForbidden(errorMsg)
+                        404 -> NetworkState.HttpErrors.ResourceNotFound(errorMsg)
+                        500 -> NetworkState.HttpErrors.InternalServerError(errorMsg)
+                        502 -> NetworkState.HttpErrors.BadGateWay(errorMsg)
+                        503 -> NetworkState.HttpErrors.ServiceUnavailable(errorMsg)
+                        504 -> NetworkState.HttpErrors.ResourceRemoved(errorMsg)
+                        else -> NetworkState.HttpErrors.WrongData(e.response()?.errorBody())
+                    }
+                }
+
+                else -> NetworkState.NetworkException(e.localizedMessage ?: "Unknown network error")
+            }
+
+
+        }
+    }
     suspend fun passDispatchOrder(headers: HashMap<String, String>,formaData:MultipartBody.Part?,request:PurchaseOrderRequest): NetworkState<UploadsDetailResponse> {
         val podate = request.PODATE.toRequestBody("multipart/form-data".toMediaTypeOrNull())
         val po_number = request.PO_NUMBER.toRequestBody("multipart/form-data".toMediaTypeOrNull())
         val location_name = request.LOCATION_NAME.toRequestBody("multipart/form-data".toMediaTypeOrNull())
         val lat = request.LATITUDE.toRequestBody("multipart/form-data".toMediaTypeOrNull())
         val lng = request.LONGITUDE.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val QTY = request.QTY.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        val SEAL_NO = request.SEAL_NO.toRequestBody("multipart/form-data".toMediaTypeOrNull())
         return try {
             // Make API call using Retrofit suspend function
-            val response =  apiService.dispatchOrder(headers,formaData!!,podate,po_number,location_name,lat,lng)
+            val response =  apiService.dispatchOrder(headers,formaData!!,podate,po_number,location_name,lat,lng,QTY,SEAL_NO)
             NetworkState.Success(response)
         } catch (e: Exception) {
             // Handle errors and exceptions

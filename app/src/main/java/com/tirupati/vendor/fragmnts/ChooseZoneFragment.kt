@@ -59,32 +59,48 @@ class ChooseZoneFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.apply {
-            val radioGroup: RadioGroup = radioGroup
-            val radioCustomer: RadioButton = radioCustomer
-            val radioVendor: RadioButton = radioVendor
+            val customerLayout = linearCustomer
+            val vendorLayout = linearVendor
             val continueButton: TextView = btnContinue
 
+            // Initial state
+            customerLayout.isSelected = false
+            vendorLayout.isSelected = true
 
+            // Set click listeners for layouts
+            customerLayout.setOnClickListener {
+                customerLayout.isSelected = true
+                vendorLayout.isSelected = false
+            }
+
+            vendorLayout.setOnClickListener {
+                customerLayout.isSelected = false
+                vendorLayout.isSelected = true
+            }
+
+            // Handle continue button click
             continueButton.setOnClickListener {
-                val selectedId = radioGroup.checkedRadioButtonId
-                if (selectedId == -1) {
-                    Toast.makeText(context, "Please select Customer or Vendor", Toast.LENGTH_SHORT).show()
-                } else {
-                    val selection = if (selectedId == R.id.radio_customer) {
-                        "1"
-                    } else {
-                        "2"
+                when {
+                    customerLayout.isSelected -> {
+                        navigateWithSelection("1") // "1" for Customer
                     }
-                    val args = Bundle()
-                    args.putString("zoneselect",selection)
-
-                    Navigation.findNavController(binding!!.root).
-                    navigate(R.id.action_choosezone_loginfragment, args)
-
-                    // You can perform your navigation or further logic here based on the selection
+                    vendorLayout.isSelected -> {
+                        navigateWithSelection("2") // "2" for Vendor
+                    }
+                    else -> {
+                        Toast.makeText(context, "Please select Customer or Vendor", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }
+    }
+
+    private fun navigateWithSelection(selection: String) {
+        val args = Bundle()
+        args.putString("zoneselect", selection)
+
+        Navigation.findNavController(binding!!.root)
+            .navigate(R.id.action_choosezone_loginfragment, args)
     }
 
     override fun onDestroyView() {
@@ -92,3 +108,4 @@ class ChooseZoneFragment : Fragment() {
         binding = null
     }
 }
+

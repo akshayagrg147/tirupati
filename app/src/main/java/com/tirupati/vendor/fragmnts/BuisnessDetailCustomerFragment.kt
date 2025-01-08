@@ -590,10 +590,12 @@ class BuisnessDetailCustomerFragment : Fragment() {
             status = false
 
         }
-        else if(binding.ownerContactET.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Owner's Contact Number can't be empty!","Error")
+        else if (binding.ownerContactET.text.isNullOrEmpty()) {
+            showCustomDialog(requireContext(), "Owner's Contact Number can't be empty!", "Error")
             status = false
-
+        } else if (binding.ownerContactET.text?.length != 10) {
+            showCustomDialog(requireContext(), "Owner's Contact Number must be 10 digits!", "Error")
+            status = false
         }
         else if(!binding.ownerContactET.text.toString().isValidPhoneNumber()){
             showCustomDialog(requireContext(),"Owner's Contact Number is incorrect","Error")

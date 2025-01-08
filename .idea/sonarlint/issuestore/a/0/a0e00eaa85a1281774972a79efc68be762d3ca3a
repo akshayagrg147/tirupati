@@ -1,18 +1,18 @@
 
-qkotlin:S6615È"&The value assigned here is never used.(–µş¬ıÿÿÿÿ8À…Øï‡2J$be41fbf6-8571-45a2-8388-840209ebd083
-kkotlin:S6615Ë" Remove this useless initializer.(ö¹öüÿÿÿÿ8À…Øï‡2J$a4a2aedb-86e0-4d1b-92bd-b7f2138e8360
-kotlin:S6615’";Remove this variable, which is assigned but never accessed.(´Ø³Í8À…Øï‡2J$deb07167-7401-44f4-b924-8a7030b5b6c9
-ikotlin:S125è"Remove this commented out code.(ö´óùÿÿÿÿ8Ã…Øï‡2J$209096c8-ca90-4b68-b65c-7a802c3ad4d6
-~kotlin:S1144·"3Remove this unused private "getPathFromUri" method.(õŠ×¸şÿÿÿÿ8Ê…Øï‡2J$50ebb313-f710-46f0-a9ae-fd924d8d19b5
-‚kotlin:S1144õ"7Remove this unused private "getRealPathFromURI" method.(†”ğÊùÿÿÿÿ8Ì…Øï‡2J$4744505c-fd7d-434c-9822-230b841e5da0
-skotlin:S108Ø")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8Ğ…Øï‡2J$e648cc18-cd34-4418-a506-6b5431ed2b67
-ykotlin:S1481Ì"3Remove this unused "imageByteArray" local variable.(çú8Õ…Øï‡2J$e27efcb2-4723-4ea0-866c-0197812fa7dd
-mkotlin:S1481é"'Remove this unused "cw" local variable.(Éó‹Â8Õ…Øï‡2J$087e5c83-9b0a-4614-9b79-52e3511cec13
- kotlin:S1192¡"UDefine a constant instead of duplicating this literal "something went wrong" 4 times.(ªÅ–üùÿÿÿÿ8Ù…Øï‡2J$82f7023e-d5ff-46a2-b974-130182d8fdce
-“kotlin:S1871¤"MThis branch's code block is the same as the block for the branch on line 415.(ñ¿ÿÄ8Ú…Øï‡2J$bfda87dd-ed91-402c-8f8e-f5d0c5d3ad98
-“kotlin:S1871©"MThis branch's code block is the same as the block for the branch on line 415.(ßâƒ‚8Ú…Øï‡2J$e5bf8dbb-d117-4f04-be6a-a59349df6400
-’kotlin:S1871®"MThis branch's code block is the same as the block for the branch on line 415.(Ä†•8Ú…Øï‡2J$4511cf65-d582-4c2d-9681-196168eda272
-ikotlin:S1874½"#Deprecated code should not be used.(òô’Ò8Û…Øï‡2J$3b9c9660-f54a-4759-bb60-9ca21188ec5a
-—kotlin:S6516¯"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8ß…Øï‡2J$cec8e99e-308a-4fcd-96f1-a36eca42b7c3
-tkotlin:S1066í".Merge this "if" statement with the nested one.(¥Ä¬á8à…Øï‡2J$9713e60d-71ab-42b1-ad76-871af3204714
-ˆkotlin:S6511œ"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8à…Øï‡2J$2de6767b-64a8-4f79-b156-bf8a47f07e54
+qkotlin:S6615Ò"&The value assigned here is never used.(–µş¬ıÿÿÿÿ8À…Øï‡2J$dfc019aa-02d3-47f5-92e2-3be2f151553f
+kkotlin:S6615Õ" Remove this useless initializer.(ö¹öüÿÿÿÿ8À…Øï‡2J$9fb5ce33-250e-4976-8924-f1cabdbd41ae
+kotlin:S6615œ";Remove this variable, which is assigned but never accessed.(´Ø³Í8À…Øï‡2J$5a78027a-7802-4de4-b775-4ca4bac588ce
+ikotlin:S125ò"Remove this commented out code.(ö´óùÿÿÿÿ8Ã…Øï‡2J$6f7f2d10-01b1-4ff3-965c-5b21e77fce2c
+~kotlin:S1144Á"3Remove this unused private "getPathFromUri" method.(õŠ×¸şÿÿÿÿ8Ê…Øï‡2J$3ea14620-f99d-48b3-83ae-791c0993d0a0
+‚kotlin:S1144ÿ"7Remove this unused private "getRealPathFromURI" method.(†”ğÊùÿÿÿÿ8Ì…Øï‡2J$820e9ba5-1487-4b96-a01d-ecdd1bfa7db4
+skotlin:S108â")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8Ğ…Øï‡2J$5be9e653-eb84-4a12-b5f1-30a57660212e
+ykotlin:S1481Ö"3Remove this unused "imageByteArray" local variable.(çú8Õ…Øï‡2J$2bc773a9-e6ff-4813-a9cb-61cb16c1ef32
+mkotlin:S1481ó"'Remove this unused "cw" local variable.(Éó‹Â8Õ…Øï‡2J$158bec30-49b4-4e5f-903f-9840f6c8cc25
+ kotlin:S1192«"UDefine a constant instead of duplicating this literal "something went wrong" 4 times.(ªÅ–üùÿÿÿÿ8Ù…Øï‡2J$cf3be8c1-dc2a-427b-95e0-231b033ee476
+“kotlin:S1871®"MThis branch's code block is the same as the block for the branch on line 425.(ñ¿ÿÄ8Ú…Øï‡2J$a58d4374-ce55-40dd-aeed-f36d1ef94d1b
+“kotlin:S1871³"MThis branch's code block is the same as the block for the branch on line 425.(ßâƒ‚8Ú…Øï‡2J$f7ba0cc3-ac1d-465a-9f33-f5a3a2f20919
+’kotlin:S1871¸"MThis branch's code block is the same as the block for the branch on line 425.(Ä†•8Ú…Øï‡2J$ef707f2d-82e8-449a-b228-5d51c99a8dbc
+ikotlin:S1874Ç"#Deprecated code should not be used.(òô’Ò8Û…Øï‡2J$f2bed4ce-070c-4034-a32d-6ba92c151703
+—kotlin:S6516¹"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8ß…Øï‡2J$5e87463a-640f-49b2-8985-02aebb11a1e7
+tkotlin:S1066÷".Merge this "if" statement with the nested one.(¥Ä¬á8à…Øï‡2J$b5b2443d-a789-44d4-826e-5bb944f9cfa5
+ˆkotlin:S6511¦"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8à…Øï‡2J$0bb14506-19e6-4855-8b88-c418c5e063e0

@@ -20,11 +20,17 @@ class LogInViewModel  @Inject constructor(private val logInVMRepo:LogInVMReposit
     suspend fun getLogIn(gst_id:String):NetworkState<LogInResponse>{
         return logInVMRepo.getLogIn(gst_id)
     }
-
+    suspend fun getCustomerLogIn(gst_id:String):NetworkState<LogInResponse>{
+        return logInVMRepo.getCustomerLogIn(gst_id)
+    }
 
     suspend fun getOtpVerified(otp:String,mobile:String,typeUser:String):NetworkState<OTPverifiedModel>{
         return logInVMRepo.getOTPVerified(otp,mobile,typeUser)
     }
+    suspend fun getOTPVerifiedCustomer(otp:String,mobile:String,typeUser:String):NetworkState<OTPverifiedModel>{
+        return logInVMRepo.getOTPVerifiedCustomer(otp,mobile,typeUser)
+    }
+
 
 
 
@@ -40,12 +46,27 @@ class LogInVMRepository @Inject constructor(private val apiService: ApiService) 
             apiService.getLogIn(gst_id)
         }
     }
+    suspend fun getCustomerLogIn(gst_id:String): NetworkState<LogInResponse> {
+
+        return safeApiCall {
+
+            apiService.getCustomerLogIn(gst_id)
+        }
+    }
+
 
     suspend fun getOTPVerified(otp:String,mobile:String,userType:String): NetworkState<OTPverifiedModel> {
 
         return safeApiCall {
 
             apiService.getVerifiedOTP( otp,mobile,userType)
+        }
+    }
+    suspend fun getOTPVerifiedCustomer(otp:String,mobile:String,userType:String): NetworkState<OTPverifiedModel> {
+
+        return safeApiCall {
+
+            apiService.getVerifiedOTPCustomer( otp,mobile,userType)
         }
     }
 

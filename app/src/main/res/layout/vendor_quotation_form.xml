@@ -16,9 +16,12 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_regular"
 
-                android:text="Vensors can counter the rate upto twice,exceeding this may lead to PO rejection"  android:textColor="@color/black"
+             android:fontFamily="@font/monsrt_bold"
+
+                android:textColor="@color/red_DA3A36"
+
+                android:text="Vendors can counter the rate upto twice,exceeding this may lead to PO rejection"
                 android:textSize="@dimen/_10sdp" />
 
 
@@ -187,7 +190,7 @@
                 <EditText
                     android:id="@+id/quantity"
                     android:imeOptions="actionDone"
-                    android:inputType="number"
+                    android:inputType="numberSigned"
                     android:textCursorDrawable="@null"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -211,7 +214,7 @@
 
                 <EditText
                     android:id="@+id/rate"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:layout_width="match_parent"
                     android:textCursorDrawable="@null"
                     android:layout_height="wrap_content"
@@ -232,7 +235,7 @@
 
                 <EditText
                     android:id="@+id/payment_terms"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:textCursorDrawable="@null"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

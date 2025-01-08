@@ -1,5 +1,8 @@
 
-ƒkotlin:S1172á"8Use "_" instead of this unused lambda parameter "event".(¿Ñ´İûÿÿÿÿ8åä ­ƒ2J$c65fbde2-74ce-494b-bc3b-7fea4c8aaa8a
-ekotlin:S6615" Remove this useless initializer.(²© 8æä ­ƒ2J$3a1a8528-0f39-497e-b0f4-574aa4e7a0d6
-ikotlin:S125Ê"Remove this commented out code.(²Ÿ°Óûÿÿÿÿ8èä ­ƒ2J$42ba44e5-c688-41fc-a72e-c510ce1d931f
-ƒkotlin:S6511€"=Merge chained "if" statements into a single "when" statement.(¤üÇÍ8ñä ­ƒ2J$cd97b55c-29e8-4816-ac67-31fa369b0b5e
+ƒkotlin:S1172Ì"8Use "_" instead of this unused lambda parameter "event".(¿Ñ´İûÿÿÿÿ8ıÁË‚Ä2J$728846cf-d06a-4202-8579-0ecf8b8da970
+fkotlin:S6615¢" Remove this useless initializer.(²© 8ıÁË‚Ä2J$04bc3a90-e832-4b0f-8d1c-3fef32542055
+ikotlin:S125µ"Remove this commented out code.(²Ÿ°Óûÿÿÿÿ8şÁË‚Ä2J$4ffab9f8-2756-4003-a032-89d55dabe41d
+hkotlin:S1874h"#Deprecated code should not be used.(àŸº8…ÂË‚Ä2J$51e13867-82d0-46cf-96c9-60771cd5f9fa
+kotlin:S3776 "RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(Ùîà°ûÿÿÿÿ8†ÂË‚Ä2J$f3047abf-6dd0-4690-8425-70ccf5119493
+ƒkotlin:S6511£"=Merge chained "if" statements into a single "when" statement.(¤üÇÍ8ˆÂË‚Ä2J$8461eb47-be86-4b65-a2b7-5c9e46e06649
+qkotlin:S6518h",Replace function call with indexed accessor.(àŸº8ˆÂË‚Ä2J$99f594f3-306d-42fa-858d-d6ead029c790

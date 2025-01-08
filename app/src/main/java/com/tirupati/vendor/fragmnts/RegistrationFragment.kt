@@ -99,9 +99,9 @@ class RegistrationFragment : Fragment() {
             args.putString("ORG_NAME",bindingReg!!.etNameOrg.text.toString())
             args.putString("ORG_CONTACT",bindingReg!!.etContactNumber.text.toString())
             args.putString("ORG_EMAIL",bindingReg!!.etOrgEmailNumber.text.toString())
-
+            args.putString("selectItem","1")
             Navigation.findNavController(bindingReg!!.root).
-            navigate(R.id.action_registrationFragment_to_businessDetailCustomerFragment, args)
+            navigate(R.id.action_registrationFragment_to_firstDetailPageFragment, args)
         }
         else{
             val args = Bundle()
@@ -109,7 +109,7 @@ class RegistrationFragment : Fragment() {
             args.putString("ORG_NAME",bindingReg!!.etNameOrg.text.toString())
             args.putString("ORG_CONTACT",bindingReg!!.etContactNumber.text.toString())
             args.putString("ORG_EMAIL",bindingReg!!.etOrgEmailNumber.text.toString())
-
+            args.putString("selectItem","2")
             Navigation.findNavController(bindingReg!!.root).
             navigate(R.id.action_registrationFragment_to_firstDetailPageFragment, args)
         }

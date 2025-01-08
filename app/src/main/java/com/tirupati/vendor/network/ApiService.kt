@@ -1,6 +1,8 @@
 package com.tirupati.vendor.network
 
 
+
+import com.tirupati.vendor.model.ApiResponse
 import com.tirupati.vendor.model.CounterResponseModel
 import com.tirupati.vendor.model.GateKeeperEntryModel
 import com.tirupati.vendor.model.LogInResponse
@@ -9,6 +11,7 @@ import com.tirupati.vendor.model.POID_RESPONSE
 import com.tirupati.vendor.model.PoDetailsResponse
 import com.tirupati.vendor.model.PurchaseOrderResponse
 import com.tirupati.vendor.model.StateResponse
+import com.tirupati.vendor.model.TicketResponse
 import com.tirupati.vendor.model.UpdatePoDetailsRequest
 import com.tirupati.vendor.model.UploadsDetailResponse
 import com.tirupati.vendor.model.VendorListModel
@@ -59,9 +62,26 @@ suspend fun getLogIn(
 ): Response<LogInResponse>
 
     @FormUrlEncoded
+    @POST("V2/Customerlogin")
+    @Headers("version:1")
+    suspend fun getCustomerLogIn(
+        @Field("GST_NUMBER") gst_id: String
+    ): Response<LogInResponse>
+
+    @FormUrlEncoded
     @POST("V2/VerifyOTP")
     @Headers("version:1")
     suspend fun getVerifiedOTP(
+        @Field("OTP") otp: String,
+        @Field("MOBILE_NO") mobileNo: String,
+        @Field("USER_TYPE") userType: String
+
+    ): Response<OTPverifiedModel>
+
+    @FormUrlEncoded
+    @POST("V2/CustomerVerifyOTP")
+    @Headers("version:1")
+    suspend fun getVerifiedOTPCustomer(
         @Field("OTP") otp: String,
         @Field("MOBILE_NO") mobileNo: String,
         @Field("USER_TYPE") userType: String
@@ -102,6 +122,19 @@ suspend fun getLogIn(
     suspend fun getVandor(
     ): Response<VendorListModel>
 
+
+
+    @GET("V2/complaintDetails")
+    suspend fun getComplaintDetails(
+        @HeaderMap headers: Map<String, String>,
+    ): Response<TicketResponse>
+
+    @GET("V2/getsoList")
+    suspend fun setOrderNumber(
+        @Query("SOID") orderNumber:String,
+        @HeaderMap headers: Map<String, String>,
+    ): Response<ApiResponse>
+
     @GET("V2/gateentrychecklist")
     suspend fun getSuperVisor(
         @HeaderMap headers: Map<String, String>,
@@ -130,6 +163,24 @@ suspend fun getLogIn(
     @Part("RATE") RATE: RequestBody
 
 ): UploadsDetailResponse
+
+    @Multipart
+    @POST("V2/salesComplaint")
+    suspend fun reportIssueDone(
+        @HeaderMap headers: Map<String, String>,
+
+
+        @Part formaData: MultipartBody.Part?,
+        @Part("SOID_REF") SOID_REF: RequestBody,
+        @Part("BATCH_NO") BATCH_NO: RequestBody,
+        @Part("COIL_NO") COIL_NO: RequestBody,
+        @Part("GROSS_WEIGHT") GROSS_WEIGHT: RequestBody,
+        @Part("PALLET_WEIGHT") PALLET_WEIGHT: RequestBody,
+        @Part("NET_WEIGHT") NET_WEIGHT: RequestBody,
+        @Part("ISSUE_TYPE") ISSUE_TYPE: RequestBody,
+        @Part("ISSUE_DESCRIPTION") ISSUE_DESCRIPTION: RequestBody
+
+    ): UploadsDetailResponse
 
     @GET("V2/getpoList")
     suspend fun getpoList(
@@ -174,7 +225,9 @@ suspend fun getLogIn(
         @Part("PO_NUMBER")  po_number: RequestBody,
         @Part("LOCATION_NAME")  location_name: RequestBody,
         @Part("LATITUDE")  lat: RequestBody,
-        @Part("LONGITUDE") lng: RequestBody
+        @Part("LONGITUDE") lng: RequestBody,
+        @Part("QTY") QTY: RequestBody,
+        @Part("SEAL_NO") SEAL_NO: RequestBody
 
 
     ): UploadsDetailResponse
@@ -264,6 +317,75 @@ suspend fun getLogIn(
 
 
         ):UploadsDetailResponse
+
+    @Multipart
+    @POST("V2/CustomerRegister")
+    suspend fun signUpCustomerCall(
+        @HeaderMap headers: Map<String, String>,
+
+        @Part("LATITUDE") LATITUDE: RequestBody,
+        @Part("LONGITUDE") LONGITUDE: RequestBody,
+        @Part("GODOWN_LOCATION") GODOWN_LOCATION: RequestBody,
+
+        @Part("OTHERCUSTOMERAPPLICABLE") OTHERVENDORSAPPLICABLE: RequestBody,
+        @Part("C1_NAME") V1_NAME: RequestBody,
+        @Part("C1_EMAIL") V1_EMAIL: RequestBody,
+        @Part("C1_CONTACT_NO") V1_CONTACT_NO: RequestBody,
+        @Part("C1_PAN_NO") V1_AADHAR_NO: RequestBody,
+
+
+        @Part("C2_NAME") V2_NAME: RequestBody,
+        @Part("C2_EMAIL") V2_EMAIL: RequestBody,
+        @Part("C2_CONTACT_NO") V2_CONTACT_NO: RequestBody,
+        @Part("C2_PAN_NO") V2_AADHAR_NO: RequestBody,
+
+
+        @Part("C3_NAME") V3_NAME: RequestBody,
+        @Part("C3_EMAIL") V3_EMAIL: RequestBody,
+        @Part("C3_CONTACT_NO") V3_CONTACT_NO: RequestBody,
+        @Part("C3_PAN_NO") V3_AADHAR_NO: RequestBody,
+
+
+        @Part("OWNER_NAME") OWNER_NAME: RequestBody,
+        @Part("OWNER_CONTACT") OWNER_CONTACT: RequestBody,
+        @Part("OWNER_EMAIL") OWNER_EMAIL: RequestBody,
+        @Part("NAME_OF_ORGANISATION") NAME_OF_ORGANISATION: RequestBody,
+        @Part("CUSTOMER_LEGAL_NAME") VENDOR_LEGAL_NAME: RequestBody,
+        @Part("CONTACT_PERSON") CONTACT_PERSON: RequestBody,
+        @Part("CONTACT_NUMBER") CONTACT_NUMBER: RequestBody,
+        @Part("CONTACT_EMAIL") CONTACT_EMAIL: RequestBody,
+
+        @Part("POC_NAME") POC_NAME: RequestBody,
+        @Part("POC_NO") POC_NO: RequestBody,
+        @Part("WHATSAPP_NO") WHATSAPP_NO: RequestBody,
+        @Part("ADDRESS") ADDRESS: RequestBody,
+        @Part("COUNTRY") COUNTRY: RequestBody,
+        @Part("STATE") STATE: RequestBody,
+        @Part("CITY") CITY: RequestBody,
+        @Part("PIN_CODE") PIN_CODE: RequestBody,
+        @Part("GSTIN") GSTIN: RequestBody,
+        @Part("PANCARD_NO") PANCARD_NO: RequestBody,
+        @Part("BANK_NAME") BANK_NAME: RequestBody,
+        @Part("ACCOUNT_NUMBER") ACCOUNT_NUMBER: RequestBody,
+        @Part("ACCOUNT_TYPE") ACCOUNT_TYPE: RequestBody,
+        @Part("BANK_BRANCH") BANK_BRANCH: RequestBody,
+        @Part("IFSC_CODE") IFSC_CODE: RequestBody,
+        @Part("MSME_APPLICABLE") MSME_APPLICABLE: RequestBody?,
+        @Part("E_INVOICE_APPLICABLE") E_INVOICE_APPLICABLE: RequestBody?,
+
+
+
+
+
+        @Part image_url1: ArrayList<MultipartBody.Part?>,
+        @Part image_url2: ArrayList<MultipartBody.Part?>,
+        @Part image_url3: ArrayList<MultipartBody.Part?>,
+
+
+
+
+        ):UploadsDetailResponse
+
     @Multipart
     @POST("V2/vendorRegister")
     suspend fun signUpCall(
@@ -333,6 +455,8 @@ suspend fun getLogIn(
         @Part image_url9: ArrayList<MultipartBody.Part?>,
         @Part image_url10: ArrayList<MultipartBody.Part?>,
         @Part image_url11: ArrayList<MultipartBody.Part?>,
+        @Part image_url12: ArrayList<MultipartBody.Part?>,
+
 
 
 

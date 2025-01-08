@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.SpinnerAdapter
 import com.tirupati.vendor.databinding.FragmentFirstDetailPageBinding
+import com.tirupati.vendor.helper.isValidGST
 import com.tirupati.vendor.helper.isValidPhoneNumber
 import com.tirupati.vendor.helper.showCustomDialog
 import com.tirupati.vendor.utils.isValidEmail
@@ -29,6 +30,7 @@ class BusinessDetailFragment : Fragment() {
     var org_name = ""
     var org_contact = ""
     var org_email = ""
+    var selectItem=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +39,7 @@ class BusinessDetailFragment : Fragment() {
             org_name = args.getString("ORG_NAME","")
             org_contact = args.getString("ORG_CONTACT","")
             org_email = args.getString("ORG_EMAIL","")
+            selectItem=args.getString("selectItem","")
         }
     }
 
@@ -52,23 +55,55 @@ class BusinessDetailFragment : Fragment() {
             findNavController(). popBackStack()
 
         }
+        if(selectItem=="1"){
+            bindingFirstPage?.ownerContactET1?.visibility=View.GONE
+            bindingFirstPage?.ownerFullNameET1?.visibility=View.GONE
+            bindingFirstPage?.ownerPanET1?.visibility=View.GONE
+            bindingFirstPage?.emailOwnerET1?.visibility=View.GONE
+        }
+        else{
+            bindingFirstPage?.POCEmailIdET1?.visibility=View.GONE
+            bindingFirstPage?.PANEt1?.visibility=View.GONE
+            bindingFirstPage?.GSTnumberEt1?.visibility=View.GONE
+
+        }
         bindingFirstPage?.btnFirstDone?.setOnClickListener {
             if(validateUI(bindingFirstPage!!)){
                 val args = Bundle()
                 args.putString("ORG_NAME",org_name)
                 args.putString("ORG_CONTACT",org_contact)
                 args.putString("ORG_EMAIL",org_email)
+                args.putString("selectItem",selectItem)
 //                NEW ADDED
 
                 args.putString("NAME_OF_ORG",bindingFirstPage!!.inputUserFirstName.text.toString())
                 args.putString("LEGAL_ENTITY",bindingFirstPage!!.legalEntity.text.toString())
-                args.putString("OWNER_NAME",bindingFirstPage!!.ownerFullNameET.text.toString())
-                args.putString("OWNER_CONTACT",bindingFirstPage!!.ownerContactET.text.toString())
-                args.putString("OWNER_EMAIL",bindingFirstPage!!.emailOwnerET.text.toString())
-                args.putString("POD_NAME",bindingFirstPage!!.ETpodName.text.toString())
-                args.putString("OWNER_PAN",bindingFirstPage!!.ownerPanET.text.toString())
-                args.putString("POCWhatsAppNumber",bindingFirstPage!!.POCWhatsAppET.text.toString())
+                if(selectItem=="1"){
+                    args.putString("OWNER_NAME",bindingFirstPage?.ETpodName?.text.toString())
+                    args.putString("OWNER_CONTACT",bindingFirstPage?.POCWhatsAppET?.text.toString())
+                    args.putString("OWNER_EMAIL",bindingFirstPage?.POCEmailIdET?.text.toString())
+                }
+                else{
+                    args.putString("OWNER_NAME",bindingFirstPage?.ownerFullNameET?.text.toString())
+                    args.putString("OWNER_CONTACT",bindingFirstPage?.ownerContactET?.text.toString())
+                    args.putString("OWNER_EMAIL",bindingFirstPage?.emailOwnerET?.text.toString())
+                }
 
+                args.putString("POD_NAME",bindingFirstPage!!.ETpodName.text.toString())
+                args.putString("OWNER_PAN",bindingFirstPage?.ownerPanET?.text.toString())
+                args.putString("POCEmailIdET",bindingFirstPage?.POCEmailIdET?.text.toString())
+                args.putString("ORG_PAN",bindingFirstPage?.PANEt?.text.toString())
+                args.putString("ORG_GST",bindingFirstPage?.GSTnumberEt?.text.toString())
+
+
+
+
+
+                args.putString("POCWhatsAppNumber",bindingFirstPage!!.POCWhatsAppET.text.toString())
+                for (key in args.keySet()) {
+                    val value = args.get(key)
+                    Log.d("BundleArgs", "Key: $key, Value: $value")
+                }
 
                 Navigation.findNavController(bindingFirstPage!!.root)
                     .navigate(R.id.action_firstDetailPageFragment_to_secondDetailPageFragment, args)
@@ -135,48 +170,120 @@ class BusinessDetailFragment : Fragment() {
 
         }
 
-        else if(binding.ownerFullNameET.text.toString().isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Owner's Full Name can't be empty!","Error")
+        else if(binding.ownerFullNameET.text.toString().isNullOrEmpty() && selectItem!="1"){
+
+                showCustomDialog(requireContext(), "Owner's Full Name can't be empty!", "Error")
             status = false
 
-        }
-        else if(binding.ownerContactET.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Owner's Contact Number can't be empty!","Error")
-            status = false
+
 
         }
-        else if(!binding.ownerContactET.text.toString().isValidPhoneNumber()){
+        else if(binding.ownerContactET.text.isNullOrEmpty() && selectItem!="1"){
+
+            showCustomDialog(
+                requireContext(),
+                "Owner's Contact Number can't be empty!",
+                "Error"
+            )
+            status = false
+
+
+        }
+        else if(!binding.ownerContactET.text.toString().isValidPhoneNumber() && selectItem!="1"){
+
             showCustomDialog(requireContext(),"Owner's Contact Number is incorrect","Error")
             status = false
 
-        }
-
-        else if(binding.emailOwnerET.text.length>0 && !binding.emailOwnerET.text.toString().isValidEmail()){
-
-                showCustomDialog(requireContext(),"Owner's Email ID is incorrect","Error")
-                status = false
 
         }
-
-        else if(binding.ownerPanET.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Owner's PAN number can't be empty","Error")
+        else if(binding.emailOwnerET.text.isNullOrEmpty() && selectItem!="1" ){
+            showCustomDialog(requireContext(), "Owner's Email ID is empty", "Error")
             status = false
 
+
         }
-        else if(!binding.ownerPanET.text.toString().isValidPANNumber()){
+        else if(binding.emailOwnerET.text.length>0 && !binding.emailOwnerET.text.toString().isValidEmail() ){
+            showCustomDialog(requireContext(), "Owner's Email ID is incorrect", "Error")
+            status = false
+
+
+        }
+        else if(binding.ownerPanET.text.isNullOrEmpty() && selectItem!="1"){
+
+            showCustomDialog(requireContext(), "Owner Pan number can't be empty", "Error")
+            status = false
+
+
+        }
+        else if(!binding.ownerPanET.text.toString().isValidPANNumber() && selectItem!="1"){
+
             showCustomDialog(requireContext(),"Owner's PAN Card is incorrect","Error")
             status = false
 
-        }
-        else if(!binding.POCWhatsAppET.text.isNullOrEmpty()){
-            if(!binding.POCWhatsAppET.text.toString().isValidPhoneNumber()){
-                showCustomDialog(requireContext(),"POC Whatsapp Number is incorrect","Error")
-                status = false
 
-            }else{
-            status=true
-            }
         }
+
+
+        else if(binding.ETpodName.text.isNullOrEmpty() ){
+
+            showCustomDialog(requireContext(), "POC Name should not empty", "Error")
+            status = false
+
+
+        }
+
+        else if(binding.POCWhatsAppET.text.isNullOrEmpty()){
+
+            showCustomDialog(requireContext(), "POC Whatsapp Number is empty", "Error")
+            status = false
+
+
+        }
+
+
+           else if(!binding.POCWhatsAppET.text.toString().isValidPhoneNumber()) {
+            showCustomDialog(requireContext(), "POC Whatsapp Number is incorrect", "Error")
+            status = false
+
+        }
+
+        else if((binding.POCEmailIdET.text.isEmpty() || binding.POCEmailIdET.text.isNotEmpty() && !binding.POCEmailIdET.text.toString().isValidEmail()) && selectItem=="1" ){
+
+            showCustomDialog(requireContext(), "POC Email ID is incorrect", "Error")
+            status = false
+
+
+        }
+        else if(binding.GSTnumberEt.text.isNullOrEmpty() && selectItem=="1"){
+
+            showCustomDialog(requireContext(), "Organisation's GST number can't be empty", "Error")
+            status = false
+
+
+        }
+        else if(!binding.GSTnumberEt.text.toString().isValidGST() && selectItem=="1"){
+            showCustomDialog(requireContext(), "GST is not valid", "Error")
+            status = false
+
+
+        }
+
+        else if(binding.PANEt.text.isNullOrEmpty() && selectItem=="1"){
+
+            showCustomDialog(requireContext(), "Organisation's PAN number can't be empty", "Error")
+            status = false
+
+
+        }
+        else if(!binding.PANEt.text.toString().isValidPANNumber() && selectItem=="1"){
+
+            showCustomDialog(requireContext(),"Organisation's PAN number is incorrect","Error")
+            status = false
+
+
+        }
+
+
 
 
         else {

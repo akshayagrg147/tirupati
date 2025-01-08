@@ -47,9 +47,19 @@
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A unique platform for modern businesses\n\nMetaluxe is a comprehensive solution for smarter and faster business, offering unparalleled efficiency in copper transactions."
+            android:text="A unique platform for modern businesses"
             android:textColor="#000000"
             android:textSize="14sp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:gravity="center" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Metaluxe is a comprehensive solution for smarter and faster business, offering unparalleled efficiency in copper transactions."
+            android:textColor="#000000"
+            android:textSize="12sp"
             android:layout_marginTop="16dp"
             android:layout_gravity="center"
             android:gravity="center" />
@@ -69,34 +79,74 @@
             android:layout_gravity="center" />
 
         <!-- RadioGroup for Customer/Vendor selection -->
-        <RadioGroup
-            android:id="@+id/radioGroup"
+
+        <LinearLayout
+            android:id="@+id/selection_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="16dp">
 
-            <RadioButton
-                android:id="@+id/radio_customer"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/linear_customer"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Customer"
-                android:buttonTint="@color/radio_button_color_selector"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/rect_selector"
+                android:orientation="vertical"
 
+                android:padding="10dp"
+                android:layout_marginEnd="8dp">
+                <ImageView
 
-                android:layout_marginEnd="16dp" />
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/customer_icon"
+                    android:contentDescription=""
+                    android:layout_marginBottom="8dp" />
 
-            <RadioButton
-                android:id="@+id/radio_vendor"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/text_customer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customer"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_vendor"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:text="Vender"
-                android:buttonTint="@color/radio_button_color_selector"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/rect_selector"
 
-                />
+                android:padding="10dp"
+                android:layout_marginStart="8dp">
 
-        </RadioGroup>
+                <ImageView
+
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/vendor_icon"
+                    android:contentDescription=""
+                    android:layout_marginBottom="8dp" />
+                <TextView
+                    android:id="@+id/text_vendor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vendor"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+
 
         <!-- Continue Button -->
 

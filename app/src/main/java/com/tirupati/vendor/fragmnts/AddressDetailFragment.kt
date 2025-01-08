@@ -53,6 +53,12 @@ class AddressDetailFragment : Fragment() {
 
     var stateCode = ""
     var cityCode = ""
+    var selectItem=""
+    var ORG_GST = ""
+    var ORG_PAN=""
+    var POCEmailIdET=""
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +75,12 @@ class AddressDetailFragment : Fragment() {
              podName = args.getString("POD_NAME","")
              ownerPan = args.getString("OWNER_PAN","")
              pocWhatsapp = args.getString("POCWhatsAppNumber","")
+            selectItem=  args.getString("selectItem","-1")
+            ORG_GST=  args.getString("ORG_GST","")
+            ORG_PAN=  args.getString("ORG_PAN","")
+            POCEmailIdET=args.getString("POCEmailIdET","")
+
+
         }
 
     }
@@ -84,6 +96,10 @@ class AddressDetailFragment : Fragment() {
             findNavController(). popBackStack()
 
         }
+        if(selectItem=="1") {
+            bindingSecondPage?.GSTnumberEt1?.visibility = View.GONE
+            bindingSecondPage?.PANEt1?.visibility = View.GONE
+        }
         bindingSecondPage?.btnSecondDone?.setOnClickListener {
             if(validateUI(bindingSecondPage!!)){
                 val args = Bundle()
@@ -98,6 +114,7 @@ class AddressDetailFragment : Fragment() {
                 args.putString("POD_NAME",podName)
                 args.putString("OWNER_PAN",ownerPan)
                 args.putString("POCWhatsAppNumber",pocWhatsapp)
+                args.putString("selectItem",selectItem)
 //              New Added
 
                 args.putString("ADDRESS",bindingSecondPage!!.addressET.text.toString())
@@ -107,8 +124,18 @@ class AddressDetailFragment : Fragment() {
                 args.putString("STATE",stateCode)
                 args.putString("CITY",cityCode)
                 args.putString("PIN",bindingSecondPage!!.etPinCode.text.toString())
-                args.putString("ORG_GST",bindingSecondPage!!.GSTnumberEt.text.toString())
-                args.putString("ORG_PAN",bindingSecondPage!!.PANEt.text.toString())
+                args.putString("selectItem",selectItem)
+
+
+                if(selectItem=="1"){
+                    args.putString("ORG_GST",ORG_GST)
+                    args.putString("ORG_PAN",ORG_PAN)
+                    args.putString("POCEmailIdET",POCEmailIdET)
+                }
+                else{
+                    args.putString("ORG_GST",bindingSecondPage!!.GSTnumberEt.text.toString())
+                    args.putString("ORG_PAN",bindingSecondPage!!.PANEt.text.toString())
+                }
 
 
                 Navigation.findNavController(bindingSecondPage!!.root)
@@ -116,6 +143,12 @@ class AddressDetailFragment : Fragment() {
             }
         }
         bindingSecondPage!!.countrySpinner.setText("India")
+        bindingSecondPage!!.statesList.setOnClickListener {
+//        bindingSecondPage!!.spinner.visibility = View.VISIBLE
+//            bindingSecondPage!!.spinner.visibility = View.VISIBLE
+            bindingSecondPage!!.spinner.performClick()
+
+        }
         getStatesfromServer()
         return bindingSecondPage!!.root
     }
@@ -245,19 +278,34 @@ class AddressDetailFragment : Fragment() {
 
         }
         else if(binding.GSTnumberEt.text.toString().isNullOrEmpty()){
-            showCustomDialog(requireContext(),"GST number can't be empty","Error")
-            status = false
+            if(selectItem!="1") {
+                showCustomDialog(requireContext(), "GST number can't be empty", "Error")
+                status = false
+            }
+            else{
+                status = true
+            }
 
         }
 
         else if(!binding.GSTnumberEt.text.toString().isValidGST()){
-            showCustomDialog(requireContext(),"GST is not valid","Error")
-            status = false
+            if(selectItem!="1") {
+                showCustomDialog(requireContext(), "GST is not valid", "Error")
+                status = false
+            }
+            else{
+                status = true
+            }
 
         }
         else if(binding.PANEt.text.isNullOrEmpty()){
+            if(selectItem!="1") {
             showCustomDialog(requireContext(),"PAN number can't be Empty","Error")
             status = false
+            }
+            else{
+                status = true
+            }
 
         }
         else if(!binding.PANEt.text.toString().isValidPANNumber()){
@@ -357,28 +405,26 @@ class AddressDetailFragment : Fragment() {
     }
 */
 fun getStates(stateName: ArrayList<ResponseDataPo>) {
+    stateName.add(0, ResponseDataPo("Select State", "0","0","0"))
     val spinnerAdapter =
         StateAdapter(requireActivity(), R.layout.item_spinner_row, stateName)
     spinnerAdapter.setDropDownViewResource(R.layout.item_spinner_row)
         bindingSecondPage!!.spinner.adapter = spinnerAdapter
-    bindingSecondPage!!.statesList.setOnClickListener {
-//        bindingSecondPage!!.spinner.visibility = View.VISIBLE
-        bindingSecondPage!!.spinner.visibility = View.VISIBLE
-        bindingSecondPage!!.spinner.performClick()
 
-    }
     bindingSecondPage!!.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
         override fun onItemSelected(parent: AdapterView<*>?, view:View?, position: Int, id: Long) {
-            // Handle spinner item selection here
+            if (position != 0) {
+                // Handle spinner item selection here
 //            val selectedItem = parent?.getItemAtPosition(position).toString()
-            // Update EditText text
-            bindingSecondPage!!.spinner.visibility=View.GONE
+                // Update EditText text
+                bindingSecondPage!!.spinner.visibility = View.GONE
 
-            bindingSecondPage!!.statesList.setText(spinnerAdapter.getItem(position).NAME)
-            getCities(spinnerAdapter.getItem(position).STID)
+                bindingSecondPage!!.statesList.setText(spinnerAdapter.getItem(position).NAME)
+                getCities(spinnerAdapter.getItem(position).STID)
 
 //            bindingSecondPage!!.statesList.setText(spinnerAdapter.getItem(position).NAME)
 //            bindingSecondPage!!.spinner.visibility = View.GONE
+            }
         }
 
         override fun onNothingSelected(parent: AdapterView<*>?) {

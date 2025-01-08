@@ -557,9 +557,10 @@ fun String.isValidPINcode() : Boolean {
     val patterns =  "^[1-9][0-9]{5}\$"
     return Pattern.compile(patterns).matcher(this).matches()
 }
-
 fun String.isValidGST() : Boolean {
-    val patterns =  "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}[0-9A-Z]{1}[0-9]{1}"
+
+    val patterns = "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}[0-9A-Z]{2}"
+
     return Pattern.compile(patterns).matcher(this).matches()
 }
 fun String.isValidAdharCard() : Boolean {

@@ -19,6 +19,34 @@
         <action
             android:id="@+id/action_customerFragment_to_editSupervisorFragment"
             app:destination="@id/editSupervisorFragment" />
+        <action
+            android:id="@+id/orderStatusTabFragment_to_orderStatusDetailFragment"
+            app:destination="@id/orderStatusDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderStatusTabFragment"
+        android:name="com.tirupati.vendor.fragmnts.OrderStatusTabFragment"
+        android:label="fragment_customer"
+        tools:layout="@layout/fragment_order_status_customer" >
+        <action
+            android:id="@+id/orderStatusTabFragment_to_orderStatusDetailFragment"
+            app:destination="@id/orderStatusDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderStatusDetailFragment"
+        android:name="com.tirupati.vendor.fragmnts.OrderStatusDetailFragment"
+        android:label="fragment_customer"
+        tools:layout="@layout/fragment_order_status_detail" >
+        <action
+            android:id="@+id/action_customerFragment_to_reportIssueFragment"
+            app:destination="@id/reportIssueFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportIssueFragment"
+        android:name="com.tirupati.vendor.fragmnts.ReportIssueFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report_issue" >
+
     </fragment>
 
 </navigation>

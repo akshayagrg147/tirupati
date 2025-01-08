@@ -461,6 +461,8 @@ class DispatchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.purchaseNo?.setText(objectResponseData?.PO_NO)
         binding?.orderDate?.setText(objectResponseData?.PO_DT)
+        binding?.quantityDispatching?.setText(objectResponseData?.PO_QTY)
+
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
@@ -513,13 +515,17 @@ class DispatchFragment : Fragment() {
                     lifecycleScope.launch {
                         val orderDate = binding?.orderDate?.text.toString()
                         val purchaseNo = binding?.purchaseNo?.text.toString()
+                        val qty = binding?.quantityDispatching?.text.toString()
+                        val serialNumber = binding?.serialNumber?.text.toString()
 
-                        if (orderDate.isEmpty() || purchaseNo.isEmpty() || convertAddress==null || convertAddress?.isEmpty()==true || latitude==0.00 || longitude==0.00|| multipart==null) {
+                        if (orderDate.isEmpty() || purchaseNo.isEmpty() || convertAddress==null || convertAddress?.isEmpty()==true || latitude==0.00 || longitude==0.00|| multipart==null||qty.isEmpty()||serialNumber.isEmpty()) {
                             // Return with a message indicating that some fields are empty
                             val emptyFields = mutableListOf<String>()
                             if (orderDate.isEmpty()) emptyFields.add("Order Date")
                             if (purchaseNo.isEmpty()) emptyFields.add("Purchase Number")
                             if (convertAddress==null) emptyFields.add("Location Name")
+                            if (qty.isEmpty()) emptyFields.add("Quantity")
+                            if (serialNumber.isEmpty()) emptyFields.add("Serial Number")
                             else{
                                 if (convertAddress?.isEmpty()==true) emptyFields.add("Location Name")
 
@@ -542,7 +548,10 @@ class DispatchFragment : Fragment() {
                                     LOCATION_NAME = convertAddress?:"",
                                     PO_NUMBER = binding?.purchaseNo?.text.toString(),
                                     LONGITUDE = latitude.toString(),
-                                    LATITUDE = longitude.toString()
+                                    LATITUDE = longitude.toString(),
+                                    QTY =binding?.quantityDispatching?.text.toString(),
+                                    SEAL_NO = binding?.serialNumber?.text.toString(),
+
                                 )
                             )
 

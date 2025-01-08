@@ -5,5 +5,7 @@ data class PurchaseOrderRequest(
     val LOCATION_NAME: String,
     val PO_NUMBER: String,
     val LONGITUDE: String,
-    val LATITUDE: String
+    val LATITUDE: String,
+    val QTY:String,
+    val SEAL_NO:String
 )

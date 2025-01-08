@@ -1,17 +1,25 @@
 
->kotlin:S125€"Remove this commented out code.(ä‰‰Û8úˆ‚•2
-’kotlin:S117T"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(©’ğ’8”äû´€2J$2e37df88-3e31-4976-a357-a75585884bdd
-kotlin:S117¤"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(„µà×üÿÿÿÿ8Ì´Ãê€2J$0fdc4fc9-f162-45d2-b581-1ba02920de3f
-˜kotlin:S117¥"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(×¼õæ8Ì´Ãê€2J$bd888004-0f7a-4ec9-aeb5-7a366444a98e
-kotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.(†Ç±€øÿÿÿÿ8”äû´€2J$e304e5d8-bda6-4827-bf03-7c8b9d2f22c1
-dkotlin:S6313$"EClasses extending "ViewModel" should not expose suspending functions.(Ÿ—ôŸ8ÿˆ‚•2
-ikotlin:S6313("EClasses extending "ViewModel" should not expose suspending functions.(şŠÄˆùÿÿÿÿ8€‰‚•2
-ikotlin:S6313+"EClasses extending "ViewModel" should not expose suspending functions.(×÷´˜øÿÿÿÿ8€‰‚•2
-kotlin:S6313."EClasses extending "ViewModel" should not expose suspending functions.(ÿ‘âµùÿÿÿÿ8”äû´€2J$14c270ad-371a-4718-849f-5bacf7005d0d
-ikotlin:S63131"EClasses extending "ViewModel" should not expose suspending functions.(Ô¾óøÿÿÿÿ8‰‚•2
-Škotlin:S63139"EClasses extending "ViewModel" should not expose suspending functions.(¿öÇ8”äû´€2J$ee96f199-e8bb-4448-82e8-33f86e9533f8
->kotlin:S1128"Remove this unused import.(ÊÒÅ­ùÿÿÿÿ8‰‚•2
-9kotlin:S1128"Remove this unused import.(ßĞÕ©8‚‰‚•2
->kotlin:S1128"Remove this unused import.(öŒÎƒÿÿÿÿÿ8‚‰‚•2
-9kotlin:S1128"Remove this unused import.(´â 8‚‰‚•2
-ykotlin:S1192v"UDefine a constant instead of duplicating this literal "multipart/form-data" 13 times.(¢¸­†ûÿÿÿÿ8‚‰‚•2
+dkotlin:S125£"Remove this commented out code.(ä‰‰Û8‹ÔíÁÀ2J$c8c0543c-a142-44b8-9f61-eaddedd2f877
+dkotlin:S125Ö"Remove this commented out code.(ä‰‰Û8ŒÔíÁÀ2J$b1c0c90b-28d0-4755-9fa9-70d54f1e89bd
+’kotlin:S117w"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(©’ğ’8ÔíÁÀ2J$258a3554-e158-4504-8c1a-9ed388c53788
+kotlin:S117ú"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(„µà×üÿÿÿÿ8ÔíÁÀ2J$8defdcea-e792-4789-8ec1-01e0facd623d
+˜kotlin:S117û"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(×¼õæ8ÔíÁÀ2J$9c5fabbf-6839-4118-98bc-7122f23ef2c5
+˜kotlin:S117ş"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(¥úœ½8ÔíÁÀ2J$e607b0fe-8a92-4dd4-9dfe-7a10cae654d4
+˜kotlin:S117ÿ"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(Æ­Â­8ÔíÁÀ2J$46ebe24d-a9aa-48cf-80ba-185f9635396b
+kotlin:S6313#"EClasses extending "ViewModel" should not expose suspending functions.(†Ç±€øÿÿÿÿ8ÔíÁÀ2J$f2814ddb-06b2-446c-83e5-cc2633ff565e
+kotlin:S6313'"EClasses extending "ViewModel" should not expose suspending functions.(ìÔıùÿÿÿÿ8ÔíÁÀ2J$b7fe5847-bb58-4cde-9e62-34e33cee6ccd
+kotlin:S6313*"EClasses extending "ViewModel" should not expose suspending functions.(¸­ÏÅşÿÿÿÿ8ÔíÁÀ2J$759ee1c3-173e-4201-a8fe-eb2eebb951f6
+Škotlin:S6313/"EClasses extending "ViewModel" should not expose suspending functions.(Ÿ—ôŸ8ÔíÁÀ2J$a36719d7-cba3-42bc-8c82-68a5840dc712
+kotlin:S63133"EClasses extending "ViewModel" should not expose suspending functions.(şŠÄˆùÿÿÿÿ8ÔíÁÀ2J$6b7b61e5-d213-4ef7-8f30-f28009b9f1eb
+kotlin:S63136"EClasses extending "ViewModel" should not expose suspending functions.(×÷´˜øÿÿÿÿ8ÔíÁÀ2J$40936a75-c3ec-4dc7-8811-0c9918250ea9
+kotlin:S63139"EClasses extending "ViewModel" should not expose suspending functions.(ÿ‘âµùÿÿÿÿ8ÔíÁÀ2J$64a01f6e-211a-41e1-be2e-36b9dc151dad
+kotlin:S6313<"EClasses extending "ViewModel" should not expose suspending functions.(Ô¾óøÿÿÿÿ8ÔíÁÀ2J$b4f9734f-2950-440e-a0a1-79a75007bc94
+kotlin:S6313C"EClasses extending "ViewModel" should not expose suspending functions.(¬ÁŒ´øÿÿÿÿ8ÔíÁÀ2J$fe6dba2f-daa4-467a-bdd1-d6c1ffac91c8
+Škotlin:S6313L"EClasses extending "ViewModel" should not expose suspending functions.(¿öÇ8ÔíÁÀ2J$910a5539-d310-43b5-b330-8dc67f6a900d
+dkotlin:S1128"Remove this unused import.(ÊÒÅ­ùÿÿÿÿ8“ÔíÁÀ2J$51789c1a-9824-49ca-8943-0a5d88fcbe22
+_kotlin:S1128"Remove this unused import.(ßĞÕ©8“ÔíÁÀ2J$c4f0411b-50d7-4b02-a9f2-4dd4e75ca939
+dkotlin:S1128"Remove this unused import.(öŒÎƒÿÿÿÿÿ8“ÔíÁÀ2J$d5bbf575-6f0b-4c2e-9ea5-1add642d69bc
+_kotlin:S1128"Remove this unused import.(´â 8“ÔíÁÀ2J$2068647a-6895-4060-85f3-05371fb4d2fb
+ kotlin:S1192™"UDefine a constant instead of duplicating this literal "multipart/form-data" 23 times.(¢¸­†ûÿÿÿÿ8”ÔíÁÀ2J$cae35669-fb5e-4d8a-9d4d-1a238ec3b9e7
+”kotlin:S1192±"NDefine a constant instead of duplicating this literal "Unknown error" 3 times.(ğ¹¥ú8”ÔíÁÀ2J$b780c178-df38-4679-ac77-cb1cdf007d63
+œkotlin:S1192¿"VDefine a constant instead of duplicating this literal "Unknown network error" 3 times.(¼Ù»8”ÔíÁÀ2J$d09fa0f9-987e-447f-820c-44a7ed4dc8bd

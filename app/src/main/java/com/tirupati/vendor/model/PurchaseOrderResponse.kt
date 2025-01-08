@@ -27,5 +27,8 @@ data class ResponseData(
     val AMOUNT: String,
     val COUNTER_REMARK: String?,
     val STATUS: String,
-    val COUNTS: String
+    val COUNTS: String,
+    val PAYMENT_TERMS: String,
+    val DELIVERY_ADD: String,
+
 ):Parcelable

@@ -1,23 +1,23 @@
 
-}kotlin:S1172¾"8Use "_" instead of this unused lambda parameter "which".(Š‡Ãa8¨¶‡ü–2J$21130ed9-e099-4295-b08e-c1f8a7c5809f
-kkotlin:S6615Œ" Remove this useless initializer.(ö¹öüÿÿÿÿ8®¶‡ü–2J$6b33b7dc-5b1a-4110-9308-8c6e02ede88b
-kkotlin:S6615¥" Remove this useless initializer.(ö¹öüÿÿÿÿ8®¶‡ü–2J$29d17833-5591-4ea1-a64c-8f955355c1bb
-kkotlin:S6615õ" Remove this useless initializer.(‚–£öşÿÿÿÿ8®¶‡ü–2J$91157515-5949-48fc-b325-cc5f4b558229
-dkotlin:S125«"Remove this commented out code.(Ìß¡8µ¶‡ü–2J$64e1071b-d749-4c98-b169-b58d34ab58a3
-‰kotlin:S1144Õ">Remove this unused private "checkAndPromptForLocation" method.(‰Ëú™ùÿÿÿÿ8¾¶‡ü–2J$4ebc0235-c1da-4316-9e88-ebb96089c2fb
-skotlin:S108³")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8Ç¶‡ü–2J$43599e0f-3cde-4b29-836f-f475176faae7
-|kotlin:S1135Q"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8Ö¶‡ü–2J$96bd8b35-91fb-47d6-a067-f1dcce167313
-vkotlin:S1481‹"0Remove this unused "bitmapImage" local variable.(ıĞç8Ö¶‡ü–2J$556b3cf7-c0eb-47df-92c8-918e97ece266
-mkotlin:S1481Ã"'Remove this unused "cw" local variable.(Éó‹Â8Ö¶‡ü–2J$bc9011f5-8827-4b5c-a867-88fbadeba2c2
->kotlin:S1128-"Remove this unused import.(µ““ûÿÿÿÿ8ñ³¼œ 2
->kotlin:S1128/"Remove this unused import.(Ù¯•¬ùÿÿÿÿ8ñ³¼œ 2
-_kotlin:S11287"Remove this unused import.(‰±ˆ8ã¶‡ü–2J$cc12e0f0-50f3-44b5-86e3-a452a7aae7a3
-dkotlin:S1128H"Remove this unused import.(åÉˆúÿÿÿÿÿ8ã¶‡ü–2J$e1f0884f-2095-4a60-96a1-0ad90b6c12a8
-ikotlin:S1874™"#Deprecated code should not be used.(òô’Ò8å¶‡ü–2J$f7e26ea4-0783-4a7b-b4f1-69f3087351fb
-Bkotlin:S1874l"#Deprecated code should not be used.(¿©¡í8ó³¼œ 2
-˜kotlin:S3776Ì"RRefactor this method to reduce its Cognitive Complexity from 63 to the 15 allowed.(ëü«8ç¶‡ü–2J$f72440ed-9dce-428d-b6f0-2044a74da90a
-qkotlin:S6516‰"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8÷³¼œ 2
-—kotlin:S6516Ä"LReplace explicit functional interface implementation with lambda expression.(Ü¦ÏÛûÿÿÿÿ8ì¶‡ü–2J$6bdfda1c-da56-4399-a390-44f77f691d4b
-tkotlin:S1066Ç".Merge this "if" statement with the nested one.(¥Ä¬á8í¶‡ü–2J$3a8a1eee-2bfa-4467-910e-9444d0365f1e
-ˆkotlin:S6511ö"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8î¶‡ü–2J$13360dc5-3e28-4390-bc07-be59f78c828f
-¦secrets:S6334ó"_Make sure this Google API Key is either secured or revoked, changed, and removed from the code.(ºÄĞ·8†ºÚ§„2J$e4782d71-2b77-4893-8851-76053b6bb002
+}kotlin:S1172¾"8Use "_" instead of this unused lambda parameter "which".(Š‡Ãa8û°”¿¿2J$6eaa40cb-58ed-4d51-819a-f4be9580f891
+kkotlin:S6615Œ" Remove this useless initializer.(ö¹öüÿÿÿÿ8ü°”¿¿2J$06c990d5-02bb-4357-a19a-e361d059db23
+kkotlin:S6615¥" Remove this useless initializer.(ö¹öüÿÿÿÿ8ü°”¿¿2J$20fad08c-bbe4-4219-ba09-4588eb7c3519
+kkotlin:S6615÷" Remove this useless initializer.(‚–£öşÿÿÿÿ8ü°”¿¿2J$d8336f01-bfa5-4138-917a-9db675217229
+dkotlin:S125«"Remove this commented out code.(Ìß¡8ş°”¿¿2J$3a6fccad-29c1-4d52-8726-b39cb450e951
+‰kotlin:S1144Õ">Remove this unused private "checkAndPromptForLocation" method.(‰Ëú™ùÿÿÿÿ8…±”¿¿2J$97674344-1141-49c0-9235-892e4c0fd726
+skotlin:S108³")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8Š±”¿¿2J$df5870bf-5787-464d-8e77-466a6ad0f8cd
+|kotlin:S1135Q"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8±”¿¿2J$b05b3a5d-38c4-4cee-9f7f-e580864176c6
+vkotlin:S1481‹"0Remove this unused "bitmapImage" local variable.(ıĞç8±”¿¿2J$6655e34d-efbe-4166-b72c-7d8a447b24b6
+mkotlin:S1481Ã"'Remove this unused "cw" local variable.(Éó‹Â8±”¿¿2J$9b09eee4-ff79-4c55-8e2a-e7f3d9aece1d
+dkotlin:S1128-"Remove this unused import.(µ““ûÿÿÿÿ8’±”¿¿2J$e38c7b08-502d-4763-865b-5d434a7b22b3
+dkotlin:S1128/"Remove this unused import.(Ù¯•¬ùÿÿÿÿ8’±”¿¿2J$ac884d82-a39d-4e04-9341-48c18ee50eef
+_kotlin:S11287"Remove this unused import.(‰±ˆ8’±”¿¿2J$f5d698f8-3120-4602-9cf2-f6fbfedaf770
+dkotlin:S1128H"Remove this unused import.(åÉˆúÿÿÿÿÿ8’±”¿¿2J$9b361e65-31b6-4f4c-a420-233e4722269a
+ikotlin:S1874™"#Deprecated code should not be used.(òô’Ò8”±”¿¿2J$44cfed06-ede8-40eb-b257-f07f900eb259
+hkotlin:S1874l"#Deprecated code should not be used.(¿©¡í8”±”¿¿2J$1500a1b6-134b-4438-8e38-8bbffbae5f01
+˜kotlin:S3776Ì"RRefactor this method to reduce its Cognitive Complexity from 75 to the 15 allowed.(ëü«8•±”¿¿2J$10e76980-efa5-4b11-8d5f-cfdf7289271e
+—kotlin:S6516‰"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8˜±”¿¿2J$2d28ebb6-9fed-4ed0-a00c-4522b234cae1
+—kotlin:S6516Ä"LReplace explicit functional interface implementation with lambda expression.(Ü¦ÏÛûÿÿÿÿ8˜±”¿¿2J$baa0f6fe-6ece-4433-8754-d5c1d9f345c0
+tkotlin:S1066Ç".Merge this "if" statement with the nested one.(¥Ä¬á8˜±”¿¿2J$5b20d635-2de9-4884-bdfa-d45cb1516f29
+ˆkotlin:S6511ö"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8™±”¿¿2J$9a6d5b43-387b-4d44-9c79-aea142e0e11d
+¦secrets:S6334õ"_Make sure this Google API Key is either secured or revoked, changed, and removed from the code.(ºÄĞ·8†ºÚ§„2J$f3c317ac-96bf-4db1-a888-c9dfa804542d

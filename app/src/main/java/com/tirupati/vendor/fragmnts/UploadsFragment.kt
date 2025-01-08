@@ -29,6 +29,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
+import android.widget.AutoCompleteTextView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -38,6 +39,7 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -124,44 +126,54 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
     private val pdf9 = ArrayList<File>()
     private val pdf10 = ArrayList<File>()
     private val pdf11 = ArrayList<File>()
+    private val pdf12 = ArrayList<File>()
 
     private var image1:String = ""
     private var image1clicked:Boolean = false
-    private var first:ArrayList<MultipartBody.Part?>?=null
+    private var first:ArrayList<MultipartBody.Part?>?= arrayListOf()
 
     private var image2:String = ""
     private var image2clicked:Boolean = false
-    private var second:ArrayList<MultipartBody.Part?>?=null
+
+
+
+
+
+
+    private var second:ArrayList<MultipartBody.Part?>?= arrayListOf()
 
     private var image3:String = ""
     private var image3clicked:Boolean = false
-    private var third:ArrayList<MultipartBody.Part?>?=null
+    private var third:ArrayList<MultipartBody.Part?>?= arrayListOf()
 
     private var image4:String = ""
     private var image4clicked:Boolean = false
-    private var fourth:ArrayList<MultipartBody.Part?>?=null
+    private var fourth:ArrayList<MultipartBody.Part?>?= arrayListOf()
 
 
     private var image5:String=""
     private var image5clicked:Boolean = false
-    private var fifth:ArrayList<MultipartBody.Part?>?=null
+    private var fifth:ArrayList<MultipartBody.Part?>?= arrayListOf()
 
     private var image6:String=""
     private var image6clicked:Boolean = false
-    private var sixth:ArrayList<MultipartBody.Part?>?=null
+    private var sixth:ArrayList<MultipartBody.Part?>?= arrayListOf()
 
 
     private var image7:String=""
     private var image7clicked:Boolean = false
-    private var seventh:ArrayList<MultipartBody.Part?>?=null
+    private var seventh:ArrayList<MultipartBody.Part?>?= arrayListOf()
 
     private var image8:String=""
     private var image8clicked:Boolean = false
-    private var eighth:ArrayList<MultipartBody.Part?>?=null
+    private var eighth:ArrayList<MultipartBody.Part?>?= arrayListOf()
+
+    private var imageAddclicked:Boolean = false
+    private var additionalDoc:ArrayList<MultipartBody.Part?>?= arrayListOf()
 
     private var image9:String=""
     private var image9clicked:Boolean = false
-    private var ninth:ArrayList<MultipartBody.Part?>?=null
+    private var ninth:ArrayList<MultipartBody.Part?>?= arrayListOf()
 
     private var image10:String=""
     private var image10clicked:Boolean = false
@@ -197,6 +209,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
     var branchPin = ""
     var msme = "0"
     var einvoice = "0"
+    var  selectItem=""
 
 
 
@@ -219,11 +232,16 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
     var v3Adhar=""
 
 
+    var POCEmailIdET=""
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
-        adapter = ImageCamAdapter(images, this,false)
+
 
         val args= arguments
         if(args!=null){
@@ -247,6 +265,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             pinCode =args.getString("PIN","")
             orgGst =args.getString("ORG_GST","")
             orgPAN =args.getString("ORG_PAN","")
+                selectItem =args.getString("selectItem","")
                 msme =args.getString("MSME","0")
                 einvoice =args.getString("EINVOICE","0")
                 MULTIPLE_ACCOUNTS =args.getString("OTHERAPPLICABLE","0")
@@ -257,6 +276,10 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             ifsc= args.getString("IFSC","")
             branchName =args.getString("BRANCH_NAME","")
             branchPin =args.getString("PINCODE","")
+
+                POCEmailIdET =args.getString("POCEmailIdET","")
+
+
             }
             else{
 
@@ -266,6 +289,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                 business_org_name= args.getString("NAME_OF_ORG","")
                 legalName = args.getString("LEGAL_ENTITY","")
                 ownerName= args.getString("OWNER_NAME","")
+                selectItem =args.getString("selectItem","")
                 ownerContact = args.getString("OWNER_CONTACT","")
                 ownerEmail =args.getString("OWNER_EMAIL","")
                 podName= args.getString("POD_NAME","")
@@ -310,10 +334,20 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                 v3Contact =args.getString("V3_CONTACT","")
                 v3Email =args.getString("V3_EMAIL","")
                 v3Adhar=args.getString("V3_ADHAR","")
+                POCEmailIdET =args.getString("POCEmailIdET","")
 
 
             }
         }
+        if(v3Name.isNotEmpty())
+        adapter = ImageCamAdapter(images, this,false,4)
+        else  if(v2Name.isNotEmpty())
+            adapter = ImageCamAdapter(images, this,false,3)
+        else  if(v1Name.isNotEmpty())
+            adapter = ImageCamAdapter(images, this,false,2)
+        else
+            adapter = ImageCamAdapter(images, this,false,1)
+
 
 
 
@@ -460,7 +494,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             bindingUploads?.MsmeRL?.visibility=View.GONE
 
         }
-        if(einvoice=="1"){
+        if(selectItem!="1"){
             bindingUploads?.eInvRL?.visibility=View.GONE
             bindingUploads?.eInvLL?.visibility=View.VISIBLE
         }
@@ -469,7 +503,29 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             bindingUploads?.eInvLL?.visibility=View.GONE
 
         }
+if(selectItem=="1"){
+    bindingUploads?.ccLL?.visibility=View.GONE
+    bindingUploads?.godwonLL?.visibility=View.GONE
+    bindingUploads?.rentDeaLL?.visibility=View.GONE
+    bindingUploads?.eleBillLL?.visibility=View.GONE
+    bindingUploads?.panRL?.visibility=View.GONE
+    bindingUploads?.BCLL?.visibility=View.GONE
+    bindingUploads?.itrLL?.visibility=View.GONE
 
+    bindingUploads?.findFormatOf?.visibility=View.GONE
+    bindingUploads?.bankletter?.visibility=View.GONE
+
+    bindingUploads?.additionalLayout?.visibility=View.VISIBLE
+
+    bindingUploads!!.eInvRL.visibility = View.GONE
+
+
+}
+        else
+{
+    bindingUploads?.additionalRl?.visibility=View.GONE
+    bindingUploads?.additionalLayout?.visibility=View.VISIBLE
+}
 
         bindingUploads!!.imageListRCPDF.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         bindingUploads!!.imageListRCPDF.itemAnimator = null
@@ -480,6 +536,8 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
         }else{
             bindingUploads!!.imageListRCPDF.visibility = View.GONE
         }
+
+
         bindingUploads!!.gstCertificate.setOnClickListener {
 //            dispatchTakePictureIntent()
             image1clicked=true
@@ -490,6 +548,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image6clicked=false
             image7clicked=false
             image8clicked=false
+            imageAddclicked=false
             image9clicked=false
             image10clicked=false
             image11clicked=false
@@ -508,6 +567,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image6clicked=false
             image7clicked=false
             image8clicked=false
+            imageAddclicked=false
             image9clicked=false
             image10clicked=false
             image11clicked=false
@@ -524,12 +584,31 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image6clicked=false
             image7clicked=false
             image8clicked=false
+            imageAddclicked=false
             image9clicked=false
             image10clicked=false
             image11clicked=false
             capturePhoto("pdf")
 
         }
+        bindingUploads!!.uploadAdditionalImg.setOnClickListener {
+            image1clicked=false
+            image2clicked=false
+            image3clicked=false
+            image4clicked=false
+            image5clicked=false
+            image6clicked=false
+            image7clicked=false
+            image8clicked=false
+            imageAddclicked=false
+            image9clicked=false
+            image10clicked=false
+            image11clicked=false
+            imageAddclicked=true
+            capturePhoto("pdf")
+
+        }
+
 
         bindingUploads!!.rentDeadUpload.setOnClickListener {
             image1clicked=false
@@ -540,6 +619,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image6clicked=false
             image7clicked=false
             image8clicked=false
+            imageAddclicked=false
             image9clicked=false
             image10clicked=false
             image11clicked=false
@@ -575,6 +655,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
                 image6clicked=false
                 image7clicked=false
                 image8clicked=false
+                imageAddclicked=false
                 image9clicked=false
                 image10clicked=false
                 image11clicked=false
@@ -601,6 +682,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image6clicked=true
             image7clicked=false
             image8clicked=false
+            imageAddclicked=false
             image9clicked=false
             image10clicked=false
             image11clicked=false
@@ -619,6 +701,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image6clicked=false
             image7clicked=true
             image8clicked=false
+            imageAddclicked=false
             image9clicked=false
             image10clicked=false
             image11clicked=false
@@ -637,6 +720,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image6clicked=false
             image7clicked=false
             image8clicked=true
+            imageAddclicked=false
             image9clicked=false
             image10clicked=false
             image11clicked=false
@@ -656,6 +740,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image6clicked=false
             image7clicked=false
             image8clicked=false
+            imageAddclicked=false
             image9clicked=true
             image10clicked=false
             image11clicked=false
@@ -674,6 +759,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image6clicked=false
             image7clicked=false
             image8clicked=false
+            imageAddclicked=false
             image9clicked=false
             image10clicked=true
             image11clicked=false
@@ -691,6 +777,7 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
             image6clicked=false
             image7clicked=false
             image8clicked=false
+            imageAddclicked=false
             image9clicked=false
             image10clicked=false
             image11clicked=true
@@ -946,21 +1033,10 @@ bindingUploads!!.bankletter.setOnClickListener{
 
     private fun callUploadImageData() {
 
-        println("$latitude,$longitude,$locationName,$org_name,$org_contact, $org_email,$business_org_name,$ownerName,$legalName,$ownerContact,$ownerEmail,$podName,$ownerPan,$podWhatsapp,$addressName$country,$state,$city,$pinCode,$orgGst,$orgPAN$orgBank,$accountNumber,$accountType,$ifsc,$branchName,$branchPin ,$v1Name,$v1Contact,$v1Email,$v1Adhar,$v2Name,$v2Contact,$v2Email,$v2Adhar,$v3Name,$v3Contact,$v3Email,$v3Adhar")
-        println("first: ${first?.get(0)}, isEmpty: ${first.isNullOrEmpty()}")
-        println("second: ${second?.get(0)}, isEmpty: ${second.isNullOrEmpty()}")
-        println("third: $third, isEmpty: ${third.isNullOrEmpty()}")
-        println("fourth: $fourth, isEmpty: ${fourth.isNullOrEmpty()}")
-        println("fifth: $fifth, isEmpty: ${fifth.isNullOrEmpty()}")
-        println("sixth: $sixth, isEmpty: ${sixth.isNullOrEmpty()}")
-        println("seventh: $seventh, isEmpty: ${seventh.isNullOrEmpty()}")
-        println("eighth: $eighth, isEmpty: ${eighth.isNullOrEmpty()}")
-        println("ninth: $ninth, isEmpty: ${ninth.isNullOrEmpty()}")
-        println("tenth: $tenth, isEmpty: ${tenth.isNullOrEmpty()}")
-
 
         bindingUploads!!.loginProgressBar.progressBar.shown()
-
+        if(selectItem!="1")
+        {
             lifecycleScope.launch(Dispatchers.IO) {
                 val header = HashMap<String, String>()
                 header["Accept"] = "application/json"
@@ -974,9 +1050,108 @@ bindingUploads!!.bankletter.setOnClickListener{
                     org_name,legalName,ownerName,ownerContact,ownerEmail,podName,ownerPan,podWhatsapp,
                     addressName,"1",state,city,pinCode,orgGst,orgPAN,
                     orgBank,accountNumber,accountType,branchName,ifsc,msme,einvoice,
-                    first!!,second!!,third!!,fourth!!,fifth!!,sixth!!,seventh!!,eighth!!,ninth!!,tenth?: arrayListOf(),elevnth?: arrayListOf()
+                    first!!,second!!,third!!,fourth!!,fifth!!,sixth!!,seventh!!,eighth!!,ninth!!,tenth?: arrayListOf(),elevnth?: arrayListOf(),
+                    additionalDoc?: arrayListOf()
 
                 )
+
+                when (response) {
+
+                    is NetworkState.Success -> {
+                        withContext(Dispatchers.Main){
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
+
+                            showCustomDialog()
+                        }
+
+
+
+//                    binding?.listOpts?.adapter!!.notifyDataSetChanged()
+
+
+
+                    }
+                    is NetworkState.HttpErrors.ResourceForbidden -> {
+                        withContext(Dispatchers.Main) {
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
+                            Toast.makeText(
+                                context,
+                                "Access forbidden: ${response.msg}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+
+                    is NetworkState.Error<*> -> {
+                        withContext(Dispatchers.Main) {
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
+
+                            Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                    }
+
+                    is NetworkState.NetworkException -> {
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
+                                .show()
+
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        }
+
+                    }
+
+                    is NetworkState.HttpErrors.InternalServerError -> {
+                        withContext(Dispatchers.Main){
+                            Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()}
+
+                    }
+
+                    is NetworkState.HttpErrors.ResourceNotFound -> {
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
+                                .show()
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        }
+
+                    }
+
+                    else -> {
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(context, "something went wrong", Toast.LENGTH_SHORT)
+                                .show()
+                            bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+        else
+            lifecycleScope.launch(Dispatchers.IO) {
+                val header = HashMap<String, String>()
+                header["Accept"] = "application/json"
+                header["version"] = "1"
+
+                var response = signUpVM.postSignUpCustomerRegistration(header,latitude.toString(),
+                    longitude.toString(),locationName,MULTIPLE_ACCOUNTS,
+                    v1Name,v1Email,v1Contact,v1Adhar,
+                    v2Name,v2Email,v2Contact,v2Adhar,
+                    v3Name,v3Email,v3Contact,v3Adhar,
+                    ownerName,ownerContact,ownerEmail,
+                    org_name,legalName,ownerName,ownerContact,ownerEmail,podName,ownerPan,podWhatsapp,
+                    addressName,"1",state,city,pinCode,orgGst,orgPAN,
+                    orgBank,accountNumber,accountType,branchName,ifsc,msme,einvoice,
+                    imagelist1 = first?: arrayListOf(),
+                    imagelist2 = additionalDoc?:arrayListOf(),
+                    imagelist3 = seventh?:arrayListOf(),
+
+                )
+
+
 
                 when (response) {
 
@@ -1069,10 +1244,22 @@ bindingUploads!!.bankletter.setOnClickListener{
 
         // Handle button click inside the custom layout
         val dialogButton = customView.findViewById<TextView>(R.id.success)
+        val purchaseNo = customView.findViewById<AutoCompleteTextView>(R.id.purchaseNo)
+        if(selectItem=="1"){
+            purchaseNo.setText("Thank you for your registration. After review and approval, you will receive confirmation and access to our portal. \n We value your patience and anticipate a fruitful partnership.")
+        }
+        else{
+            purchaseNo.setText(" Thank you for your registration. After review and approval, you will receive confirmation and access to our quotation portal.\nWe value your patience and anticipate a fruitful partnership.")
+        }
+
+
 
 
         dialogButton.setOnClickListener {
-            findNavController().navigate(R.id.logInFragment2)
+            val navOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.logInFragment2, true) // Clear all back stack
+                .build()
+            findNavController().navigate(R.id.logInFragment2, null, navOptions)
             dialog.dismiss()
         }
 
@@ -1088,65 +1275,93 @@ bindingUploads!!.bankletter.setOnClickListener{
             showCustomDialog(requireContext(), "Please upload GST certificate","Error")
             status = false
         }
-        else if (pdf2.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload Owner's Pancard","Error")
-            status = false
+        else if (pdf2.isEmpty() && selectItem!="1" ) {
+            showCustomDialog(requireContext(), "Please upload Owner's Pancard", "Error")
+                status = false
+
         }
-        else if (pdf3.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload Electricity bill","Error")
-            status = false
+        else if (pdf3.isEmpty() && selectItem!="1") {
+
+                showCustomDialog(requireContext(), "Please upload Electricity bill", "Error")
+                status = false
+
         }
-        else if (pdf4.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload Rent dead","Error")
-            status = false
+        else if (pdf4.isEmpty() && selectItem!="1") {
+
+                showCustomDialog(requireContext(), "Please upload Rent dead", "Error")
+                status = false
+
         }
-        else if (images5.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload Real time godown","Error")
-            status = false
+        else if (images5.isEmpty() && selectItem!="1") {
+
+                showCustomDialog(requireContext(), "Please upload Real time godown", "Error")
+                status = false
+
         }
 //        ==========================================================
-        else if (pdf6.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload cancelled cheque","Error")
-            status = false
+        else if (pdf6.isEmpty()&& selectItem!="1") {
+
+                showCustomDialog(requireContext(), "Please upload cancelled cheque", "Error")
+                status = false
+
         }
         else if (pdf7.isEmpty()) {
             showCustomDialog(requireContext(), "Please upload Organisation PAN card","Error")
             status = false
         }
-        else if (pdf8.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload Bank confirmation letter","Error")
-            status = false
-        }
-        else if (pdf9.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload ITR Acknowledgement","Error")
-            status = false
-        }
-        else if(msme=="1") {
-            if (pdf10.isEmpty()) {
-                showCustomDialog(requireContext(), "Please upload MSME", "Error")
+        else if (pdf8.isEmpty()&& selectItem!="1") {
+
+
+                showCustomDialog(
+                    requireContext(),
+                    "Please upload Bank confirmation letter",
+                    "Error"
+                )
                 status = false
-            }
-            else{
-                if(einvoice=="1"){
-                    if (pdf11.isEmpty()) {
-                        showCustomDialog(requireContext(), "Please upload E-Invoice Applicable","Error")
-                        status = false
-                    }
-                    else{
+
+        }
+        else if (pdf9.isEmpty()&& selectItem!="1") {
+
+                showCustomDialog(requireContext(), "Please upload ITR Acknowledgement", "Error")
+                status = false
+
+        }
+        else if(msme=="1" && selectItem!="1") {
+
+
+                if (pdf10.isEmpty()) {
+                    showCustomDialog(requireContext(), "Please upload MSME", "Error")
+                    status = false
+                } else {
+                    if (einvoice == "1" && selectItem!="1") {
+                        if (pdf11.isEmpty()) {
+                            showCustomDialog(
+                                requireContext(),
+                                "Please upload E-Invoice Applicable",
+                                "Error"
+                            )
+                            status = false
+                        } else {
+                            return true
+                        }
+
+                    } else {
                         return true
                     }
 
-                }
-                else {
-                    return true
-                }
 
             }
         }
-        else if(einvoice=="1"){
-            if (pdf11.isEmpty()) {
-                showCustomDialog(requireContext(), "Please upload E-Invoice Applicable","Error")
-                status = false
+        else if(einvoice=="1" && selectItem!="1"){
+
+                if (pdf11.isEmpty() && selectItem!="1") {
+                    showCustomDialog(
+                        requireContext(),
+                        "Please upload E-Invoice Applicable",
+                        "Error"
+                    )
+                    status = false
+
             }
 
         }
@@ -1427,7 +1642,11 @@ bindingUploads!!.bankletter.setOnClickListener{
                         val file7 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
 
                         pdf7.add(compressFile(file7!!,requireContext()))
-                        seventh= filesToMultipartParts("OWNER_AADHAR[]",pdf7)
+
+                        seventh = if(selectItem=="1")
+                            filesToMultipartParts("ORGANISATIONS_PAN_CARD[]",pdf7)
+                        else
+                            filesToMultipartParts("OWNER_AADHAR[]",pdf7)
 
 //                        adharRL
 //                        adhaarIV
@@ -1527,6 +1746,24 @@ bindingUploads!!.bankletter.setOnClickListener{
                         }
 
                     }
+                    imageAddclicked -> {
+
+                        val file11 = getImageFromUri(uri=Uri.fromFile(File(selectedPaths)))
+
+                        pdf12.add(compressFile(file11!!,requireContext()))
+
+                        additionalDoc= filesToMultipartParts("ADDITIONAL_DOCUMENTS[]",pdf12)
+                        bindingUploads?.additionalLayout?.visibility = View.GONE
+                        bindingUploads!!.additionalRl.visibility = View.VISIBLE
+                        bindingUploads!!.AdditionalImageView1.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
+
+                        bindingUploads!!.deleteAdditionalImageView.setOnClickListener {
+                            bindingUploads?.additionalLayout?.visibility = View.VISIBLE
+                            bindingUploads!!.additionalRl.visibility = View.GONE
+                        }
+
+                    }
+
 
                     else -> {
 
@@ -1607,7 +1844,10 @@ bindingUploads!!.bankletter.setOnClickListener{
                     }
                     image7clicked -> {
                         pdf7.add(file)
-                        seventh = filesToMultipartParts("OWNER_AADHAR[]", pdf7)
+                        seventh = if(selectItem=="1")
+                            filesToMultipartParts("ORGANISATIONS_PAN_CARD[]",pdf7)
+                        else
+                            filesToMultipartParts("OWNER_AADHAR[]",pdf7)
                         bindingUploads?.adharLL?.visibility = View.GONE
                         bindingUploads!!.adharRL.visibility = View.VISIBLE
                         bindingUploads!!.adhaarIV.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
@@ -1666,6 +1906,21 @@ bindingUploads!!.bankletter.setOnClickListener{
                             bindingUploads!!.eInvRL.visibility = View.GONE
                         }
                     }
+                    imageAddclicked -> {
+                        pdf12.add(file)
+                        additionalDoc = filesToMultipartParts("ADDITIONAL_DOCUMENTS[]", pdf12)
+                        bindingUploads?.additionalLayout?.visibility = View.GONE
+                        bindingUploads!!.additionalRl.visibility = View.VISIBLE
+                        bindingUploads!!.AdditionalImageView1.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.pdf))
+
+                        bindingUploads!!.deleteAdditionalImageView.setOnClickListener {
+                            bindingUploads?.additionalLayout?.visibility = View.VISIBLE
+                            bindingUploads!!.additionalRl.visibility = View.GONE
+                        }
+
+
+                    }
+
                 }
             }
         }

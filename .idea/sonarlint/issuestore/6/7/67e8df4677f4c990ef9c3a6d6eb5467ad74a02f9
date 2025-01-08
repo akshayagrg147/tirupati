@@ -1,20 +1,21 @@
 
-{kotlin:S1172¿"0Remove this unused function parameter "binding".(Ë€¼úÿÿÿÿ8¿Ë”‰2J$650154ef-0b80-432c-8802-0a54ea28c898
-€kotlin:S899î";Do something with the "Boolean" value returned by "delete".(ø¸ºÀ8¹‡‰Ú‰2J$8b944cfe-fe8c-4e61-8542-1ee87e0096ad
-fkotlin:S6615Á" Remove this useless initializer.(²© 8ÀË”‰2J$d8539869-f5c4-4e5b-9031-8d832ec998fe
-dkotlin:S125®"Remove this commented out code.(‹úõö8ÂË”‰2J$2f31b880-c52d-48f6-bd14-9a915048399f
-ikotlin:S125¾"Remove this commented out code.(— ûéıÿÿÿÿ8ÂË”‰2J$5d7fdb58-625a-460a-9c90-55e030ce6615
-dkotlin:S125"Remove this commented out code.(€„øí8ÂË”‰2J$5f270db9-ec9d-4f93-8f27-3f0599498a98
-ikotlin:S125š"Remove this commented out code.(ö´óùÿÿÿÿ8ÃË”‰2J$179dd6eb-8a39-405c-95a3-5cebc3937cba
-ikotlin:S125ù"Remove this commented out code.(ö§ƒ’ùÿÿÿÿ8¼‡‰Ú‰2J$5079bcc4-07ca-4b10-84af-d049d5871e03
-nkotlin:S108œ")Either remove or fill this block of code.(á¢–¬8ÌË”‰2J$c5aaed39-444c-4212-90da-04b04540adea
-nkotlin:S108´")Either remove or fill this block of code.(÷¦¦Ò8Æ‡‰Ú‰2J$1daddb89-5ba8-469e-92ff-22d6f68f419e
-xkotlin:S1481­"2Remove this unused "adapterImages" local variable.(ô8É‡‰Ú‰2J$f75c8337-ed80-4223-9fab-0ffdabf10c48
-“kotlin:S1871"MThis branch's code block is the same as the block for the branch on line 278.(ñ¿ÿÄ8ÖË”‰2J$62cfe453-fa53-481a-b10f-68519787c568
-“kotlin:S1871£"MThis branch's code block is the same as the block for the branch on line 278.(ßâƒ‚8ÖË”‰2J$3fc5835d-217a-4ef3-b151-543956ff90e7
-’kotlin:S1871©"MThis branch's code block is the same as the block for the branch on line 278.(Ä†•8ÖË”‰2J$c034e728-7506-4b71-b4ca-de7f445b59b9
-“kotlin:S1871®"MThis branch's code block is the same as the block for the branch on line 278.(Šä•8€â±ü–2J$089f15cc-9061-443c-81c5-de3d18823094
-Bkotlin:S1874z"#Deprecated code should not be used.(É´¹8Òº‘¬2
-Ckotlin:S1874ş"#Deprecated code should not be used.(–ø”8Óº‘¬2
-Ckotlin:S1874¼"#Deprecated code should not be used.(‚´Ã¬8Óº‘¬2
-ˆkotlin:S6511Ê"=Merge chained "if" statements into a single "when" statement.(êúƒ ÿÿÿÿÿ8ÛË”‰2J$bfef38d4-e7f1-46b6-b4b7-f023af05dd17
+{kotlin:S1172¿"0Remove this unused function parameter "binding".(Ë€¼úÿÿÿÿ8€÷ÛÃ2J$e11571ed-505e-4da5-b4e0-b251c087f1aa
+€kotlin:S899î";Do something with the "Boolean" value returned by "delete".(ø¸ºÀ8€÷ÛÃ2J$9fe9840f-ed64-45a9-8b54-7a9eedd6ccc0
+fkotlin:S6615Á" Remove this useless initializer.(²© 8÷ÛÃ2J$e5c958f6-8a13-4085-924e-1fae9478b7c6
+\kotlin:S6619£"7Remove this useless non-null check, it always succeeds.(ö¢ú´ûÿÿÿÿ8Ÿ­à€Ä2
+dkotlin:S125®"Remove this commented out code.(‹úõö8„÷ÛÃ2J$fc220656-2578-4b44-ba88-0a205dbd5da9
+ikotlin:S125¾"Remove this commented out code.(— ûéıÿÿÿÿ8„÷ÛÃ2J$f6c0b4ed-b4b7-416f-aba8-fe78faf42699
+dkotlin:S125"Remove this commented out code.(€„øí8„÷ÛÃ2J$3435e626-99c7-4827-93df-3bcc0614051a
+ikotlin:S125š"Remove this commented out code.(ö´óùÿÿÿÿ8„÷ÛÃ2J$ff0c4b25-6c5b-497a-a05b-f5fe4eb2b8a1
+ikotlin:S125ù"Remove this commented out code.(ö§ƒ’ùÿÿÿÿ8„÷ÛÃ2J$77a1729b-c0a6-4b4c-88ac-348ea719fedd
+nkotlin:S108œ")Either remove or fill this block of code.(á¢–¬8—÷ÛÃ2J$870cbc8d-272a-40d3-a635-1b1bfc2d24d2
+nkotlin:S108´")Either remove or fill this block of code.(÷¦¦Ò8—÷ÛÃ2J$dd484404-2c3a-4cee-9be7-627ebb160ac1
+xkotlin:S1481­"2Remove this unused "adapterImages" local variable.(ô8Ÿ÷ÛÃ2J$3f1420f7-4911-491b-a05d-e4622d678ff4
+“kotlin:S1871"MThis branch's code block is the same as the block for the branch on line 278.(ñ¿ÿÄ8¦÷ÛÃ2J$303d00a3-eff6-4ff9-b2a8-b108b0391d6f
+“kotlin:S1871£"MThis branch's code block is the same as the block for the branch on line 278.(ßâƒ‚8¦÷ÛÃ2J$75183ec8-4b6b-452f-bd8a-fb37ba790f39
+’kotlin:S1871©"MThis branch's code block is the same as the block for the branch on line 278.(Ä†•8¦÷ÛÃ2J$f8454b02-1bf8-469a-ac83-5a966d145a90
+“kotlin:S1871®"MThis branch's code block is the same as the block for the branch on line 278.(Šä•8¦÷ÛÃ2J$31f177a2-47b4-4dc8-9094-9c90aff4b2e4
+hkotlin:S1874z"#Deprecated code should not be used.(É´¹8§÷ÛÃ2J$56925e1d-1293-4dac-a634-861365357084
+ikotlin:S1874ş"#Deprecated code should not be used.(–ø”8§÷ÛÃ2J$60c08dcd-2f5b-4795-9e61-7b6371c23a87
+ikotlin:S1874¼"#Deprecated code should not be used.(‚´Ã¬8§÷ÛÃ2J$ac6b9feb-661b-46f9-9d3f-294e88ffb225
+ˆkotlin:S6511Ê"=Merge chained "if" statements into a single "when" statement.(êúƒ ÿÿÿÿÿ8«÷ÛÃ2J$70323e62-b859-4b75-b1cd-86f5abee935d

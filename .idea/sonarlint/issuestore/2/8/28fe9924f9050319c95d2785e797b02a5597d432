@@ -1,10 +1,10 @@
 
-†kotlin:S6619•";Remove this useless elvis operation ?:, it always succeeds.(¯¿º…şÿÿÿÿ8óÛè†2J$38f209fd-ca07-42b9-ad37-d539adc13144
-kotlin:S6619š";Remove this useless elvis operation ?:, it always succeeds.(²áÍÛ8óÛè†2J$3c77656d-822e-40f9-83ef-79dfc98603d1
-†kotlin:S6619 ";Remove this useless elvis operation ?:, it always succeeds.(İÏËØÿÿÿÿÿ8óÛè†2J$4dd818fb-abf6-4f1f-8a58-b45fa42e6c3b
-dkotlin:S1128"Remove this unused import.(Íå‘Áûÿÿÿÿ8··ëè†2J$e82cd6ca-84ff-465a-9dc8-456eb5b9a441
-£kotlin:S1192Å"XDefine a constant instead of duplicating this literal "Invalid Owner Full Name" 3 times.( ã‰ƒüÿÿÿÿ8Øœ‚ï‡2J$6658f3b6-e578-4b59-8820-e56947a705c5
-Ÿkotlin:S1192É"YDefine a constant instead of duplicating this literal "Invalid Owner Contact No" 3 times.(©ÏØï8ªÒ‚ï‡2J$7d7a8436-6c75-40ba-ab4f-8153c947847a
-—kotlin:S1192Í"QDefine a constant instead of duplicating this literal "Invalid Email Id" 3 times.(Ùªèù8„¥ƒï‡2J$b94a88de-8fb9-4c9b-a6dd-23106c47d180
-—kotlin:S1192Ñ"QDefine a constant instead of duplicating this literal "Invalid Pan card" 3 times.(•”åù8ºéƒï‡2J$2c622db7-44b7-4060-87af-8dfff6bb30f0
-kotlin:S3776Â"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(ˆï¼ëşÿÿÿÿ8ºùî‡2J$0cdf41b2-c30c-42f7-8cf5-fa52646e3b77
+†kotlin:S6619£";Remove this useless elvis operation ?:, it always succeeds.(¯¿º…şÿÿÿÿ8¦Áî×½2J$191f811f-4d00-4a34-b22f-0c7a1bcf6ed2
+kotlin:S6619¨";Remove this useless elvis operation ?:, it always succeeds.(²áÍÛ8§Áî×½2J$2872201d-3d56-472c-bc77-a3cda8176711
+†kotlin:S6619®";Remove this useless elvis operation ?:, it always succeeds.(İÏËØÿÿÿÿÿ8§Áî×½2J$fcc528c6-c0b3-4e51-856c-1e76b63158e4
+dkotlin:S1128"Remove this unused import.(Íå‘Áûÿÿÿÿ8°Áî×½2J$c03ec8f9-c2ad-4be7-bbe6-f9b096a974f6
+£kotlin:S1192Ó"XDefine a constant instead of duplicating this literal "Invalid Owner Full Name" 3 times.( ã‰ƒüÿÿÿÿ8±Áî×½2J$9b7bab4d-34bf-421c-9e81-bf36a8b05a9a
+Ÿkotlin:S1192×"YDefine a constant instead of duplicating this literal "Invalid Owner Contact No" 3 times.(©ÏØï8±Áî×½2J$6da2f602-f71e-457d-9072-4478a3f6a2cf
+—kotlin:S1192Û"QDefine a constant instead of duplicating this literal "Invalid Email Id" 3 times.(Ùªèù8±Áî×½2J$4e65219d-9f50-485c-8fab-a3451c94ee83
+—kotlin:S1192ß"QDefine a constant instead of duplicating this literal "Invalid Pan card" 3 times.(•”åù8²Áî×½2J$d1969b7a-5446-466a-8cee-d14b049e7b05
+kotlin:S3776Ğ"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(ˆï¼ëşÿÿÿÿ8³Áî×½2J$4af774c2-c397-48de-9413-e3bef9c90a73

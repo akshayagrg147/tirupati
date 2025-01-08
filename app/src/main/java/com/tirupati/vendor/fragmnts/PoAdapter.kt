@@ -25,8 +25,11 @@ class PoAdapter(cntx: Context, private val itemList: List<ResponseData>) : Recyc
         val priceText: TextView = itemView.findViewById(R.id.price_text)
         val totalText: TextView = itemView.findViewById(R.id.total_text)
         val poNumber: TextView = itemView.findViewById(R.id.po_vslue)
-        val vendorName: TextView = itemView.findViewById(R.id.vendor_value)
-        val itemName: TextView = itemView.findViewById(R.id.item_value)
+//        val vendorName: TextView = itemView.findViewById(R.id.vendor_value)
+
+        val payment_terms_value: TextView = itemView.findViewById(R.id.payment_terms_value1)
+        val delivery_terms_value: TextView = itemView.findViewById(R.id.delivery_terms_value1)
+
         val statusCircle: View = itemView.findViewById(R.id.status_circle)
         val actionButton: TextView = itemView.findViewById(R.id.action_button)
     }
@@ -45,8 +48,9 @@ class PoAdapter(cntx: Context, private val itemList: List<ResponseData>) : Recyc
         holder.priceText.text = item.RATEP_UOM
         holder.totalText.text = item.NET_TOTAL
         holder.poNumber.text = "${item.PO_NO}"
-        holder.vendorName.text = "${item.VENDOR_NAME}"
-        holder.itemName.text = "${item.ITEM_NAME}"
+      //  holder.vendorName.text = "${item.VENDOR_NAME}"
+        holder.payment_terms_value.text = "${item.PAYMENT_TERMS}"
+        holder.delivery_terms_value.text = "${item.DELIVERY_ADD}"
         holder.itemView.setOnClickListener{
             when(item.STATUS){
                 "Approved"->{
@@ -88,7 +92,7 @@ class PoAdapter(cntx: Context, private val itemList: List<ResponseData>) : Recyc
             }
             "Cancel" -> {
                 holder.statusCircle.setBackgroundResource(R.drawable.approved)
-                holder.actionButton.visibility = View.VISIBLE
+                holder.actionButton.visibility = View.GONE
                 holder.actionButton.text = "Dispatch"
                 val color = ContextCompat.getColor(context, com.tirupati.vendor.R.color.green_18BE46)
                 holder.statusText.setTextColor(color)

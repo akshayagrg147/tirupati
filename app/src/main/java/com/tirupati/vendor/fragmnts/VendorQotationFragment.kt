@@ -126,17 +126,27 @@ class VendorQotationFragment : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val quantityText = binding?.quantity?.text.toString()
                 val rateText = s.toString()
 
+                // Ensure only 2 decimal places are allowed
+                if (rateText.contains(".")) {
+                    val splitText = rateText.split(".")
+                    if (splitText.size > 1 && splitText[1].length > 2) {
+                        binding?.rate?.setText(rateText.substring(0, rateText.length - 1))
+                        binding?.rate?.setSelection(binding?.rate?.text?.length ?: 0)
+                        return
+                    }
+                }
+
+                val quantityText = binding?.quantity?.text.toString()
                 val quantity = quantityText.toDoubleOrNull() ?: 0.0
                 val rate = rateText.toDoubleOrNull() ?: 0.0
+
+                // Format the total amount without decimal places
                 val decimalFormat = DecimalFormat("#")
-                decimalFormat.setMaximumFractionDigits(0) // No decimal places
+                decimalFormat.maximumFractionDigits = 0
 
                 binding!!.amountTotal.setText(decimalFormat.format(quantity * rate))
-
-                // Code to execute when text is changing
             }
 
             override fun afterTextChanged(s: Editable?) {

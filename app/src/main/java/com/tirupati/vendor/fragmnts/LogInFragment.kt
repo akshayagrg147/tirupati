@@ -116,6 +116,9 @@ class LogInFragment : Fragment() {
             }
         binding!!.btnContinueLogin.setOnClickListener {
             if (validateUI(binding!!)) {
+                if(selectItem=="1"){
+                    logInCustomerRequest(binding?.inputUserGST?.text.toString())
+                }else
                 logInRequest(binding?.inputUserGST?.text.toString())
             }
         }
@@ -176,6 +179,66 @@ class LogInFragment : Fragment() {
                     binding!!.loginProgressBar.progressBar.hidden()
 
                         showCustomDialog(requireContext(),response.msg.toString(), "Error")
+
+
+                }
+                is NetworkState.HttpErrors.InternalServerError->{
+                    binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(),response.msg.toString(), "Error")
+
+                }
+                is NetworkState.HttpErrors.ResourceNotFound->{
+                    binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(),response.msg.toString(), "Error")
+
+                }
+                else->{
+                    showCustomDialog(requireContext(),"something went wrong", "Error")
+                    binding!!.loginProgressBar.progressBar.hidden()
+
+                }
+            }
+
+
+        }
+
+
+    }
+    fun logInCustomerRequest(gstNumber: String) {
+        binding!!.loginProgressBar.progressBar.shown()
+        lifecycleScope.launch {
+            var response = logInVm.getCustomerLogIn(gstNumber)
+
+
+            when (response) {
+                is NetworkState.Success->{
+                    var progressDialogHelper= ProgressDialogHelper(requireContext())
+
+                    binding!!.loginProgressBar.progressBar.hidden()
+
+                    var otp=response.body.OTP
+                    var phn_nbr = response.body.MOBILE_NO
+                    var type = response.body.USER_TYPE
+                    val args = Bundle()
+                    args.putString("GST",binding?.inputUserGST?.text.toString())
+                    args.putString("OTP_IS",otp)
+                    args.putString("PH_NO",phn_nbr)
+                    args.putString("USERTYPE",type)
+                    args.putString("zoneselect",selectItem)
+                    Navigation.findNavController(binding!!.root).
+                    navigate(R.id.action_logInFragment2_to_OTPFragment2, args)
+                }
+
+                is NetworkState.Error<*>->{
+                    binding!!.loginProgressBar.progressBar.hidden()
+
+                    Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+                }
+
+                is NetworkState.NetworkException->{
+                    binding!!.loginProgressBar.progressBar.hidden()
+
+                    showCustomDialog(requireContext(),response.msg.toString(), "Error")
 
 
                 }

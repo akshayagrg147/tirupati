@@ -54,7 +54,7 @@ class SplashActivity : /*BaseActivity<ActivitySplashBinding>*/AppCompatActivity(
         } else {
             Handler(Looper.getMainLooper()).postDelayed({
                // if (sessionManager.virtualAddress==null){
-
+                Log.i("UPDATEE", "We have an update."+sessionManager.user)
                 if (sessionManager.user!=null){
 
                     if(sessionManager.user!!.USER_TYPE=="Superviser"){
@@ -67,15 +67,22 @@ class SplashActivity : /*BaseActivity<ActivitySplashBinding>*/AppCompatActivity(
                         startActivity(Intent(this, LandingVendorSActivity::class.java))
 
                         finish()}
+                    else  if(sessionManager.user!!.USER_TYPE=="Customer"){
+
+//
+                        startActivity(Intent(this, CustomerHomeActivity::class.java))
+
+                        finish()}
+
 
 
                     else{
-                        startActivity(Intent(this, LandingScreenGateKeeperActivity::class.java))
+                        startActivity(Intent(this, SIgnInRegisterActivity::class.java))
 
                     }
 
                 }else{
-                    startActivity(Intent(this, CustomerHomeActivity::class.java))
+                    startActivity(Intent(this, SIgnInRegisterActivity::class.java))
 
                     finish()
                 }

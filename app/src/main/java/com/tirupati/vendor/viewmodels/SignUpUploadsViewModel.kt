@@ -114,6 +114,112 @@ class SignUpUploadsViewModel @Inject constructor(private val registerUploadVMRep
 
         )
     }
+    suspend fun postSignUpCustomerRegistration(
+        headers: HashMap<String, String>,
+        LATITUDE: String,
+        LONGITUDE: String,
+        GODOWN_LOCATION: String,
+        OTHERVENDORSAPPLICABLE: String,
+
+        V1_NAME: String,
+        V1_EMAIL: String,
+        V1_CONTACT_NO: String,
+        V1_AADHAR_NO: String,
+
+        V2_NAME: String,
+        V2_EMAIL: String,
+        V2_CONTACT_NO: String,
+        V2_AADHAR_NO: String,
+
+        V3_NAME: String,
+        V3_EMAIL: String,
+        V3_CONTACT_NO: String,
+        V3_AADHAR_NO: String,
+
+        OWNER_NAME: String,
+        OWNER_CONTACT: String,
+        OWNER_EMAIL: String,
+        NAME_OF_ORGANISATION: String,
+        VENDOR_LEGAL_NAME: String,
+        CONTACT_PERSON: String,
+        CONTACT_NUMBER: String,
+        CONTACT_EMAIL: String,
+        POC_NAME: String,
+        POC_NO: String,
+        WHATSAPP_NO: String,
+        ADDRESS: String,
+        country: String,
+        STATE: String,
+        CITY: String,
+        PIN_CODE: String,
+        GSTIN: String,
+        PANCARD_NO: String,
+        BANK_NAME: String,
+        ACCOUNT_NUMBER: String,
+        ACCOUNT_TYPE: String,
+        BANK_BRANCH: String,
+        IFSC_CODE: String?,
+        MSME_APPLICABLE: String?,
+        E_INVOICE_APPLICABLE: String?,
+
+        imagelist1: ArrayList<MultipartBody.Part?>,
+        imagelist2: ArrayList<MultipartBody.Part?>,
+        imagelist3: ArrayList<MultipartBody.Part?>,
+
+    ): NetworkState<UploadsDetailResponse> {
+        return registerUploadVMRepo.signUpCustomerUploads(
+            headers,
+            LATITUDE,
+            LONGITUDE,
+            GODOWN_LOCATION,
+            OTHERVENDORSAPPLICABLE,
+
+            V1_NAME,
+            V1_EMAIL,
+            V1_CONTACT_NO,
+            V1_AADHAR_NO,
+
+            V2_NAME,
+            V2_EMAIL,
+            V2_CONTACT_NO,
+            V2_AADHAR_NO,
+
+            V3_NAME,
+            V3_EMAIL,
+            V3_CONTACT_NO,
+            V3_AADHAR_NO,
+
+            OWNER_NAME,
+            OWNER_CONTACT,
+            OWNER_EMAIL,
+            NAME_OF_ORGANISATION,
+            VENDOR_LEGAL_NAME,
+            CONTACT_PERSON,
+            CONTACT_NUMBER,
+            CONTACT_EMAIL,
+            POC_NAME,
+            POC_NO,
+            WHATSAPP_NO,
+            ADDRESS,
+            country,
+            STATE,
+            CITY,
+            PIN_CODE,
+            GSTIN,
+            PANCARD_NO,
+            BANK_NAME,
+            ACCOUNT_NUMBER,
+            ACCOUNT_TYPE,
+            BANK_BRANCH,
+            IFSC_CODE!!,
+            MSME_APPLICABLE,
+            E_INVOICE_APPLICABLE,
+            imagelist1,
+            imagelist2,
+            imagelist3,
+
+        )
+    }
 
     suspend fun postSignUpRegistration(
         headers: HashMap<String, String>,
@@ -173,7 +279,8 @@ class SignUpUploadsViewModel @Inject constructor(private val registerUploadVMRep
         imagelist8: ArrayList<MultipartBody.Part?>,
         imagelist9: ArrayList<MultipartBody.Part?>,
         imagelist10: ArrayList<MultipartBody.Part?>,
-        imagelist11: ArrayList<MultipartBody.Part?>
+        imagelist11: ArrayList<MultipartBody.Part?>,
+        imagelist12: ArrayList<MultipartBody.Part?>
     ): NetworkState<UploadsDetailResponse> {
         return registerUploadVMRepo.signUpUploads(
             headers,
@@ -232,7 +339,8 @@ class SignUpUploadsViewModel @Inject constructor(private val registerUploadVMRep
             imagelist8,
             imagelist9,
             imagelist10,
-            imagelist11
+            imagelist11,
+            imagelist12
         )
     }
 
@@ -380,7 +488,140 @@ class SignUpUploadsRepository @Inject constructor(private val apiService: ApiSer
 
         }
     }
+    suspend fun signUpCustomerUploads(
+        headers: HashMap<String, String>,
+        LATITUDE: String,
+        LONGITUDE: String,
+        GODOWN_LOCATION: String,
+        OTHERVENDORSAPPLICABLE: String,
 
+        V1_NAME: String,
+        V1_EMAIL: String,
+        V1_CONTACT_NO: String,
+        V1_AADHAR_NO: String,
+
+        V2_NAME: String,
+        V2_EMAIL: String,
+        V2_CONTACT_NO: String,
+        V2_AADHAR_NO: String,
+
+        V3_NAME: String,
+        V3_EMAIL: String,
+        V3_CONTACT_NO: String,
+        V3_AADHAR_NO: String,
+
+        OWNER_NAME: String,
+        OWNER_CONTACT: String,
+        OWNER_EMAIL: String,
+        NAME_OF_ORGANISATION: String,
+        VENDOR_LEGAL_NAME: String,
+        CONTACT_PERSON: String,
+        CONTACT_NUMBER: String,
+        CONTACT_EMAIL: String,
+        POC_NAME: String,
+        POC_NO: String,
+        WHATSAPP_NO: String,
+        ADDRESS: String,
+        country: String,
+        STATE: String,
+        CITY: String,
+        PIN_CODE: String,
+        GSTIN: String,
+        PANCARD_NO: String,
+        BANK_NAME: String,
+        ACCOUNT_NUMBER: String,
+        ACCOUNT_TYPE: String,
+        BANK_BRANCH: String,
+        IFSC_CODE: String?,
+        MSME_APPLICABLE: String?,
+        E_INVOICE_APPLICABLE: String?,
+
+        imagelist1: ArrayList<MultipartBody.Part?>,
+        imagelist2: ArrayList<MultipartBody.Part?>,
+        imagelist3: ArrayList<MultipartBody.Part?>,
+
+    ): NetworkState<UploadsDetailResponse> {
+
+
+        return try {
+            // Make API call using Retrofit suspend function
+            val response = apiService.signUpCustomerCall(
+                headers,
+                LATITUDE.toRequestBody(),
+                LONGITUDE.toRequestBody(),
+                GODOWN_LOCATION.toRequestBody(),
+                OTHERVENDORSAPPLICABLE.toRequestBody(),
+
+                V1_NAME.toRequestBody(),
+                V1_EMAIL.toRequestBody(),
+                V1_CONTACT_NO.toRequestBody(),
+                V1_AADHAR_NO.toRequestBody(),
+
+                V2_NAME.toRequestBody(),
+                V2_EMAIL.toRequestBody(),
+                V2_CONTACT_NO.toRequestBody(),
+                V2_AADHAR_NO.toRequestBody(),
+
+                V3_NAME.toRequestBody(),
+                V3_EMAIL.toRequestBody(),
+                V3_CONTACT_NO.toRequestBody(),
+                V3_AADHAR_NO.toRequestBody(),
+
+                OWNER_NAME.toRequestBody(),
+                OWNER_CONTACT.toRequestBody(),
+                OWNER_EMAIL.toRequestBody(),
+                NAME_OF_ORGANISATION.toRequestBody(),
+                VENDOR_LEGAL_NAME.toRequestBody(),
+                CONTACT_PERSON.toRequestBody(),
+                CONTACT_NUMBER.toRequestBody(),
+                CONTACT_EMAIL.toRequestBody(),
+                POC_NAME.toRequestBody(),
+                POC_NO.toRequestBody(),
+                WHATSAPP_NO.toRequestBody(),
+                ADDRESS.toRequestBody(),
+                country.toRequestBody(),
+                STATE.toRequestBody(),
+                CITY.toRequestBody(),
+                PIN_CODE.toRequestBody(),
+                GSTIN.toRequestBody(),
+                PANCARD_NO.toRequestBody(),
+                BANK_NAME.toRequestBody(),
+                ACCOUNT_NUMBER.toRequestBody(),
+                ACCOUNT_TYPE.toRequestBody(),
+                BANK_BRANCH.toRequestBody(),
+                IFSC_CODE!!.toRequestBody(),
+                MSME_APPLICABLE?.toRequestBody(),
+                E_INVOICE_APPLICABLE?.toRequestBody(),
+                imagelist1,
+                imagelist2,
+                imagelist3,
+
+            )
+            NetworkState.Success(response)
+        } catch (e: Exception) {
+            // Handle errors and exceptions
+            when (e) {
+                is retrofit2.HttpException -> {
+                    val errorMsg = e.response()?.errorBody()?.string() ?: "Unknown error"
+                    when (e.code()) {
+                        400 -> NetworkState.HttpErrors.BadRequest(errorMsg)
+                        401 -> NetworkState.HttpErrors.Unauthorized(errorMsg)
+                        403 -> NetworkState.HttpErrors.ResourceForbidden(errorMsg)
+                        404 -> NetworkState.HttpErrors.ResourceNotFound(errorMsg)
+                        500 -> NetworkState.HttpErrors.InternalServerError(errorMsg)
+                        502 -> NetworkState.HttpErrors.BadGateWay(errorMsg)
+                        503 -> NetworkState.HttpErrors.ServiceUnavailable(errorMsg)
+                        504 -> NetworkState.HttpErrors.ResourceRemoved(errorMsg)
+                        else -> NetworkState.HttpErrors.WrongData(e.response()?.errorBody())
+                    }
+                }
+
+                else -> NetworkState.NetworkException(e.localizedMessage ?: "Unknown network error")
+            }
+
+
+        }
+    }
 
     suspend fun signUpUploads(
         headers: HashMap<String, String>,
@@ -440,7 +681,8 @@ class SignUpUploadsRepository @Inject constructor(private val apiService: ApiSer
         imagelist8: ArrayList<MultipartBody.Part?>,
         imagelist9: ArrayList<MultipartBody.Part?>,
         imagelist10: ArrayList<MultipartBody.Part?>,
-        imagelist11: ArrayList<MultipartBody.Part?>
+        imagelist11: ArrayList<MultipartBody.Part?>,
+        imagelist12: ArrayList<MultipartBody.Part?>,
     ): NetworkState<UploadsDetailResponse> {
 
 
@@ -503,7 +745,8 @@ class SignUpUploadsRepository @Inject constructor(private val apiService: ApiSer
                 imagelist8,
                 imagelist9,
                 imagelist10,
-                imagelist11
+                imagelist11,
+                imagelist12
             )
             NetworkState.Success(response)
         } catch (e: Exception) {

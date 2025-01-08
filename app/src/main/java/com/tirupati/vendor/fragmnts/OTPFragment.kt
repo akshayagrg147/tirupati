@@ -142,7 +142,11 @@ class OTPFragment : Fragment() {
         bindingOTP!!.btnVerify.setOnClickListener {
 
             if (bindingOTP?.otpValueVOFF?.text.toString() == OTPReceived) {
+                if(zoneselect!="1")
                 callVerifiedOTP()
+                else{
+                    callVerifiedCustomerOTP()
+                }
             } else {
                 toast("OTP is not matched!"+bindingOTP?.otpValueVOFF?.text.toString()+"--"+OTPReceived+"--")
             }
@@ -195,6 +199,52 @@ class OTPFragment : Fragment() {
                     else{
                         //gateEntryFragment //vendorList
                         requireActivity().moveToActivity(LandingScreenGateKeeperActivity::class.java)
+                        requireActivity().finish()
+                    }
+                }
+
+                is NetworkState.Error<*> -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
+                    // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+                }
+
+                is NetworkState.NetworkException -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
+                }
+
+                is NetworkState.HttpErrors.InternalServerError -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
+                }
+
+                is NetworkState.HttpErrors.ResourceNotFound -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
+                }
+
+                else -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
+                }
+            }
+
+
+        }
+
+    }
+    fun callVerifiedCustomerOTP() {
+        bindingOTP!!.loginProgressBar.progressBar.shown()
+        lifecycleScope.launch {
+            var response = logInVm.getOTPVerifiedCustomer(bindingOTP?.otpValueVOFF?.text.toString(), Mobile, UserType)
+
+            when (response) {
+
+                is NetworkState.Success -> {
+                    bindingOTP!!.loginProgressBar.progressBar.hidden()
+                    sessionManager.user= response.body
+                    var type= sessionManager.user!!.USER_TYPE
+                    //Gatekeeper
+                    //Vendor
+
+                    if(zoneselect=="1" && type=="Customer"){
+                        requireActivity().moveToActivity(CustomerHomeActivity::class.java)
                         requireActivity().finish()
                     }
                 }

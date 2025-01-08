@@ -177,6 +177,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/text_Box"
+                    android:id="@+id/ownerFullNameET1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:boxCornerRadiusBottomEnd="12dp"
@@ -205,6 +206,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/text_Box"
+                    android:id="@+id/ownerContactET1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:boxCornerRadiusBottomEnd="12dp"
@@ -233,6 +235,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/text_Box"
+                    android:id="@+id/emailOwnerET1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:boxCornerRadiusBottomEnd="12dp"
@@ -257,37 +260,9 @@
                         android:outlineAmbientShadowColor="@color/blue_light" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/text_Box"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:boxCornerRadiusBottomEnd="12dp"
-                    app:boxCornerRadiusBottomStart="12dp"
-                    app:boxCornerRadiusTopEnd="12dp"
-                    app:boxCornerRadiusTopStart="12dp"
-                    app:boxStrokeErrorColor="@color/brightRed"
-                    app:counterMaxLength="50"
-                    app:endIconCheckable="true"
-                    app:errorEnabled="true"
-                    app:hintAnimationEnabled="true"
-                    app:hintTextColor="@color/colorPrimaryVariant">
-
-                    <EditText
-                        android:id="@+id/ETpodName"
-                        style="@style/et_login_signup"
-                        android:hint="POC Name"
-                        android:imeOptions="actionDone"
-                        android:textCursorDrawable="@null"
-                        android:importantForAutofill="noExcludeDescendants"
-                        android:inputType="text"
-                        android:maxLength="50"
-                        android:outlineAmbientShadowColor="@color/blue_light" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/text_Box"
+                    android:id="@+id/ownerPanET1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:boxCornerRadiusBottomEnd="12dp"
@@ -330,6 +305,36 @@
                     app:hintTextColor="@color/colorPrimaryVariant">
 
                     <EditText
+                        android:id="@+id/ETpodName"
+                        style="@style/et_login_signup"
+                        android:hint="POC Name"
+                        android:imeOptions="actionDone"
+                        android:textCursorDrawable="@null"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:inputType="text"
+                        android:maxLength="50"
+                        android:outlineAmbientShadowColor="@color/blue_light" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    app:endIconCheckable="true"
+                    app:errorEnabled="true"
+                    app:hintAnimationEnabled="true"
+                    app:hintTextColor="@color/colorPrimaryVariant">
+
+                    <EditText
                         android:id="@+id/POCWhatsAppET"
                         style="@style/et_login_signup"
                         android:hint="POC Whatsapp Number"
@@ -339,6 +344,88 @@
                         android:inputType="number"
 
                         android:maxLength="10"
+                        android:outlineAmbientShadowColor="@color/blue_light" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    android:id="@+id/POCEmailIdET1"
+                    app:endIconCheckable="true"
+                    app:errorEnabled="true"
+                    app:hintAnimationEnabled="true"
+                    app:hintTextColor="@color/colorPrimaryVariant">
+
+                    <EditText
+                        android:id="@+id/POCEmailIdET"
+                        style="@style/et_login_signup"
+                        android:hint="POC Email Id"
+                        android:textCursorDrawable="@null"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
+                        android:outlineAmbientShadowColor="@color/blue_light" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/lightGrey"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    app:endIconCheckable="true"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:errorEnabled="true"
+                    android:id="@+id/GSTnumberEt1"
+                    app:hintAnimationEnabled="true">
+
+                    <EditText
+                        android:id="@+id/GSTnumberEt"
+                        style="@style/et_login_signup"
+                        android:hint="Organisation's GST Number"
+                        android:textCursorDrawable="@null"
+                        android:inputType="textCapCharacters"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:textAllCaps="true"
+                        android:maxLength="50"
+                        android:outlineAmbientShadowColor="@color/blue_light" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:counterMaxLength="50"
+                    app:endIconCheckable="true"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:errorEnabled="true"
+                    android:id="@+id/PANEt1"
+                    app:hintAnimationEnabled="true">
+
+                    <EditText
+                        android:id="@+id/PANEt"
+                        style="@style/et_login_signup"
+                        android:hint="Organisation's PAN Number"
+                        android:textCursorDrawable="@null"
+                        android:inputType="textCapCharacters"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:textAllCaps="true"
+                        android:maxLength="50"
                         android:outlineAmbientShadowColor="@color/blue_light" />
 
                 </com.google.android.material.textfield.TextInputLayout>

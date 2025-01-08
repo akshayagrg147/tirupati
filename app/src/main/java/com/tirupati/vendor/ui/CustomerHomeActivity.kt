@@ -97,6 +97,8 @@ class CustomerHomeActivity : AppCompatActivity(), ToolbarTitleChangeListener {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.landing_screen)
         binding = ActivityCustomerHomeBinding.inflate(layoutInflater)
+        binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.NAME
+        binding.sideOptions.email.text=sessionManager.user?.RESPONSEDATA?.CONTACT_EMAIL
 
         if (sessionManager.user?.USER_TYPE == "Vendor"){
             binding.sideOptions.headerUsername.text=sessionManager.user?.RESPONSEDATA?.NAME?:"null"
