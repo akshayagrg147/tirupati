@@ -186,7 +186,7 @@
                 android:id="@+id/ifscET"
                 style="@style/et_login_signup"
 
-                android:hint="IFSC"
+                android:hint="IFSC CODE"
                 android:textCursorDrawable="@null"
                 android:importantForAutofill="noExcludeDescendants"
 

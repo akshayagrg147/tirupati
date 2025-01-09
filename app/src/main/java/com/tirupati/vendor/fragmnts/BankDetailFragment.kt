@@ -254,16 +254,17 @@ bindingThirdPage?.msmeApplicable1?.visibility=View.GONE
             status = false
 
         }
-        else if(binding.branchET.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Branch name can't be empty","Error")
-            status = false
-
-        }
         else if(!binding.ifscET.text.toString().isIFSC()){
             showCustomDialog(requireContext(),"IFSC code is incorrect!","Error")
             status = false
 
         }
+        else if(binding.branchET.text.isNullOrEmpty()){
+            showCustomDialog(requireContext(),"Branch name can't be empty","Error")
+            status = false
+
+        }
+
 //        else if(binding.pinET.text.toString().isNullOrEmpty()){
 //            showCustomDialog(requireContext(),"PIN code can't be Empty","Error")
 //            status = false

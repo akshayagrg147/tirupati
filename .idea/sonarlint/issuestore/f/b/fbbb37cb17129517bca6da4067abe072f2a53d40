@@ -1,0 +1,21 @@
+
+kotlin:S6619˜";Remove this useless elvis operation ?:, it always succeeds.(‹˜ú•8øíÅ¡½2J$c52a3278-7e01-46ac-ae0c-ca24b8e5a017
+hkotlin:S125}"Remove this commented out code.(Ë¶ßöùÿÿÿÿ8ùíÅ¡½2J$b5014df7-aa23-4ee5-9879-f78ef4a97349
+dkotlin:S125†"Remove this commented out code.(ãÚÊÃ8á¥Ø¡½2J$77b8ccdb-42f6-49a0-8a89-4d784a62114a
+ikotlin:S125Ü"Remove this commented out code.(ö´óùÿÿÿÿ8ùíÅ¡½2J$bb48112b-f0d2-4271-ba25-3eef35541584
+ikotlin:S125„"Remove this commented out code.(ö´óùÿÿÿÿ8ùíÅ¡½2J$b737e962-c567-4624-81c8-3272cd1044f8
+dkotlin:S125®"Remove this commented out code.(Üèâ8úíÅ¡½2J$886522fb-fed8-4aac-9190-57d7186f3393
+ikotlin:S125Ó"Remove this commented out code.(ïÂÏ‰ùÿÿÿÿ8úíÅ¡½2J$a6eea55d-7cd5-49fb-8887-e4f49c757bc3
+dkotlin:S125Û"Remove this commented out code.(¥©óä8úíÅ¡½2J$60ff3d43-2738-48a0-a43f-b4198a9fec35
+˜kotlin:S117ğ"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ä´›¶üÿÿÿÿ8üíÅ¡½2J$98abede6-7aae-4041-a6df-84a424d34ece
+|kotlin:S11356"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8€îÅ¡½2J$dacdd464-01d2-42ab-b5d2-30c0a521fc67
+|kotlin:S1135A"2Complete the task associated to this TODO comment.(ğï¢öúÿÿÿÿ8€îÅ¡½2J$1d7551df-8d5b-4114-8d19-9f46ad332ea3
+{kotlin:S1481•"0Remove this unused "displayName" local variable.(ş¬¶ûÿÿÿÿ8îÅ¡½2J$da690608-5c0e-4bca-9d7f-6290d6249751
+nkotlin:S1481”")Remove this unused "path" local variable.(æ’³#8îÅ¡½2J$8c2ecaef-a612-4b7e-9b8f-b7d0d3680584
+{kotlin:S1481•"0Remove this unused "displayName" local variable.(ş¬¶ûÿÿÿÿ8îÅ¡½2J$dabdb5f0-0489-48fc-8288-d37f92ced1ee
+nkotlin:S1481”")Remove this unused "path" local variable.(æ’³#8îÅ¡½2J$23052633-5887-47d6-ac2f-bcb4f4a303db
+dkotlin:S1128"Remove this unused import.(äƒ›•ıÿÿÿÿ8ƒîÅ¡½2J$43043aa0-9d8b-4366-97ea-33581dc3cabd
+ikotlin:S1874‹"#Deprecated code should not be used.(‚´Ã¬8„îÅ¡½2J$46c0f0cb-dae9-4cb4-9589-c28de5b3aa49
+ikotlin:S1874õ"#Deprecated code should not be used.(–ø”8ì¥Ø¡½2J$dd9ec665-16f3-4b9f-ae6d-a4d3099a8f15
+nkotlin:S1874…"#Deprecated code should not be used.(ßÀ›æıÿÿÿÿ8ì¥Ø¡½2J$208fb5b8-d298-430d-9dfb-8dc88b7dcbf2
+˜kotlin:S3776Ô"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ß»Š…8í¥Ø¡½2J$16aa1a3f-1db5-4920-8571-5620c3a18223

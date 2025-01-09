@@ -1,13 +1,11 @@
 
-fkotlin:S6615ø" Remove this useless initializer.(²© 8ø¼ß¯Ä2J$84e8d6de-f7d3-47cb-bea1-85837c8aa5f3
-hkotlin:S125z"Remove this commented out code.(åÆ»«ÿÿÿÿÿ8ú¼ß¯Ä2J$c5464814-4462-4c26-af74-1a21be6d5b88
-dkotlin:S125®"Remove this commented out code.(›ŠàÅ8û¼ß¯Ä2J$46b76c54-c126-4b07-b310-f2be38c8240a
-ikotlin:S125Ø"Remove this commented out code.(ö´óùÿÿÿÿ8û¼ß¯Ä2J$78f713bb-9aff-4325-b682-524d1be39efd
-dkotlin:S125â"Remove this commented out code.(Üèâ8û¼ß¯Ä2J$e8389e82-b5e2-46ca-8c9f-8ca2f9c9452d
-dkotlin:S125û"Remove this commented out code.(–±Ù8ü¼ß¯Ä2J$ed4110a7-caf9-42ed-8c9e-f83ba9929ca3
-ikotlin:S125¡"Remove this commented out code.(ïÂÏ‰ùÿÿÿÿ8ü¼ß¯Ä2J$e6d344d4-ff1c-437c-b5b5-103b33d759c2
-dkotlin:S125©"Remove this commented out code.(¥©óä8ü¼ß¯Ä2J$e09f7b6e-f1dd-45ab-9475-e0632f195b1f
-ikotlin:S125Å"Remove this commented out code.(ö´óùÿÿÿÿ8ü¼ß¯Ä2J$92d2da33-f672-47df-a930-cc40d82b9f45
-˜kotlin:S117Ä"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ä´›¶üÿÿÿÿ8ş¼ß¯Ä2J$84e187fe-6edc-4178-95fb-17c0e820d946
-kotlin:S3776ö"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÇîÚÓüÿÿÿÿ8‰½ß¯Ä2J$cc1cd4a9-6d19-40ea-9739-7a42af4182b6
-ˆkotlin:S6511ù"=Merge chained "if" statements into a single "when" statement.(ıÖº¸úÿÿÿÿ8Œ½ß¯Ä2J$672f5cdc-c3ad-49d1-a1c0-809e07f979a2
+fkotlin:S6615ò" Remove this useless initializer.(²© 8ø¼ß¯Ä2J$eb2648fc-8bb1-4ae0-932a-9a0601b4a45f
+hkotlin:S125z"Remove this commented out code.(åÆ»«ÿÿÿÿÿ8ú¼ß¯Ä2J$4e8ce17d-e767-4dff-a068-b42405ca8559
+dkotlin:S125¨"Remove this commented out code.(›ŠàÅ8û¼ß¯Ä2J$c7a41e08-853f-4f74-b50c-e786f1ab902f
+ikotlin:S125Ò"Remove this commented out code.(ö´óùÿÿÿÿ8û¼ß¯Ä2J$5f04e91b-58e8-4153-ac77-4be8978affe1
+dkotlin:S125Ü"Remove this commented out code.(Üèâ8û¼ß¯Ä2J$df1738cf-3d9f-4fb7-9280-aed1011b5193
+dkotlin:S125õ"Remove this commented out code.(–±Ù8ü¼ß¯Ä2J$ba366cd2-6ee6-46ce-a74e-c272cf571322
+ikotlin:S125½"Remove this commented out code.(ö´óùÿÿÿÿ8ü¼ß¯Ä2J$491b7fe8-c567-4464-b485-cb100874a3e6
+˜kotlin:S117¾"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ä´›¶üÿÿÿÿ8ş¼ß¯Ä2J$ac931d23-1881-4178-bd1f-d90abb70fded
+kotlin:S3776ğ"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÇîÚÓüÿÿÿÿ8‰½ß¯Ä2J$32b9ea18-7814-4ec5-b10e-5e968c770029
+ˆkotlin:S6511ó"=Merge chained "if" statements into a single "when" statement.(ıÖº¸úÿÿÿÿ8Œ½ß¯Ä2J$7b73d223-462a-4deb-8467-9f7ed4dda9e9

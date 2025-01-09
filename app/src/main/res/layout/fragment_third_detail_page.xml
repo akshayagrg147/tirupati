@@ -131,7 +131,7 @@
                         android:hint="Account Number"
                         android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
-                        android:inputType="number"
+                        android:inputType="text"
                         android:textAllCaps="true"
                         android:maxLength="50"
                         android:outlineAmbientShadowColor="@color/blue_light" />

@@ -466,7 +466,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload Godown Photo"
+                        android:text="Upload Godown Picture"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -1047,7 +1047,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Additional Document (if any)"
+                        android:text="Upload Additional Document (if any)"
                         android:fontFamily="@font/montserrat_regular"
                         />
 

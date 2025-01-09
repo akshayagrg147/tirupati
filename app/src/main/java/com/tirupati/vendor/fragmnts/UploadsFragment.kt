@@ -1246,10 +1246,10 @@ bindingUploads!!.bankletter.setOnClickListener{
         val dialogButton = customView.findViewById<TextView>(R.id.success)
         val purchaseNo = customView.findViewById<AutoCompleteTextView>(R.id.purchaseNo)
         if(selectItem=="1"){
-            purchaseNo.setText("Thank you for your registration. After review and approval, you will receive confirmation and access to our portal. \n We value your patience and anticipate a fruitful partnership.")
+            purchaseNo.setText("Thank you for your registration. After review and approval, you will receive confirmation and access to our portal.We value your patience and anticipate a fruitful partnership.")
         }
         else{
-            purchaseNo.setText(" Thank you for your registration. After review and approval, you will receive confirmation and access to our quotation portal.\nWe value your patience and anticipate a fruitful partnership.")
+            purchaseNo.setText(" Thank you for your registration. After review and approval, you will receive confirmation and access to our quotation portal.We value your patience and anticipate a fruitful partnership.")
         }
 
 

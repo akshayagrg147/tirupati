@@ -143,12 +143,6 @@ class AddressDetailFragment : Fragment() {
             }
         }
         bindingSecondPage!!.countrySpinner.setText("India")
-        bindingSecondPage!!.statesList.setOnClickListener {
-//        bindingSecondPage!!.spinner.visibility = View.VISIBLE
-//            bindingSecondPage!!.spinner.visibility = View.VISIBLE
-            bindingSecondPage!!.spinner.performClick()
-
-        }
         getStatesfromServer()
         return bindingSecondPage!!.root
     }
@@ -404,35 +398,33 @@ class AddressDetailFragment : Fragment() {
 
     }
 */
-fun getStates(stateName: ArrayList<ResponseDataPo>) {
-    stateName.add(0, ResponseDataPo("Select State", "0","0","0"))
+private fun getStates(stateName: ArrayList<ResponseDataPo>) {
+
     val spinnerAdapter =
         StateAdapter(requireActivity(), R.layout.item_spinner_row, stateName)
     spinnerAdapter.setDropDownViewResource(R.layout.item_spinner_row)
-        bindingSecondPage!!.spinner.adapter = spinnerAdapter
 
-    bindingSecondPage!!.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-        override fun onItemSelected(parent: AdapterView<*>?, view:View?, position: Int, id: Long) {
-            if (position != 0) {
-                // Handle spinner item selection here
-//            val selectedItem = parent?.getItemAtPosition(position).toString()
-                // Update EditText text
-                bindingSecondPage!!.spinner.visibility = View.GONE
-
-                bindingSecondPage!!.statesList.setText(spinnerAdapter.getItem(position).NAME)
-                getCities(spinnerAdapter.getItem(position).STID)
-
-//            bindingSecondPage!!.statesList.setText(spinnerAdapter.getItem(position).NAME)
-//            bindingSecondPage!!.spinner.visibility = View.GONE
-            }
-        }
-
-        override fun onNothingSelected(parent: AdapterView<*>?) {
-            // Do nothing
-        }
+    bindingSecondPage?.statesList?.setAdapter(spinnerAdapter);
+    // Remove setting key listener to null
+    // bindingSecondPage?.statesList?.setKeyListener(null);
+    bindingSecondPage?.statesList?.threshold=1
+    bindingSecondPage?.statesList?.setOnClickListener {
+        (it as AutoCompleteTextView).showDropDown()
     }
 
+    bindingSecondPage?.statesList?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
+        val selectedModel = parent.adapter.getItem(position) as ResponseDataPo
+        // Do whatever you want with the selected model object here
+        bindingSecondPage?.statesList?.setText(selectedModel.NAME)
+
+
+        getCities(spinnerAdapter.getItem(position).STID)
+//            getCities(stateId)
+    }
+
+
 }
+
 
     private fun getStatesfromServer() {
         bindingSecondPage!!.loginProgressBar.progressBar.shown()

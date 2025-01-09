@@ -1,0 +1,17 @@
+
+kkotlin:S6615ü" Remove this useless initializer.(ö¹öüÿÿÿÿ8í…°ÀÀ2J$6f9aa3f3-117b-4b10-85e0-8c9e6528f975
+kkotlin:S6615¤" Remove this useless initializer.(ö¹öüÿÿÿÿ8í…°ÀÀ2J$278f21fa-74f9-4af9-8bfe-d5c8f9f64ade
+dkotlin:S125›"Remove this commented out code.(Ìß¡8î…°ÀÀ2J$48c3d707-b9a3-4301-84d6-eb6bb6002c33
+skotlin:S108£")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8ö…°ÀÀ2J$2cc64b8d-6054-4337-975f-06c9533d35d9
+|kotlin:S1135G"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8ø…°ÀÀ2J$375ee5c2-b73e-4caf-a86f-781daf1a95cd
+vkotlin:S1481û"0Remove this unused "bitmapImage" local variable.(ıĞç8ù…°ÀÀ2J$090a73ef-4577-4c6a-9a59-b21af271db5c
+mkotlin:S1481Â"'Remove this unused "cw" local variable.(Éó‹Â8ù…°ÀÀ2J$a95f7662-e3f1-447c-8d1d-331d63d6ab41
+ kotlin:S1192«"UDefine a constant instead of duplicating this literal "something went wrong" 4 times.(ªÅ–üùÿÿÿÿ8ÅşïÁÀ2J$a9922ceb-e6a8-44de-9235-52bda3c71587
+“kotlin:S1871®"MThis branch's code block is the same as the block for the branch on line 297.(ñ¿ÿÄ8ÅşïÁÀ2J$4f534728-1ad6-47f9-82ce-66aa4e793525
+“kotlin:S1871³"MThis branch's code block is the same as the block for the branch on line 297.(ßâƒ‚8ÅşïÁÀ2J$e2c96451-6283-477e-8063-20ebee884fa6
+’kotlin:S1871¸"MThis branch's code block is the same as the block for the branch on line 297.(Ä†•8ÆşïÁÀ2J$72f8841d-e58f-4022-8f81-339e092bee6b
+ikotlin:S1874‰"#Deprecated code should not be used.(òô’Ò8ü…°ÀÀ2J$94e3a864-487f-4ceb-896f-c99b0a0a5399
+mkotlin:S1874f"#Deprecated code should not be used.(…ƒÚñúÿÿÿÿ8ü…°ÀÀ2J$763b7c14-4814-42f1-b451-f6de520dc642
+—kotlin:S6516ù"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8ÿ…°ÀÀ2J$70406fcd-0907-453d-9ea1-6ad8c60a7a5f
+tkotlin:S1066Æ".Merge this "if" statement with the nested one.(¥Ä¬á8ÿ…°ÀÀ2J$9763b852-6a0f-48c8-95cd-409280cf4613
+ˆkotlin:S6511æ"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8ÿ…°ÀÀ2J$b6a95590-3786-4f24-b771-a64600da0fc1

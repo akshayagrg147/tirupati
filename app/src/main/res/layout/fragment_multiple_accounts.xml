@@ -301,36 +301,6 @@
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
                         </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/firstSEmail"
-                            style="@style/text_Box"
-                            android:layout_width="match_parent"
-                            android:textColorHint="@color/black"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            app:boxCornerRadiusBottomEnd="12dp"
-                            app:boxCornerRadiusBottomStart="12dp"
-                            app:boxCornerRadiusTopEnd="12dp"
-                            app:boxCornerRadiusTopStart="12dp"
-                            app:boxStrokeErrorColor="@color/brightRed"
-                            app:counterMaxLength="50"
-                            app:endIconCheckable="true"
-                            app:errorEnabled="true"
-                            app:hintAnimationEnabled="true">
-
-                            <EditText
-                                android:id="@+id/inputSecondVendorEmail"
-                                style="@style/et_login_signup"
-                                android:hint="Owner's Email"
-                                android:importantForAutofill="noExcludeDescendants"
-                                android:inputType="text"
-                                android:textCursorDrawable="@null"
-                                android:maxLength="50"
-                                android:outlineAmbientShadowColor="@color/blue_light" />
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/secondVnumber"
                             style="@style/text_Box"
@@ -360,6 +330,37 @@
 
                         </com.google.android.material.textfield.TextInputLayout>
 
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/firstSEmail"
+                            style="@style/text_Box"
+                            android:layout_width="match_parent"
+                            android:textColorHint="@color/black"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeErrorColor="@color/brightRed"
+                            app:counterMaxLength="50"
+                            app:endIconCheckable="true"
+                            app:errorEnabled="true"
+                            app:hintAnimationEnabled="true">
+
+                            <EditText
+                                android:id="@+id/inputSecondVendorEmail"
+                                style="@style/et_login_signup"
+                                android:hint="Owner's Email Id"
+                                android:importantForAutofill="noExcludeDescendants"
+                                android:inputType="text"
+                                android:textCursorDrawable="@null"
+                                android:maxLength="50"
+                                android:outlineAmbientShadowColor="@color/blue_light" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/secondAdhaar"
                             style="@style/text_Box"
@@ -380,7 +381,7 @@
                             <EditText
                                 android:id="@+id/secondVAdhar"
                                 style="@style/et_login_signup"
-                                android:hint="Owner's Pan Card"
+                                android:hint="Owner's Pan Number"
                                 android:textCursorDrawable="@null"
                                 android:inputType="textCapCharacters"
 
@@ -453,37 +454,6 @@
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
                         </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-
-                            android:id="@+id/thirdVEmail"
-                            style="@style/text_Box"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            app:boxCornerRadiusBottomEnd="12dp"
-                            android:textColorHint="@color/black"
-                            app:boxCornerRadiusBottomStart="12dp"
-                            app:boxCornerRadiusTopEnd="12dp"
-                            app:boxCornerRadiusTopStart="12dp"
-                            app:boxStrokeErrorColor="@color/brightRed"
-                            app:counterMaxLength="50"
-                            app:endIconCheckable="true"
-                            app:errorEnabled="true"
-                            app:hintAnimationEnabled="true">
-
-                            <EditText
-                                android:id="@+id/inputThirdVendorEmail"
-                                style="@style/et_login_signup"
-                                android:hint="Owner's Email"
-                                android:textCursorDrawable="@null"
-                                android:importantForAutofill="noExcludeDescendants"
-                                android:inputType="text"
-                                android:maxLength="50"
-                                android:outlineAmbientShadowColor="@color/blue_light" />
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/thirdVname"
                             style="@style/text_Box"
@@ -513,6 +483,38 @@
 
                         </com.google.android.material.textfield.TextInputLayout>
 
+
+                        <com.google.android.material.textfield.TextInputLayout
+
+                            android:id="@+id/thirdVEmail"
+                            style="@style/text_Box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            android:textColorHint="@color/black"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeErrorColor="@color/brightRed"
+                            app:counterMaxLength="50"
+                            app:endIconCheckable="true"
+                            app:errorEnabled="true"
+                            app:hintAnimationEnabled="true">
+
+                            <EditText
+                                android:id="@+id/inputThirdVendorEmail"
+                                style="@style/et_login_signup"
+                                android:hint="Owner's Email Id"
+                                android:textCursorDrawable="@null"
+                                android:importantForAutofill="noExcludeDescendants"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:outlineAmbientShadowColor="@color/blue_light" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/thirdUserAdhar"
                             style="@style/text_Box"
@@ -533,7 +535,7 @@
                             <EditText
                                 android:id="@+id/thirdVAdhar"
                                 style="@style/et_login_signup"
-                                android:hint="Owner's Pan Card"
+                                android:hint="Owner's Pan Number"
                                 android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="textCapCharacters"
@@ -607,37 +609,6 @@
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
                         </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-
-                            android:id="@+id/fourthVEmail"
-                            style="@style/text_Box"
-                            android:layout_width="match_parent"
-                            android:textColorHint="@color/black"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            app:boxCornerRadiusBottomEnd="12dp"
-                            app:boxCornerRadiusBottomStart="12dp"
-                            app:boxCornerRadiusTopEnd="12dp"
-                            app:boxCornerRadiusTopStart="12dp"
-                            app:boxStrokeErrorColor="@color/brightRed"
-                            app:counterMaxLength="50"
-                            app:endIconCheckable="true"
-                            app:errorEnabled="true"
-                            app:hintAnimationEnabled="true">
-
-                            <EditText
-                                android:id="@+id/inputfourthVendorEmail"
-                                style="@style/et_login_signup"
-                                android:hint="Owner's Email"
-                                android:textCursorDrawable="@null"
-                                android:importantForAutofill="noExcludeDescendants"
-                                android:inputType="text"
-                                android:maxLength="50"
-                                android:outlineAmbientShadowColor="@color/blue_light" />
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/fourthVname"
                             style="@style/text_Box"
@@ -668,6 +639,38 @@
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
+
+                            android:id="@+id/fourthVEmail"
+                            style="@style/text_Box"
+                            android:layout_width="match_parent"
+                            android:textColorHint="@color/black"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeErrorColor="@color/brightRed"
+                            app:counterMaxLength="50"
+                            app:endIconCheckable="true"
+                            app:errorEnabled="true"
+                            app:hintAnimationEnabled="true">
+
+                            <EditText
+                                android:id="@+id/inputfourthVendorEmail"
+                                style="@style/et_login_signup"
+                                android:hint="Owner's Email Id"
+                                android:textCursorDrawable="@null"
+                                android:importantForAutofill="noExcludeDescendants"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:outlineAmbientShadowColor="@color/blue_light" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                        <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/fourthUserAdhar"
                             style="@style/text_Box"
                             android:layout_width="match_parent"
@@ -687,7 +690,7 @@
                             <EditText
                                 android:id="@+id/fourthVAdhar"
                                 style="@style/et_login_signup"
-                                android:hint="Owner's Pan Card"
+                                android:hint="Owner's Pan Number"
                                 android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="textCapCharacters"

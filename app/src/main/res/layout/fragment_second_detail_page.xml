@@ -151,6 +151,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
+
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/text_Box"
                     android:layout_width="match_parent"
@@ -166,7 +167,7 @@
                     app:hintAnimationEnabled="true"
                     app:hintTextColor="@color/colorPrimaryVariant">
 
-                   <!-- <AutoCompleteTextView
+                    <AutoCompleteTextView
                         android:id="@+id/statesList"
                         style="@style/et_login_signup"
                         android:layout_width="match_parent"
@@ -176,24 +177,7 @@
                         android:importantForAutofill="noExcludeDescendants"
                         android:fontFamily="@font/montserrat_regular"
                         android:paddingStart="@dimen/_15sdp" />
--->
-
-                    <EditText
-                        android:id="@+id/statesList"
-                        style="@style/et_login_signup"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textCursorDrawable="@null"
-                        android:hint="State"
-                        android:focusable="false" />
-
-                    <Spinner
-                        android:id="@+id/spinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/transparent"
-                         />
-
+                    <!--android:layout_marginLeft="@dimen/_10sdp"-->
                 </com.google.android.material.textfield.TextInputLayout>
 
 

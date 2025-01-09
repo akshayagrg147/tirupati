@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+
+
+        <!-- Order Details Section -->
+        <TextView
+            android:id="@+id/order_details_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order Details"
+            android:textStyle="bold"
+            android:paddingVertical="15dp"
+
+            android:textColor="#000000" />
+
+        <!-- Sales Order Number -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/grey"
+
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_sales_order_number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Sales Order Number"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/value_sales_order_number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="SO/00005/24-25"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Sales Order Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp"
+          >
+            <TextView
+                android:id="@+id/label_sales_order_date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Sales Order Date"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/value_sales_order_date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="2024-10-23"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Customer PO Number -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_customer_po_number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Customer PO Number"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/value_customer_po_number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="pono009"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Booking Type -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_booking_type"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Booking Type"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/value_booking_type"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="BROKER"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+
+        <!-- Name of Broker -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_name_of_broker"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Name of Broker"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/value_name_of_broker"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="SHAHIL NENTA"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Billing Address -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_billing_address"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Billing Address"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_billing_address_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Shipping Address -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_shipping_address"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Shipping Address"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_shipping_address_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- State -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_state"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="State"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_state_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Payment Terms -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_payment_terms"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Payment Terms"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_payment_terms_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#000000" />
+        </LinearLayout>
+        <!-- Payment Credit Days -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_payment_credit_Days"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Payment Credit Days"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_payment_credit_Days_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#000000" />
+        </LinearLayout>
+        <!-- Offer Validity -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_offer_validity"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Offer Validity"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_offer_validity_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Item Details Section -->
+        <TextView
+            android:id="@+id/item_details_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Item Details"
+            android:paddingVertical="15dp"
+            android:textStyle="bold"
+
+            android:textColor="#000000" />
+
+        <!-- Item Name -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_item_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Item Name"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/value_item_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Copper Rod 8 mm"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <!-- UOM -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_uom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="UOM"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_uom_VALUE"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Copper Rod 8 mm"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+
+        <!-- Quantity -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_quantity"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/value_quantity"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3000.000"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Rate -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_rate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Rate/kg"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/value_rate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="860.00000"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Taxable Amount -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_taxable_amount"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Taxable Amount"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/value_taxable_amount"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="2580000.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <!-- Tax -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_tax"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Tax"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_tax_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3044400.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <!-- Total Amount -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_total_amoun1t"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Total Amount"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/value_total_amount"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3044400.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Batch Details"
+            android:paddingVertical="15dp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <!-- Total bach -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_batch_number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Batch Number"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_batch_number_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3044400.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <!-- coil number -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/coil_number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Coil Number"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/coil_number_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3044400.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <!-- Gross weight -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_gross_weight"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Gross weight"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_gross_weight_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3044400.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <!-- Pallet weight -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_pallet_weight"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Pallet Weight"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_pallet_weight_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3044400.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <!-- Net weight -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_net_weight"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Net weight"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_net_weight_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3044400.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <!-- Quality Document -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="2"
+            >
+            <TextView
+                android:id="@+id/quantity_doucument"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Quality Document"
+                android:paddingVertical="15dp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+            <ImageView
+                android:id="@+id/quantity_doucument_image"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_10sdp"
+
+
+                android:layout_height="wrap_content"
+                android:src="@drawable/pdf" />
+        </LinearLayout>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Transport Details Sequence"
+            android:textStyle="bold"
+            android:paddingVertical="15dp"
+            android:textColor="#000000" />
+
+        <!-- vechile Number -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_vechile_number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Vechile Number"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_vechile_number_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3044400.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Driver's name -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/driver_name_label"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Driver Name"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/driver_name_label_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3044400.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Driver Contact number -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@color/grey"
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_contact_number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Drivers's contact number"
+
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/label_contact_number_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3044400.00"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- E-WAY Bill -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="2"
+           >
+            <TextView
+                android:id="@+id/e_way_bill"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="E-WAY Bill"
+                android:textStyle="bold"
+                android:paddingVertical="15dp"
+                android:textColor="#000000" />
+            <ImageView
+                android:id="@+id/img_ewaybill"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:src="@drawable/pdf" />
+        </LinearLayout>
+
+        <!-- Sales Invoice -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="2"
+            >
+            <TextView
+                android:id="@+id/sales_invoice"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Sales Invoice"
+                android:textStyle="bold"
+                android:paddingVertical="15dp"
+                android:textColor="#000000" />
+            <ImageView
+                android:id="@+id/img_sales_invoic"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:src="@drawable/pdf" />
+        </LinearLayout>
+
+
+        <!-- Platform Invoice -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="2"
+          >
+            <TextView
+                android:id="@+id/platform_invoice"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Platform Invoice"
+                android:textStyle="bold"
+                android:paddingVertical="15dp"
+                android:textColor="#000000" />
+            <ImageView
+                android:id="@+id/img_platform_invoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/pdf" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+
+            android:paddingVertical="15dp">
+            <TextView
+                android:id="@+id/label_report_issue"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Did you face any kind of issue with the order?"
+
+                android:textColor="#000000" />
+            <Switch
+                android:id="@+id/contact_number_toggle"
+
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:checked="false" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
