@@ -407,7 +407,7 @@ class VendorQotationFragment : Fragment() {
                 is NetworkState.Success -> {
                     binding!!.loginProgressBar.progressBar.hidden()
                     if(response.body.STATUS){
-                        Toast.makeText(context,"updated",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context,response.body.MESSAGE,Toast.LENGTH_SHORT).show()
                         Handler(Looper.getMainLooper()).postDelayed({
                             findNavController().popBackStack()
                         }, 1000)
@@ -487,7 +487,7 @@ class VendorQotationFragment : Fragment() {
                         val selectedModel = parent.adapter.getItem(position) as UOMData
                         if (selectedModel != null) {
                             uomDetail=selectedModel.UOMID
-                            binding?.uom?.setText(selectedModel.UOMCODE)
+                            binding?.uom?.setText(selectedModel.UOMCODE,false)
                         }
                     }
 
@@ -611,7 +611,7 @@ class VendorQotationFragment : Fragment() {
         binding?.deliveryTerms?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedModel = parent.adapter.getItem(position) as String
             // Do whatever you want with the selected model object here
-            binding?.deliveryTerms?.setText(selectedModel)
+            binding?.deliveryTerms?.setText(selectedModel,false)
         }
 
 
@@ -693,7 +693,7 @@ class VendorQotationFragment : Fragment() {
                             itemDetail = selectedItem.NAME
                             clicked=true
                             itemId = selectedItem.ITEMID
-                            binding?.itemDetail?.setText(itemDetail)
+                            binding?.itemDetail?.setText(itemDetail,false)
                             binding?.hsnSacCode?.setText(selectedItem.HSNDESCRIPTION)
                         }
                     }

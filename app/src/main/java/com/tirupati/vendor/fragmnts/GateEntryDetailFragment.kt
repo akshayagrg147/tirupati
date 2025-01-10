@@ -139,7 +139,7 @@ class GateEntryDetailFragment : Fragment() {
         bindingGateEntryFragment?.purchaseNo?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedModel = parent.adapter.getItem(position) as POIDRESPONSEDATA
             // Do whatever you want with the selected model object here
-            bindingGateEntryFragment?.purchaseNo?.setText(selectedModel.PO_NO)
+            bindingGateEntryFragment?.purchaseNo?.setText(selectedModel.PO_NO,false)
 
         }
 

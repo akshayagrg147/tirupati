@@ -560,7 +560,7 @@ class DispatchFragment : Fragment() {
 
                                 is NetworkState.Success -> {
                                     binding!!.loginProgressBar.progressBar.hidden()
-                                    Toast.makeText(context, "Dispatched", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(context, response.body.MESSAGE, Toast.LENGTH_SHORT).show()
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         findNavController().popBackStack()
                                     }, 1000)

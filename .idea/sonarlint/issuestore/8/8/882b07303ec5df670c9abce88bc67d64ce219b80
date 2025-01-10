@@ -1,11 +1,11 @@
 
-fkotlin:S6615ò" Remove this useless initializer.(²© 8ø¼ß¯Ä2J$eb2648fc-8bb1-4ae0-932a-9a0601b4a45f
-hkotlin:S125z"Remove this commented out code.(åÆ»«ÿÿÿÿÿ8ú¼ß¯Ä2J$4e8ce17d-e767-4dff-a068-b42405ca8559
-dkotlin:S125¨"Remove this commented out code.(›ŠàÅ8û¼ß¯Ä2J$c7a41e08-853f-4f74-b50c-e786f1ab902f
-ikotlin:S125Ò"Remove this commented out code.(ö´óùÿÿÿÿ8û¼ß¯Ä2J$5f04e91b-58e8-4153-ac77-4be8978affe1
-dkotlin:S125Ü"Remove this commented out code.(Üèâ8û¼ß¯Ä2J$df1738cf-3d9f-4fb7-9280-aed1011b5193
-dkotlin:S125õ"Remove this commented out code.(–±Ù8ü¼ß¯Ä2J$ba366cd2-6ee6-46ce-a74e-c272cf571322
-ikotlin:S125½"Remove this commented out code.(ö´óùÿÿÿÿ8ü¼ß¯Ä2J$491b7fe8-c567-4464-b485-cb100874a3e6
-˜kotlin:S117¾"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ä´›¶üÿÿÿÿ8ş¼ß¯Ä2J$ac931d23-1881-4178-bd1f-d90abb70fded
-kotlin:S3776ğ"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÇîÚÓüÿÿÿÿ8‰½ß¯Ä2J$32b9ea18-7814-4ec5-b10e-5e968c770029
-ˆkotlin:S6511ó"=Merge chained "if" statements into a single "when" statement.(ıÖº¸úÿÿÿÿ8Œ½ß¯Ä2J$7b73d223-462a-4deb-8467-9f7ed4dda9e9
+fkotlin:S6615ò" Remove this useless initializer.(²© 8ø¼ß¯Ä2J$eb43489c-34d8-44d8-840d-b115370be2e3
+hkotlin:S125z"Remove this commented out code.(åÆ»«ÿÿÿÿÿ8ú¼ß¯Ä2J$3878c0f9-09b4-49bf-b1c0-f0af3348cbd2
+dkotlin:S125¨"Remove this commented out code.(›ŠàÅ8û¼ß¯Ä2J$a3c155ec-25e5-4154-b02f-5867b5f6fbbd
+ikotlin:S125Ò"Remove this commented out code.(ö´óùÿÿÿÿ8û¼ß¯Ä2J$aef6d784-c59b-40bd-814c-cc34738e3c15
+dkotlin:S125İ"Remove this commented out code.(Üèâ8’¢ÕÄ2J$7ee1cd37-3802-4b0f-97e5-3d1a22e475bb
+dkotlin:S125ö"Remove this commented out code.(–±Ù8ü¼ß¯Ä2J$307e5209-2f13-4a98-b522-cce7d262160b
+ikotlin:S125¾"Remove this commented out code.(ö´óùÿÿÿÿ8ü¼ß¯Ä2J$2513f8d3-15e4-4969-8aee-0d3201b19e80
+˜kotlin:S117¾"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ä´›¶üÿÿÿÿ8ş¼ß¯Ä2J$9fe5b484-3794-4deb-8cd8-c77a14166993
+kotlin:S3776ğ"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÇîÚÓüÿÿÿÿ8‰½ß¯Ä2J$21e925c0-30f2-4812-b185-f504d00daf87
+ˆkotlin:S6511ó"=Merge chained "if" statements into a single "when" statement.(ıÖº¸úÿÿÿÿ8Œ½ß¯Ä2J$a34bb93b-f577-44e5-b66d-d9c1fb1e6b5e

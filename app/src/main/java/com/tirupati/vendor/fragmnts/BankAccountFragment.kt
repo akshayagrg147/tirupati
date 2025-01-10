@@ -225,7 +225,7 @@ class BankAccountFragment : Fragment() {
         bindingThirdPage?.accountTypes?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedModel = parent.adapter.getItem(position) as String
             // Do whatever you want with the selected model object here
-            bindingThirdPage?.accountTypes?.setText(selectedModel)
+            bindingThirdPage?.accountTypes?.setText(selectedModel,false)
         }
     }
     private fun validateUI(binding: FragmentBankAccountBinding): Boolean {

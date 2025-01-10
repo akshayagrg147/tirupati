@@ -1050,7 +1050,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                     org_name,legalName,ownerName,ownerContact,ownerEmail,podName,ownerPan,podWhatsapp,
                     addressName,"1",state,city,pinCode,orgGst,orgPAN,
                     orgBank,accountNumber,accountType,branchName,ifsc,msme,einvoice,
-                    first!!,second!!,third!!,fourth!!,fifth!!,sixth!!,seventh!!,eighth!!,ninth!!,tenth?: arrayListOf(),elevnth?: arrayListOf(),
+                    first!!,second!!,third!!,fourth?: arrayListOf(),fifth!!,sixth!!,seventh!!,eighth!!,ninth!!,tenth?: arrayListOf(),elevnth?: arrayListOf(),
                     additionalDoc?: arrayListOf()
 
                 )
@@ -1275,23 +1275,19 @@ bindingUploads!!.bankletter.setOnClickListener{
             showCustomDialog(requireContext(), "Please upload GST certificate","Error")
             status = false
         }
-        else if (pdf2.isEmpty() && selectItem!="1" ) {
-            showCustomDialog(requireContext(), "Please upload Owner's Pancard", "Error")
-                status = false
 
-        }
         else if (pdf3.isEmpty() && selectItem!="1") {
 
                 showCustomDialog(requireContext(), "Please upload Electricity bill", "Error")
                 status = false
 
         }
-        else if (pdf4.isEmpty() && selectItem!="1") {
-
-                showCustomDialog(requireContext(), "Please upload Rent dead", "Error")
-                status = false
-
-        }
+//        else if (pdf4.isEmpty() && selectItem!="1") {
+//
+//                showCustomDialog(requireContext(), "Please upload Rent dead", "Error")
+//                status = false
+//
+//        }
         else if (images5.isEmpty() && selectItem!="1") {
 
                 showCustomDialog(requireContext(), "Please upload Real time godown", "Error")
@@ -1303,6 +1299,11 @@ bindingUploads!!.bankletter.setOnClickListener{
 
                 showCustomDialog(requireContext(), "Please upload cancelled cheque", "Error")
                 status = false
+
+        }
+        else if (pdf2.isEmpty() && selectItem!="1" ) {
+            showCustomDialog(requireContext(), "Please upload Owner's Pancard", "Error")
+            status = false
 
         }
         else if (pdf7.isEmpty()) {
@@ -1337,7 +1338,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                         if (pdf11.isEmpty()) {
                             showCustomDialog(
                                 requireContext(),
-                                "Please upload E-Invoice Applicable",
+                                "Please upload Indeminity Bond",
                                 "Error"
                             )
                             status = false
@@ -1352,17 +1353,15 @@ bindingUploads!!.bankletter.setOnClickListener{
 
             }
         }
-        else if(einvoice=="1" && selectItem!="1"){
-
-                if (pdf11.isEmpty() && selectItem!="1") {
-                    showCustomDialog(
+        else if(einvoice=="1" && selectItem!="1" && pdf11.isEmpty()){
+            showCustomDialog(
                         requireContext(),
                         "Please upload E-Invoice Applicable",
                         "Error"
                     )
                     status = false
 
-            }
+
 
         }
         else {

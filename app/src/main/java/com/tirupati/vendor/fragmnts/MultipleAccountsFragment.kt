@@ -208,63 +208,112 @@ class MultipleAccountsFragment : Fragment() {
     private fun validateUI(bindingUploads: FragmentMultipleAccountsBinding): Boolean {
         if (bindingUploads.secondAccountll.visibility == View.VISIBLE) {
             if (!isValidName(bindingUploads.EtVSecondName.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Owner Full Name", Toast.LENGTH_SHORT).show()
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Owner Full Name",
+                    "Error"
+                )
                 return false
             }
             if (!isValidContact(bindingUploads.secondVContact.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Owner Contact No", Toast.LENGTH_SHORT).show()
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Owner Contact No",
+                    "Error"
+                )
                 return false
             }
-            if (!isValidEmail(bindingUploads.inputSecondVendorEmail.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Email Id", Toast.LENGTH_SHORT).show()
+            if (bindingUploads.inputSecondVendorEmail.text.toString().isNotEmpty() && !isValidEmail(bindingUploads.inputSecondVendorEmail.text.toString())) {
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Email Id",
+                    "Error"
+                )
                 return false
             }
             if (!isValidPan(bindingUploads.secondVAdhar.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Pan card", Toast.LENGTH_SHORT).show()
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Pan card",
+                    "Error"
+                )
                 return false
             }
         }
 
         if (bindingUploads.thirdAccountll.visibility == View.VISIBLE) {
             if (!isValidName(bindingUploads.EtVThirdName.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Owner Full Name", Toast.LENGTH_SHORT).show()
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Owner Full Name",
+                    "Error"
+                )
                 return false
             }
             if (!isValidContact(bindingUploads.thirdVContact.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Owner Contact No", Toast.LENGTH_SHORT).show()
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Owner Contact No",
+                    "Error"
+                )
                 return false
             }
-            if (!isValidEmail(bindingUploads.inputThirdVendorEmail.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Email Id", Toast.LENGTH_SHORT).show()
+            if (bindingUploads.inputThirdVendorEmail.text.toString().isNotEmpty() && !isValidEmail(bindingUploads.inputThirdVendorEmail.text.toString())) {
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Email Id",
+                    "Error"
+                )
                 return false
             }
             if (!isValidPan(bindingUploads.thirdVAdhar.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Pan card", Toast.LENGTH_SHORT).show()
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Pan card",
+                    "Error"
+                )
                 return false
             }
         }
 
         if (bindingUploads.fourthAccountll.visibility == View.VISIBLE) {
             if (!isValidName(bindingUploads.EtVFourthName.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Owner Full Name", Toast.LENGTH_SHORT).show()
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Owner Full Name",
+                    "Error"
+                )
                 return false
             }
             if (!isValidContact(bindingUploads.fourthVContact.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Owner Contact No", Toast.LENGTH_SHORT).show()
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Owner Contact No",
+                    "Error"
+                )
                 return false
             }
-            if (!isValidEmail(bindingUploads.inputfourthVendorEmail.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Email Id", Toast.LENGTH_SHORT).show()
+            if (bindingUploads.inputfourthVendorEmail.text.toString().isNotEmpty() && !isValidEmail(bindingUploads.inputfourthVendorEmail.text.toString())) {
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Email Id",
+                    "Error"
+                )
                 return false
             }
             if (!isValidPan(bindingUploads.fourthVAdhar.text.toString())) {
-                Toast.makeText(bindingUploads.root.context, "Invalid Pan card", Toast.LENGTH_SHORT).show()
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Pan card",
+                    "Error"
+                )
                 return false
             }
         }
 
         return true
     }
+
 
     fun isValidName(name: String): Boolean {
         return name.isNotEmpty()

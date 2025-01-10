@@ -304,7 +304,7 @@ bindingThirdPage?.msmeApplicable1?.visibility=View.GONE
         bindingThirdPage?.accountTypes?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedModel = parent.adapter.getItem(position) as String
             // Do whatever you want with the selected model object here
-            bindingThirdPage?.accountTypes?.setText(selectedModel)
+            bindingThirdPage?.accountTypes?.setText(selectedModel,false)
         }
     }
 

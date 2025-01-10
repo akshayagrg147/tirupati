@@ -196,12 +196,12 @@ class BusinessDetailFragment : Fragment() {
 
 
         }
-        else if(binding.emailOwnerET.text.isNullOrEmpty() && selectItem!="1" ){
-            showCustomDialog(requireContext(), "Owner's Email ID is empty", "Error")
-            status = false
-
-
-        }
+//        else if(binding.emailOwnerET.text.isNullOrEmpty() && selectItem!="1" ){
+//            showCustomDialog(requireContext(), "Owner's Email ID is empty", "Error")
+//            status = false
+//
+//
+//        }
         else if(binding.emailOwnerET.text.length>0 && !binding.emailOwnerET.text.toString().isValidEmail() ){
             showCustomDialog(requireContext(), "Owner's Email ID is incorrect", "Error")
             status = false
@@ -224,24 +224,24 @@ class BusinessDetailFragment : Fragment() {
         }
 
 
-        else if(binding.ETpodName.text.isNullOrEmpty() ){
+//        else if(binding.ETpodName.text.isNullOrEmpty() ){
+//
+//            showCustomDialog(requireContext(), "POC Name should not empty", "Error")
+//            status = false
+//
+//
+//        }
 
-            showCustomDialog(requireContext(), "POC Name should not empty", "Error")
-            status = false
+//        else if(binding.POCWhatsAppET.text.isNullOrEmpty()){
+//
+//            showCustomDialog(requireContext(), "POC Whatsapp Number is empty", "Error")
+//            status = false
+//
+//
+//        }
 
 
-        }
-
-        else if(binding.POCWhatsAppET.text.isNullOrEmpty()){
-
-            showCustomDialog(requireContext(), "POC Whatsapp Number is empty", "Error")
-            status = false
-
-
-        }
-
-
-           else if(!binding.POCWhatsAppET.text.toString().isValidPhoneNumber()) {
+           else if(binding.POCWhatsAppET.text.toString().isNotEmpty() && !binding.POCWhatsAppET.text.toString().isValidPhoneNumber()) {
             showCustomDialog(requireContext(), "POC Whatsapp Number is incorrect", "Error")
             status = false
 

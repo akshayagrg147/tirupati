@@ -139,7 +139,7 @@ class ReportIssueFragment : Fragment() {
         binding?.batchNo?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedModel = parent.adapter.getItem(position) as BatchDetail
             // Do whatever you want with the selected model object here
-            binding?.batchNo?.setText(selectedModel.batchCode)
+            binding?.batchNo?.setText(selectedModel.batchCode,false)
 
         }
 
@@ -158,7 +158,7 @@ class ReportIssueFragment : Fragment() {
         binding?.coilNumber?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedModel = parent.adapter.getItem(position) as BatchDetail
             // Do whatever you want with the selected model object here
-            binding?.coilNumber?.setText(selectedModel.coilNo)
+            binding?.coilNumber?.setText(selectedModel.coilNo,false)
             binding?.grossWeight?.setText(selectedModel.grossWeight)
             binding?.parallelWeight?.setText(selectedModel.palletWeight)
             binding?.netWeight?.setText(selectedModel.netWeight)
@@ -188,7 +188,7 @@ class ReportIssueFragment : Fragment() {
         binding?.issueType?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedString = parent.adapter.getItem(position) as String
             // Set the selected value in the text field
-            binding?.issueType?.setText(selectedString)
+            binding?.issueType?.setText(selectedString,false)
         }
         binding?.submitButton?.setOnClickListener{
             onSubmitClicked()

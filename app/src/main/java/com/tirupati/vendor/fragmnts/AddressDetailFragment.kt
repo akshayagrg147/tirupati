@@ -323,6 +323,7 @@ class AddressDetailFragment : Fragment() {
         }
         return status
     }
+
     private fun cityAdapter(cityList: ArrayList<CityList>) {
 
         val spinnerAdapter =
@@ -340,7 +341,7 @@ class AddressDetailFragment : Fragment() {
         bindingSecondPage?.citiesList?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedModel = parent.adapter.getItem(position) as CityList
             // Do whatever you want with the selected model object here
-            bindingSecondPage?.citiesList?.setText(selectedModel.NAME)
+            bindingSecondPage?.citiesList?.setText(selectedModel.NAME,false)
             cityCode= selectedModel.CITYID
 //            getCities(stateId)
         }
@@ -415,7 +416,7 @@ private fun getStates(stateName: ArrayList<ResponseDataPo>) {
     bindingSecondPage?.statesList?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
         val selectedModel = parent.adapter.getItem(position) as ResponseDataPo
         // Do whatever you want with the selected model object here
-        bindingSecondPage?.statesList?.setText(selectedModel.NAME)
+        bindingSecondPage?.statesList?.setText(selectedModel.NAME,false)
 
 
         getCities(spinnerAdapter.getItem(position).STID)

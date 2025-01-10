@@ -851,7 +851,7 @@ class BuisnessDetailCustomerFragment : Fragment() {
         bindingFirstPage?.citiesList?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedModel = parent.adapter.getItem(position) as CityList
             // Do whatever you want with the selected model object here
-            bindingFirstPage?.citiesList?.setText(selectedModel.NAME)
+            bindingFirstPage?.citiesList?.setText(selectedModel.NAME,false)
             cityCode= selectedModel.CITYID
 //            getCities(stateId)
         }

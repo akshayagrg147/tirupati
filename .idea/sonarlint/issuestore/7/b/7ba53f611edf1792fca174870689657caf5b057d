@@ -1,27 +1,27 @@
 
-Ukotlin:S1172À"0Remove this unused function parameter "country".(ÍÓÉíùÿÿÿÿ8è®úØÃ2
-Tkotlin:S1172Ï"/Remove this unused function parameter "action".(İŒÙèøÿÿÿÿ8è®úØÃ2
-\kotlin:S1172n"8Use "_" instead of this unused lambda parameter "which".(Àìïóúÿÿÿÿ8è®úØÃ2
-Bkotlin:S125G"Remove this commented out code.(™ä€¨ıÿÿÿÿ8ê®úØÃ2
-Bkotlin:S125K"Remove this commented out code.(›Ş™ñûÿÿÿÿ8ë®úØÃ2
-=kotlin:S125S"Remove this commented out code.(è±±8ë®úØÃ2
->kotlin:S125†"Remove this commented out code.(ÏóÚ8ë®úØÃ2
-Ckotlin:S125Á"Remove this commented out code.(–ÚñÒşÿÿÿÿ8ë®úØÃ2
->kotlin:S125ç"Remove this commented out code.(–±Ù8ë®úØÃ2
-Hkotlin:S108¤")Either remove or fill this block of code.(½ûöÆ8ó®úØÃ2
-=kotlin:S6531H"Remove this useless cast.(ëˆÃÿûÿÿÿÿ8÷®úØÃ2
-Vkotlin:S1481€"1Remove this unused "milliseconds" local variable.(õÖ©øÿÿÿÿ8÷®úØÃ2
-ykotlin:S5843¨"TSimplify this regular expression to reduce its complexity from 21 to the 20 allowed.(âÂŞ‰şÿÿÿÿ8ø®úØÃ2
-nkotlin:S1192 "IDefine a constant instead of duplicating this literal "HH:mm:ss" 3 times.(Ôá»ìúÿÿÿÿ8û®úØÃ2
-Ckotlin:S1874ƒ"#Deprecated code should not be used.(‘ü´Á8ü®úØÃ2
-Ckotlin:S1874†"#Deprecated code should not be used.(ñˆíé8ü®úØÃ2
-Ckotlin:S1874"#Deprecated code should not be used.(¦³º8ü®úØÃ2
-Hkotlin:S1874Š"#Deprecated code should not be used.(ÌØÜòüÿÿÿÿ8ü®úØÃ2
-Hkotlin:S1874Š"#Deprecated code should not be used.(ÌØÜòüÿÿÿÿ8ü®úØÃ2
-Ckotlin:S1874™"#Deprecated code should not be used.(ù•ŞÔ8ı®úØÃ2
-Hkotlin:S1874£"#Deprecated code should not be used.(Œ£Ñíúÿÿÿÿ8ı®úØÃ2
-Hkotlin:S1874£"#Deprecated code should not be used.(Œ£Ñíúÿÿÿÿ8ı®úØÃ2
-Ckotlin:S1874Ä"#Deprecated code should not be used.(¬ş½´8ı®úØÃ2
-Ckotlin:S1874Ä"#Deprecated code should not be used.(¬ş½´8ı®úØÃ2
-Ckotlin:S1874Ã"#Deprecated code should not be used.(¨ÀÕ8ı®úØÃ2
-bkotlin:S6511"=Merge chained "if" statements into a single "when" statement.(æ©ÿäúÿÿÿÿ8¯úØÃ2
+{kotlin:S1172À"0Remove this unused function parameter "country".(ÍÓÉíùÿÿÿÿ8è®úØÃ2J$df4e9cd1-b789-40ae-8dda-3da8c6781d1a
+zkotlin:S1172Ï"/Remove this unused function parameter "action".(İŒÙèøÿÿÿÿ8è®úØÃ2J$c8d05e10-3d84-4b13-8eeb-fa0536d3c831
+‚kotlin:S1172n"8Use "_" instead of this unused lambda parameter "which".(Àìïóúÿÿÿÿ8è®úØÃ2J$4a5d4879-a58c-49b9-8353-027b4c057a8f
+hkotlin:S125G"Remove this commented out code.(™ä€¨ıÿÿÿÿ8ê®úØÃ2J$c00ec9d3-3c49-4448-989d-efc40b1ded8f
+hkotlin:S125K"Remove this commented out code.(›Ş™ñûÿÿÿÿ8ë®úØÃ2J$1ef24749-3fe2-4b2d-b25e-2dffb7c7c734
+ckotlin:S125S"Remove this commented out code.(è±±8ë®úØÃ2J$094d82c1-95c4-4296-8ecd-ae6fb8f30b91
+dkotlin:S125†"Remove this commented out code.(ÏóÚ8ë®úØÃ2J$621f1e89-6332-4591-bc4c-77edacd22e61
+ikotlin:S125Á"Remove this commented out code.(–ÚñÒşÿÿÿÿ8ë®úØÃ2J$c9584b9e-c696-4b70-8b78-15686302607c
+dkotlin:S125ç"Remove this commented out code.(–±Ù8ë®úØÃ2J$d263e51b-f3f7-4c61-b150-91c01c0a3e84
+nkotlin:S108¤")Either remove or fill this block of code.(½ûöÆ8ó®úØÃ2J$f92f9cd2-bc7a-4a63-b8ae-297fa2553531
+ckotlin:S6531H"Remove this useless cast.(ëˆÃÿûÿÿÿÿ8÷®úØÃ2J$73d8967b-1288-4897-8c3d-f5e04fe8938c
+|kotlin:S1481€"1Remove this unused "milliseconds" local variable.(õÖ©øÿÿÿÿ8÷®úØÃ2J$6ed3e09e-aaf8-43e0-b04d-ae3c3f625444
+Ÿkotlin:S5843¨"TSimplify this regular expression to reduce its complexity from 21 to the 20 allowed.(âÂŞ‰şÿÿÿÿ8ø®úØÃ2J$1f2590f2-9669-4c0c-be3b-89f63a78f3e5
+”kotlin:S1192 "IDefine a constant instead of duplicating this literal "HH:mm:ss" 3 times.(Ôá»ìúÿÿÿÿ8û®úØÃ2J$22effd89-8985-4fe5-9464-9b93f27e1029
+ikotlin:S1874ƒ"#Deprecated code should not be used.(‘ü´Á8ü®úØÃ2J$ad6ae265-c97f-4489-b1c4-9f380155b6b8
+ikotlin:S1874†"#Deprecated code should not be used.(ñˆíé8ü®úØÃ2J$22ba9b9c-ace0-402a-b1cb-273d54caa623
+ikotlin:S1874"#Deprecated code should not be used.(¦³º8ü®úØÃ2J$0956f789-765e-4d19-8f19-55b34729caa0
+nkotlin:S1874Š"#Deprecated code should not be used.(ÌØÜòüÿÿÿÿ8ü®úØÃ2J$79f42f08-7f30-4629-9ca5-a2df5b7e6295
+nkotlin:S1874Š"#Deprecated code should not be used.(ÌØÜòüÿÿÿÿ8ü®úØÃ2J$9ba0390e-3e8e-40a0-94a4-4f768d66fad3
+ikotlin:S1874™"#Deprecated code should not be used.(ù•ŞÔ8ı®úØÃ2J$552b0969-4587-4546-8d5f-0afc454f204e
+nkotlin:S1874£"#Deprecated code should not be used.(Œ£Ñíúÿÿÿÿ8ı®úØÃ2J$a929cb67-69d9-4555-b0e6-a0a5c7dd4dc4
+nkotlin:S1874£"#Deprecated code should not be used.(Œ£Ñíúÿÿÿÿ8ı®úØÃ2J$97d84ddf-2c29-4fa3-b8ee-d10bc4a43362
+ikotlin:S1874Ä"#Deprecated code should not be used.(¬ş½´8ı®úØÃ2J$4aee92c9-8a42-4a90-80b5-c453a0aaa2e7
+ikotlin:S1874Ä"#Deprecated code should not be used.(¬ş½´8ı®úØÃ2J$1b048b29-b4d7-4c23-a129-0f7f546a6200
+ikotlin:S1874Ã"#Deprecated code should not be used.(¨ÀÕ8ı®úØÃ2J$fb83e25d-0787-4e32-9d77-400b7aa6903a
+ˆkotlin:S6511"=Merge chained "if" statements into a single "when" statement.(æ©ÿäúÿÿÿÿ8¯úØÃ2J$dba27cc0-df6e-426c-a789-05cebb862631

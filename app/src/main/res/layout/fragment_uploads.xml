@@ -760,7 +760,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="ITR Photo"
+                        android:text="ITR Acknowledgement"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -835,7 +835,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="MSME Uploaded"
+                        android:text="MSME"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -992,7 +992,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="Additional Document"
+                        android:text="Upload Additional Document"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
