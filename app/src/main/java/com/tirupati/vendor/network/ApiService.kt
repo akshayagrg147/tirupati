@@ -38,8 +38,9 @@ import retrofit2.http.Query
 interface ApiService {
 
     companion object {
+        const val BASE_URL = "https://bsquareappfordemo.com:8095/api/"
 
-        const val BASE_URL = "http://103.139.58.23:8095/api/"
+
             /*-------------------- DEVICE TYPE --------------------*/
         const val DEVICE_TYPE = "android"
 
