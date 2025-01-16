@@ -1,11 +1,0 @@
-
-fkotlin:S6615ò" Remove this useless initializer.(²© 8ø¼ß¯Ä2J$eb43489c-34d8-44d8-840d-b115370be2e3
-hkotlin:S125z"Remove this commented out code.(åÆ»«ÿÿÿÿÿ8ú¼ß¯Ä2J$3878c0f9-09b4-49bf-b1c0-f0af3348cbd2
-dkotlin:S125¨"Remove this commented out code.(›ŠàÅ8û¼ß¯Ä2J$a3c155ec-25e5-4154-b02f-5867b5f6fbbd
-ikotlin:S125Ò"Remove this commented out code.(ö´óùÿÿÿÿ8û¼ß¯Ä2J$aef6d784-c59b-40bd-814c-cc34738e3c15
-dkotlin:S125İ"Remove this commented out code.(Üèâ8’¢ÕÄ2J$7ee1cd37-3802-4b0f-97e5-3d1a22e475bb
-dkotlin:S125ö"Remove this commented out code.(–±Ù8ü¼ß¯Ä2J$307e5209-2f13-4a98-b522-cce7d262160b
-ikotlin:S125¾"Remove this commented out code.(ö´óùÿÿÿÿ8ü¼ß¯Ä2J$2513f8d3-15e4-4969-8aee-0d3201b19e80
-˜kotlin:S117¾"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ä´›¶üÿÿÿÿ8ş¼ß¯Ä2J$9fe5b484-3794-4deb-8cd8-c77a14166993
-kotlin:S3776ğ"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÇîÚÓüÿÿÿÿ8‰½ß¯Ä2J$21e925c0-30f2-4812-b185-f504d00daf87
-ˆkotlin:S6511ó"=Merge chained "if" statements into a single "when" statement.(ıÖº¸úÿÿÿÿ8Œ½ß¯Ä2J$a34bb93b-f577-44e5-b66d-d9c1fb1e6b5e

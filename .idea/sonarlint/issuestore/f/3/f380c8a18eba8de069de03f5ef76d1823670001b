@@ -1,19 +1,0 @@
-
-{kotlin:S1172ü"0Remove this unused function parameter "binding".(òÊ»Ãÿÿÿÿÿ8µ£°Â†2J$390097f8-9cf0-4ebe-840f-140973da9fad
-€kotlin:S899Õ";Do something with the "Boolean" value returned by "delete".(ø¸ºÀ8¶£°Â†2J$d8943939-e1b2-41a7-9521-75522b62fd93
-fkotlin:S6615ş" Remove this useless initializer.(²© 8¶£°Â†2J$44395c95-d201-40d0-9884-bb5837632715
-dkotlin:S125"Remove this commented out code.(±ä‘Ô8¸£°Â†2J$be936191-9a82-406d-a2f6-3cab1837bbf9
-ikotlin:S125"Remove this commented out code.(— ûéıÿÿÿÿ8¸£°Â†2J$0176713d-6564-4dd7-a882-abe57437c42b
-dkotlin:S125ï"Remove this commented out code.(àçÑ¬8¹£°Â†2J$c632ee53-4c38-45b0-bf79-bf17bf741186
-ikotlin:S125Ì"Remove this commented out code.(ö´óùÿÿÿÿ8¹£°Â†2J$0a026e47-9ca0-4253-b1d5-75b8f94420a9
-ikotlin:S125ë"Remove this commented out code.(é§Æùşÿÿÿÿ8¹£°Â†2J$4262cd7a-ebcb-464f-9302-b7c068fc3372
-ikotlin:S125£"Remove this commented out code.(ö§ƒ’ùÿÿÿÿ8¹£°Â†2J$9c22111e-0357-432d-ad4d-9181658e535b
-‰kotlin:S1144ˆ">Remove this unused private "dispatchTakePictureIntent" method.(ÔŒè…ÿÿÿÿÿ8À£°Â†2J$32cc982c-ad86-4375-b023-15d82a3286f7
-’kotlin:S1192€"GDefine a constant instead of duplicating this literal "Error!" 7 times.(è¹ôµşÿÿÿÿ8Ê£°Â†2J$2a05517c-1773-4a81-9feb-d660fc4919a4
-mkotlin:S1874|"#Deprecated code should not be used.(…±³„şÿÿÿÿ8Ì£°Â†2J$3dbf1dbf-f315-4ddd-a0e6-f639158b3374
-ikotlin:S1874ó"#Deprecated code should not be used.(‚´Ã¬8Ì£°Â†2J$24b52eb8-ff32-497d-8e5f-2aa7bd45c344
-ikotlin:S1874ù"#Deprecated code should not be used.(–ø”8Ì£°Â†2J$6e0a35e0-32ad-4d04-80ef-d2f2e52f7abd
-ikotlin:S1874˜"#Deprecated code should not be used.(–ø”8Ì£°Â†2J$9850b49b-e72b-4543-8a4f-851a6948862f
-˜kotlin:S3776İ"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Öúˆï8Ì£°Â†2J$36ccf356-de30-4f11-83e7-e2e8751f478a
-ˆkotlin:S6511ÿ"=Merge chained "if" statements into a single "when" statement.(êúƒ ÿÿÿÿÿ8Ğ£°Â†2J$cb660639-af71-4f61-9735-d4202a64a4cf
-ˆkotlin:S6511ú"=Merge chained "if" statements into a single "when" statement.(ê›‡úÿÿÿÿ8Ğ£°Â†2J$e5cd0688-ce8e-4ec6-89df-0e37d2186d96

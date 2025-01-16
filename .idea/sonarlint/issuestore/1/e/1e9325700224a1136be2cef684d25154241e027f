@@ -1,17 +1,0 @@
-
-†kotlin:S6619Œ";Remove this useless elvis operation ?:, it always succeeds.(—º‡øÿÿÿÿÿ8±·¢ 2J$fb4c103c-9a22-4bc0-bc2e-f16d90ced170
-kotlin:S6619‘";Remove this useless elvis operation ?:, it always succeeds.(¤Àñ¥8²·¢ 2J$f3a7a4ad-2fae-4ce8-987f-290f191f3c59
-†kotlin:S6619—";Remove this useless elvis operation ?:, it always succeeds.(Œ¯ª—şÿÿÿÿ8²·¢ 2J$c7e81590-3c4c-4d6e-865c-9885ae78e7a1
-dkotlin:S1128"Remove this unused import.(å÷÷Şüÿÿÿÿ8œ‚…ÎÄ2J$5609b23d-47a7-40c8-8d6e-b15953d3ecfd
-_kotlin:S1128"Remove this unused import.(üƒŠ¸8‚…ÎÄ2J$92335677-0b11-4ad9-acbc-146c0f559e95
-dkotlin:S1128"Remove this unused import.(Íå‘Áûÿÿÿÿ8Š˜Ùš 2J$ad0ed18c-d9ce-4a1b-949f-71cbf076eff8
-dkotlin:S1128
-"Remove this unused import.(á»¸•úÿÿÿÿ8‚…ÎÄ2J$370b5567-1ccb-4727-8181-0458f0ee16a1
-9kotlin:S1128"Remove this unused import.(´Ùí8ú¢‹ÎÄ2
-^kotlin:S1128"Remove this unused import.(´€Ú
-8Š˜Ùš 2J$6078dd2a-96f4-4471-a61a-0604cffedcd5
-}kotlin:S1192½"XDefine a constant instead of duplicating this literal "Invalid Owner Full Name" 3 times.(Ğ¶ê„ÿÿÿÿÿ8ú¢‹ÎÄ2
-ykotlin:S1192Å"YDefine a constant instead of duplicating this literal "Invalid Owner Contact No" 3 times.(Û£ô8ú¢‹ÎÄ2
-qkotlin:S1192Í"QDefine a constant instead of duplicating this literal "Invalid Email Id" 3 times.(ÌúÍÉ8ú¢‹ÎÄ2
-vkotlin:S1192Õ"QDefine a constant instead of duplicating this literal "Invalid Pan card" 3 times.(¹ƒ™üûÿÿÿÿ8ú¢‹ÎÄ2
-wkotlin:S3776¸"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.( íˆşùÿÿÿÿ8û¢‹ÎÄ2

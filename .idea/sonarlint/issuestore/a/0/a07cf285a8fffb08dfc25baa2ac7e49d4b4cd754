@@ -1,14 +1,0 @@
-
-fkotlin:S6615ˆ" Remove this useless initializer.(²© 8æÎ¬ Ÿ2J$7bc8a7d3-414e-4035-8bf5-af136cfd60ef
-hkotlin:S125S"Remove this commented out code.(ÕœÙşÿÿÿÿ8èÎ¬ Ÿ2J$949b97b4-2413-400d-ad9d-894e96456919
-hkotlin:S125m"Remove this commented out code.(ÀéÃúÿÿÿÿ8èÎ¬ Ÿ2J$15d87706-1017-4cee-9bef-278d5cf00df1
-kotlin:S117 "SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(Æ¢ÔËüÿÿÿÿ8éÎ¬ Ÿ2J$56e7c081-f5fc-4369-b7d5-2e9073f65df3
-kotlin:S117Ü"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(Æ¢ÔËüÿÿÿÿ8ú˜Ö‹À2J$ca3baefe-4489-42f8-820b-995763b79c02
-|kotlin:S1135e"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ëÎ¬ Ÿ2J$0269e1d0-7ace-4c9c-a781-22ccac1dcc57
-|kotlin:S1135j"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ëÎ¬ Ÿ2J$1c511c8c-e25b-4e55-8e07-2720727d0594
-„kotlin:S1481›"9Remove this unused "progressDialogHelper" local variable.(„ûí„üÿÿÿÿ8ìÎ¬ Ÿ2J$b5170f74-bd2f-4a9f-a4f8-7964334b9630
-„kotlin:S1481×"9Remove this unused "progressDialogHelper" local variable.(„ûí„üÿÿÿÿ8ş˜Ö‹À2J$72cec47e-b0bf-4483-a90a-2d40b52392fe
-“kotlin:S1871¹"MThis branch's code block is the same as the block for the branch on line 178.(ßâƒ‚8íÎ¬ Ÿ2J$93b915bd-c1b7-4b90-aca0-f3d2f0d8089e
-’kotlin:S1871¾"MThis branch's code block is the same as the block for the branch on line 178.(Ä†•8îÎ¬ Ÿ2J$e1d7ceba-e43e-4300-a33c-14a31ee4a466
-“kotlin:S1871õ"MThis branch's code block is the same as the block for the branch on line 238.(ßâƒ‚8€™Ö‹À2J$8c7e0379-31a5-47d6-bcc7-472e161ff356
-’kotlin:S1871ú"MThis branch's code block is the same as the block for the branch on line 238.(Ä†•8€™Ö‹À2J$88746b3e-85a2-492a-bb3f-19baf704a269
