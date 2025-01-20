@@ -27,6 +27,7 @@ import com.tirupati.vendor.fragmnts.PoListFragment
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
 import com.tirupati.vendor.helper.interfaces.ToolbarTitleChangeListener
+import com.tirupati.vendor.helper.showCustomDialog
 import com.tirupati.vendor.model.ResponseData
 import com.tirupati.vendor.model.VendorRESPONSEDATAX
 import com.tirupati.vendor.network.NetworkState
@@ -189,23 +190,31 @@ class LandingVendorActivity : AppCompatActivity(), ToolbarTitleChangeListener {
 
                 is NetworkState.Error<*> -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(this@LandingVendorActivity, response.msg.toString(),"Error")
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(this@LandingVendorActivity, response.msg.toString(),"Error")
+
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(this@LandingVendorActivity, response.msg.toString(),"Error")
+
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(this@LandingVendorActivity, response.msg.toString(),"Error")
+
                 }
 
                 else -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(this@LandingVendorActivity, "something went wrong","Error")
                 }
             }
 

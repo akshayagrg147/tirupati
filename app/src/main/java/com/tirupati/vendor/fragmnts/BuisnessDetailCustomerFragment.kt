@@ -129,6 +129,7 @@ class BuisnessDetailCustomerFragment : Fragment() {
             org_name = args.getString("ORG_NAME","")
             org_contact = args.getString("ORG_CONTACT","")
             org_email = args.getString("ORG_EMAIL","")
+
         }
     }
 
@@ -146,6 +147,7 @@ class BuisnessDetailCustomerFragment : Fragment() {
             findNavController(). popBackStack()
 
         }
+        bindingFirstPage?.inputUserFirstName?.setText(org_name)
         bindingFirstPage?.btnFirstDone?.setOnClickListener {
             if(validateUI(bindingFirstPage!!)){
                 val apiKey = "AIzaSyBPlX3AuJuNr8bsZaaL2QQOI4weEkZkBb0"
@@ -576,7 +578,7 @@ class BuisnessDetailCustomerFragment : Fragment() {
 
         var status = false
         if (binding.inputUserFirstName.text.isNullOrEmpty()) {
-            showCustomDialog(requireContext(),"Name of the organisation can't be empty!","Error")
+            showCustomDialog(requireContext(),"Name of Organisation can't be empty!","Error")
             status = false
         }
         else if(binding.legalEntity.text.isNullOrEmpty()){
@@ -594,71 +596,71 @@ class BuisnessDetailCustomerFragment : Fragment() {
             showCustomDialog(requireContext(), "Owner's Contact Number can't be empty!", "Error")
             status = false
         } else if (binding.ownerContactET.text?.length != 10) {
-            showCustomDialog(requireContext(), "Owner's Contact Number must be 10 digits!", "Error")
+            showCustomDialog(requireContext(), "Owner's Contact Number is Incorrect", "Error")
             status = false
         }
         else if(!binding.ownerContactET.text.toString().isValidPhoneNumber()){
-            showCustomDialog(requireContext(),"Owner's Contact Number is incorrect","Error")
+            showCustomDialog(requireContext(),"Owner's Contact Number is Incorrect","Error")
             status = false
 
         }
 
         else if(binding.emailOwnerET.text.length>0 && !binding.emailOwnerET.text.toString().isValidEmail()){
 
-            showCustomDialog(requireContext(),"Owner's Email ID is incorrect","Error")
+            showCustomDialog(requireContext(),"Owner's Email ID is Incorrect","Error")
             status = false
 
         }
 
         else if(binding.ownerPanET.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Owner's PAN number can't be empty","Error")
+            showCustomDialog(requireContext(),"Owner's PAN Number can't be empty!","Error")
             status = false
 
         }
         else if(!binding.ownerPanET.text.toString().isValidPANNumber()){
-            showCustomDialog(requireContext(),"Owner's PAN Card is incorrect","Error")
+            showCustomDialog(requireContext(),"Owner's PAN Number is Incorrect","Error")
             status = false
 
         }
         else if (binding.addressET.text.isNullOrEmpty()) {
-            showCustomDialog(requireContext(),"Address can't be empty","Error")
+            showCustomDialog(requireContext(),"Address can't be empty!","Error")
             status = false
         }
         else if(binding.countrySpinner.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Country can't be empty","Error")
+            showCustomDialog(requireContext(),"Country can't be empty!","Error")
             status = false
 
         }
 
         else if(binding.statesList.text.toString().isNullOrEmpty()){
-            showCustomDialog(requireContext(),"States can't be empty!!","Error")
+            showCustomDialog(requireContext(),"State can't be empty!","Error")
             status = false
 
         }
         else if(binding.citiesList.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"City can't be empty","Error")
+            showCustomDialog(requireContext(),"City can't be empty!","Error")
             status = false
 
         }
         else if(binding.etPinCode.text.toString().isNullOrEmpty()){
-            showCustomDialog(requireContext(),"PIN Code can't be empty","Error")
+            showCustomDialog(requireContext(),"Pincode can't be empty!","Error")
             status = false
 
         }
 
         else if(!binding.etPinCode.text.toString().isValidPINcode()){
-            showCustomDialog(requireContext(),"PIN code not Valid","Error")
+            showCustomDialog(requireContext(),"Pincode is Incorrect","Error")
             status = false
 
         }
         else if(binding.orgGstNumber.text.toString().isNullOrEmpty()){
-            showCustomDialog(requireContext(),"GST number can't be empty","Error")
+            showCustomDialog(requireContext(),"Organisation’s GST Number can't be empty!","Error")
             status = false
 
         }
 
         else if(!binding.orgGstNumber.text.toString().isValidGST()){
-            showCustomDialog(requireContext(),"GST is not valid","Error")
+            showCustomDialog(requireContext(),"Organisation’s GST Number is Incorrect","Error")
             status = false
 
         }
@@ -774,6 +776,7 @@ class BuisnessDetailCustomerFragment : Fragment() {
 
                 is NetworkState.Error<*>->{
                     bindingFirstPage!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
@@ -814,6 +817,7 @@ class BuisnessDetailCustomerFragment : Fragment() {
 
                 is NetworkState.Error<*>->{
                     bindingFirstPage!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 

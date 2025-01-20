@@ -121,27 +121,27 @@ class RegistrationFragment : Fragment() {
 
         var status = false
         if (binding.etNameOrg.text.isNullOrEmpty()) {
-            showCustomDialog(requireContext(),"Name Of Organisation can't be empty!","Error")
+            showCustomDialog(requireContext(),"Name of the Organisation can't be empty!","Error")
             status = false
         }
         else if(binding.etContactNumber.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Organisation’s Contact number can't be empty!","Error")
+            showCustomDialog(requireContext(),"Organisation’s Contact Number can't be empty","Error")
             status = false
 
         }
 
         else if(!binding.etContactNumber.text.toString().isValidPhoneNumber()){
-            showCustomDialog(requireContext(),"Organisation’s Contact number is incorrect","Error")
+            showCustomDialog(requireContext(),"Organisation’s Contact Number is Incorrect","Error")
             status = false
 
         }
         else if(binding.etOrgEmailNumber.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Organisation’s Email id can't be empty!","Error")
+            showCustomDialog(requireContext(),"Organisation’s Email ID can't be empty!","Error")
             status = false
 
         }
         else if(!binding.etOrgEmailNumber.text.toString().isValidEmail()){
-            showCustomDialog(requireContext(),"Organisation’s Email id is incorrect","Error")
+            showCustomDialog(requireContext(),"Organisation’s Email ID is Incorrect","Error")
             status = false
 
         }

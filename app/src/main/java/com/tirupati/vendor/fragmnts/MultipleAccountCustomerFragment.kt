@@ -210,7 +210,7 @@ class MultipleAccountCustomerFragment : Fragment() {
             if (!isValidPan(bindingUploads.secondVAdhar.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Pan card",
+                    "Invalid PAN Number",
                     "Error"
                 )
                 return false
@@ -245,7 +245,7 @@ class MultipleAccountCustomerFragment : Fragment() {
             if (!isValidPan(bindingUploads.thirdVAdhar.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Pan card",
+                    "Invalid PAN Number",
                     "Error"
                 )
                 return false
@@ -280,7 +280,7 @@ class MultipleAccountCustomerFragment : Fragment() {
             if (!isValidPan(bindingUploads.fourthVAdhar.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Pan card",
+                    "Invalid PAN Number",
                     "Error"
                 )
                 return false

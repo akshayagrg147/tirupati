@@ -32,7 +32,7 @@
         <EditText
             android:id="@+id/inputUserFirstName"
             style="@style/et_login_signup"
-            android:hint="Unique Sales Order Number"
+            android:hint="Enter Unique Sales Order Number"
             android:textCursorDrawable="@null"
             android:textColorHint="@color/grey"
 

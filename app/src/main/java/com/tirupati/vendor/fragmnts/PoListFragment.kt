@@ -14,6 +14,7 @@ import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.FragmentPoListBinding
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.showCustomDialog
 import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.ResponseData
 import com.tirupati.vendor.network.NetworkState
@@ -107,6 +108,7 @@ class PoListFragment : Fragment() {
 
                 is NetworkState.Error<*> -> {
                     bindingS!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 

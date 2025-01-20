@@ -37,7 +37,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_semibold"
-                    android:text="Upload"
+                    android:text="Upload Documents"
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -161,68 +161,80 @@
                 />
 
             </LinearLayout>
-
-                <!--             Aadhar -->
+             <!-- PAN-->
                 <RelativeLayout
-                    android:id="@+id/adharRL"
-
+                    android:id="@+id/panRL"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
+                    android:background="@drawable/rounded_dashed_border_vivamagenta_all"
+                    android:visibility="visible"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_7sdp"
                     tools:visibility="visible"
                     >
                     <TextView
-                        android:id="@+id/TvAdharCard"
+                        android:id="@+id/TvPanCard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="Organisation Pan Card"
+                        android:text="Upload Owner's Pan Card"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
-                    <ImageView
-                        android:id="@+id/adhaarIV"
-                        android:layout_below="@+id/TvAdharCard"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/pdf"
-                        android:scaleType="fitXY"
-                        android:padding="@dimen/_6sdp"
-                        />
+                    <!-- <ImageView
+                         android:id="@+id/panIV"
+                         android:layout_below="@+id/TvPanCard"
+                         android:layout_width="@dimen/_80sdp"
+                         android:layout_height="@dimen/_80sdp"
+                         android:scaleType="fitXY"
+                         android:padding="@dimen/_6sdp"
+                         android:src="@drawable/appbg"/>
 
-                    <ImageView
-                        android:id="@+id/deleteAdharIv"
-                        android:layout_below="@+id/TvAdharCard"
-                        android:layout_width="@dimen/_14sdp"
-                        android:layout_height="@dimen/_14sdp"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="43dp"
-                        android:layout_marginEnd="3dp"
-                        android:src="@drawable/ic_delete"
-                        />
+                     <ImageView
+                         android:id="@+id/deletePanIV"
+                         android:layout_below="@+id/TvPanCard"
+                         android:layout_width="@dimen/_14sdp"
+                         android:layout_height="@dimen/_14sdp"
+                         android:layout_alignParentStart="true"
+                         android:layout_marginStart="69dp"
+                         android:layout_marginEnd="3dp"
+                         android:src="@drawable/ic_delete"
+                         />
+ -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_below="@+id/TvPanCard"
+                        android:id="@+id/imageListRCPDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
+                        app:reverseLayout="true"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:visibility="visible"
+                        android:layout_marginEnd="@dimen/_2sdp"
+                        tools:listitem="@layout/item_add_image"/>
 
                 </RelativeLayout>
-
                 <LinearLayout
-                    android:id="@+id/adharLL"
-
+                    android:id="@+id/panLL"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
+                    android:visibility="gone"
                     android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/adhaarUpload"
+                        android:id="@+id/panCardUpload"
                         android:layout_width="@dimen/_40sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:layout_marginTop="@dimen/_23sdp"
                         android:src="@drawable/tpp_upload_image"
                         android:layout_gravity="center"
-                        style="@style/Style.App.circleImageView"
+                        app:shapeAppearanceOverlay="@style/Style.App.circleImageView"
                         />
                     <TextView
                         android:layout_below="@+id/gstUpload"
@@ -232,11 +244,13 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload Organisation Pan Card"
+                        android:text="Upload PAN Card"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
                 </LinearLayout>
+
+
 
 <!--                   Electricity bill -->
 
@@ -333,7 +347,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="Upload Rent Deed(if applicable)"
+                        android:text="Rent Deed"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -550,81 +564,68 @@
 
                 </LinearLayout>
 
-<!--
-                PAN-->
+
+                <!--             Aadhar -->
                 <RelativeLayout
-                    android:id="@+id/panRL"
+                    android:id="@+id/adharRL"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_dashed_border_vivamagenta_all"
-                    android:visibility="visible"
-                    android:paddingLeft="@dimen/_10sdp"
-                    android:layout_marginVertical="@dimen/_7sdp"
+                    android:visibility="gone"
                     tools:visibility="visible"
                     >
                     <TextView
-                        android:id="@+id/TvPanCard"
+                        android:id="@+id/TvAdharCard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="Upload Owner's Pan Card"
+                        android:text="Organisation PAN Card"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
-                    <!-- <ImageView
-                         android:id="@+id/panIV"
-                         android:layout_below="@+id/TvPanCard"
-                         android:layout_width="@dimen/_80sdp"
-                         android:layout_height="@dimen/_80sdp"
-                         android:scaleType="fitXY"
-                         android:padding="@dimen/_6sdp"
-                         android:src="@drawable/appbg"/>
-
-                     <ImageView
-                         android:id="@+id/deletePanIV"
-                         android:layout_below="@+id/TvPanCard"
-                         android:layout_width="@dimen/_14sdp"
-                         android:layout_height="@dimen/_14sdp"
-                         android:layout_alignParentStart="true"
-                         android:layout_marginStart="69dp"
-                         android:layout_marginEnd="3dp"
-                         android:src="@drawable/ic_delete"
-                         />
- -->
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:layout_below="@+id/TvPanCard"
-                        android:id="@+id/imageListRCPDF"
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/adhaarIV"
+                        android:layout_below="@+id/TvAdharCard"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        android:orientation="horizontal"
-                        app:reverseLayout="true"
-                        android:layout_marginHorizontal="@dimen/_5sdp"
-                        android:visibility="visible"
-                        android:layout_marginEnd="@dimen/_2sdp"
-                        tools:listitem="@layout/item_add_image"/>
+                        android:src="@drawable/pdf"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_6sdp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/deleteAdharIv"
+                        android:layout_below="@+id/TvAdharCard"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="43dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_delete"
+                        />
 
                 </RelativeLayout>
+
                 <LinearLayout
-                    android:id="@+id/panLL"
+                    android:id="@+id/adharLL"
+
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
-                    android:visibility="gone"
                     android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/panCardUpload"
+                        android:id="@+id/adhaarUpload"
                         android:layout_width="@dimen/_40sdp"
                         android:layout_height="@dimen/_40sdp"
                         android:layout_marginTop="@dimen/_23sdp"
                         android:src="@drawable/tpp_upload_image"
                         android:layout_gravity="center"
-                        app:shapeAppearanceOverlay="@style/Style.App.circleImageView"
+                        style="@style/Style.App.circleImageView"
                         />
                     <TextView
                         android:layout_below="@+id/gstUpload"
@@ -634,7 +635,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload PAN Card"
+                        android:text="Upload Organisation PAN Card"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -658,7 +659,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="Bank Confirmation"
+                        android:text="Bank Confirmation Letter"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -835,7 +836,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="MSME"
+                        android:text="MSME Certificate"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -914,7 +915,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="Upload Indeminity Bond"
+                        android:text="Indeminity Bond"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -992,7 +993,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="Upload Additional Document"
+                        android:text="Additional Document"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -1026,7 +1027,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_110sdp"
                     android:orientation="vertical"
-                    android:visibility="gone"
+
                     android:layout_marginVertical="@dimen/_7sdp"
                     android:background="@drawable/rounded_dashed_border_vivamagenta_all">
 
@@ -1046,8 +1047,7 @@
                         android:textColor="@color/black"
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
-                        android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload Additional Document (if any)"
+                        android:text="Upload Additional Document\n(if any)"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -1077,7 +1077,7 @@
             android:layout_marginVertical="@dimen/_20sdp"
             android:background="@drawable/square_filled_black"
             android:fontFamily="@font/monsrt_bold"
-            android:text="Sign Up"
+            android:text="Continue"
             android:textColor="@color/white" />
         <View
             android:layout_width="match_parent"

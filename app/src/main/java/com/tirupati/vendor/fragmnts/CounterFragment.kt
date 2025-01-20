@@ -60,7 +60,7 @@ class CounterFragment : Fragment() {
             }
             else{
                 binding!!.loginProgressBar.progressBar.hidden()
-                Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
+
 
             }
         })

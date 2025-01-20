@@ -207,6 +207,7 @@ class AddressDetailFragment : Fragment() {
 
                 is NetworkState.Error<*>->{
                     bindingSecondPage!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
@@ -245,35 +246,36 @@ class AddressDetailFragment : Fragment() {
             status = false
         }
         else if(binding.countrySpinner.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Country can't be empty","Error")
+            showCustomDialog(requireContext(),"Country can't be empty!","Error")
             status = false
 
         }
 
+
         else if(binding.statesList.text.toString().isNullOrEmpty()){
-            showCustomDialog(requireContext(),"States can't be empty!!","Error")
+            showCustomDialog(requireContext(),"State can't be empty!","Error")
             status = false
 
         }
         else if(binding.citiesList.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"City can't be empty","Error")
+            showCustomDialog(requireContext(),"City can't be empty!","Error")
             status = false
 
         }
         else if(binding.etPinCode.text.toString().isNullOrEmpty()){
-            showCustomDialog(requireContext(),"PIN Code can't be empty","Error")
+            showCustomDialog(requireContext(),"Pincode can't be empty!","Error")
             status = false
 
         }
 
         else if(!binding.etPinCode.text.toString().isValidPINcode()){
-            showCustomDialog(requireContext(),"PIN code not Valid","Error")
+            showCustomDialog(requireContext(),"Pincode is Incorrect","Error")
             status = false
 
         }
         else if(binding.GSTnumberEt.text.toString().isNullOrEmpty()){
             if(selectItem!="1") {
-                showCustomDialog(requireContext(), "GST number can't be empty", "Error")
+                showCustomDialog(requireContext(), "Organisation’s GST Number can't be empty!", "Error")
                 status = false
             }
             else{
@@ -284,7 +286,7 @@ class AddressDetailFragment : Fragment() {
 
         else if(!binding.GSTnumberEt.text.toString().isValidGST()){
             if(selectItem!="1") {
-                showCustomDialog(requireContext(), "GST is not valid", "Error")
+                showCustomDialog(requireContext(), "Organisation’s GST Number is Incorrect", "Error")
                 status = false
             }
             else{
@@ -294,7 +296,7 @@ class AddressDetailFragment : Fragment() {
         }
         else if(binding.PANEt.text.isNullOrEmpty()){
             if(selectItem!="1") {
-            showCustomDialog(requireContext(),"PAN number can't be Empty","Error")
+            showCustomDialog(requireContext(),"Organisation’s PAN Number can't be empty!","Error")
             status = false
             }
             else{
@@ -303,7 +305,7 @@ class AddressDetailFragment : Fragment() {
 
         }
         else if(!binding.PANEt.text.toString().isValidPANNumber()){
-            showCustomDialog(requireContext(),"PAN number is not valid","Error")
+            showCustomDialog(requireContext(),"Organisation’s PAN Number is Incorrect","Error")
             status = false
 
         }
@@ -443,6 +445,7 @@ private fun getStates(stateName: ArrayList<ResponseDataPo>) {
 
                 is NetworkState.Error<*>->{
                     bindingSecondPage!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 

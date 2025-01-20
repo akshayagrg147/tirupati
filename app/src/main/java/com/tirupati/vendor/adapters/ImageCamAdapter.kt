@@ -55,7 +55,7 @@ import com.tirupati.vendor.R
         val deleteButton: ImageButton = itemView.findViewById(R.id.deleteButton)
     }
 }*/
-class ImageCamAdapter(private val images: MutableList<Uri>, private val onClickListener: OnClickListener,val shouldShowImage:Boolean,val maxLimit:Int=1) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ImageCamAdapter(private val images: MutableList<Uri>, private val onClickListener: OnClickListener,val shouldShowImage:Boolean,val maxLimit:Int=1,  private val updateAdapter: () -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     interface OnClickListener {
         fun onAddImageClick()
@@ -133,6 +133,7 @@ class ImageCamAdapter(private val images: MutableList<Uri>, private val onClickL
     fun addImage(imageUri: Uri) {
         images.add(imageUri)
         notifyItemInserted(images.size - 1)
+        updateAdapter()
     }
 
     fun removeImage(position: Int) {
@@ -140,6 +141,7 @@ class ImageCamAdapter(private val images: MutableList<Uri>, private val onClickL
         images.removeAt(position)
         notifyItemRemoved(position)
         notifyDataSetChanged()
+        updateAdapter()
     }
 
     inner class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

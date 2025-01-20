@@ -12,6 +12,7 @@ import com.tirupati.vendor.adapters.CustomerComplaintAdapter
 import com.tirupati.vendor.databinding.FragmentCustomerComplaintTabBinding
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.showCustomDialog
 import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
@@ -64,23 +65,29 @@ class CustomerComplaintTabFragment : Fragment() {
 
                 is NetworkState.Error<*> -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
+
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkState.NetworkException -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                 }
 
                 else -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), "something went wrong","Error")
                 }
             }
 

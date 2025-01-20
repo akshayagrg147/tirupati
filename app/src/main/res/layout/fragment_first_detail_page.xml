@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:fontFamily="@font/montserrat_semibold"
-                    android:text="Business Details"
+                    android:text="Business Detail"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
 
@@ -281,7 +281,7 @@
                         style="@style/et_login_signup_caps"
                         android:textCursorDrawable="@null"
 
-                        android:hint="Owner's Pan Card"
+                        android:hint="Owner's PAN Number"
                         android:imeOptions="actionDone"
                         android:inputType="textCapCharacters"
                         android:maxLength="50"

@@ -141,7 +141,9 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
 
         bindingPic!!.imageListRC.layoutManager = LinearLayoutManager(requireContext())
 
-        adapter = ImageCamAdapter(images, this,true)
+        adapter = ImageCamAdapter(images, this,true){
+
+        }
         val weightChange = tareWT.toDouble()
         if(weightChange>.00){
             bindingPic!!.tollReceiptLL.visibility = View.GONE
@@ -276,7 +278,7 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
                 }
 
                 is NetworkState.Error<*> -> {
-                    toast("${response.msg}")
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                     bindingPic!!.loginProgressBar.progressBar.hidden()
 
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
@@ -322,29 +324,29 @@ class UploadSupervisorPicturesFragment : Fragment(), ImageCamAdapter.OnClickList
 
         if(tareWT.toDouble()>.00){
             if (images6.isEmpty()) {
-                showCustomDialog(requireContext(), "Image Video of Empty vehicle can't be Empty","Error")
+                showCustomDialog(requireContext(), "Image Video of Empty vehicle can't be empty","Error")
                 return false
             }
             return true
         }
         if (images1.isEmpty()) {
-            showCustomDialog(requireContext(), "Image Video of Load vehicle can't be Empty","Error")
+            showCustomDialog(requireContext(), "Image Video of Load vehicle can't be empty","Error")
             status = false
         }
         else if (images2.isEmpty()) {
-            showCustomDialog(requireContext(), "Copy Of Toll Receipt can't be Empty","Error")
+            showCustomDialog(requireContext(), "Copy Of Toll Receipt can't be empty","Error")
             status = false
         }
         else if (images3.isEmpty()) {
-            showCustomDialog(requireContext(), "Vehicle RC can't be Empty","Error")
+            showCustomDialog(requireContext(), "Vehicle RC can't be empty","Error")
             status = false
         }
         else if (images4.isEmpty()) {
-            showCustomDialog(requireContext(), "Driving Licence can't be Empty","Error")
+            showCustomDialog(requireContext(), "Driving Licence can't be empty","Error")
             status = false
         }
         else if (images5.isEmpty()) {
-            showCustomDialog(requireContext(), "Front and Back of vehicle with Driver can't be Empty","Error")
+            showCustomDialog(requireContext(), "Front and Back of vehicle with Driver can't be empty","Error")
             status = false
         }
 

@@ -87,6 +87,7 @@ import java.util.Locale
 import java.util.zip.ZipEntry
 import java.util.zip.ZipOutputStream
 import javax.inject.Inject
+import kotlin.math.log
 
 @AndroidEntryPoint
 class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
@@ -339,14 +340,45 @@ class UploadsFragment : Fragment(), ImageCamAdapter.OnClickListener {
 
             }
         }
+
         if(v3Name.isNotEmpty())
-        adapter = ImageCamAdapter(images, this,false,4)
+        adapter = ImageCamAdapter(images, this,false,4){
+Log.d("djsndjd","sdkd"+images.size)
+            if(images.size==4){
+                bindingUploads?.TvPanCard?.text="Owner's Pan Card"
+
+            }
+            else{
+                bindingUploads?.TvPanCard?.text="Upload Owner's Pan Card"
+            }
+        }
         else  if(v2Name.isNotEmpty())
-            adapter = ImageCamAdapter(images, this,false,3)
+            adapter = ImageCamAdapter(images, this,false,3){
+                if(images.size==3){
+                    bindingUploads?.TvPanCard?.text="Owner's Pan Card"
+                }
+                else{
+                    bindingUploads?.TvPanCard?.text="Upload Owner's Pan Card"
+                }
+            }
         else  if(v1Name.isNotEmpty())
-            adapter = ImageCamAdapter(images, this,false,2)
+            adapter = ImageCamAdapter(images, this,false,2){
+                if(images.size==2){
+                    bindingUploads?.TvPanCard?.text="Owner's Pan Card"
+                }
+                else{
+                    bindingUploads?.TvPanCard?.text="Upload Owner's Pan Card"
+                }
+            }
         else
-            adapter = ImageCamAdapter(images, this,false,1)
+            adapter = ImageCamAdapter(images, this,false,1){
+                if(images.size==1){
+                    bindingUploads?.TvPanCard?.text="Owner's Pan Card"
+                }
+                else{
+                    bindingUploads?.TvPanCard?.text="Upload Owner's Pan Card"
+                }
+            }
 
 
 
@@ -822,10 +854,12 @@ bindingUploads!!.bankletter.setOnClickListener{
     }
 
     override fun onDeleteImageClick(position: Int) {
-        if(position==0){
 
-        }
         adapter.removeImage(position)
+        if(adapter.itemCount==1) {
+            pdf2.clear()
+            second?.clear()
+        }
     }
     private fun getCompleteAddressString(LATITUDE: Double, LONGITUDE: Double) {
         val apiKey = "AIzaSyBPlX3AuJuNr8bsZaaL2QQOI4weEkZkBb0"
@@ -1086,8 +1120,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                         withContext(Dispatchers.Main) {
                             bindingUploads!!.loginProgressBar.progressBar.hidden()
 
-                            Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
-                                .show()
+                            showCustomDialog(requireContext(), response.msg.toString(),"Error")
                         }
                     }
 
@@ -1184,8 +1217,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                         withContext(Dispatchers.Main) {
                             bindingUploads!!.loginProgressBar.progressBar.hidden()
 
-                            Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
-                                .show()
+                            showCustomDialog(requireContext(), response.msg.toString(),"Error")
                         }
                     }
 
@@ -1272,13 +1304,17 @@ bindingUploads!!.bankletter.setOnClickListener{
 
         var status = false
         if (pdf1.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload GST certificate","Error")
+            showCustomDialog(requireContext(), "Please upload GST Certificate","Error")
             status = false
         }
+        else if (pdf2.isEmpty() && selectItem!="1" ) {
+            showCustomDialog(requireContext(), "Please upload Owner's Pancard", "Error")
+            status = false
 
+        }
         else if (pdf3.isEmpty() && selectItem!="1") {
 
-                showCustomDialog(requireContext(), "Please upload Electricity bill", "Error")
+                showCustomDialog(requireContext(), "Please upload Electricity Bill", "Error")
                 status = false
 
         }
@@ -1290,24 +1326,20 @@ bindingUploads!!.bankletter.setOnClickListener{
 //        }
         else if (images5.isEmpty() && selectItem!="1") {
 
-                showCustomDialog(requireContext(), "Please upload Real time godown", "Error")
+                showCustomDialog(requireContext(), "Please upload Real Time Godown Picture", "Error")
                 status = false
 
         }
 //        ==========================================================
         else if (pdf6.isEmpty()&& selectItem!="1") {
 
-                showCustomDialog(requireContext(), "Please upload cancelled cheque", "Error")
+                showCustomDialog(requireContext(), "Please upload Cancelled Cheque", "Error")
                 status = false
 
         }
-        else if (pdf2.isEmpty() && selectItem!="1" ) {
-            showCustomDialog(requireContext(), "Please upload Owner's Pancard", "Error")
-            status = false
 
-        }
         else if (pdf7.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload Organisation PAN card","Error")
+            showCustomDialog(requireContext(), "Please upload Organisation PAN Card","Error")
             status = false
         }
         else if (pdf8.isEmpty()&& selectItem!="1") {
@@ -1315,7 +1347,7 @@ bindingUploads!!.bankletter.setOnClickListener{
 
                 showCustomDialog(
                     requireContext(),
-                    "Please upload Bank confirmation letter",
+                    "Please upload Bank Confirmation Letter",
                     "Error"
                 )
                 status = false
@@ -1331,7 +1363,7 @@ bindingUploads!!.bankletter.setOnClickListener{
 
 
                 if (pdf10.isEmpty()) {
-                    showCustomDialog(requireContext(), "Please upload MSME", "Error")
+                    showCustomDialog(requireContext(), "Please upload MSME Certificate", "Error")
                     status = false
                 } else {
                     if (einvoice == "1" && selectItem!="1") {
@@ -1517,6 +1549,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteGst.setOnClickListener {
                             bindingUploads?.gstCerLL?.visibility = View.VISIBLE
                             bindingUploads!!.gstCerRL.visibility = View.GONE
+                            first?.clear()
+                            pdf1?.clear()
                         }
 
                     }
@@ -1565,6 +1599,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteIVElecBill.setOnClickListener {
                             bindingUploads?.eleBillLL?.visibility = View.VISIBLE
                             bindingUploads!!.eleBillRL.visibility = View.GONE
+                            third?.clear()
+                            pdf3?.clear()
                         }
 
 
@@ -1586,6 +1622,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteRentDead.setOnClickListener {
                             bindingUploads?.rentDeaLL?.visibility = View.VISIBLE
                             bindingUploads!!.rentDeaRL.visibility = View.GONE
+                            fourth?.clear()
+                            pdf4?.clear()
 
                         }
 
@@ -1609,6 +1647,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.IVdeletegodownImg.setOnClickListener {
                             bindingUploads?.godwonLL?.visibility = View.VISIBLE
                             bindingUploads!!.godwonRL.visibility = View.GONE
+                            images5.clear()
 
                         }
 
@@ -1632,6 +1671,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteChequeIV.setOnClickListener {
                             bindingUploads?.ccLL?.visibility = View.VISIBLE
                             bindingUploads!!.ccRL.visibility = View.GONE
+                            pdf6?.clear()
+                            sixth?.clear()
 
                         }
 
@@ -1658,6 +1699,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             bindingUploads?.adharLL?.visibility = View.VISIBLE
                             bindingUploads!!.adharRL.visibility = View.GONE
                             seventh!!.clear()
+                            pdf7?.clear()
 
                         }
 
@@ -1679,6 +1721,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteBankConfirmIV.setOnClickListener {
                             bindingUploads?.BCLL?.visibility = View.VISIBLE
                             bindingUploads!!.BCRL.visibility = View.GONE
+                            eighth?.clear()
+                            pdf8?.clear()
 
                         }
 
@@ -1699,6 +1743,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteITRIV.setOnClickListener {
                             bindingUploads?.itrLL?.visibility = View.VISIBLE
                             bindingUploads!!.itrRL.visibility = View.GONE
+                            ninth?.clear()
+                            pdf9?.clear()
 
                         }
 
@@ -1719,6 +1765,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteMSMEImageView.setOnClickListener {
                             bindingUploads?.MsmeLL?.visibility = View.VISIBLE
                             bindingUploads!!.MsmeRL.visibility = View.GONE
+                            tenth?.clear()
+                            pdf10?.clear()
 
                         }
 
@@ -1741,6 +1789,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteEInvoice.setOnClickListener {
                             bindingUploads?.eInvLL?.visibility = View.VISIBLE
                             bindingUploads!!.eInvRL.visibility = View.GONE
+                            elevnth?.clear()
+                            pdf11.clear()
 
                         }
 
@@ -1797,6 +1847,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteGst.setOnClickListener {
                             bindingUploads?.gstCerLL?.visibility = View.VISIBLE
                             bindingUploads!!.gstCerRL.visibility = View.GONE
+                            first?.clear()
+                            pdf1?.clear()
                         }
                     }
                     image2clicked -> {
@@ -1815,6 +1867,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteIVElecBill.setOnClickListener {
                             bindingUploads?.eleBillLL?.visibility = View.VISIBLE
                             bindingUploads!!.eleBillRL.visibility = View.GONE
+                            third?.clear()
+                            pdf3?.clear()
                         }
                     }
                     image4clicked -> {
@@ -1827,6 +1881,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteRentDead.setOnClickListener {
                             bindingUploads?.rentDeaLL?.visibility = View.VISIBLE
                             bindingUploads!!.rentDeaRL.visibility = View.GONE
+                            fourth?.clear()
+                            pdf4?.clear()
                         }
                     }
                     image6clicked -> {
@@ -1839,6 +1895,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteChequeIV.setOnClickListener {
                             bindingUploads?.ccLL?.visibility = View.VISIBLE
                             bindingUploads!!.ccRL.visibility = View.GONE
+                            pdf6?.clear()
+                            sixth?.clear()
                         }
                     }
                     image7clicked -> {
@@ -1855,6 +1913,7 @@ bindingUploads!!.bankletter.setOnClickListener{
                             bindingUploads?.adharLL?.visibility = View.VISIBLE
                             bindingUploads!!.adharRL.visibility = View.GONE
                             seventh!!.clear()
+                            pdf7?.clear()
                         }
                     }
                     image8clicked -> {
@@ -1867,6 +1926,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteBankConfirmIV.setOnClickListener {
                             bindingUploads?.BCLL?.visibility = View.VISIBLE
                             bindingUploads!!.BCRL.visibility = View.GONE
+                            eighth?.clear()
+                            pdf8?.clear()
                         }
                     }
                     image9clicked -> {
@@ -1879,6 +1940,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteITRIV.setOnClickListener {
                             bindingUploads?.itrLL?.visibility = View.VISIBLE
                             bindingUploads!!.itrRL.visibility = View.GONE
+                            ninth?.clear()
+                            pdf9?.clear()
                         }
                     }
                     image10clicked -> {
@@ -1891,6 +1954,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteMSMEImageView.setOnClickListener {
                             bindingUploads?.MsmeLL?.visibility = View.VISIBLE
                             bindingUploads!!.MsmeRL.visibility = View.GONE
+                            tenth?.clear()
+                            pdf10?.clear()
                         }
                     }
                     image11clicked -> {
@@ -1903,6 +1968,8 @@ bindingUploads!!.bankletter.setOnClickListener{
                         bindingUploads!!.deleteEInvoice.setOnClickListener {
                             bindingUploads?.eInvLL?.visibility = View.VISIBLE
                             bindingUploads!!.eInvRL.visibility = View.GONE
+                            elevnth?.clear()
+                            pdf11.clear()
                         }
                     }
                     imageAddclicked -> {

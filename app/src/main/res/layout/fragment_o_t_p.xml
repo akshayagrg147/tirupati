@@ -31,7 +31,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Otp Verification"
+                        android:text="OTP Verification"
                         android:layout_marginStart="@dimen/_22sdp"
                         android:fontFamily="@font/montserrat_semibold"
                         android:layout_centerVertical="true"/>

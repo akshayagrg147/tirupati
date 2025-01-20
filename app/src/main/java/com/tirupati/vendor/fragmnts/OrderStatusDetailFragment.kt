@@ -10,6 +10,8 @@ import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -101,7 +103,7 @@ private fun downloadFileUsingDownloadManager(  url: String, fileName: String, co
         binding.valueSalesOrderDate.text = responseData.salesOrderDate
         binding.valueCustomerPoNumber.text = responseData.customerPONo
         binding.valueBookingType.text = responseData.directBooking
-        binding.valueNameOfBroker.text = responseData.nameOfOrganization
+        binding.valueNameOfBroker.text = responseData.broker
 
         binding.labelBillingAddressValue.text= responseData.billTo
         binding.labelShippingAddressValue.text= responseData.shipTo
@@ -119,10 +121,44 @@ private fun downloadFileUsingDownloadManager(  url: String, fileName: String, co
         binding.labelTaxValue.text = responseData.taxAmount
         binding.valueTotalAmount.text = responseData.totalAmount
         binding.labelBatchNumberValue.text = responseData.batchDetails.firstOrNull()?.batchCode ?: "N/A"  // Handle batch details
-        binding.coilNumberValue.text = responseData.batchDetails.firstOrNull()?.coilNo?: "N/A" // Handle batch details
-        binding.labelGrossWeightValue.text = responseData.batchDetails.firstOrNull()?.grossWeight  // Assuming this is the rate per UOM
-        binding.labelPalletWeightValue.text = responseData.batchDetails.firstOrNull()?.palletWeight // Assuming this is the rate per UOM
-        binding.labelNetWeightValue.text = responseData.batchDetails.firstOrNull()?.netWeight
+
+        val initialBatch = responseData.batchDetails.firstOrNull()
+        binding.labelGrossWeightValue.text = initialBatch?.grossWeight ?: ""
+        binding.labelPalletWeightValue.text = initialBatch?.palletWeight ?: ""
+        binding.labelNetWeightValue.text = initialBatch?.netWeight ?: ""
+
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, responseData.batchDetails.mapNotNull { it.coilNo })
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.coilNumberValue.adapter = adapter
+
+        binding.coilNumberValue.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                // Get the selected coil number
+                val selectedCoilNo = adapter.getItem(position)
+
+                // Find the corresponding BatchDetail object
+                val selectedBatch = responseData.batchDetails.find { it.coilNo == selectedCoilNo }
+
+                // Update the labels with the selected batch details
+                binding.labelGrossWeightValue.text = selectedBatch?.grossWeight ?: ""
+                binding.labelPalletWeightValue.text = selectedBatch?.palletWeight ?: ""
+                binding.labelNetWeightValue.text = selectedBatch?.netWeight ?: ""
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Handle the case where nothing is selected (optional)
+            }
+        }
+
+
+
+
+
         binding.labelVechileNumberValue.text = responseData.truckNo ?: "N/A" // Handle nullable field
         binding.driverNameLabelValue.text = responseData.driverName ?: "N/A"  // Handle nullable field
         binding.labelContactNumberValue.text = responseData.driverContactNo ?: "N/A"  // Handle nullable field

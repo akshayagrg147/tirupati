@@ -55,6 +55,7 @@ class BusinessDetailFragment : Fragment() {
             findNavController(). popBackStack()
 
         }
+        bindingFirstPage?.inputUserFirstName?.setText(org_name)
         if(selectItem=="1"){
             bindingFirstPage?.ownerContactET1?.visibility=View.GONE
             bindingFirstPage?.ownerFullNameET1?.visibility=View.GONE
@@ -136,7 +137,7 @@ class BusinessDetailFragment : Fragment() {
         }else if self.contactNumberTextField.text == ""{
             self.showAlertWithViewController(self, title: "Error", message: "Owner's Contact Number can't be empty!")
         }else if self.contactNumberTextField.text?.isValidPhone == false{
-            self.showAlertWithViewController(self, title: "Error", message: "Owner's Contact Number is incorrect")
+            self.showAlertWithViewController(self, title: "Error", message: "Owner's Contact Number is Incorrect")
         }
         else if ((self.emailIDTextField.text?.count ?? 0) > 0) && (self.emailIDTextField.text?.isValidEmail == false){
             self.showAlertWithViewController(self, title: "Error", message: "Owner's Email ID is incorrect")
@@ -161,11 +162,11 @@ class BusinessDetailFragment : Fragment() {
 
         var status = false
         if (binding.inputUserFirstName.text.isNullOrEmpty()) {
-            showCustomDialog(requireContext(),"Name of the organisation can't be empty!","Error")
+            showCustomDialog(requireContext(),"Name of the Organisation can't be empty!","Error")
             status = false
         }
         else if(binding.legalEntity.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Legal entity type can't be empty!","Error")
+            showCustomDialog(requireContext(),"Legal Entity Type can't be empty!","Error")
             status = false
 
         }
@@ -191,7 +192,7 @@ class BusinessDetailFragment : Fragment() {
         }
         else if(!binding.ownerContactET.text.toString().isValidPhoneNumber() && selectItem!="1"){
 
-            showCustomDialog(requireContext(),"Owner's Contact Number is incorrect","Error")
+            showCustomDialog(requireContext(),"Owner's Contact Number is Incorrect","Error")
             status = false
 
 
@@ -210,59 +211,59 @@ class BusinessDetailFragment : Fragment() {
         }
         else if(binding.ownerPanET.text.isNullOrEmpty() && selectItem!="1"){
 
-            showCustomDialog(requireContext(), "Owner Pan number can't be empty", "Error")
+            showCustomDialog(requireContext(), "Owner PAN Number can't be empty", "Error")
             status = false
 
 
         }
         else if(!binding.ownerPanET.text.toString().isValidPANNumber() && selectItem!="1"){
 
-            showCustomDialog(requireContext(),"Owner's PAN Card is incorrect","Error")
+            showCustomDialog(requireContext(),"Owner's PAN Card is Incorrect","Error")
             status = false
 
 
         }
 
 
-//        else if(binding.ETpodName.text.isNullOrEmpty() ){
-//
-//            showCustomDialog(requireContext(), "POC Name should not empty", "Error")
-//            status = false
-//
-//
-//        }
+        else if(binding.ETpodName.text.isNullOrEmpty() ){
 
-//        else if(binding.POCWhatsAppET.text.isNullOrEmpty()){
-//
-//            showCustomDialog(requireContext(), "POC Whatsapp Number is empty", "Error")
-//            status = false
-//
-//
-//        }
+            showCustomDialog(requireContext(), "POC Name can't be empty!", "Error")
+            status = false
+
+
+        }
+
+        else if(binding.POCWhatsAppET.text.isNullOrEmpty()){
+
+            showCustomDialog(requireContext(), "POC WhatsApp Number can't be empty!", "Error")
+            status = false
+
+
+        }
 
 
            else if(binding.POCWhatsAppET.text.toString().isNotEmpty() && !binding.POCWhatsAppET.text.toString().isValidPhoneNumber()) {
-            showCustomDialog(requireContext(), "POC Whatsapp Number is incorrect", "Error")
+            showCustomDialog(requireContext(), "POC WhatsApp Number is Incorrect ", "Error")
             status = false
 
         }
 
         else if((binding.POCEmailIdET.text.isEmpty() || binding.POCEmailIdET.text.isNotEmpty() && !binding.POCEmailIdET.text.toString().isValidEmail()) && selectItem=="1" ){
 
-            showCustomDialog(requireContext(), "POC Email ID is incorrect", "Error")
+            showCustomDialog(requireContext(), "POC Email ID is Incorrect", "Error")
             status = false
 
 
         }
         else if(binding.GSTnumberEt.text.isNullOrEmpty() && selectItem=="1"){
 
-            showCustomDialog(requireContext(), "Organisation's GST number can't be empty", "Error")
+            showCustomDialog(requireContext(), "Organisation's GST Number can't be empty", "Error")
             status = false
 
 
         }
         else if(!binding.GSTnumberEt.text.toString().isValidGST() && selectItem=="1"){
-            showCustomDialog(requireContext(), "GST is not valid", "Error")
+            showCustomDialog(requireContext(), "GST is not Valid", "Error")
             status = false
 
 
@@ -270,14 +271,14 @@ class BusinessDetailFragment : Fragment() {
 
         else if(binding.PANEt.text.isNullOrEmpty() && selectItem=="1"){
 
-            showCustomDialog(requireContext(), "Organisation's PAN number can't be empty", "Error")
+            showCustomDialog(requireContext(), "Organisation's PAN Number can't be empty", "Error")
             status = false
 
 
         }
         else if(!binding.PANEt.text.toString().isValidPANNumber() && selectItem=="1"){
 
-            showCustomDialog(requireContext(),"Organisation's PAN number is incorrect","Error")
+            showCustomDialog(requireContext(),"Organisation's PAN Number is Incorrect","Error")
             status = false
 
 

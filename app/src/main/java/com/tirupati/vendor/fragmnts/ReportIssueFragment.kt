@@ -46,6 +46,7 @@ import com.tirupati.vendor.adapters.ReportIssueCoilAdapter
 import com.tirupati.vendor.databinding.FragmentReportIssueBinding
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.showCustomDialog
 import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.BatchDetail
 import com.tirupati.vendor.model.ResponseData
@@ -167,7 +168,7 @@ class ReportIssueFragment : Fragment() {
         }
 
         // Create a list of static strings
-        val staticStrings = listOf("Item Missing Issue", "Packaging Issue")
+        val staticStrings = listOf("Quality Issue", "Weight Issue","Others(Please Specify)")
 
 // Initialize a default ArrayAdapter with the list of strings
         val spinnerAdapter2 = ArrayAdapter(requireActivity(), R.layout.item_spinner_row, staticStrings)
@@ -211,7 +212,7 @@ class ReportIssueFragment : Fragment() {
     }
     private fun onSubmitClicked() {
 
-        val gstValue = binding!!.txtUserGST.editText!!.getText().toString().trim()
+
         val batchNoValue = binding!!.batchNo.getText().toString().trim()
         val coilNoValue = binding!!.coilNumber.getText().toString().trim()
         val grossWeightValue = binding!!.grossWeight.getText().toString().trim()
@@ -223,36 +224,37 @@ class ReportIssueFragment : Fragment() {
         // Validate if any field is empty and show toast messages
 
         // Validate if any field is empty and show toast messages
-        if (gstValue.isEmpty()) {
-            showToast("GST number is required")
+        if (batchNoValue.isEmpty()) {
+            showCustomDialog(requireContext(), "Batch Number can't be empty!","Error")
+
             return  // Exit method if validation fails
         }
-        if (batchNoValue.isEmpty()) {
-            showToast("Batch number is required")
-            return
-        }
+
         if (coilNoValue.isEmpty()) {
-            showToast("Coil number is required")
+            showCustomDialog(requireContext(), "Coil Number can't be empty!","Error")
             return
         }
         if (grossWeightValue.isEmpty()) {
-            showToast("Gross weight is required")
+
+            showCustomDialog(requireContext(), "Gross weight can't be empty!","Error")
             return
         }
         if (parallelWeightValue.isEmpty()) {
-            showToast("Parallel weight is required")
+            showCustomDialog(requireContext(), "Parallel weight can't be empty!","Error")
+
             return
         }
         if (netWeightValue.isEmpty()) {
-            showToast("Net weight is required")
+            showCustomDialog(requireContext(), "Net weight can't be empty!","Error")
             return
         }
         if (issueTypeValue.isEmpty()) {
+            showCustomDialog(requireContext(), "Select issue type can't be empty!","Error")
             showToast("Issue type is required")
             return
         }
         if (serialNumberValue.isEmpty()) {
-            showToast("Serial number is required")
+            showCustomDialog(requireContext(), "Please Describe your issue","Error")
             return
         }
         binding!!.loginProgressBar.progressBar.shown()
@@ -263,7 +265,7 @@ class ReportIssueFragment : Fragment() {
         header["userID"]="${sessionManager.user?.RESPONSEDATA?.USER_ID}"
         lifecycleScope.launch {
             val saveReportRequest = SaveReportRequest(
-                SOID_REF = gstValue,
+                SOID_REF = batchNoValue,
                 BATCH_NO = batchNoValue,
                 COIL_NO = coilNoValue,
                 GROSS_WEIGHT = grossWeightValue,
@@ -296,26 +298,27 @@ class ReportIssueFragment : Fragment() {
 
                 is NetworkState.Error<*> -> {
                     binding!!.loginProgressBar.progressBar.hidden()
-                    Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                 }
 
                 is NetworkState.NetworkException -> {
                     binding!!.loginProgressBar.progressBar.hidden()
-                    Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                 }
 
                 is NetworkState.HttpErrors.InternalServerError -> {
                     binding!!.loginProgressBar.progressBar.hidden()
-                    Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                 }
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
                     binding!!.loginProgressBar.progressBar.hidden()
-                    Toast.makeText(context,"something went wrong",Toast.LENGTH_SHORT).show()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                 }
 
                 else -> {
                     binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), "something went wrong","Error")
                 }
             }
 

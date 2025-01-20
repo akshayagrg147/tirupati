@@ -50,14 +50,19 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.gson.Gson
+import com.google.gson.JsonObject
+import com.google.gson.reflect.TypeToken
 import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.FragmentDispatchBinding
 import com.tirupati.vendor.databinding.FragmentPurchaseOrderClickBinding
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.showCustomDialog
 import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.model.PurchaseOrderRequest
 import com.tirupati.vendor.model.ResponseData
+import com.tirupati.vendor.model.UploadsDetailResponse
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.ui.LandingVendorSActivity
 import com.tirupati.vendor.utils.ActivityUtils
@@ -519,25 +524,48 @@ class DispatchFragment : Fragment() {
                         val serialNumber = binding?.serialNumber?.text.toString()
 
                         if (orderDate.isEmpty() || purchaseNo.isEmpty() || convertAddress==null || convertAddress?.isEmpty()==true || latitude==0.00 || longitude==0.00|| multipart==null||qty.isEmpty()||serialNumber.isEmpty()) {
-                            // Return with a message indicating that some fields are empty
-                            val emptyFields = mutableListOf<String>()
-                            if (orderDate.isEmpty()) emptyFields.add("Order Date")
-                            if (purchaseNo.isEmpty()) emptyFields.add("Purchase Number")
-                            if (convertAddress==null) emptyFields.add("Location Name")
-                            if (qty.isEmpty()) emptyFields.add("Quantity")
-                            if (serialNumber.isEmpty()) emptyFields.add("Serial Number")
-                            else{
-                                if (convertAddress?.isEmpty()==true) emptyFields.add("Location Name")
 
+                            if (orderDate.isEmpty()) {
+                                showCustomDialog(requireContext(), "Order Date can't be empty", "Error")
+                                return@launch
                             }
-                            if (latitude==0.00) emptyFields.add("Latitude")
-                            if (longitude==0.00) emptyFields.add("Longitude")
-                            if (multipart==null) emptyFields.add("Image")
 
-                            val message = "The following fields are empty: ${emptyFields.joinToString(", ")}"
-                            // Show the message to the user (you can use Toast, Snackbar, or any other method)
-                            // For example:
-                            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                            if (purchaseNo.isEmpty()) {
+                                showCustomDialog(requireContext(), "Purchase Number can't be empty", "Error")
+                                return@launch
+                            }
+
+                            if (convertAddress!!.isEmpty()) {
+                                showCustomDialog(requireContext(), "Location Name can't be empty", "Error")
+                                return@launch
+                            }
+
+                            if (qty.isEmpty()) {
+                                showCustomDialog(requireContext(), "Quantity can't be empty", "Error")
+                                return@launch
+                            }
+
+                            if (serialNumber.isEmpty()) {
+                                showCustomDialog(requireContext(), "Seal Number can't be empty", "Error")
+                                return@launch
+                            }
+
+                            if (latitude == 0.00) {
+                                showCustomDialog(requireContext(), "Latitude is empty or invalid", "Error")
+                                return@launch
+                            }
+
+                            if (longitude == 0.00) {
+                                showCustomDialog(requireContext(), "Longitude is empty or invalid", "Error")
+                                return@launch
+                            }
+
+                            if (multipart == null) {
+                                showCustomDialog(requireContext(), "Photo/Video can't be empty", "Error")
+                                return@launch
+                            }
+
+
                         } else {
                             binding!!.loginProgressBar.progressBar.shown()
                             var response = gateKeeperVm.passDispatchOrder(
@@ -560,7 +588,7 @@ class DispatchFragment : Fragment() {
 
                                 is NetworkState.Success -> {
                                     binding!!.loginProgressBar.progressBar.hidden()
-                                    Toast.makeText(context, response.body.MESSAGE, Toast.LENGTH_SHORT).show()
+                                    showCustomDialog(requireContext(), response.body.MESSAGE,"Error")
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         findNavController().popBackStack()
                                     }, 1000)
@@ -570,24 +598,43 @@ class DispatchFragment : Fragment() {
 
                                 is NetworkState.Error<*> -> {
                                     binding!!.loginProgressBar.progressBar.hidden()
-                                    Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT)
-                                        .show()
+                                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                                 }
 
                                 is NetworkState.NetworkException -> {
                                     binding!!.loginProgressBar.progressBar.hidden()
+                                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                                 }
 
                                 is NetworkState.HttpErrors.InternalServerError -> {
                                     binding!!.loginProgressBar.progressBar.hidden()
+                                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                                 }
 
                                 is NetworkState.HttpErrors.ResourceNotFound -> {
                                     binding!!.loginProgressBar.progressBar.hidden()
+                                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                                 }
 
                                 else -> {
                                     binding!!.loginProgressBar.progressBar.hidden()
+
+                                    val gson = Gson()
+
+                                    // Extract the JSON part of the response
+                                    val jsonPart = response.toString().substringAfter("msg=").substringBeforeLast(")")
+
+                                    // Parse the JSON using Gson
+
+                                    val jsonObject = gson.fromJson(jsonPart, JsonObject::class.java)
+
+                                    // Extract the MESSAGE field
+                                    val message = jsonObject.get("MESSAGE").asString
+
+                                    // Print the extracted message
+                                    println("Extracted Message: $message")
+                                    showCustomDialog(requireContext(), message,"Error")
+
                                 }
                             }
                         }

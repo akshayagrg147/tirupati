@@ -16,6 +16,7 @@ import com.tirupati.vendor.R
 import com.tirupati.vendor.databinding.FragmentOrderStatusTabBinding
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.showCustomDialog
 import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
@@ -67,6 +68,11 @@ class OrderStatusTabFragment : Fragment() {
 
         // Use binding to access views
         binding.btnSubmit.setOnClickListener {
+            if(_binding?.inputUserFirstName?.text.toString().isEmpty())
+            {
+                showCustomDialog(requireContext(), "Unique Sales Order Number can't be empty!","Error")
+                return@setOnClickListener
+            }
             callCustomerStatus(_binding?.inputUserFirstName?.text.toString())
         }
     }
@@ -98,14 +104,20 @@ class OrderStatusTabFragment : Fragment() {
                 is NetworkState.Error<*> -> {
 
                     binding.loginProgressBar.progressBar.hidden()
-                    Toast.makeText(context, response.msg.toString(), Toast.LENGTH_SHORT).show()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
+
+
                 }
                 is NetworkState.NetworkException,
                 is NetworkState.HttpErrors.InternalServerError,
                 is NetworkState.HttpErrors.ResourceNotFound -> {
                     binding.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), "something went wrong", "Error")
                 }
-                else -> binding.loginProgressBar.progressBar.hidden()
+                else -> {
+                    binding.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), "something went wrong", "Error")
+                }
             }
         }
     }

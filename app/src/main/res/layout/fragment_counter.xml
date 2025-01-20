@@ -27,9 +27,9 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/open_sans_regular"
-                    android:text="Vensors can counter the rate upto twice,exceeding this may lead to PO rejection"
-                    android:textColor="@color/black"
+                    android:fontFamily="@font/monsrt_bold"
+                    android:text="Vendors can counter the rate upto twice,exceeding this may lead to PO rejection"
+                    android:textColor="@color/brightRed"
                     android:textSize="@dimen/_10sdp" />
 
 
@@ -81,7 +81,7 @@
                         android:textCursorDrawable="@null"
                         android:focusable="false"
                         android:text="@{model.counterDetails.responseData.nameOfOrganization}"
-                        android:hint="Name of the organisation"
+                        android:hint="Name of the Organisation"
                         android:imeOptions="actionDone" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -172,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:clickable="false"
                         android:textCursorDrawable="@null"
-                        android:text="@{model.counterDetails.responseData.icode}"
+                        android:text="@{model.counterDetails.responseData.hsncCode}"
                         android:focusable="false"
                         android:hint="HSN/SAC Code" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -224,12 +224,39 @@
                         android:text="@{model.counterDetails.responseData.ratepUom}"
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
-
-                <TextView
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/text_Box"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeErrorColor="@color/brightRed"
+                    app:errorEnabled="true"
+                    app:hintTextColor="@color/colorPrimaryVariant">
+
+                    <EditText
+                        android:id="@+id/amount_total"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Amount(Exclusive GST)"
+                        android:textCursorDrawable="@null"
+                        android:text="@{model.counterDetails.responseData.amount}"
+                        android:imeOptions="actionDone"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+
+                    android:fontFamily="@font/monsrt_bold"
                     android:text="@{model.counterDetails.message}"
-                    />
+                    android:textColor="@color/brightRed"
+                    android:textSize="@dimen/_10sdp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/text_Box"
@@ -266,28 +293,6 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/text_Box"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:boxCornerRadiusBottomEnd="12dp"
-                    app:boxCornerRadiusBottomStart="12dp"
-                    app:boxCornerRadiusTopEnd="12dp"
-                    app:boxCornerRadiusTopStart="12dp"
-                    app:boxStrokeErrorColor="@color/brightRed"
-                    app:errorEnabled="true"
-                    app:hintTextColor="@color/colorPrimaryVariant">
-
-                    <EditText
-                        android:id="@+id/amount_total"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Amount Exclusive GST"
-                        android:textCursorDrawable="@null"
-                        android:text="@{model.counterDetails.responseData.amount}"
-                        android:imeOptions="actionDone"
-                        android:inputType="number" />
-                </com.google.android.material.textfield.TextInputLayout>
 
 
                 <com.google.android.material.textfield.TextInputLayout

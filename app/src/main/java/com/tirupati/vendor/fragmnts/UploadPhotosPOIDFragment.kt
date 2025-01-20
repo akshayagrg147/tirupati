@@ -328,6 +328,7 @@ class UploadPhotosPOIDFragment : Fragment() {
 
                     is NetworkState.Error<*> -> {
                         bindingUploads!!.loginProgressBar.progressBar.hidden()
+                        showCustomDialog(requireContext(), response.msg.toString(),"Error")
 
                         // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                     }

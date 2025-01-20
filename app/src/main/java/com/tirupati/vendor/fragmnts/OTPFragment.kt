@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import com.tirupati.vendor.databinding.FragmentOTPBinding
 import com.tirupati.vendor.helper.SessionManager
 import com.tirupati.vendor.helper.hidden
+import com.tirupati.vendor.helper.showCustomDialog
 import com.tirupati.vendor.helper.shown
 import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.ui.CustomerHomeActivity
@@ -109,6 +110,7 @@ class OTPFragment : Fragment() {
 
                         is NetworkState.Error<*> -> {
                             bindingOTP!!.loginProgressBar.progressBar.hidden()
+                            showCustomDialog(requireContext(), response.msg.toString(),"Error")
                             // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                         }
 
@@ -205,6 +207,7 @@ class OTPFragment : Fragment() {
 
                 is NetworkState.Error<*> -> {
                     bindingOTP!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 
@@ -251,6 +254,7 @@ class OTPFragment : Fragment() {
 
                 is NetworkState.Error<*> -> {
                     bindingOTP!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                     // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
                 }
 

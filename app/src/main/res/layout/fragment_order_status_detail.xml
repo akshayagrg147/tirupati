@@ -282,7 +282,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Offer Validity"
+                android:text="Order Validity"
 
                 android:textColor="#000000" />
             <TextView
@@ -423,6 +423,7 @@
                 android:id="@+id/value_taxable_amount"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:text="2580000.00"
                 android:textColor="#000000" />
@@ -446,6 +447,7 @@
                 android:id="@+id/label_tax_value"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:text="3044400.00"
                 android:textColor="#000000" />
@@ -470,6 +472,7 @@
                 android:id="@+id/value_total_amount"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:text="3044400.00"
                 android:textColor="#000000" />
@@ -522,13 +525,13 @@
                 android:text="Coil Number"
 
                 android:textColor="#000000" />
-            <TextView
+            <Spinner
                 android:id="@+id/coil_number_value"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="3044400.00"
-                android:textColor="#000000" />
+                android:spinnerMode="dropdown" />
+
         </LinearLayout>
         <!-- Gross weight -->
         <LinearLayout

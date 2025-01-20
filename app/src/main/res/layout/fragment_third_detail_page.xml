@@ -37,7 +37,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_semibold"
-                    android:text="Bank Details"
+                    android:text="Bank Detail"
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -212,7 +212,7 @@
                         android:id="@+id/ifscET"
                         style="@style/et_login_signup"
 
-                        android:hint="IFSC"
+                        android:hint="IFSC Code"
                         android:textCursorDrawable="@null"
                         android:importantForAutofill="noExcludeDescendants"
 
@@ -391,6 +391,7 @@
                         android:layout_weight="5">
 
                         <TextView
+                            android:id="@+id/multiple_owner_text"
                             android:layout_width="0dp"
                             android:layout_weight="4"
                             android:layout_gravity="center_vertical"

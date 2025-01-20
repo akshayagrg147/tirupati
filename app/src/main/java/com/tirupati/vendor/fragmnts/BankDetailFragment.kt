@@ -94,6 +94,8 @@ Log.d("selectItemselectItem",selectItem)
 
         }
         if(selectItem=="1"){
+            bindingThirdPage?.multipleOwnerText?.text="Is Multiple Owners Applicable?"
+
 bindingThirdPage?.msmeApplicable1?.visibility=View.GONE
             bindingThirdPage?.evoiceApplicable1?.visibility=View.GONE
         }
@@ -235,17 +237,17 @@ bindingThirdPage?.msmeApplicable1?.visibility=View.GONE
 
         var status = false
         if (binding.bankNameET.text.isNullOrEmpty()) {
-            showCustomDialog(requireContext(),"Organisation’s Bank name can't be empty!","Error")
+            showCustomDialog(requireContext(),"Organisation’s Bank Name can't be empty!","Error")
             status = false
         }
         else if(binding.accountNumberET.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Account number can't be empty!","Error")
+            showCustomDialog(requireContext(),"Account Number can't be empty!","Error")
             status = false
 
         }
 
         else if(binding.accountTypes.text.toString().isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Select Account Type!!","Error")
+            showCustomDialog(requireContext(),"Account Type can't be empty!","Error")
             status = false
 
         }
@@ -255,18 +257,18 @@ bindingThirdPage?.msmeApplicable1?.visibility=View.GONE
 
         }
         else if(!binding.ifscET.text.toString().isIFSC()){
-            showCustomDialog(requireContext(),"IFSC code is incorrect!","Error")
+            showCustomDialog(requireContext(),"IFSC code is Incorrect!","Error")
             status = false
 
         }
         else if(binding.branchET.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Branch name can't be empty","Error")
+            showCustomDialog(requireContext(),"Branch Name can't be empty!","Error")
             status = false
 
         }
 
 //        else if(binding.pinET.text.toString().isNullOrEmpty()){
-//            showCustomDialog(requireContext(),"PIN code can't be Empty","Error")
+//            showCustomDialog(requireContext(),"PIN code can't be empty","Error")
 //            status = false
 //
 //        }

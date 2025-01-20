@@ -266,7 +266,7 @@
                                 android:layout_marginBottom="@dimen/_5sdp"
                                 android:textStyle="bold"
                                 android:fontFamily="@font/montserrat_medium"
-                                android:text="Second Owner Details"
+                                android:text="Second Owner Detail"
                                 android:textColor="@color/black"
 
                                 android:textSize="@dimen/_13ssp" />
@@ -301,34 +301,7 @@
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
                         </com.google.android.material.textfield.TextInputLayout>
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/secondVnumber"
-                            style="@style/text_Box"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:textColorHint="@color/black"
-                            app:boxCornerRadiusBottomEnd="12dp"
-                            app:boxCornerRadiusBottomStart="12dp"
-                            app:boxCornerRadiusTopEnd="12dp"
-                            app:boxCornerRadiusTopStart="12dp"
-                            app:boxStrokeErrorColor="@color/brightRed"
-                            app:counterMaxLength="50"
-                            app:endIconCheckable="true"
-                            app:errorEnabled="true"
-                            app:hintAnimationEnabled="true">
 
-                            <EditText
-                                android:id="@+id/secondVContact"
-                                style="@style/et_login_signup"
-                                android:hint="Owner's Contact Number"
-                                android:importantForAutofill="noExcludeDescendants"
-                                android:inputType="phone"
-                                android:textCursorDrawable="@null"
-                                android:maxLength="50"
-                                android:outlineAmbientShadowColor="@color/blue_light" />
-
-                        </com.google.android.material.textfield.TextInputLayout>
 
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -354,6 +327,34 @@
                                 android:hint="Owner's Email Id"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
+                                android:textCursorDrawable="@null"
+                                android:maxLength="50"
+                                android:outlineAmbientShadowColor="@color/blue_light" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/secondVnumber"
+                            style="@style/text_Box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColorHint="@color/black"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeErrorColor="@color/brightRed"
+                            app:counterMaxLength="50"
+                            app:endIconCheckable="true"
+                            app:errorEnabled="true"
+                            app:hintAnimationEnabled="true">
+
+                            <EditText
+                                android:id="@+id/secondVContact"
+                                style="@style/et_login_signup"
+                                android:hint="Owner's Contact Number"
+                                android:importantForAutofill="noExcludeDescendants"
+                                android:inputType="phone"
                                 android:textCursorDrawable="@null"
                                 android:maxLength="50"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
@@ -454,34 +455,7 @@
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
                         </com.google.android.material.textfield.TextInputLayout>
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/thirdVname"
-                            style="@style/text_Box"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:textColorHint="@color/black"
-                            app:boxCornerRadiusBottomEnd="12dp"
-                            app:boxCornerRadiusBottomStart="12dp"
-                            app:boxCornerRadiusTopEnd="12dp"
-                            app:boxCornerRadiusTopStart="12dp"
-                            app:boxStrokeErrorColor="@color/brightRed"
-                            app:counterMaxLength="50"
-                            app:endIconCheckable="true"
-                            app:errorEnabled="true"
-                            app:hintAnimationEnabled="true">
 
-                            <EditText
-                                android:id="@+id/thirdVContact"
-                                style="@style/et_login_signup"
-                                android:hint="Owner's Contact Number"
-                                android:textCursorDrawable="@null"
-                                android:importantForAutofill="noExcludeDescendants"
-                                android:inputType="phone"
-                                android:maxLength="50"
-                                android:outlineAmbientShadowColor="@color/blue_light" />
-
-                        </com.google.android.material.textfield.TextInputLayout>
 
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -509,6 +483,34 @@
                                 android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
+                                android:maxLength="50"
+                                android:outlineAmbientShadowColor="@color/blue_light" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/thirdVname"
+                            style="@style/text_Box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColorHint="@color/black"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeErrorColor="@color/brightRed"
+                            app:counterMaxLength="50"
+                            app:endIconCheckable="true"
+                            app:errorEnabled="true"
+                            app:hintAnimationEnabled="true">
+
+                            <EditText
+                                android:id="@+id/thirdVContact"
+                                style="@style/et_login_signup"
+                                android:hint="Owner's Contact Number"
+                                android:textCursorDrawable="@null"
+                                android:importantForAutofill="noExcludeDescendants"
+                                android:inputType="phone"
                                 android:maxLength="50"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
@@ -609,34 +611,7 @@
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
                         </com.google.android.material.textfield.TextInputLayout>
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/fourthVname"
-                            style="@style/text_Box"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:textColorHint="@color/black"
-                            app:boxCornerRadiusBottomEnd="12dp"
-                            app:boxCornerRadiusBottomStart="12dp"
-                            app:boxCornerRadiusTopEnd="12dp"
-                            app:boxCornerRadiusTopStart="12dp"
-                            app:boxStrokeErrorColor="@color/brightRed"
-                            app:counterMaxLength="50"
-                            app:endIconCheckable="true"
-                            app:errorEnabled="true"
-                            app:hintAnimationEnabled="true">
 
-                            <EditText
-                                android:id="@+id/fourthVContact"
-                                style="@style/et_login_signup"
-                                android:hint="Owner's Contact Number"
-                                android:textCursorDrawable="@null"
-                                android:importantForAutofill="noExcludeDescendants"
-                                android:inputType="phone"
-                                android:maxLength="50"
-                                android:outlineAmbientShadowColor="@color/blue_light" />
-
-                        </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
 
@@ -663,6 +638,34 @@
                                 android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="text"
+                                android:maxLength="50"
+                                android:outlineAmbientShadowColor="@color/blue_light" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/fourthVname"
+                            style="@style/text_Box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColorHint="@color/black"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeErrorColor="@color/brightRed"
+                            app:counterMaxLength="50"
+                            app:endIconCheckable="true"
+                            app:errorEnabled="true"
+                            app:hintAnimationEnabled="true">
+
+                            <EditText
+                                android:id="@+id/fourthVContact"
+                                style="@style/et_login_signup"
+                                android:hint="Owner's Contact Number"
+                                android:textCursorDrawable="@null"
+                                android:importantForAutofill="noExcludeDescendants"
+                                android:inputType="phone"
                                 android:maxLength="50"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 

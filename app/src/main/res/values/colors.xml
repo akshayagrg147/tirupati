@@ -27,6 +27,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="brownHigh">#815343</color>
+    <color name="brownHigh1">#FFB0AFAE</color>
+
+    <color name="brownOff">#53504F</color>
     <color name="brownlow">#E99972</color>
     <color name="orange">#EA8F62</color>
 
@@ -76,6 +79,9 @@
     <color name="color1A1A1A">#1A1A1A</color>
     <color name="gun_metal">#585C5E</color>
     <color name="dark_red">#f74f5d</color>
+    <color name="dark_red1">#815343</color>
+
+
     <color name="pink_light">#fff7e8</color>
     <color name="pink">#fce4e4</color>
     <color name="pink_dark">#ff8878</color>

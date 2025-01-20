@@ -210,15 +210,16 @@ class MultipleAccountsFragment : Fragment() {
             if (!isValidName(bindingUploads.EtVSecondName.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Owner Full Name",
+                    "Owner's Full Name can't be empty",
                     "Error"
                 )
                 return false
             }
-            if (!isValidContact(bindingUploads.secondVContact.text.toString())) {
+
+            if(bindingUploads.inputSecondVendorEmail.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Owner Contact No",
+                    "Owner's Email Id can't be empty",
                     "Error"
                 )
                 return false
@@ -231,10 +232,34 @@ class MultipleAccountsFragment : Fragment() {
                 )
                 return false
             }
-            if (!isValidPan(bindingUploads.secondVAdhar.text.toString())) {
+            if(bindingUploads.secondVContact.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Pan card",
+                    "Owner's Contact Number can't be empty",
+                    "Error"
+                )
+                return false
+            }
+            if ( bindingUploads.secondVContact.text.toString().isNotEmpty() && !isValidContact(bindingUploads.secondVContact.text.toString())) {
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Owner Contact Number",
+                    "Error"
+                )
+                return false
+            }
+            if(bindingUploads.secondVAdhar.text.toString().isEmpty()){
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Owner's PAN Number can't be empty",
+                    "Error"
+                )
+                return false
+            }
+            if (bindingUploads.secondVAdhar.text.toString().isNotEmpty() && !isValidPan(bindingUploads.secondVAdhar.text.toString())) {
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid PAN Number",
                     "Error"
                 )
                 return false
@@ -242,18 +267,20 @@ class MultipleAccountsFragment : Fragment() {
         }
 
         if (bindingUploads.thirdAccountll.visibility == View.VISIBLE) {
+
             if (!isValidName(bindingUploads.EtVThirdName.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Owner Full Name",
+                    "Owner's Full Name can't be empty",
                     "Error"
                 )
                 return false
             }
-            if (!isValidContact(bindingUploads.thirdVContact.text.toString())) {
+
+            if(bindingUploads.inputThirdVendorEmail.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Owner Contact No",
+                    "Owner's Email Id can't be empty",
                     "Error"
                 )
                 return false
@@ -266,29 +293,58 @@ class MultipleAccountsFragment : Fragment() {
                 )
                 return false
             }
-            if (!isValidPan(bindingUploads.thirdVAdhar.text.toString())) {
+            if(bindingUploads.thirdVContact.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Pan card",
+                    "Owner's Contact Number can't be empty",
                     "Error"
                 )
                 return false
             }
+            if ( bindingUploads.thirdVContact.text.toString().isNotEmpty() && !isValidContact(bindingUploads.thirdVContact.text.toString())) {
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Owner Contact Number",
+                    "Error"
+                )
+                return false
+            }
+
+            if(bindingUploads.thirdVAdhar.text.toString().isEmpty()){
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Owner's PAN Number can't be empty",
+                    "Error"
+                )
+                return false
+            }
+            if (bindingUploads.thirdVAdhar.text.toString().isNotEmpty() && !isValidPan(bindingUploads.thirdVAdhar.text.toString())) {
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid PAN Number",
+                    "Error"
+                )
+                return false
+            }
+
+
+
         }
 
         if (bindingUploads.fourthAccountll.visibility == View.VISIBLE) {
             if (!isValidName(bindingUploads.EtVFourthName.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Owner Full Name",
+                    "Owner's Full Name can't be empty",
                     "Error"
                 )
                 return false
             }
-            if (!isValidContact(bindingUploads.fourthVContact.text.toString())) {
+
+            if(bindingUploads.inputfourthVendorEmail.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Owner Contact No",
+                    "Owner's Email Id can't be empty",
                     "Error"
                 )
                 return false
@@ -301,14 +357,41 @@ class MultipleAccountsFragment : Fragment() {
                 )
                 return false
             }
-            if (!isValidPan(bindingUploads.fourthVAdhar.text.toString())) {
+            if(bindingUploads.fourthVContact.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Pan card",
+                    "Owner's Contact Number can't be empty",
                     "Error"
                 )
                 return false
             }
+            if ( bindingUploads.fourthVContact.text.toString().isNotEmpty() && !isValidContact(bindingUploads.fourthVContact.text.toString())) {
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid Owner Contact Number",
+                    "Error"
+                )
+                return false
+            }
+            if(bindingUploads.fourthVAdhar.text.toString().isEmpty()){
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Owner's PAN Number can't be empty",
+                    "Error"
+                )
+                return false
+            }
+            if (bindingUploads.fourthVAdhar.text.toString().isNotEmpty() && !isValidPan(bindingUploads.fourthVAdhar.text.toString())) {
+                com.tirupati.vendor.helper.showCustomDialog(
+                    requireContext(),
+                    "Invalid PAN Number",
+                    "Error"
+                )
+                return false
+            }
+
+
+
         }
 
         return true

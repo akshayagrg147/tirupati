@@ -135,7 +135,7 @@ class LogInFragment : Fragment() {
 
         var status = false
         if (binding.inputUserGST.text.isNullOrEmpty()) {
-            showCustomDialog(requireContext(),"Gst Number can't be empty!", "Error")
+            showCustomDialog(requireContext(),"GST Number can't be empty!", "Error")
             status = false
         }else {
             return true
@@ -172,7 +172,7 @@ class LogInFragment : Fragment() {
                 is NetworkState.Error<*>->{
                     binding!!.loginProgressBar.progressBar.hidden()
 
-                    Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                 }
 
                 is NetworkState.NetworkException->{
@@ -232,7 +232,7 @@ class LogInFragment : Fragment() {
                 is NetworkState.Error<*>->{
                     binding!!.loginProgressBar.progressBar.hidden()
 
-                    Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
+                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
                 }
 
                 is NetworkState.NetworkException->{
