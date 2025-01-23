@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
+import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.SuperviserMenuAdapter
 import com.tirupati.vendor.databinding.FragmentCustomerBinding
@@ -24,6 +26,7 @@ import com.tirupati.vendor.ui.LandingVendorSActivity
 import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -150,30 +153,49 @@ class CustomerFragment : Fragment() {
 
                 }
 
-                is NetworkState.Error<*> -> {
+                is NetworkState.Error<*>->{
                     binding!!.loginProgressBar.progressBar.hidden()
-                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
-                    // Toast.makeText(context,response.msg.toString(),Toast.LENGTH_SHORT).show()
-                }
 
-                is NetworkState.NetworkException -> {
-                    binding!!.loginProgressBar.progressBar.hidden()
                     showCustomDialog(requireContext(), response.msg.toString(),"Error")
                 }
 
-                is NetworkState.HttpErrors.InternalServerError -> {
+                is NetworkState.NetworkException->{
                     binding!!.loginProgressBar.progressBar.hidden()
-                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
-                }
 
-                is NetworkState.HttpErrors.ResourceNotFound -> {
-                    binding!!.loginProgressBar.progressBar.hidden()
-                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
-                }
+                    showCustomDialog(requireContext(),response.msg.toString(), "Error")
 
-                else -> {
+
+                }
+                is NetworkState.HttpErrors.InternalServerError->{
                     binding!!.loginProgressBar.progressBar.hidden()
-                    showCustomDialog(requireContext(), "something went wrong","Error")
+                    showCustomDialog(requireContext(),response.msg.toString(), "Error")
+
+                }
+                is NetworkState.HttpErrors.ResourceNotFound->{
+                    val jsonObject = JSONObject(response.msg)
+                    val message = jsonObject.optString("MESSAGE", "Unknown error")
+                    binding!!.loginProgressBar.progressBar.hidden()
+                    showCustomDialog(requireContext(),message, "Error")
+
+                }
+                else->{
+                    binding!!.loginProgressBar.progressBar.hidden()
+                    val gson = Gson()
+                    val jsonPart = response.toString().substringAfter("msg=").substringBeforeLast(")")
+                    println("Extracted JSON Part: $jsonPart")
+
+                    try {
+                        val jsonObject = gson.fromJson(jsonPart, JsonObject::class.java)
+                        val message = jsonObject.get("MESSAGE")?.asString ?: "Unknown error"
+                        println("Extracted Message: $message")
+                        showCustomDialog(requireContext(), message, "Error")
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        showCustomDialog(requireContext(), "Failed to parse the response", "Error")
+
+
+                    }
+
                 }
             }
 

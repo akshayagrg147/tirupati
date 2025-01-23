@@ -78,22 +78,22 @@ class EditSupervisorFragment : Fragment() {
 
         var status = false
         if (binding.etVendor.text.isNullOrEmpty()) {
-            toast("Vendor can't be empty")
+            toast("Vendor can't be empty!")
             status = false
         }else if(binding.etGateNumber.text.isNullOrEmpty()){
-            toast("Gate Entry Number can't be empty")
+            toast("Gate Entry Number can't be empty!")
             status = false
         }
         else if(binding.etGross.text.isNullOrEmpty()){
-            toast("Gross Weight can't be empty")
+            toast("Gross Weight can't be empty!")
             status = false
         }
         else if(binding.etTare.text.isNullOrEmpty()){
-            toast("Tare Weight can't be empty")
+            toast("Tare Weight can't be empty!")
             status = false
         }
         else if(binding.etNet.text.isNullOrEmpty()){
-            toast("Net Weight can't be empty")
+            toast("Net Weight can't be empty!")
             status = false
         }
         else {

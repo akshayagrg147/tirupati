@@ -526,27 +526,27 @@ class DispatchFragment : Fragment() {
                         if (orderDate.isEmpty() || purchaseNo.isEmpty() || convertAddress==null || convertAddress?.isEmpty()==true || latitude==0.00 || longitude==0.00|| multipart==null||qty.isEmpty()||serialNumber.isEmpty()) {
 
                             if (orderDate.isEmpty()) {
-                                showCustomDialog(requireContext(), "Order Date can't be empty", "Error")
+                                showCustomDialog(requireContext(), "Order Date can't be empty!", "Error")
                                 return@launch
                             }
 
                             if (purchaseNo.isEmpty()) {
-                                showCustomDialog(requireContext(), "Purchase Number can't be empty", "Error")
+                                showCustomDialog(requireContext(), "Purchase Number can't be empty!", "Error")
                                 return@launch
                             }
 
                             if (convertAddress!!.isEmpty()) {
-                                showCustomDialog(requireContext(), "Location Name can't be empty", "Error")
+                                showCustomDialog(requireContext(), "Location Name can't be empty!", "Error")
                                 return@launch
                             }
 
                             if (qty.isEmpty()) {
-                                showCustomDialog(requireContext(), "Quantity can't be empty", "Error")
+                                showCustomDialog(requireContext(), "Quantity can't be empty!", "Error")
                                 return@launch
                             }
 
                             if (serialNumber.isEmpty()) {
-                                showCustomDialog(requireContext(), "Seal Number can't be empty", "Error")
+                                showCustomDialog(requireContext(), "Seal Number can't be empty!", "Error")
                                 return@launch
                             }
 
@@ -561,7 +561,7 @@ class DispatchFragment : Fragment() {
                             }
 
                             if (multipart == null) {
-                                showCustomDialog(requireContext(), "Photo/Video can't be empty", "Error")
+                                showCustomDialog(requireContext(), "Photo/Video can't be empty!", "Error")
                                 return@launch
                             }
 

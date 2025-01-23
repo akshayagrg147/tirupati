@@ -14,19 +14,22 @@ abstract class NetworkCall {
                 NetworkState.Success(response.body()!!)
 
             } else {
+                val errorMessage = response.errorBody()?.string() ?: "Unknown error"
+
+                Log.d("errormessage",errorMessage)
                 when (response.code()) {
-                    400 -> NetworkState.HttpErrors.BadRequest(response.message())
-                    401 -> NetworkState.HttpErrors.Unauthorized(response.message())
+                    400 -> NetworkState.HttpErrors.BadRequest(errorMessage)
+                    401 -> NetworkState.HttpErrors.Unauthorized(errorMessage)
                     503 -> NetworkState.HttpErrors.ServiceUnavailable(response.message())
 
                     422 -> NetworkState.HttpErrors.WrongData(response.errorBody())
-                    403 -> NetworkState.HttpErrors.ResourceForbidden(response.message())
-                    404 -> NetworkState.HttpErrors.ResourceNotFound(response.message())
-                    500 -> NetworkState.HttpErrors.InternalServerError(response.message())
-                    502 -> NetworkState.HttpErrors.BadGateWay(response.message())
-                    301 -> NetworkState.HttpErrors.ResourceRemoved(response.message())
-                    302 -> NetworkState.HttpErrors.RemovedResourceFound(response.message())
-                    else -> NetworkState.Error(response.message())
+                    403 -> NetworkState.HttpErrors.ResourceForbidden(errorMessage)
+                    404 -> NetworkState.HttpErrors.ResourceNotFound(errorMessage)
+                    500 -> NetworkState.HttpErrors.InternalServerError(errorMessage)
+                    502 -> NetworkState.HttpErrors.BadGateWay(errorMessage)
+                    301 -> NetworkState.HttpErrors.ResourceRemoved(errorMessage)
+                    302 -> NetworkState.HttpErrors.RemovedResourceFound(errorMessage)
+                    else -> NetworkState.Error(errorMessage)
                 }
             }
 

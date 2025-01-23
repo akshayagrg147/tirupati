@@ -242,11 +242,11 @@ class AddressDetailFragment : Fragment() {
 
         var status = false
         if (binding.addressET.text.isNullOrEmpty()) {
-            showCustomDialog(requireContext(),"Address can't be empty","Error")
+            showCustomDialog(requireContext(),"Address can't be empty!","Error")
             status = false
         }
         else if(binding.countrySpinner.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Country can't be empty!","Error")
+            showCustomDialog(requireContext(),"Country can't be empty!!","Error")
             status = false
 
         }

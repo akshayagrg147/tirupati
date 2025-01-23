@@ -323,8 +323,7 @@
                         android:textColor="@color/black"
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
-                        android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload Electricity Bill\n \(Latest)"
+                        android:text="Upload Electricity Bill\n(Latest)"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -582,7 +581,7 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="Organisation PAN Card"
+                        android:text="Organisation's PAN Card"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -635,7 +634,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload Organisation PAN Card"
+                        android:text="Upload Organisation's PAN Card"
                         android:fontFamily="@font/montserrat_regular"
                         />
 
@@ -813,7 +812,7 @@
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload ITR Acknowledgement"
+                        android:text="Upload ITR Acknowledgement(Last 2 Years)"
                         android:fontFamily="@font/montserrat_regular"
                         />
 

@@ -29,6 +29,9 @@ class OrderStatusCustomerFragment : Fragment(R.layout.fragment_order_status_cust
             findNavController().navigate(actionId, args ?: Bundle())
 
         }
+
+        CustomerHomeActivity.showIcon(true)
+
         tabLayout.getTabAt(0)?.select()
         // Linking TabLayout and ViewPager2
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
@@ -74,7 +77,7 @@ class OrderStatusCustomerFragment : Fragment(R.layout.fragment_order_status_cust
         super.onResume()
 
         CustomerHomeActivity.showIcon(true)
-        CustomerHomeActivity.changeTitle("")
+        CustomerHomeActivity.changeTitle("Order Status")
 
 
     }
@@ -82,7 +85,7 @@ class OrderStatusCustomerFragment : Fragment(R.layout.fragment_order_status_cust
     override fun onPause() {
         super.onPause()
         CustomerHomeActivity.showIcon(true)
-        CustomerHomeActivity.changeTitle("")
+        CustomerHomeActivity.changeTitle("Order Status")
 
     }
 }

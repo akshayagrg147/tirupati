@@ -180,7 +180,7 @@
                 android:id="@+id/po_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Quotation Number:"
+                android:text="Quotation Number"
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_medium"
                 android:textSize="14sp"
@@ -207,7 +207,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Item:"
+                android:text="Item"
                 android:textSize="14sp"
                 android:fontFamily="@font/montserrat_medium"
                 android:textColor="@color/color1A1A1A" />

@@ -122,6 +122,7 @@
             android:layout_height="1dp"
             android:background="@color/grey"/>
         <TextView
+            android:id="@+id/privacy_f"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -140,6 +141,7 @@
             android:layout_height="1dp"
             android:background="@color/grey"/>
         <TextView
+
             android:id="@+id/txtStaticContentNav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

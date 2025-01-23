@@ -210,24 +210,24 @@ class MultipleAccountsFragment : Fragment() {
             if (!isValidName(bindingUploads.EtVSecondName.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Owner's Full Name can't be empty",
+                    "Owner's Full Name can't be empty!",
                     "Error"
                 )
                 return false
             }
 
-            if(bindingUploads.inputSecondVendorEmail.text.toString().isEmpty()){
-                com.tirupati.vendor.helper.showCustomDialog(
-                    requireContext(),
-                    "Owner's Email Id can't be empty",
-                    "Error"
-                )
-                return false
-            }
+//            if(bindingUploads.inputSecondVendorEmail.text.toString().isEmpty()){
+//                com.tirupati.vendor.helper.showCustomDialog(
+//                    requireContext(),
+//                    "Owner's Email Id can't be empty",
+//                    "Error"
+//                )
+//                return false
+//            }
             if (bindingUploads.inputSecondVendorEmail.text.toString().isNotEmpty() && !isValidEmail(bindingUploads.inputSecondVendorEmail.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Email Id",
+                    "Owner's Email Id is Incorrect",
                     "Error"
                 )
                 return false
@@ -235,7 +235,7 @@ class MultipleAccountsFragment : Fragment() {
             if(bindingUploads.secondVContact.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Owner's Contact Number can't be empty",
+                    "Owner's Contact Number can't be empty!",
                     "Error"
                 )
                 return false
@@ -243,7 +243,7 @@ class MultipleAccountsFragment : Fragment() {
             if ( bindingUploads.secondVContact.text.toString().isNotEmpty() && !isValidContact(bindingUploads.secondVContact.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Owner Contact Number",
+                    "Owner's Contact Number is Incorrect",
                     "Error"
                 )
                 return false
@@ -251,7 +251,7 @@ class MultipleAccountsFragment : Fragment() {
             if(bindingUploads.secondVAdhar.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Owner's PAN Number can't be empty",
+                    "Owner's PAN Number can't be empty!",
                     "Error"
                 )
                 return false
@@ -259,7 +259,7 @@ class MultipleAccountsFragment : Fragment() {
             if (bindingUploads.secondVAdhar.text.toString().isNotEmpty() && !isValidPan(bindingUploads.secondVAdhar.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid PAN Number",
+                    "Owner's PAN Number is Incorrect",
                     "Error"
                 )
                 return false
@@ -271,24 +271,24 @@ class MultipleAccountsFragment : Fragment() {
             if (!isValidName(bindingUploads.EtVThirdName.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Owner's Full Name can't be empty",
+                    "Owner's Full Name can't be empty!",
                     "Error"
                 )
                 return false
             }
 
-            if(bindingUploads.inputThirdVendorEmail.text.toString().isEmpty()){
-                com.tirupati.vendor.helper.showCustomDialog(
-                    requireContext(),
-                    "Owner's Email Id can't be empty",
-                    "Error"
-                )
-                return false
-            }
+//            if(bindingUploads.inputThirdVendorEmail.text.toString().isEmpty()){
+//                com.tirupati.vendor.helper.showCustomDialog(
+//                    requireContext(),
+//                    "Owner's Email Id can't be empty",
+//                    "Error"
+//                )
+//                return false
+//            }
             if (bindingUploads.inputThirdVendorEmail.text.toString().isNotEmpty() && !isValidEmail(bindingUploads.inputThirdVendorEmail.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Email Id",
+                    "Owner's Email Id is Incorrect",
                     "Error"
                 )
                 return false
@@ -296,7 +296,7 @@ class MultipleAccountsFragment : Fragment() {
             if(bindingUploads.thirdVContact.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Owner's Contact Number can't be empty",
+                    "Owner's Contact Number can't be empty!",
                     "Error"
                 )
                 return false
@@ -304,7 +304,7 @@ class MultipleAccountsFragment : Fragment() {
             if ( bindingUploads.thirdVContact.text.toString().isNotEmpty() && !isValidContact(bindingUploads.thirdVContact.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Owner Contact Number",
+                    "Owner's Contact Number is Incorrect",
                     "Error"
                 )
                 return false
@@ -313,7 +313,7 @@ class MultipleAccountsFragment : Fragment() {
             if(bindingUploads.thirdVAdhar.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Owner's PAN Number can't be empty",
+                    "Owner's PAN Number can't be empty!",
                     "Error"
                 )
                 return false
@@ -321,7 +321,7 @@ class MultipleAccountsFragment : Fragment() {
             if (bindingUploads.thirdVAdhar.text.toString().isNotEmpty() && !isValidPan(bindingUploads.thirdVAdhar.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid PAN Number",
+                    "Owner's PAN Number is Incorrect",
                     "Error"
                 )
                 return false
@@ -335,24 +335,24 @@ class MultipleAccountsFragment : Fragment() {
             if (!isValidName(bindingUploads.EtVFourthName.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Owner's Full Name can't be empty",
+                    "Owner's Full Name can't be empty!",
                     "Error"
                 )
                 return false
             }
 
-            if(bindingUploads.inputfourthVendorEmail.text.toString().isEmpty()){
-                com.tirupati.vendor.helper.showCustomDialog(
-                    requireContext(),
-                    "Owner's Email Id can't be empty",
-                    "Error"
-                )
-                return false
-            }
+//            if(bindingUploads.inputfourthVendorEmail.text.toString().isEmpty()){
+//                com.tirupati.vendor.helper.showCustomDialog(
+//                    requireContext(),
+//                    "Owner's Email Id can't be empty",
+//                    "Error"
+//                )
+//                return false
+//            }
             if (bindingUploads.inputfourthVendorEmail.text.toString().isNotEmpty() && !isValidEmail(bindingUploads.inputfourthVendorEmail.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Email Id",
+                    "Owner's Email Id is Incorrect",
                     "Error"
                 )
                 return false
@@ -360,7 +360,7 @@ class MultipleAccountsFragment : Fragment() {
             if(bindingUploads.fourthVContact.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Owner's Contact Number can't be empty",
+                    "Owner's Contact Number can't be empty!",
                     "Error"
                 )
                 return false
@@ -368,7 +368,7 @@ class MultipleAccountsFragment : Fragment() {
             if ( bindingUploads.fourthVContact.text.toString().isNotEmpty() && !isValidContact(bindingUploads.fourthVContact.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid Owner Contact Number",
+                    "Owner's Contact Number is Incorrect",
                     "Error"
                 )
                 return false
@@ -376,7 +376,7 @@ class MultipleAccountsFragment : Fragment() {
             if(bindingUploads.fourthVAdhar.text.toString().isEmpty()){
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Owner's PAN Number can't be empty",
+                    "Owner's PAN Number can't be empty!",
                     "Error"
                 )
                 return false
@@ -384,7 +384,7 @@ class MultipleAccountsFragment : Fragment() {
             if (bindingUploads.fourthVAdhar.text.toString().isNotEmpty() && !isValidPan(bindingUploads.fourthVAdhar.text.toString())) {
                 com.tirupati.vendor.helper.showCustomDialog(
                     requireContext(),
-                    "Invalid PAN Number",
+                    "Owner's PAN Number is Incorrect",
                     "Error"
                 )
                 return false

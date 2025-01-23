@@ -1308,7 +1308,7 @@ bindingUploads!!.bankletter.setOnClickListener{
             status = false
         }
         else if (pdf2.isEmpty() && selectItem!="1" ) {
-            showCustomDialog(requireContext(), "Please upload Owner's Pancard", "Error")
+            showCustomDialog(requireContext(), "Please upload Owner's PAN CARD", "Error")
             status = false
 
         }
@@ -1339,7 +1339,7 @@ bindingUploads!!.bankletter.setOnClickListener{
         }
 
         else if (pdf7.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload Organisation PAN Card","Error")
+            showCustomDialog(requireContext(), "Please upload Organisation's PAN Card","Error")
             status = false
         }
         else if (pdf8.isEmpty()&& selectItem!="1") {

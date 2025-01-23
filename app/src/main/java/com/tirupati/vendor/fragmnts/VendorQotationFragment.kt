@@ -21,6 +21,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
@@ -38,6 +39,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.tirupati.vendor.R
 import com.tirupati.vendor.adapters.DeliveryTermsAdapter
 import com.tirupati.vendor.adapters.PaymentTermsAdapter
@@ -62,6 +65,7 @@ import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import org.apache.commons.io.FileUtils
+import org.json.JSONObject
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.text.DecimalFormat
@@ -83,7 +87,7 @@ class VendorQotationFragment : Fragment() {
     private val vendorFormVM: VendorFormViewModel by viewModels()
     @Inject
     lateinit var sessionManager: SessionManager
-    lateinit var deliverTerm:String
+     var deliverTerm:String=""
     lateinit var itemDetail:String
     lateinit var uomDetail:String
     lateinit var paymentTerm:String
@@ -111,8 +115,12 @@ class VendorQotationFragment : Fragment() {
 
                 val decimalFormat = DecimalFormat("#")
                 decimalFormat.setMaximumFractionDigits(0) // No decimal places
+                val calculatedAmount = quantity * rate
 
-                binding!!.amountTotal.setText(decimalFormat.format(quantity * rate))
+                if (calculatedAmount > 0) {
+                    binding!!.amountTotal.setText(decimalFormat.format(calculatedAmount))
+                }
+
                 // Code to execute when text is changing
             }
 
@@ -388,6 +396,31 @@ class VendorQotationFragment : Fragment() {
     }
 
     private fun onSubmitClicked() {
+
+        binding?.quantity?.text?.toString()?.trim()?.takeIf { it.isNotEmpty() } ?: run {
+            showCustomDialog(requireContext(), "Quantity can't be empty!", "Error")
+            return
+        }
+        binding?.rate?.text?.toString()?.trim()?.takeIf { it.isNotEmpty() } ?: run {
+            showCustomDialog(requireContext(), "Rate can't be empty!", "Error")
+            return
+        }
+
+        binding?.amountTotal?.text?.toString()?.trim()?.takeIf { it.isNotEmpty() } ?: run {
+            showCustomDialog(requireContext(), "Amount can't be empty!", "Error")
+            return
+        }
+
+        binding?.paymentTerms?.text?.toString()?.trim()?.takeIf { it.isNotEmpty() } ?: run {
+            showCustomDialog(requireContext(), "Payment Terms can't be empty!", "Error")
+            return
+        }
+
+        binding?.deliveryTerms?.text?.toString()?.trim()?.takeIf { it.isNotEmpty() } ?: run {
+            showCustomDialog(requireContext(), "Delivery Terms can't be empty!", "Error")
+            return
+        }
+
         binding!!.loginProgressBar.progressBar.shown()
         val rate = binding?.rate?.text.toString().trim()
         val quantity = binding?.quantity?.text.toString().trim()
@@ -440,12 +473,29 @@ class VendorQotationFragment : Fragment() {
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
                     binding!!.loginProgressBar.progressBar.hidden()
-                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
+                    val jsonObject = JSONObject(response.msg)
+                    val message = jsonObject.optString("MESSAGE", "Unknown error")
+                    showCustomDialog(requireContext(),message, "Error")
                 }
 
                 else -> {
                     binding!!.loginProgressBar.progressBar.hidden()
-                    showCustomDialog(requireContext(), "something went wrong","Error")
+
+                    val gson = Gson()
+
+                    // Extract the JSON part of the response
+                    val jsonPart = response.toString().substringAfter("msg=").substringBeforeLast(")")
+
+                    // Parse the JSON using Gson
+
+                    val jsonObject = gson.fromJson(jsonPart, JsonObject::class.java)
+
+                    // Extract the MESSAGE field
+                    val message = jsonObject.get("MESSAGE").asString
+
+                    // Print the extracted message
+                    println("Extracted Message: $message")
+                    showCustomDialog(requireContext(), message,"Error")
                 }
             }
 
@@ -592,36 +642,45 @@ class VendorQotationFragment : Fragment() {
     }
 
     private fun getItemDetails() {
-        deliverTerm="Freight Paid"
-        val accountType: ArrayList<String> = ArrayList()
-        accountType.add( "Freight Paid")
-        accountType.add("Freight To Pay")
-        binding?.deliveryTerms?.setText(deliverTerm)
 
+        val accountType: ArrayList<String> = ArrayList()
+        accountType.add("Freight Paid")
+        accountType.add("Freight To Pay")
+
+        // Set no initial text for deliveryTerms
+        binding?.deliveryTerms?.setText(deliverTerm, false)
+
+        // Set up spinner adapter
         val spinnerAdapter = SpinnerAdapter(requireActivity(), R.layout.item_spinner_row, accountType)
         spinnerAdapter.setDropDownViewResource(R.layout.item_spinner_row)
-        binding?.deliveryTerms?.setAdapter(spinnerAdapter);
-        // Remove setting key listener to null
-        // bindingSecondPage?.statesList?.setKeyListener(null);
-        binding?.deliveryTerms?.threshold=1
-        binding?.deliveryTerms?.setKeyListener(null);
+        binding?.deliveryTerms?.setAdapter(spinnerAdapter)
+
+        // Set threshold to 1 so the dropdown opens as soon as typing starts
+        binding?.deliveryTerms?.threshold = 1
+
+        // Disable direct editing by user
+        binding?.deliveryTerms?.setKeyListener(null)
+
+        // Show dropdown on click
         binding?.deliveryTerms?.setOnClickListener {
             (it as AutoCompleteTextView).showDropDown()
         }
+
+        // Show dropdown when the field gains focus
         binding?.deliveryTerms?.setOnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
                 (v as AutoCompleteTextView).showDropDown()
             }
         }
 
+        // Handle item selection
         binding?.deliveryTerms?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedModel = parent.adapter.getItem(position) as String
-            // Do whatever you want with the selected model object here
-            binding?.deliveryTerms?.setText(selectedModel,false)
+            // Update the text to the selected item
+            binding?.deliveryTerms?.setText(selectedModel, false)
         }
-
-
     }
+
 
     private fun displayVideoThumbnail(context: Context, uri: Uri, imageView: ImageView?) {
         binding?.thumbnail?.visibility=View.VISIBLE
@@ -669,51 +728,41 @@ class VendorQotationFragment : Fragment() {
 
             when (response) {
 
-                is NetworkState.Success->{
+                is NetworkState.Success -> {
                     binding!!.loginProgressBar.progressBar.hidden()
-                    var clicked:Boolean=true
-
-                    // Assuming you have a PaymentTermsAdapter that takes a context and a list of ResponseDataItem
                     val customDropDownAdapter3 = PaymentTermsAdapter(requireContext(), response.body.RESPONSEDATA)
-                    val initialItem = response.body.RESPONSEDATA[0]
+                    itemDetail = ""
+                    itemId = ""
+                    binding?.itemDetail?.setText("") // Set the AutoCompleteTextView to empty
+                    binding?.hsnSacCode?.setText("") // Clear the associated HSN description field
 
-// Set initial values
-                    itemDetail = initialItem.NAME
-                    binding?.itemDetail?.setText(itemDetail)
-                    itemId = initialItem.ITEMID
-                    binding?.hsnSacCode?.setText(initialItem.HSNDESCRIPTION)
-
-// Set the adapter to the AutoCompleteTextView
+                    // Set the adapter to the AutoCompleteTextView
                     binding?.itemDetail?.setAdapter(customDropDownAdapter3)
 
-                    binding?.itemDetail?.threshold=1
-                    binding?.itemDetail?.setKeyListener(null);
-                    binding?.itemDetail?.setOnClickListener {
-                        (it as AutoCompleteTextView).showDropDown()
+                    binding?.itemDetail?.threshold = 1
+                    binding?.itemDetail?.setKeyListener(null)
+
+                    // Ensure dropdown shows on single tap
+                    binding?.itemDetail?.setOnTouchListener { v, event ->
+                        if (event.action == MotionEvent.ACTION_UP) {
+                            (v as AutoCompleteTextView).showDropDown()
+                        }
+                        false
                     }
 
                     binding?.itemDetail?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
                         val selectedItem = parent.adapter.getItem(position) as ResponseDataItem
-                        // Do whatever you want with the selected model object here
+                        // Handle the selected model object
                         if (selectedItem != null) {
                             itemDetail = selectedItem.NAME
-                            clicked=true
                             itemId = selectedItem.ITEMID
-                            binding?.itemDetail?.setText(itemDetail,false)
+                            binding?.itemDetail?.setText(itemDetail, false)
                             binding?.hsnSacCode?.setText(selectedItem.HSNDESCRIPTION)
                         }
                     }
-
-
-
-
-
-
-
-
-
-
                 }
+
+
 
                 is NetworkState.Error<*>->{
                     binding!!.loginProgressBar.progressBar.hidden()

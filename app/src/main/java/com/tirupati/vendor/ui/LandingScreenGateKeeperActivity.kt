@@ -155,6 +155,22 @@ class LandingScreenGateKeeperActivity : AppCompatActivity(), ToolbarTitleChangeL
             toolbar.setNavigationIcon(R.drawable.menu)
             navController.navigate(R.id.gateEntryFragment)
         }
+        findViewById<TextView>(R.id.txtPaymentHNav).setOnClickListener {
+            closeDrawer()
+            toolbar.setNavigationIcon(R.drawable.menu)
+            navController.navigate(R.id.termsConditionFragment)
+        }
+        findViewById<TextView>(R.id.privacy_f).setOnClickListener {
+            closeDrawer()
+            toolbar.setNavigationIcon(R.drawable.menu)
+            navController.navigate(R.id.privacyFragment)
+        }
+
+        findViewById<TextView>(R.id.txtStaticContentNav).setOnClickListener {
+            closeDrawer()
+            toolbar.setNavigationIcon(R.drawable.menu)
+            navController.navigate(R.id.aboutFragment)
+        }
         findViewById<TextView>(R.id.txtLogoutItem).setOnClickListener {
             closeDrawer()
             sessionManager.logout()

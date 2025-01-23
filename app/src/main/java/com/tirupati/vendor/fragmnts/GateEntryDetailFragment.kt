@@ -184,18 +184,18 @@ class GateEntryDetailFragment : Fragment() {
 
         var status = false
         if (binding.purchaseNo.text.isNullOrEmpty()) {
-            showCustomDialog(requireContext(),"Purchase Number can't be empty","Error")
+            showCustomDialog(requireContext(),"Purchase Number can't be empty!","Error")
             status = false
         }else if(binding.billNumber.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Bill Number can't be empty","Error")
+            showCustomDialog(requireContext(),"Bill Number can't be empty!","Error")
             status = false
         }
         else if(binding.vehicleNumber.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Vehicle Number can't be empty","Error")
+            showCustomDialog(requireContext(),"Vehicle Number can't be empty!","Error")
             status = false
         }
         else if(binding.billDate.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Bill Date can't be empty","Error")
+            showCustomDialog(requireContext(),"Bill Date can't be empty!","Error")
             status = false
         }
         else {

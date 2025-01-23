@@ -125,7 +125,7 @@ class RegistrationFragment : Fragment() {
             status = false
         }
         else if(binding.etContactNumber.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"Organisation’s Contact Number can't be empty","Error")
+            showCustomDialog(requireContext(),"Organisation’s Contact Number can't be empty!","Error")
             status = false
 
         }

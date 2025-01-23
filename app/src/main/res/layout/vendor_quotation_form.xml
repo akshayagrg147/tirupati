@@ -18,8 +18,10 @@
                 android:layout_height="wrap_content"
 
              android:fontFamily="@font/monsrt_bold"
+                android:layout_gravity="center"
+                android:gravity="center"
 
-                android:textColor="@color/red_DA3A36"
+                android:textColor="@color/brownlow"
 
                 android:text="Vendors can counter the rate upto twice,exceeding this may lead to PO rejection"
                 android:textSize="@dimen/_10sdp" />

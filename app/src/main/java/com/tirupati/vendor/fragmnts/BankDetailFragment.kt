@@ -252,12 +252,12 @@ bindingThirdPage?.msmeApplicable1?.visibility=View.GONE
 
         }
         else if(binding.ifscET.text.isNullOrEmpty()){
-            showCustomDialog(requireContext(),"IFSC code can't be empty!","Error")
+            showCustomDialog(requireContext(),"IFSC Code can't be empty!","Error")
             status = false
 
         }
         else if(!binding.ifscET.text.toString().isIFSC()){
-            showCustomDialog(requireContext(),"IFSC code is Incorrect!","Error")
+            showCustomDialog(requireContext(),"IFSC Code is Incorrect!","Error")
             status = false
 
         }

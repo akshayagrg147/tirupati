@@ -211,14 +211,14 @@ class BusinessDetailFragment : Fragment() {
         }
         else if(binding.ownerPanET.text.isNullOrEmpty() && selectItem!="1"){
 
-            showCustomDialog(requireContext(), "Owner PAN Number can't be empty", "Error")
+            showCustomDialog(requireContext(), "Owner's PAN Number can't be empty!", "Error")
             status = false
 
 
         }
         else if(!binding.ownerPanET.text.toString().isValidPANNumber() && selectItem!="1"){
 
-            showCustomDialog(requireContext(),"Owner's PAN Card is Incorrect","Error")
+            showCustomDialog(requireContext(),"Owner's PAN Number is Incorrect","Error")
             status = false
 
 
@@ -247,8 +247,14 @@ class BusinessDetailFragment : Fragment() {
             status = false
 
         }
-
         else if((binding.POCEmailIdET.text.isEmpty() || binding.POCEmailIdET.text.isNotEmpty() && !binding.POCEmailIdET.text.toString().isValidEmail()) && selectItem=="1" ){
+
+            showCustomDialog(requireContext(), "POC Email ID can't be empty!", "Error")
+            status = false
+
+
+        }
+        else if(( binding.POCEmailIdET.text.isNotEmpty() && !binding.POCEmailIdET.text.toString().isValidEmail()) && selectItem=="1" ){
 
             showCustomDialog(requireContext(), "POC Email ID is Incorrect", "Error")
             status = false
@@ -257,7 +263,7 @@ class BusinessDetailFragment : Fragment() {
         }
         else if(binding.GSTnumberEt.text.isNullOrEmpty() && selectItem=="1"){
 
-            showCustomDialog(requireContext(), "Organisation's GST Number can't be empty", "Error")
+            showCustomDialog(requireContext(), "Organisation's GST Number can't be empty!", "Error")
             status = false
 
 
@@ -271,7 +277,7 @@ class BusinessDetailFragment : Fragment() {
 
         else if(binding.PANEt.text.isNullOrEmpty() && selectItem=="1"){
 
-            showCustomDialog(requireContext(), "Organisation's PAN Number can't be empty", "Error")
+            showCustomDialog(requireContext(), "Organisation's PAN Number can't be empty!", "Error")
             status = false
 
 

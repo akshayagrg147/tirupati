@@ -30,6 +30,27 @@
         android:name="com.tirupati.vendor.fragmnts.VendorQotationFragment"
         android:label="fragment_manage_profile"
         tools:layout="@layout/vendor_quotation_form" />
+    <fragment
+        android:id="@+id/termsConditionFragment"
+        android:name="com.tirupati.vendor.fragmnts.TermsConditionFragment"
+        android:label="fragment_edit_supervisor"
+        tools:layout="@layout/fragment_terms_condition" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.tirupati.vendor.fragmnts.AboutFragment"
+        android:label="fragment_edit_supervisor"
+        tools:layout="@layout/fragment_terms_condition" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.tirupati.vendor.fragmnts.PrivacyFragment"
+        android:label="fragment_edit_supervisor"
+        tools:layout="@layout/fragment_terms_condition" >
+
+    </fragment>
 
     <fragment
         android:id="@+id/vendorListingFragment"
