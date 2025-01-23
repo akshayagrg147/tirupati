@@ -355,8 +355,9 @@
                                 android:hint="Owner's Contact Number"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
+                                android:maxLength="10"
                                 android:textCursorDrawable="@null"
-                                android:maxLength="50"
+
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
                         </com.google.android.material.textfield.TextInputLayout>
@@ -511,7 +512,7 @@
                                 android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
-                                android:maxLength="50"
+                                android:maxLength="10"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
                         </com.google.android.material.textfield.TextInputLayout>
@@ -666,7 +667,7 @@
                                 android:textCursorDrawable="@null"
                                 android:importantForAutofill="noExcludeDescendants"
                                 android:inputType="phone"
-                                android:maxLength="50"
+                                android:maxLength="10"
                                 android:outlineAmbientShadowColor="@color/blue_light" />
 
                         </com.google.android.material.textfield.TextInputLayout>

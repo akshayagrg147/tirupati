@@ -669,7 +669,7 @@ class BuisnessDetailCustomerFragment : Fragment() {
             status = false
         }
         else if (pdf2.isEmpty()) {
-            showCustomDialog(requireContext(), "Please upload Owner's PAN CARD","Error")
+            showCustomDialog(requireContext(), "Please upload Owner's PAN Card","Error")
             status = false
         }
         else if (pdf3.isEmpty()) {

@@ -105,7 +105,7 @@
                     <EditText
                         android:id="@+id/inputUserFirstName"
                         style="@style/et_login_signup"
-                        android:hint="Name of Orginazation"
+                        android:hint="Name of Organisation"
 
 
                         android:imeOptions="actionDone"

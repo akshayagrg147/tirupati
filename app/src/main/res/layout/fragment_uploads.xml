@@ -398,8 +398,8 @@
                         android:textColor="@color/black"
                         android:gravity="center"
                         android:layout_marginTop="@dimen/_4sdp"
-                        android:layout_marginBottom="@dimen/_22sdp"
-                        android:text="Upload Rent Deed(if applicable)"
+
+                        android:text="Upload Rent Deed\n(if applicable)"
                         android:fontFamily="@font/montserrat_regular"
                         />
 

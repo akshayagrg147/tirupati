@@ -588,7 +588,7 @@ class DispatchFragment : Fragment() {
 
                                 is NetworkState.Success -> {
                                     binding!!.loginProgressBar.progressBar.hidden()
-                                    showCustomDialog(requireContext(), response.body.MESSAGE,"Error")
+                                    showCustomDialog(requireContext(), response.body.MESSAGE,"SUCCESS")
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         findNavController().popBackStack()
                                     }, 1000)
