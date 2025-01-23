@@ -1,0 +1,16 @@
+
+†kotlin:S6619£";Remove this useless elvis operation ?:, it always succeeds.(¯¿º…şÿÿÿÿ8“ùùÊÇ2J$257f9698-a6a3-4651-9db9-02b2e32a6eef
+kotlin:S6619¨";Remove this useless elvis operation ?:, it always succeeds.(²áÍÛ8“ùùÊÇ2J$c38fd32c-d758-47be-aa85-aa77fdc3924b
+†kotlin:S6619®";Remove this useless elvis operation ?:, it always succeeds.(İÏËØÿÿÿÿÿ8“ùùÊÇ2J$217edfca-afdc-4765-b4b7-1caf0762fb6c
+dkotlin:S125Û"Remove this commented out code.(ğ±Ÿ²8¯ÅĞ¥È2J$cb2e4c58-6379-4327-a9f8-25aaad18ccd8
+dkotlin:S125˜"Remove this commented out code.(‘Ú¡ô8½ÚÏ¥È2J$7d990716-ba19-4390-bab1-dc32e410a1e3
+ikotlin:S125Ø"Remove this commented out code.(–¤•ıÿÿÿÿ8¯Ğ¥È2J$16db9b47-1107-4813-9759-647ef3af600c
+dkotlin:S1128"Remove this unused import.(Íå‘Áûÿÿÿÿ8ùùÊÇ2J$7a142dc2-06d6-4860-bad6-acb04a182c7c
+_kotlin:S1128"Remove this unused import.(´Ùí8ùùÊÇ2J$0f968cb8-5d47-4652-a4b7-533d2e9c3d3d
+‚kotlin:S1192Õ"bDefine a constant instead of duplicating this literal "Owner's Full Name can't be empty!" 3 times.(œã¶Š8¥‡‰ŒÉ2
+©kotlin:S1192æ"^Define a constant instead of duplicating this literal "Owner's Email Id is Incorrect" 3 times.(£¼™¯ûÿÿÿÿ8ÃÄ¦È2J$4a1dd60d-c963-4b07-91a1-3f081fc6b388
+Œkotlin:S1192î"gDefine a constant instead of duplicating this literal "Owner's Contact Number can't be empty!" 3 times.(®üıºüÿÿÿÿ8¥‡‰ŒÉ2
+ªkotlin:S1192ö"dDefine a constant instead of duplicating this literal "Owner's Contact Number is Incorrect" 3 times.(Íì‹×8€Ó¦È2J$46a6d4df-c991-4bab-ac69-f54d7ef83fe5
+ƒkotlin:S1192ş"cDefine a constant instead of duplicating this literal "Owner's PAN Number can't be empty!" 3 times.(©€Ñ¤8¥‡‰ŒÉ2
+€kotlin:S1192†"`Define a constant instead of duplicating this literal "Owner's PAN Number is Incorrect" 3 times.(¦³›¨8€ã¦È2
+kotlin:S3776Ğ"RRefactor this method to reduce its Cognitive Complexity from 48 to the 15 allowed.(ˆï¼ëşÿÿÿÿ8 ùùÊÇ2J$268b3755-5ff0-44b1-8e9d-8a57b62ec848

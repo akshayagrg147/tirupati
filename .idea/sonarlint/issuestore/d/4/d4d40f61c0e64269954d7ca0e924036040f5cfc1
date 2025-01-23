@@ -1,0 +1,16 @@
+
+kkotlin:S6615ÿ" Remove this useless initializer.(ö¹öüÿÿÿÿ8¢å°øÆ2J$9c2318f6-da55-46e8-bff9-8f24e216f2b2
+kkotlin:S6615§" Remove this useless initializer.(ö¹öüÿÿÿÿ8¢å°øÆ2J$55fcb319-5959-4c3d-bc4d-3ce2749511c2
+dkotlin:S125"Remove this commented out code.(Ìß¡8¤å°øÆ2J$96378111-5c9a-48ba-8e6b-4a9d5848776e
+skotlin:S108¦")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8¯å°øÆ2J$54b7b215-1dcc-4cbd-9de2-6024d4b5bfbc
+ukotlin:S1135H"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿJ$d9268aea-ea47-4e98-86c9-bd2b96d6dd2f
+vkotlin:S1481ş"0Remove this unused "bitmapImage" local variable.(ıĞç8³å°øÆ2J$141cc640-4e99-44aa-b04b-ce2d2c2a5b9e
+mkotlin:S1481Å"'Remove this unused "cw" local variable.(Éó‹Â8³å°øÆ2J$bc7a944f-2d0a-4f19-b95a-be57876e0842
+“kotlin:S1871°"MThis branch's code block is the same as the block for the branch on line 299.(ñ¿ÿÄ8²ÃşøÆ2J$8564a80c-3a8f-47bd-96e8-b788b516cd7f
+“kotlin:S1871µ"MThis branch's code block is the same as the block for the branch on line 299.(ßâƒ‚8şæşøÆ2J$503fb011-a6bd-41ac-9293-1584d8429007
+’kotlin:S1871º"MThis branch's code block is the same as the block for the branch on line 299.(Ä†•8¤üşøÆ2J$ba042554-e228-4897-bfc5-14fb29ce64a3
+ikotlin:S1874Œ"#Deprecated code should not be used.(òô’Ò8¸å°øÆ2J$b6b0cdf8-15e6-4664-8e70-42e459f7542e
+fkotlin:S1874g"#Deprecated code should not be used.(…ƒÚñúÿÿÿÿJ$2840fdc2-f7fd-477b-8a9b-9c31a6829757
+—kotlin:S6516ü"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8»å°øÆ2J$d7cd3007-2cf2-4e2e-9a49-1b1ce69c930c
+tkotlin:S1066É".Merge this "if" statement with the nested one.(¥Ä¬á8¼å°øÆ2J$70a15d90-4df0-4dbe-8a6a-4882417d9858
+ˆkotlin:S6511é"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8¼å°øÆ2J$e1fa2478-2da0-4f2a-9043-9be1a3525c93

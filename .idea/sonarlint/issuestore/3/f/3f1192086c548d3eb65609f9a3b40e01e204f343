@@ -1,0 +1,21 @@
+
+[kotlin:S1172|">Use "_" instead of this unused lambda parameter "destination".(Í™ƒüûÿÿÿÿ
+=kotlin:S6615n" Remove this useless initializer.(åÙ×ƒþÿÿÿÿ
+Wkotlin:S6619Å">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²
+Wkotlin:S6619Ð">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²
+Wkotlin:S6619Ö">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²
+Wkotlin:S6619Ü">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²
+Wkotlin:S6619â">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²
+Wkotlin:S6619è">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²
+;kotlin:S125]"Remove this commented out code.(Øû³°üÿÿÿÿ
+;kotlin:S125y"Remove this commented out code.(õíý®ýÿÿÿÿ
+;kotlin:S125}"Remove this commented out code.(ÏŒš²ûÿÿÿÿ
+<kotlin:S125‡"Remove this commented out code.(¿ø¢¨úÿÿÿÿ
+7kotlin:S125©"Remove this commented out code.(ÿøÁ
+<kotlin:S125¸"Remove this commented out code.(¡²æ£üÿÿÿÿ
+<kotlin:S125Ò"Remove this commented out code.(ö´óùÿÿÿÿ
+7kotlin:S125ö"Remove this commented out code.(¼š÷ƒ
+Skotlin:S1144­"5Remove this unused private "setHamburgerIcon" method.(³Ïòùÿÿÿÿ
+fkotlin:S1871Õ"MThis branch's code block is the same as the block for the branch on line 207.(ñ¿ÿÄ
+fkotlin:S1871Û"MThis branch's code block is the same as the block for the branch on line 207.(ßâƒ‚
+ekotlin:S1871á"MThis branch's code block is the same as the block for the branch on line 207.(Ä†•

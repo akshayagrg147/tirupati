@@ -1,0 +1,19 @@
+
+Nkotlin:S1172ü"0Remove this unused function parameter "binding".(òÊ»Ãÿÿÿÿÿ
+Skotlin:S899Ö";Do something with the "Boolean" value returned by "delete".(ø¸ºÀ
+9kotlin:S6615ş" Remove this useless initializer.(²© 
+7kotlin:S125"Remove this commented out code.(±ä‘Ô
+<kotlin:S125"Remove this commented out code.(— ûéıÿÿÿÿ
+7kotlin:S125ï"Remove this commented out code.(àçÑ¬
+<kotlin:S125Í"Remove this commented out code.(ö´óùÿÿÿÿ
+<kotlin:S125ì"Remove this commented out code.(é§Æùşÿÿÿÿ
+<kotlin:S125¤"Remove this commented out code.(ö§ƒ’ùÿÿÿÿ
+\kotlin:S1144‰">Remove this unused private "dispatchTakePictureIntent" method.(ÔŒè…ÿÿÿÿÿ
+ekotlin:S1192€"GDefine a constant instead of duplicating this literal "Error!" 7 times.(è¹ôµşÿÿÿÿ
+@kotlin:S1874|"#Deprecated code should not be used.(…±³„şÿÿÿÿ
+<kotlin:S1874ô"#Deprecated code should not be used.(‚´Ã¬
+<kotlin:S1874ú"#Deprecated code should not be used.(–ø”
+<kotlin:S1874™"#Deprecated code should not be used.(–ø”
+kkotlin:S3776Ş"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Öúˆï
+[kotlin:S6511ÿ"=Merge chained "if" statements into a single "when" statement.(êúƒ ÿÿÿÿÿ
+[kotlin:S6511û"=Merge chained "if" statements into a single "when" statement.(ê›‡úÿÿÿÿ

@@ -1,0 +1,27 @@
+
+Nkotlin:S1172À"0Remove this unused function parameter "country".(ÍÓÉíùÿÿÿÿ
+Mkotlin:S1172Ï"/Remove this unused function parameter "action".(İŒÙèøÿÿÿÿ
+Ukotlin:S1172n"8Use "_" instead of this unused lambda parameter "which".(Àìïóúÿÿÿÿ
+;kotlin:S125G"Remove this commented out code.(™ä€¨ıÿÿÿÿ
+;kotlin:S125K"Remove this commented out code.(›Ş™ñûÿÿÿÿ
+6kotlin:S125S"Remove this commented out code.(è±±
+7kotlin:S125†"Remove this commented out code.(ÏóÚ
+<kotlin:S125Á"Remove this commented out code.(–ÚñÒşÿÿÿÿ
+7kotlin:S125ç"Remove this commented out code.(–±Ù
+Akotlin:S108¤")Either remove or fill this block of code.(½ûöÆ
+6kotlin:S6531H"Remove this useless cast.(ëˆÃÿûÿÿÿÿ
+Okotlin:S1481€"1Remove this unused "milliseconds" local variable.(õÖ©øÿÿÿÿ
+rkotlin:S5843¨"TSimplify this regular expression to reduce its complexity from 21 to the 20 allowed.(âÂŞ‰şÿÿÿÿ
+gkotlin:S1192 "IDefine a constant instead of duplicating this literal "HH:mm:ss" 3 times.(Ôá»ìúÿÿÿÿ
+<kotlin:S1874ƒ"#Deprecated code should not be used.(‘ü´Á
+<kotlin:S1874†"#Deprecated code should not be used.(ñˆíé
+<kotlin:S1874"#Deprecated code should not be used.(¦³º
+Akotlin:S1874Š"#Deprecated code should not be used.(ÌØÜòüÿÿÿÿ
+Akotlin:S1874Š"#Deprecated code should not be used.(ÌØÜòüÿÿÿÿ
+<kotlin:S1874™"#Deprecated code should not be used.(ù•ŞÔ
+Akotlin:S1874£"#Deprecated code should not be used.(Œ£Ñíúÿÿÿÿ
+Akotlin:S1874£"#Deprecated code should not be used.(Œ£Ñíúÿÿÿÿ
+<kotlin:S1874Ä"#Deprecated code should not be used.(¬ş½´
+<kotlin:S1874Ä"#Deprecated code should not be used.(¬ş½´
+<kotlin:S1874Ã"#Deprecated code should not be used.(¨ÀÕ
+[kotlin:S6511"=Merge chained "if" statements into a single "when" statement.(æ©ÿäúÿÿÿÿ

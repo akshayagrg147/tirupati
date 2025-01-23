@@ -1,0 +1,11 @@
+
+fkotlin:S6615ó" Remove this useless initializer.(²© 8¢¥‘õÆ2J$de00214c-c7ec-409f-b327-89ca8d4e2f9a
+hkotlin:S125z"Remove this commented out code.(åÆ»«ÿÿÿÿÿ8¤¥‘õÆ2J$125bdddf-f8a4-4bf7-9266-1450a74340ed
+dkotlin:S125¨"Remove this commented out code.(›ŠàÅ8¤¥‘õÆ2J$014e4367-c6aa-4c54-a347-f8d0740fc9e6
+ikotlin:S125Ó"Remove this commented out code.(ö´óùÿÿÿÿ8¤¥‘õÆ2J$4e9f87ce-6944-4532-a41d-0c0210362f9f
+dkotlin:S125ß"Remove this commented out code.(Üèâ8¥¥‘õÆ2J$2abe6302-b9e7-4c93-afce-02ff8a53ed99
+dkotlin:S125ø"Remove this commented out code.(–±Ù8¥¥‘õÆ2J$36cfd981-584f-4597-a118-fa39045a4475
+ikotlin:S125Á"Remove this commented out code.(ö´óùÿÿÿÿ8¥¥‘õÆ2J$f2aed081-08d3-4dbc-9f98-3778bf7d3739
+˜kotlin:S117¾"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ä´›¶üÿÿÿÿ8§¥‘õÆ2J$1fcdf51a-474b-47f2-8c41-9b3415520494
+kotlin:S3776ñ"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÇîÚÓüÿÿÿÿ8±¥‘õÆ2J$cfffaa86-8903-4d35-86ae-53a93a2a24c7
+ˆkotlin:S6511ô"=Merge chained "if" statements into a single "when" statement.(ıÖº¸úÿÿÿÿ8³¥‘õÆ2J$151e3e78-e4c4-4bc9-9ebf-9a60e4724702

@@ -1,0 +1,8 @@
+
+]kotlin:S1172Ó"8Use "_" instead of this unused lambda parameter "event".(¿Ñ´Ýûÿÿÿÿ8™§û¥È2
+@kotlin:S6615£" Remove this useless initializer.(²©Ž 8š§û¥È2
+Ckotlin:S125¼"Remove this commented out code.(²Ÿ°Óûÿÿÿÿ8œ§û¥È2
+Bkotlin:S1874i"#Deprecated code should not be used.(àžŸº8¥§û¥È2
+wkotlin:S3776¡"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(Ùîà°ûÿÿÿÿ8¦§û¥È2
+]kotlin:S6511¤"=Merge chained "if" statements into a single "when" statement.(¤üÇÍ8§§û¥È2
+Kkotlin:S6518i",Replace function call with indexed accessor.(àžŸº8¨§û¥È2

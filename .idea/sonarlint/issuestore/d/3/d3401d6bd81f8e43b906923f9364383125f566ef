@@ -1,0 +1,22 @@
+
+kotlin:S1172">Use "_" instead of this unused lambda parameter "destination".(Í™ƒüûÿÿÿÿJ$8699d111-04d3-4c4c-902e-6ed59a02d212
+ckotlin:S6615q" Remove this useless initializer.(åÙ×ƒşÿÿÿÿJ$1c8fca31-1d42-4fc5-b469-ade6f8b11502
+}kotlin:S6619Í">Remove this useless non-null assertion !!, it always succeeds.(Ø„šåJ$4dabe188-d67a-4bb8-81bc-d5b15b7c16f9
+}kotlin:S6619Ô">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²J$2755428f-41dc-454f-9e67-ec8d4f76a7e5
+}kotlin:S6619ß">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²J$2ee499be-ce19-4e16-902e-2634c26a4d29
+}kotlin:S6619å">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²J$827eabd4-0e89-40f2-9410-0fa8d5eaa424
+}kotlin:S6619ê">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²J$4c971be4-25e0-477b-aa2d-d01f24810408
+}kotlin:S6619ï">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²J$3ee1fae0-d735-4474-a505-1823176be9bd
+}kotlin:S6619ô">Remove this useless non-null assertion !!, it always succeeds.(æ…Ÿ²J$e180ebea-cdcd-4344-8e53-658d4e3b23cd
+akotlin:S125`"Remove this commented out code.(Øû³°üÿÿÿÿJ$bdeeac74-e339-4cbc-aa9a-41d8e1bab132
+akotlin:S125|"Remove this commented out code.(õíı®ıÿÿÿÿJ$bddbc999-23bb-4539-9244-816fbf945765
+bkotlin:S125€"Remove this commented out code.(ÏŒš²ûÿÿÿÿJ$0e15f9a1-1e1f-4710-a408-ebf382d1bd20
+bkotlin:S125Š"Remove this commented out code.(¿ø¢¨úÿÿÿÿJ$9a23909e-882f-4797-8efa-54afa66a29c9
+]kotlin:S125«"Remove this commented out code.(ÿøÁJ$739b6c42-9bc7-4c7b-9cfe-bd4f7270629e
+ikotlin:S125º"Remove this commented out code.(¡²æ£üÿÿÿÿ8½Ÿÿ‹É2J$3c0df335-1477-49a7-b272-91a8b12f37d6
+bkotlin:S125á"Remove this commented out code.(ö´óùÿÿÿÿJ$c1ef5d49-b334-44a7-8bc6-133fedfac1b6
+]kotlin:S125‚"Remove this commented out code.(¼š÷ƒJ$1bf9dcbf-eaa3-4de6-8fb0-deaca7416b34
+ykotlin:S1144¯"5Remove this unused private "setHamburgerIcon" method.(³ÏòùÿÿÿÿJ$56f034fd-3ae9-4255-a444-4140bb8ca4c9
+Œkotlin:S1871ä"MThis branch's code block is the same as the block for the branch on line 222.(ñ¿ÿÄJ$d633c081-8349-4bf9-97e0-7ad04a758e36
+Œkotlin:S1871é"MThis branch's code block is the same as the block for the branch on line 222.(ßâƒ‚J$ee2a8b5a-4ca4-413b-95b6-d0ef11906318
+‹kotlin:S1871î"MThis branch's code block is the same as the block for the branch on line 222.(Ä†•J$6ecfa7be-0b18-45a3-a17e-e3233acd77f5

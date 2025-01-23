@@ -1,0 +1,9 @@
+
+jkotlin:S117"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(¡ÕÙèûÿÿÿÿ
+ekotlin:S117"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$( ý€Î
+jkotlin:S117*"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(¡ÕÙèûÿÿÿÿ
+ekotlin:S1171"NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$( ý€Î
+bkotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.(¡ÕÙèûÿÿÿÿ
+]kotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.( ý€Î
+bkotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.(·«›¨üÿÿÿÿ
+]kotlin:S6313"EClasses extending "ViewModel" should not expose suspending functions.(­ÕÔÛ

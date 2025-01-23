@@ -1,0 +1,20 @@
+
+tkotlin:S1172Á"0Remove this unused function parameter "binding".(Ë€¼úÿÿÿÿJ$7a181aa9-d2c4-4910-a375-af1ce966f1bc
+ykotlin:S899ğ";Do something with the "Boolean" value returned by "delete".(ø¸ºÀJ$e6581a2e-a4b0-4792-b9ae-51cc77e0e500
+_kotlin:S6615Ã" Remove this useless initializer.(²© J$9726e63c-02ec-495b-85e1-ec77364c7ffc
+]kotlin:S125°"Remove this commented out code.(‹úõöJ$26e88b2f-80d1-484e-a0d8-709466f9d324
+bkotlin:S125À"Remove this commented out code.(— ûéıÿÿÿÿJ$a21fdea4-072c-40f3-821a-b4f3a96f5b59
+]kotlin:S125’"Remove this commented out code.(€„øíJ$0a2d6d34-fd37-4e40-b699-9ab614f74681
+bkotlin:S125œ"Remove this commented out code.(ö´óùÿÿÿÿJ$e817c9ce-9fdc-450e-87e7-3921d9d2700b
+bkotlin:S125û"Remove this commented out code.(ö§ƒ’ùÿÿÿÿJ$cac1bf1a-2198-445a-b524-a01410b23848
+gkotlin:S108")Either remove or fill this block of code.(á¢–¬J$53a8feb9-9211-4f52-a655-3b76bb8e1611
+gkotlin:S108¶")Either remove or fill this block of code.(÷¦¦ÒJ$66780a67-1e76-497f-9ebd-5a05bb48bf97
+qkotlin:S1481¯"2Remove this unused "adapterImages" local variable.(ôJ$b8441597-fa4f-44bc-9240-e1f94c2213d8
+>kotlin:S1128%"Remove this unused import.(àŒşÿÿÿÿ8Á†‰ŒÉ2
+Œkotlin:S1871¥"MThis branch's code block is the same as the block for the branch on line 287.(ßâƒ‚J$f4450415-91c2-4bc9-8a8e-fa8cc36818e5
+‹kotlin:S1871«"MThis branch's code block is the same as the block for the branch on line 287.(Ä†•J$f8ffaf9c-9d26-4e40-a217-9acfb1dc6def
+Œkotlin:S1871°"MThis branch's code block is the same as the block for the branch on line 287.(Šä•J$0863f930-7f61-4898-a170-3f29ab295510
+akotlin:S1874z"#Deprecated code should not be used.(É´¹J$ad1c7ed9-cc18-4c95-bd89-6ccde9471386
+bkotlin:S1874€"#Deprecated code should not be used.(–ø”J$cb44da1b-4b9f-4fef-bbf3-9652f36e5ec6
+bkotlin:S1874¾"#Deprecated code should not be used.(‚´Ã¬J$3d9fc093-0b83-47cc-831a-5a63140f35a5
+kotlin:S6511Ì"=Merge chained "if" statements into a single "when" statement.(êúƒ ÿÿÿÿÿJ$c1328d80-3aba-46f1-b4b5-b83311e9cbeb

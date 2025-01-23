@@ -1,0 +1,35 @@
+
+tkotlin:S1172ö"0Remove this unused function parameter "context".(äÕå¨üÿÿÿÿJ$b4376300-8d4b-4414-8eca-53f5f9ff9175
+vkotlin:S1172ß"8Use "_" instead of this unused lambda parameter "which".(Š‡ÃaJ$b24e2136-bb3f-4d74-affa-a83b6b88801b
+|kotlin:S1172Õ"8Use "_" instead of this unused lambda parameter "event".(Ÿ°—šúÿÿÿÿJ$dcea6ff3-9b39-45d5-b42f-b2dab8c6fe93
+_kotlin:S6615Ã" Remove this useless initializer.(²© J$c6be4551-9ed2-44f5-b423-3b6367ce6fa8
+zkotlin:S6619œ";Remove this useless elvis operation ?:, it always succeeds.(Ûç­†J$fa3b3289-1833-4baf-a167-31b9708ab851
+zkotlin:S6619œ";Remove this useless elvis operation ?:, it always succeeds.(Ûç­†J$111f3ff6-e13b-4f53-9e00-5adf7e42c86a
+zkotlin:S6619»";Remove this useless elvis operation ?:, it always succeeds.(‹˜ú•J$58887daf-1ffc-4d8d-8e96-d01f1c03ad6a
+]kotlin:S125Ÿ"Remove this commented out code.(ãÚÊÃJ$284fa5eb-fb2e-4280-aca1-af545e769035
+bkotlin:S125¾"Remove this commented out code.(²Ÿ°ÓûÿÿÿÿJ$16ab4b4e-ee26-4c67-aaa1-07ac6984afa0
+bkotlin:S125è"Remove this commented out code.(ïÂÏ‰ùÿÿÿÿJ$5e6e573e-c137-41ec-9732-e162be994bb1
+]kotlin:S125ğ"Remove this commented out code.(¥©óäJ$9e267b61-4d9a-4af8-ae68-50c787c9e2bc
+bkotlin:S125Œ"Remove this commented out code.(ö´óùÿÿÿÿJ$91accc57-29c6-4913-88f4-b9053b38fdfc
+bkotlin:S125µ"Remove this commented out code.(ö´óùÿÿÿÿJ$eee2f015-f412-40f9-b402-cec479ca68c2
+]kotlin:S125ß"Remove this commented out code.(ÜèâJ$81637f77-432d-4b41-9e83-c74fe68c133b
+‘kotlin:S117 "NRename this parameter to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ä´›¶üÿÿÿÿJ$43544226-4b45-4b50-a1ef-37476eaaaa50
+vkotlin:S1144”"7Remove this unused private "apiCallForCustomer" method.(®òÔ¤J$be39f0cf-ec83-4542-9470-c27c95301b9f
+ukotlin:S1144ö"1Remove this unused private "compressFile" method.(äÕå¨üÿÿÿÿJ$1a15bda7-ce53-474b-b5d6-fe9093a94ffa
+ukotlin:S1135L"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿJ$0c260737-fe75-4ced-a70a-259a8dbf6cb4
+tkotlin:S1481¸"0Remove this unused "displayName" local variable.(ş¬¶ûÿÿÿÿJ$87d4febf-0b6a-4bca-b319-da3a8aef25eb
+gkotlin:S1481·")Remove this unused "path" local variable.(æ’³#J$bb78b6d2-c981-4854-9f0b-4d85327ca0a2
+tkotlin:S1481¸"0Remove this unused "displayName" local variable.(ş¬¶ûÿÿÿÿJ$495361e2-8fdd-48cb-a2f0-f32ef453a141
+gkotlin:S1481·")Remove this unused "path" local variable.(æ’³#J$df843c71-4e49-4d1a-945b-ac8c7993cbe7
+9kotlin:S11287"Remove this unused import.(÷á²Ö8°Ú¢‘È2
+˜kotlin:S1871Ú"MThis branch's code block is the same as the block for the branch on line 598.(Øè¸Óşÿÿÿÿ8ÂĞôÆ2J$a0f8246d-ec6d-4392-aa89-487d7a79833e
+bkotlin:S1874"#Deprecated code should not be used.(–ø”J$0caaec1e-7d4c-47e8-bc01-e9573ddea17d
+gkotlin:S1874"#Deprecated code should not be used.(ßÀ›æıÿÿÿÿJ$83ad161d-14a6-4c5f-8f08-b5dad36eb1dd
+bkotlin:S1874®"#Deprecated code should not be used.(‚´Ã¬J$71f0cb6e-1d51-4618-9b1b-369c339eabde
+‘kotlin:S3776‰"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(©ÀùèJ$b8591799-3472-400c-a8d9-dc9afd910c5f
+‘kotlin:S3776í"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ß»Š…J$0d0dec52-bb49-415e-9d72-573a23d07fb9
+‘kotlin:S3776À"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Ş ıŸJ$0d5c2519-0247-4514-9d3a-6a3fa55e7dfd
+kotlin:S6516å"LReplace explicit functional interface implementation with lambda expression.(Ü¦ÏÛûÿÿÿÿJ$d9e9fecf-8ccb-42f1-83ba-260b9dd83439
+™kotlin:S1186”"ZAdd a nested comment explaining why this function is empty or complete the implementation.(®òÔ¤J$ddf18a66-aad3-48ed-b191-a78bbbd5d979
+|kotlin:S6511Ä"=Merge chained "if" statements into a single "when" statement.(¤üÇÍJ$55b4af3c-1db6-4108-86b3-ae7d164f546b
+Ÿsecrets:S6334™"_Make sure this Google API Key is either secured or revoked, changed, and removed from the code.(ºÄĞ·J$d91afd40-3ddb-48e4-b1ef-5600646f6af5
