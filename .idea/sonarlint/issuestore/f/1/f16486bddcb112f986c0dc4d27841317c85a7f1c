@@ -1,27 +1,27 @@
 
-}kotlin:S1172Ã"8Use "_" instead of this unused lambda parameter "which".(Š‡Ãa8ŠÀÌ™Ç2J$b9835e1f-313d-49e6-bec0-ea9e0b50d3c1
-kkotlin:S6615‘" Remove this useless initializer.(ö¹öüÿÿÿÿ8ŒÀÌ™Ç2J$26efd734-d214-4b3a-b841-c3432cd0d74d
-kkotlin:S6615ª" Remove this useless initializer.(ö¹öüÿÿÿÿ8ŒÀÌ™Ç2J$ea34d1c2-f9e6-4e03-876d-0f713b500c7e
-kkotlin:S6615ü" Remove this useless initializer.(‚–£öşÿÿÿÿ8ŒÀÌ™Ç2J$1930b91c-ca01-4b7d-b85c-b0a1d305d36b
-dkotlin:S125°"Remove this commented out code.(Ìß¡8ÀÌ™Ç2J$3ae1ec3b-f22a-44ad-a27a-8efbeec629c0
-‰kotlin:S1144Ú">Remove this unused private "checkAndPromptForLocation" method.(‰Ëú™ùÿÿÿÿ8•ÀÌ™Ç2J$86de23d5-b4ab-44f2-bad2-cf1102a2124b
-skotlin:S108¸")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8›ÀÌ™Ç2J$67e6f8ce-d0b8-414e-b02b-d8e2343154b4
-|kotlin:S1135V"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8ÀÌ™Ç2J$8aa4904f-e144-4eea-b7a3-1f4d2cf8834e
-vkotlin:S1481"0Remove this unused "bitmapImage" local variable.(ıĞç8 ÀÌ™Ç2J$dcf11c15-487a-48ef-b289-b93294490c87
-mkotlin:S1481È"'Remove this unused "cw" local variable.(Éó‹Â8 ÀÌ™Ç2J$44ca138e-18be-443a-9fb4-f9535ecf4bca
-dkotlin:S1128-"Remove this unused import.(µ““ûÿÿÿÿ8¤ÀÌ™Ç2J$d4c1724d-da5d-4371-8325-679cdd0c8e8c
-dkotlin:S1128/"Remove this unused import.(Ù¯•¬ùÿÿÿÿ8¤ÀÌ™Ç2J$cfacc41b-f937-4d17-afc0-52597e442d2b
-dkotlin:S11287"Remove this unused import.(¸ô¿ßùÿÿÿÿ8Îˆä™Ç2J$6d24e98c-8d37-4a75-8c30-f267f0077d48
-_kotlin:S1128:"Remove this unused import.(‰±ˆ8¤ÀÌ™Ç2J$e686e259-7afe-45a6-a6c7-615559458f9d
-dkotlin:S1128M"Remove this unused import.(åÉˆúÿÿÿÿÿ8¤ÀÌ™Ç2J$83429a64-4671-4eac-8964-68c2c79903ad
-“kotlin:S1871Ü"MThis branch's code block is the same as the block for the branch on line 599.(ñ¿ÿÄ8¦ÀÌ™Ç2J$2b93d9ec-480d-417a-8e1e-09ff77e588fb
-“kotlin:S1871á"MThis branch's code block is the same as the block for the branch on line 599.(ßâƒ‚8¦ÀÌ™Ç2J$5f62db48-2a73-4347-8352-e4fa39f1ead3
-’kotlin:S1871æ"MThis branch's code block is the same as the block for the branch on line 599.(Ä†•8¦ÀÌ™Ç2J$0fd11ee5-c780-42b3-85ac-01f9a3d7d562
-ikotlin:S1874"#Deprecated code should not be used.(òô’Ò8§ÀÌ™Ç2J$315dc183-8165-4d91-8b97-be5f5ffeac65
-hkotlin:S1874q"#Deprecated code should not be used.(¿©¡í8§ÀÌ™Ç2J$576dc026-2ee8-453e-a3e1-a07dcf4c3eab
-˜kotlin:S3776Ñ"RRefactor this method to reduce its Cognitive Complexity from 67 to the 15 allowed.(ëü«8¨ÀÌ™Ç2J$95b3e65d-d3b9-4036-a434-fbe92446d3ac
-—kotlin:S6516"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8«ÀÌ™Ç2J$87e2e339-3dd9-4c9c-a450-c63d4413b472
-—kotlin:S6516É"LReplace explicit functional interface implementation with lambda expression.(Ü¦ÏÛûÿÿÿÿ8¬ÀÌ™Ç2J$cf96a464-8690-4d2e-99f9-68a30033eb7a
-tkotlin:S1066Ì".Merge this "if" statement with the nested one.(¥Ä¬á8¬ÀÌ™Ç2J$d61fca9e-05ba-429d-8b0c-eccac8fba74c
-ˆkotlin:S6511û"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8­ÀÌ™Ç2J$9dd94b1f-5a11-45f2-a41d-8e632d4b4f4b
-Ÿsecrets:S6334ú"_Make sure this Google API Key is either secured or revoked, changed, and removed from the code.(ºÄĞ·J$c942fb98-2567-4351-a35a-8e41f232f1c9
+}kotlin:S1172Ö"8Use "_" instead of this unused lambda parameter "which".(Š‡Ãa8ŠÀÌ™Ç2J$71baf85f-e10c-463f-99de-d2d1a4bdd322
+kkotlin:S6615š" Remove this useless initializer.(ö¹öüÿÿÿÿ8ŒÀÌ™Ç2J$e7d356a9-8379-4485-9d0a-5c8cdac509ab
+kkotlin:S6615½" Remove this useless initializer.(ö¹öüÿÿÿÿ8ŒÀÌ™Ç2J$469c9585-8424-4fe6-abfd-f2cc7f5bb7e8
+kkotlin:S6615" Remove this useless initializer.(‚–£öşÿÿÿÿ8ŒÀÌ™Ç2J$95fa5085-ae47-40c7-b69a-43a4a7d9430b
+dkotlin:S125¹"Remove this commented out code.(Ìß¡8ÀÌ™Ç2J$c94c5319-34e5-4c1c-8f72-a99ed51b3d12
+‰kotlin:S1144í">Remove this unused private "checkAndPromptForLocation" method.(‰Ëú™ùÿÿÿÿ8•ÀÌ™Ç2J$51ce4fcf-7416-4dd0-afed-0733062a01e6
+skotlin:S108Á")Either remove or fill this block of code.(¿ŞŞÓüÿÿÿÿ8›ÀÌ™Ç2J$4eed6021-c9c8-4bed-bb8c-c82c2e663227
+|kotlin:S1135V"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8ÀÌ™Ç2J$21954983-8c4d-49c0-aac3-8b30617b9456
+vkotlin:S1481™"0Remove this unused "bitmapImage" local variable.(ıĞç8 ÀÌ™Ç2J$a52c25f7-2e8d-496f-bc31-9f969b41133e
+mkotlin:S1481Û"'Remove this unused "cw" local variable.(Éó‹Â8 ÀÌ™Ç2J$11ed4e88-fba2-4b2d-bf81-a8a05ac022bc
+dkotlin:S1128-"Remove this unused import.(µ““ûÿÿÿÿ8¤ÀÌ™Ç2J$3161179b-9c2c-4ec7-acbc-a2a0d463797c
+dkotlin:S1128/"Remove this unused import.(Ù¯•¬ùÿÿÿÿ8¤ÀÌ™Ç2J$8af75f4f-7290-46ec-a8f5-f4122832a2cb
+dkotlin:S11287"Remove this unused import.(¸ô¿ßùÿÿÿÿ8Îˆä™Ç2J$8c7f0bca-997c-4c72-982c-ebc1e09d8ac4
+_kotlin:S1128:"Remove this unused import.(‰±ˆ8¤ÀÌ™Ç2J$2a7f12d2-e9be-45c1-9c1a-7c79ddc274b0
+dkotlin:S1128M"Remove this unused import.(åÉˆúÿÿÿÿÿ8¤ÀÌ™Ç2J$c834820f-b9a5-4351-9005-3c1d1f6e6762
+“kotlin:S1871ï"MThis branch's code block is the same as the block for the branch on line 618.(ñ¿ÿÄ8¦ÀÌ™Ç2J$72fa4d57-c714-4b4b-a468-e8b4626fbda8
+“kotlin:S1871ô"MThis branch's code block is the same as the block for the branch on line 618.(ßâƒ‚8¦ÀÌ™Ç2J$865d9ef3-5fe7-4dbe-b7e2-89c53ed71053
+’kotlin:S1871ù"MThis branch's code block is the same as the block for the branch on line 618.(Ä†•8¦ÀÌ™Ç2J$f53cc0cf-d643-4778-a560-b032e0623abd
+ikotlin:S1874§"#Deprecated code should not be used.(òô’Ò8§ÀÌ™Ç2J$45408579-4baf-4009-b30b-ca4f2494fed7
+hkotlin:S1874q"#Deprecated code should not be used.(¿©¡í8§ÀÌ™Ç2J$b95797e9-5ee9-4d42-9dbb-12c00722d5aa
+˜kotlin:S3776ä"RRefactor this method to reduce its Cognitive Complexity from 67 to the 15 allowed.(ëü«8¨ÀÌ™Ç2J$ba09d1a6-d855-4e91-ac22-759f58b7cc5e
+—kotlin:S6516—"LReplace explicit functional interface implementation with lambda expression.(¶¦É®ûÿÿÿÿ8«ÀÌ™Ç2J$5b157fbe-d738-464f-b141-da34087d91e1
+—kotlin:S6516Ü"LReplace explicit functional interface implementation with lambda expression.(Ü¦ÏÛûÿÿÿÿ8¬ÀÌ™Ç2J$4c80dd07-ce1b-4159-80ff-81c2991e18ff
+tkotlin:S1066ß".Merge this "if" statement with the nested one.(¥Ä¬á8¬ÀÌ™Ç2J$25c6d594-ae61-4c82-b760-5e0b05210605
+ˆkotlin:S6511‡"=Merge chained "if" statements into a single "when" statement.(Ñ¢£‚úÿÿÿÿ8­ÀÌ™Ç2J$7fa11cfc-5e21-4ec2-bb93-33cb3fd4cfac
+Ÿsecrets:S6334"_Make sure this Google API Key is either secured or revoked, changed, and removed from the code.(ºÄĞ·J$ee321d28-d5bd-40ec-a8ea-83e883357b00

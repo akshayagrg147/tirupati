@@ -13,6 +13,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.itextpdf.kernel.colors.Color
 import com.tirupati.vendor.R
 import com.tirupati.vendor.model.OrderStatusPagerAdapter
+import com.tirupati.vendor.model.ResponseDataCustomer
 import com.tirupati.vendor.ui.CustomerHomeActivity
 
 class OrderStatusCustomerFragment : Fragment(R.layout.fragment_order_status_customer) {
@@ -26,8 +27,13 @@ class OrderStatusCustomerFragment : Fragment(R.layout.fragment_order_status_cust
         // Set up the adapter for ViewPager2
         viewPager.adapter = OrderStatusPagerAdapter(requireActivity()) { actionId, args ->
 
-            findNavController().navigate(actionId, args ?: Bundle())
-
+            val responseData = args?.getParcelable<ResponseDataCustomer>("responseData")
+            if (responseData != null) {
+                Log.d("Navigation", "Navigating with valid responseData: $responseData")
+                findNavController().navigate(actionId, args)
+            } else {
+                Log.e("Navigation", "responseData is null. Skipping navigation.")
+            }
         }
 
         CustomerHomeActivity.showIcon(true)

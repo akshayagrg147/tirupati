@@ -18,6 +18,7 @@ import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import javax.inject.Inject
 @AndroidEntryPoint
 class CustomerComplaintTabFragment : Fragment() {
@@ -82,7 +83,9 @@ class CustomerComplaintTabFragment : Fragment() {
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
                     binding!!.loginProgressBar.progressBar.hidden()
-                    showCustomDialog(requireContext(), response.msg.toString(),"Error")
+                    val jsonObject = JSONObject(response.msg)
+                    val message = jsonObject.optString("MESSAGE", "Unknown error")
+                    showCustomDialog(requireContext(),message, "Error")
                 }
 
                 else -> {

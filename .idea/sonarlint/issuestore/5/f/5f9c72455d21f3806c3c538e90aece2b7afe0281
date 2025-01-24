@@ -1,8 +1,8 @@
 
-ˆkotlin:S1172Ô"=Use "_" instead of this unused lambda parameter "buttonView".(Ø…÷‡ûÿÿÿÿ8‰´ÑÌÇ2J$9c4c7ba3-b4f0-4bb1-a0ef-38c2e33a7cc0
-|kotlin:S1135"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8´ÑÌÇ2J$b0128b54-97e1-4abf-89e3-a06bacf80c74
-ykotlin:S1481X"/Remove this unused "downloadId" local variable.(©æÊ…ûÿÿÿÿ8´ÑÌÇ2J$14932e60-a00a-4a89-8650-ee9c6dd23426
-_kotlin:S1128"Remove this unused import.(Üº¸¡8´ÑÌÇ2J$68cc0e83-31ff-426b-acc7-009bb535d161
-‘kotlin:S1192»"KDefine a constant instead of duplicating this literal "empty file" 3 times.(Èñîİ8´ÑÌÇ2J$ea5cbca2-55a5-47d9-912a-776f74de1387
-hkotlin:S18743"#Deprecated code should not be used.(¦Ì8‘´ÑÌÇ2J$d22b0562-b3a6-4433-91e8-16f53917e14a
-—kotlin:S3776d"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¯¶¦‘8‘´ÑÌÇ2J$2f4bf572-2801-4bec-be82-c6e5d42d3320
+ˆkotlin:S1172Ô"=Use "_" instead of this unused lambda parameter "buttonView".(Ø…÷‡ûÿÿÿÿ8‰´ÑÌÇ2J$51eb9771-5310-491d-8e30-5018a1cc4ac4
+|kotlin:S1135"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8´ÑÌÇ2J$e7c78dcd-bb0a-4eb0-b497-cfd598df514f
+ykotlin:S1481X"/Remove this unused "downloadId" local variable.(©æÊ…ûÿÿÿÿ8´ÑÌÇ2J$cdcee34d-f9a0-44d2-a46f-3f9ff3842246
+_kotlin:S1128"Remove this unused import.(Üº¸¡8´ÑÌÇ2J$be7b5347-00c4-4c38-828d-32ba88b2b233
+‘kotlin:S1192»"KDefine a constant instead of duplicating this literal "empty file" 3 times.(Èñîİ8´ÑÌÇ2J$783a322d-46b9-416b-998d-b06b62fdb3cf
+Bkotlin:S18743"#Deprecated code should not be used.(¦Ì8”®„¿É2
+—kotlin:S3776d"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¯¶¦‘8‘´ÑÌÇ2J$11189f2e-f21e-4d1c-9081-51675d4ec1dd

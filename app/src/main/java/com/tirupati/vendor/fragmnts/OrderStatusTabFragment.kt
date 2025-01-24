@@ -42,6 +42,7 @@ class OrderStatusTabFragment : Fragment() {
         onNavigate = listener
     }
     private fun navigateToDetailFragment(args: Bundle) {
+        Log.d("argsrecieved",Gson().toJson(args))
 
         onNavigate?.invoke(R.id.orderStatusTabFragment_to_orderStatusDetailFragment, args)
             ?: Log.e("NavigationError", "No navigation listener set!")

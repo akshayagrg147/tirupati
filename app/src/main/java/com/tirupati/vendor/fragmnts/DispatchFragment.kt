@@ -124,18 +124,27 @@ class DispatchFragment : Fragment() {
         return binding?.root
     }
 
-    var  requestPermissionsLauncher:ActivityResultLauncher<Array<String>> = registerForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions()
-    ) { permissions ->
-        if (permissions[Manifest.permission.CAMERA] == true &&
-            permissions[Manifest.permission.RECORD_AUDIO] == true &&
-            permissions[Manifest.permission.WRITE_EXTERNAL_STORAGE] == true) {
-            // All permissions are granted
-            dispatchTakeVideoIntent()
 
-            // Handle the case where permissions are not granted
+    private var requestPermissionsLauncher: ActivityResultLauncher<Array<String>> =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+            val cameraPermissionGranted = permissions[Manifest.permission.CAMERA] == true
+            val recordAudioPermissionGranted = permissions[Manifest.permission.RECORD_AUDIO] == true
+
+            // Check appropriate storage permission based on API level
+            val storagePermissionGranted = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                permissions[Manifest.permission.READ_MEDIA_VIDEO] == true
+            } else {
+                permissions[Manifest.permission.WRITE_EXTERNAL_STORAGE] == true
+            }
+
+            if (cameraPermissionGranted && recordAudioPermissionGranted && storagePermissionGranted) {
+                // All required permissions are granted
+                dispatchTakeVideoIntent()
+            } else {
+                // Handle the case where permissions are not granted
+                Toast.makeText(requireContext(), "Permissions are required to capture video", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
     var cameraResultLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
@@ -188,8 +197,11 @@ class DispatchFragment : Fragment() {
 
     private fun dispatchTakeVideoIntent() {
         val takeVideoIntent = Intent(MediaStore.ACTION_VIDEO_CAPTURE)
-        if (takeVideoIntent.resolveActivity(requireContext().packageManager) != null) {
+        try {
             videoCaptureLauncher.launch(takeVideoIntent)
+        }
+        catch (e:Exception){
+            e.message
         }
     }
     private fun getImageFromUri(imageUri: Uri?): File? {
@@ -273,23 +285,30 @@ class DispatchFragment : Fragment() {
         }
         builder.show()
     }
-    private fun checkPermissionsAndLaunch() {
-        when {
-            ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED &&
 
-                    ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED -> {
-                // Permissions are already granted
-                dispatchTakeVideoIntent()
-            }
-            else -> {
-                // Request the permissions
-                requestPermissionsLauncher.launch(
-                    arrayOf(
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE
-                    )
-                )
-            }
+    private fun checkPermissionsAndLaunch() {
+        val requiredPermissions = mutableListOf(
+            Manifest.permission.CAMERA
+        )
+
+        // Add appropriate storage permission based on Android version
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requiredPermissions.add(Manifest.permission.READ_MEDIA_VIDEO)
+        } else {
+            requiredPermissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        }
+
+        // Check if all required permissions are granted
+        val allPermissionsGranted = requiredPermissions.all { permission ->
+            ContextCompat.checkSelfPermission(requireContext(), permission) == PackageManager.PERMISSION_GRANTED
+        }
+
+        if (allPermissionsGranted) {
+            // Permissions are already granted
+            dispatchTakeVideoIntent()
+        } else {
+            // Request missing permissions
+            requestPermissionsLauncher.launch(requiredPermissions.toTypedArray())
         }
     }
 
