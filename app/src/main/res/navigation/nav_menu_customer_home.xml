@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_flow_supervisor"
     app:startDestination="@id/orderStatusCustomer">
+    orderStatusCustomer
 
     <fragment
         android:id="@+id/vendorPageFragment"

@@ -166,7 +166,7 @@ private fun downloadFileUsingDownloadManager(  url: String, fileName: String, co
 
             val qualityDocumentUrl = responseData.otherDetails.get(0).qualityDocument
 
-            if (qualityDocumentUrl.isNotBlank()) {
+            if (qualityDocumentUrl?.isNotBlank()==true) {
                 if (qualityDocumentUrl.startsWith("http://") || qualityDocumentUrl.startsWith("https://")) {
                     downloadFileUsingDownloadManager(qualityDocumentUrl, "Quality Document", requireContext())
                 } else {
@@ -190,8 +190,8 @@ private fun downloadFileUsingDownloadManager(  url: String, fileName: String, co
 
         }
         binding.imgEwaybill.setOnClickListener{
-            if(responseData.otherDetails.get(0).eWayBill.isNotBlank())
-            downloadFileUsingDownloadManager(responseData.otherDetails.get(0).eWayBill,"E way bill",requireContext(),)
+            if(responseData?.otherDetails?.get(0)?.eWayBill?.isNotBlank()==true)
+            downloadFileUsingDownloadManager(responseData.otherDetails?.get(0)?.eWayBill?:"","E way bill",requireContext(),)
             else{
                 toast("empty file")
             }
@@ -200,8 +200,8 @@ private fun downloadFileUsingDownloadManager(  url: String, fileName: String, co
         }
 
         binding.imgPlatformInvoice.setOnClickListener{
-            if(responseData.otherDetails.get(0).proformaInvoice.isNotBlank())
-            downloadFileUsingDownloadManager(responseData.otherDetails.get(0).proformaInvoice,"Proforma Invoice",requireContext(),)
+            if(responseData.otherDetails.get(0).proformaInvoice?.isNotBlank()==true)
+            downloadFileUsingDownloadManager(responseData.otherDetails.get(0).proformaInvoice!!,"Proforma Invoice",requireContext(),)
 
             else{
                 toast("empty file")

@@ -22,6 +22,7 @@ import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -109,11 +110,13 @@ class OrderStatusTabFragment : Fragment() {
 
 
                 }
-                is NetworkState.NetworkException,
-                is NetworkState.HttpErrors.InternalServerError,
+
                 is NetworkState.HttpErrors.ResourceNotFound -> {
+
+                    val jsonObject = JSONObject(response.msg.toString())
+                    val message = jsonObject.optString("MESSAGE", "Unknown error")
+                    showCustomDialog(requireContext(),message, "Error")
                     binding.loginProgressBar.progressBar.hidden()
-                    showCustomDialog(requireContext(), "something went wrong", "Error")
                 }
                 else -> {
                     binding.loginProgressBar.progressBar.hidden()

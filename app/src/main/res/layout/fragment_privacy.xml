@@ -14,6 +14,10 @@
             android:id="@+id/textViewTitle"
             android:layout_width="match_parent"
             android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_10sdp"
+            android:textColorLink="@color/blue_00A0FA"
+
+            android:justificationMode="inter_word"
 
             android:lineSpacingExtra="4dp"
             android:lineSpacingMultiplier="1.2"

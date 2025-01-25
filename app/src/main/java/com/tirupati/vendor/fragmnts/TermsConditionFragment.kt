@@ -2,6 +2,7 @@ package com.tirupati.vendor.fragmnts
 
 import android.os.Bundle
 import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -95,7 +96,13 @@ class TermsConditionFragment : Fragment() {
                     // Update the UI on the main thread
                     withContext(Dispatchers.Main) {
                         binding.loginProgressBar.progressBar.hidden()
-                        binding.textViewTitle.text = Html.fromHtml(messageBody, Html.FROM_HTML_MODE_COMPACT)
+                        binding.textViewTitle.apply {
+                            text = Html.fromHtml(messageBody, Html.FROM_HTML_MODE_COMPACT)
+                            movementMethod = LinkMovementMethod.getInstance() // Enable hyperlink clicks
+                            isClickable = true // Ensure the TextView itself is clickable
+                            linksClickable = true // Allow links inside the TextView to be clickable
+                        }
+
 
                     }
                 } else {

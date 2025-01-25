@@ -35,6 +35,7 @@ import com.tirupati.vendor.network.NetworkState
 import com.tirupati.vendor.viewmodels.GatekeeperListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -162,7 +163,7 @@ class CustomerHomeActivity : AppCompatActivity(), ToolbarTitleChangeListener {
         binding.sideOptions.txtManageNav.setOnClickListener {
             closeDrawer()
             toolbar.setNavigationIcon(R.drawable.menu)
-            navController.navigate(R.id.vendorPageFragment)
+            navController.navigate(R.id.orderStatusCustomer)
             //  navController.navigate(R.id.customerFragment)
         }
         findViewById<TextView>(R.id.txtPaymentHNav).setOnClickListener {
@@ -260,7 +261,10 @@ class CustomerHomeActivity : AppCompatActivity(), ToolbarTitleChangeListener {
 
                 is NetworkState.HttpErrors.ResourceNotFound -> {
                     binding!!.loginProgressBar.progressBar.hidden()
-                    showCustomDialog(this@CustomerHomeActivity, response.msg.toString(),"Error")
+                    val jsonObject = JSONObject(response.msg)
+                    val message = jsonObject.optString("MESSAGE", "Unknown error")
+                    showCustomDialog(this@CustomerHomeActivity,message, "Error")
+
 
                 }
 

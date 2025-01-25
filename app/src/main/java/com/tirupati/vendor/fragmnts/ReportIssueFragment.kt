@@ -127,9 +127,9 @@ class ReportIssueFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
          binding = FragmentReportIssueBinding.inflate(inflater, container, false)
-        val spinnerAdapter = ReportIssueBatchAdapter(requireActivity(), R.layout.item_spinner_row, ArrayList(responseData?.batchDetails))
-        spinnerAdapter.setDropDownViewResource(R.layout.item_spinner_row)
-        binding?.batchNo?.setAdapter(spinnerAdapter);
+//        val spinnerAdapter = ReportIssueBatchAdapter(requireActivity(), R.layout.item_spinner_row, ArrayList(responseData?.batchDetails))
+//        spinnerAdapter.setDropDownViewResource(R.layout.item_spinner_row)
+//        binding?.batchNo?.setAdapter(spinnerAdapter);
         // Remove setting key listener to null
         // bindingSecondPage?.statesList?.setKeyListener(null);
         binding?.batchNo?.threshold=1
@@ -145,16 +145,16 @@ class ReportIssueFragment : Fragment() {
         }
 
 
-        val batchDetails = responseData?.batchDetails
-        val spinnerAdapter1 = ReportIssueCoilAdapter(requireActivity(), R.layout.item_spinner_row, ArrayList(batchDetails?: emptyList()))
-        spinnerAdapter1.setDropDownViewResource(R.layout.item_spinner_row)
-        binding?.coilNumber?.setAdapter(spinnerAdapter1);
-        // Remove setting key listener to null
-        // bindingSecondPage?.statesList?.setKeyListener(null);
-//        binding.coilNumber?.threshold=1
-        binding?.coilNumber?.setOnClickListener {
-            (it as AutoCompleteTextView).showDropDown()
-        }
+//        val batchDetails = responseData?.batchDetails
+//        val spinnerAdapter1 = ReportIssueCoilAdapter(requireActivity(), R.layout.item_spinner_row, ArrayList(batchDetails?: emptyList()))
+//        spinnerAdapter1.setDropDownViewResource(R.layout.item_spinner_row)
+//        binding?.coilNumber?.setAdapter(spinnerAdapter1);
+//        // Remove setting key listener to null
+//        // bindingSecondPage?.statesList?.setKeyListener(null);
+////        binding.coilNumber?.threshold=1
+//        binding?.coilNumber?.setOnClickListener {
+//            (it as AutoCompleteTextView).showDropDown()
+//        }
 
         binding?.coilNumber?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             val selectedModel = parent.adapter.getItem(position) as BatchDetail

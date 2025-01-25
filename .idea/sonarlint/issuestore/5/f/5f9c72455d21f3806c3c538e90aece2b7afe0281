@@ -1,8 +1,15 @@
 
-ˆkotlin:S1172Ô"=Use "_" instead of this unused lambda parameter "buttonView".(Ø…÷‡ûÿÿÿÿ8‰´ÑÌÇ2J$51eb9771-5310-491d-8e30-5018a1cc4ac4
-|kotlin:S1135"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8´ÑÌÇ2J$e7c78dcd-bb0a-4eb0-b497-cfd598df514f
-ykotlin:S1481X"/Remove this unused "downloadId" local variable.(©æÊ…ûÿÿÿÿ8´ÑÌÇ2J$cdcee34d-f9a0-44d2-a46f-3f9ff3842246
-_kotlin:S1128"Remove this unused import.(Üº¸¡8´ÑÌÇ2J$be7b5347-00c4-4c38-828d-32ba88b2b233
-‘kotlin:S1192»"KDefine a constant instead of duplicating this literal "empty file" 3 times.(Èñîİ8´ÑÌÇ2J$783a322d-46b9-416b-998d-b06b62fdb3cf
-Bkotlin:S18743"#Deprecated code should not be used.(¦Ì8”®„¿É2
-—kotlin:S3776d"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¯¶¦‘8‘´ÑÌÇ2J$11189f2e-f21e-4d1c-9081-51675d4ec1dd
+ˆkotlin:S1172Ô"=Use "_" instead of this unused lambda parameter "buttonView".(Ø…÷‡ûÿÿÿÿ8£ñÇÂÉ2J$81254aff-329f-4966-a199-e37235779f8f
+\kotlin:S6619Á"<Remove this useless null-safe access ?., it always succeeds.(‰ó±ï8Ÿ‡…èÉ2
+\kotlin:S6619Â"<Remove this useless null-safe access ?., it always succeeds.(·¶“8Ÿ‡…èÉ2
+|kotlin:S1135"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8§ñÇÂÉ2J$b541a04c-b48a-42e2-8875-83d7a2fbd42c
+ykotlin:S1481X"/Remove this unused "downloadId" local variable.(©æÊ…ûÿÿÿÿ8¨ñÇÂÉ2J$8f5c6746-9660-46ef-ada6-c6d93cc017f2
+_kotlin:S1128"Remove this unused import.(Üº¸¡8©ñÇÂÉ2J$94eb41f8-7be2-4830-83b1-f2f82fc2f16e
+‘kotlin:S1192»"KDefine a constant instead of duplicating this literal "empty file" 3 times.(Èñîİ8ªñÇÂÉ2J$892467d7-a887-405e-969c-5bde1a51b2dd
+hkotlin:S18743"#Deprecated code should not be used.(¦Ì8«ñÇÂÉ2J$a8a9adff-d716-4949-94c0-590daeb1955a
+—kotlin:S3776d"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¯¶¦‘8¬ñÇÂÉ2J$344549a9-05e5-4a2d-97d6-a0b027510d17
+Qkotlin:S6518§",Replace function call with indexed accessor.(‰¡êûùÿÿÿÿ8ª‡…èÉ2
+Lkotlin:S6518¸",Replace function call with indexed accessor.(°Ì¿‡8ª‡…èÉ2
+Lkotlin:S6518Ë",Replace function call with indexed accessor.( ´àî8ª‡…èÉ2
+Qkotlin:S6518¹",Replace function call with indexed accessor.(ÏÀäŞüÿÿÿÿ8ª‡…èÉ2
+Qkotlin:S6518Ì",Replace function call with indexed accessor.(îñØ»ÿÿÿÿÿ8ª‡…èÉ2
