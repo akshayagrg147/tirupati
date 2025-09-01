@@ -1,5 +1,5 @@
 
-Tkotlin:S6619˜";Remove this useless elvis operation ?:, it always succeeds.(‹˜ú•
+[kotlin:S6619˜";Remove this useless elvis operation ?:, it always succeeds.(‹˜ú•8ôäê3
 ;kotlin:S125}"Remove this commented out code.(Ë¶ßöùÿÿÿÿ
 7kotlin:S125†"Remove this commented out code.(ãÚÊÃ
 <kotlin:S125İ"Remove this commented out code.(ö´óùÿÿÿÿ
@@ -15,7 +15,7 @@ Akotlin:S1481”")Remove this unused "path" local variable.(æ’³#
 Nkotlin:S1481•"0Remove this unused "displayName" local variable.(ş¬¶ûÿÿÿÿ
 Akotlin:S1481”")Remove this unused "path" local variable.(æ’³#
 7kotlin:S1128"Remove this unused import.(äƒ›•ıÿÿÿÿ
-<kotlin:S1874‹"#Deprecated code should not be used.(‚´Ã¬
-<kotlin:S1874õ"#Deprecated code should not be used.(–ø”
-Akotlin:S1874…"#Deprecated code should not be used.(ßÀ›æıÿÿÿÿ
+Ckotlin:S1874‹"#Deprecated code should not be used.(‚´Ã¬8¼ôäê3
+Ckotlin:S1874õ"#Deprecated code should not be used.(–ø”8¼ôäê3
+Hkotlin:S1874…"#Deprecated code should not be used.(ßÀ›æıÿÿÿÿ8¼ôäê3
 kkotlin:S3776Ô"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ß»Š…

@@ -4,8 +4,7 @@ Tkotlin:S1172V"7Use "_" instead of this unused lambda parameter "view".(¼ÙÁ ü
 <kotlin:S125˜"Remove this commented out code.(§½âşÿÿÿÿ
 <kotlin:S125İ"Remove this commented out code.(ö´óùÿÿÿÿ
 Ekotlin:S108@")Either remove or fill this block of code.(ÅÃÏüÿÿÿÿ
-2kotlin:S1128"Remove this unused import.(ƒ¨¡ü
-;kotlin:S18742"#Deprecated code should not be used.(½¨ÖŠ
+Bkotlin:S18742"#Deprecated code should not be used.(½¨ÖŠ8ãôäê3
 Vkotlin:S6511º"=Merge chained "if" statements into a single "when" statement.(©§¥â
 Ikotlin:S6518M",Replace function call with indexed accessor.(°Ñ³ûÿÿÿÿ
 Ikotlin:S6518N",Replace function call with indexed accessor.(ç’™¿ùÿÿÿÿ

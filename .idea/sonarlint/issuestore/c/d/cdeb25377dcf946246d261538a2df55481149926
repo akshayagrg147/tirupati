@@ -1,7 +1,7 @@
 
-akotlin:S6310t"Avoid hardcoded dispatchers.(Í¡·Ş8—ÎÈ2J$a1631715-88f0-4ec1-a81b-b2e774c65cc9
-akotlin:S6310e"Avoid hardcoded dispatchers.(Í¡·Ş8—ÎÈ2J$c11d5f6f-3f39-409c-8a82-a65afc85b17a
-akotlin:S6310m"Avoid hardcoded dispatchers.(Í¡·Ş8—ÎÈ2J$704705ae-5773-4209-94ec-a39b2787b92a
-dkotlin:S1128"Remove this unused import.(êñ¦¨ùÿÿÿÿ8ò¾‘È2J$3180f2bb-b3dc-42bf-8af5-4d6c9b393558
-kotlin:S1192-"IDefine a constant instead of duplicating this literal "About Us" 4 times.(”Ëîã8Åº¤È2J$cd4e1952-b15c-4120-b1f4-2c286d5a28b7
-‡kotlin:S6511+"=Merge chained "if" statements into a single "when" statement.(«õ³»ùÿÿÿÿ8şè¡È2J$7b7a7871-8c01-402d-a643-61d477455e55
+;kotlin:S6310{"Avoid hardcoded dispatchers.(Í¡·Ş8¼óäê3
+;kotlin:S6310f"Avoid hardcoded dispatchers.(Í¡·Ş8¼óäê3
+;kotlin:S6310t"Avoid hardcoded dispatchers.(Í¡·Ş8¼óäê3
+dkotlin:S1128"Remove this unused import.(êñ¦¨ùÿÿÿÿ8ò¾‘È2J$688d2c76-3d98-4dc8-9a07-7cd5d0c9fb95
+kotlin:S1192."IDefine a constant instead of duplicating this literal "About Us" 4 times.(”Ëîã8Åº¤È2J$53a6c227-7263-4f24-bf5e-a3165afed036
+‡kotlin:S6511,"=Merge chained "if" statements into a single "when" statement.(«õ³»ùÿÿÿÿ8şè¡È2J$73a3fca5-8a1a-4641-8bc2-ef0778d92a51
